@@ -1,0 +1,359 @@
+Output: /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/benchmark_random_cv
+Models: ['RF', 'ExtraTrees', 'HistGradientBoosting', 'XGBoost', 'SVM', 'KNN', 'PLS-DA']
+Variants: ['raw', 'p1', 'p2', 'p3', 'p4', 'p5']
+Tasks: ['P1_thiram_presence', 'P2_mg_presence', 'P3_mba_presence', 'G1_thiram_molar_grade', 'G2_mg_molar_grade', 'G3_mba_molar_grade']
+
+======================================================================
+Random-CV benchmark on raw
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    RF: F1=0.955±0.023, BA=0.952±0.028, Acc=0.964±0.018, fit=3.6s
+    ExtraTrees: F1=0.970±0.010, BA=0.972±0.010, Acc=0.976±0.008, fit=6.3s
+    HistGradientBoosting: F1=0.959±0.017, BA=0.964±0.020, Acc=0.967±0.014, fit=40.2s
+    XGBoost: F1=0.967±0.009, BA=0.968±0.011, Acc=0.973±0.007, fit=31.1s
+    SVM: F1=0.840±0.015, BA=0.821±0.012, Acc=0.879±0.013, fit=0.9s
+    KNN: F1=0.945±0.012, BA=0.947±0.012, Acc=0.956±0.010, fit=0.1s
+    PLS-DA: F1=0.832±0.013, BA=0.799±0.010, Acc=0.880±0.010, fit=25.8s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    RF: F1=0.932±0.026, BA=0.930±0.030, Acc=0.946±0.021, fit=3.6s
+    ExtraTrees: F1=0.934±0.025, BA=0.933±0.033, Acc=0.947±0.019, fit=6.2s
+    HistGradientBoosting: F1=0.936±0.016, BA=0.942±0.018, Acc=0.948±0.013, fit=23.9s
+    XGBoost: F1=0.941±0.011, BA=0.946±0.015, Acc=0.952±0.009, fit=32.3s
+    SVM: F1=0.765±0.013, BA=0.749±0.011, Acc=0.822±0.014, fit=1.0s
+    KNN: F1=0.915±0.017, BA=0.906±0.021, Acc=0.933±0.014, fit=0.1s
+    PLS-DA: F1=0.715±0.029, BA=0.687±0.026, Acc=0.817±0.016, fit=25.2s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    RF: F1=0.947±0.015, BA=0.932±0.017, Acc=0.962±0.011, fit=3.6s
+    ExtraTrees: F1=0.949±0.014, BA=0.940±0.015, Acc=0.963±0.010, fit=6.4s
+    HistGradientBoosting: F1=0.937±0.021, BA=0.931±0.023, Acc=0.955±0.015, fit=28.1s
+    XGBoost: F1=0.952±0.018, BA=0.946±0.023, Acc=0.966±0.013, fit=32.5s
+    SVM: F1=0.830±0.028, BA=0.792±0.030, Acc=0.891±0.014, fit=0.8s
+    KNN: F1=0.933±0.015, BA=0.917±0.018, Acc=0.952±0.011, fit=0.1s
+    PLS-DA: F1=0.810±0.021, BA=0.777±0.022, Acc=0.877±0.011, fit=26.7s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    RF: F1=0.956±0.023, BA=0.955±0.024, Acc=0.955±0.023, fit=3.9s
+    ExtraTrees: F1=0.970±0.016, BA=0.968±0.018, Acc=0.969±0.016, fit=7.1s
+    HistGradientBoosting: F1=0.945±0.025, BA=0.944±0.025, Acc=0.944±0.026, fit=27.5s
+    XGBoost: F1=0.962±0.029, BA=0.960±0.030, Acc=0.961±0.029, fit=75.4s
+    SVM: F1=0.791±0.015, BA=0.784±0.016, Acc=0.783±0.014, fit=0.5s
+    KNN: F1=0.953±0.017, BA=0.950±0.018, Acc=0.952±0.017, fit=0.1s
+    PLS-DA: F1=0.852±0.018, BA=0.852±0.020, Acc=0.848±0.017, fit=76.6s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    RF: F1=0.900±0.028, BA=0.900±0.028, Acc=0.900±0.029, fit=3.9s
+    ExtraTrees: F1=0.908±0.022, BA=0.907±0.023, Acc=0.907±0.023, fit=6.8s
+    HistGradientBoosting: F1=0.867±0.014, BA=0.867±0.013, Acc=0.867±0.015, fit=29.0s
+    XGBoost: F1=0.901±0.028, BA=0.900±0.028, Acc=0.901±0.029, fit=87.9s
+    SVM: F1=0.552±0.011, BA=0.602±0.007, Acc=0.589±0.011, fit=0.6s
+    KNN: F1=0.882±0.016, BA=0.883±0.018, Acc=0.883±0.017, fit=0.1s
+    PLS-DA: F1=0.621±0.028, BA=0.620±0.024, Acc=0.628±0.028, fit=43.6s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    RF: F1=0.928±0.007, BA=0.928±0.007, Acc=0.928±0.007, fit=3.9s
+    ExtraTrees: F1=0.927±0.015, BA=0.927±0.015, Acc=0.927±0.015, fit=6.9s
+    HistGradientBoosting: F1=0.894±0.024, BA=0.894±0.024, Acc=0.894±0.024, fit=52.2s
+    XGBoost: F1=0.925±0.006, BA=0.925±0.006, Acc=0.925±0.006, fit=90.6s
+    SVM: F1=0.723±0.016, BA=0.735±0.017, Acc=0.733±0.017, fit=0.6s
+    KNN: F1=0.906±0.015, BA=0.906±0.015, Acc=0.906±0.014, fit=0.1s
+    PLS-DA: F1=0.685±0.010, BA=0.703±0.009, Acc=0.701±0.011, fit=73.8s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/benchmark_random_cv
+
+======================================================================
+Random-CV benchmark on p1
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    RF: F1=0.992±0.003, BA=0.990±0.006, Acc=0.993±0.002, fit=3.6s
+    ExtraTrees: F1=0.993±0.000, BA=0.992±0.003, Acc=0.994±0.000, fit=6.5s
+    HistGradientBoosting: F1=0.949±0.021, BA=0.946±0.021, Acc=0.959±0.017, fit=28.5s
+    XGBoost: F1=0.992±0.005, BA=0.992±0.007, Acc=0.993±0.004, fit=28.0s
+    SVM: F1=0.992±0.006, BA=0.994±0.004, Acc=0.993±0.005, fit=0.3s
+    KNN: F1=0.996±0.005, BA=0.998±0.003, Acc=0.997±0.004, fit=0.1s
+    PLS-DA: F1=0.975±0.007, BA=0.974±0.008, Acc=0.980±0.006, fit=26.6s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    RF: F1=0.985±0.008, BA=0.987±0.008, Acc=0.988±0.006, fit=3.8s
+    ExtraTrees: F1=0.978±0.011, BA=0.985±0.008, Acc=0.982±0.009, fit=6.5s
+    HistGradientBoosting: F1=0.938±0.023, BA=0.932±0.032, Acc=0.951±0.017, fit=21.7s
+    XGBoost: F1=0.977±0.010, BA=0.982±0.010, Acc=0.981±0.008, fit=29.5s
+    SVM: F1=0.970±0.007, BA=0.981±0.007, Acc=0.976±0.006, fit=0.4s
+    KNN: F1=0.962±0.021, BA=0.965±0.021, Acc=0.969±0.017, fit=0.1s
+    PLS-DA: F1=0.941±0.018, BA=0.947±0.022, Acc=0.952±0.014, fit=25.6s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    RF: F1=0.983±0.008, BA=0.980±0.011, Acc=0.988±0.005, fit=3.7s
+    ExtraTrees: F1=0.988±0.011, BA=0.982±0.016, Acc=0.991±0.008, fit=6.4s
+    HistGradientBoosting: F1=0.958±0.016, BA=0.948±0.016, Acc=0.970±0.011, fit=19.3s
+    XGBoost: F1=0.986±0.009, BA=0.984±0.012, Acc=0.990±0.006, fit=25.7s
+    SVM: F1=0.991±0.003, BA=0.993±0.005, Acc=0.993±0.002, fit=0.3s
+    KNN: F1=0.992±0.009, BA=0.989±0.013, Acc=0.994±0.006, fit=0.1s
+    PLS-DA: F1=0.963±0.011, BA=0.974±0.005, Acc=0.972±0.009, fit=26.5s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    RF: F1=0.990±0.009, BA=0.990±0.009, Acc=0.991±0.009, fit=4.0s
+    ExtraTrees: F1=0.994±0.006, BA=0.993±0.006, Acc=0.994±0.006, fit=6.9s
+    HistGradientBoosting: F1=0.980±0.012, BA=0.979±0.013, Acc=0.980±0.011, fit=38.9s
+    XGBoost: F1=0.989±0.010, BA=0.988±0.010, Acc=0.989±0.009, fit=68.7s
+    SVM: F1=0.998±0.003, BA=0.998±0.004, Acc=0.998±0.003, fit=0.2s
+    KNN: F1=0.985±0.013, BA=0.984±0.014, Acc=0.986±0.012, fit=0.1s
+    PLS-DA: F1=0.922±0.012, BA=0.920±0.013, Acc=0.920±0.012, fit=82.4s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    RF: F1=0.952±0.006, BA=0.952±0.005, Acc=0.952±0.006, fit=3.9s
+    ExtraTrees: F1=0.966±0.008, BA=0.967±0.008, Acc=0.966±0.008, fit=6.8s
+    HistGradientBoosting: F1=0.947±0.020, BA=0.947±0.020, Acc=0.948±0.020, fit=97.4s
+    XGBoost: F1=0.958±0.011, BA=0.959±0.011, Acc=0.958±0.011, fit=87.1s
+    SVM: F1=0.931±0.014, BA=0.930±0.014, Acc=0.931±0.014, fit=0.4s
+    KNN: F1=0.922±0.009, BA=0.922±0.009, Acc=0.923±0.010, fit=0.1s
+    PLS-DA: F1=0.822±0.021, BA=0.822±0.021, Acc=0.821±0.021, fit=121.3s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    RF: F1=0.976±0.005, BA=0.977±0.005, Acc=0.977±0.005, fit=3.9s
+    ExtraTrees: F1=0.976±0.005, BA=0.976±0.005, Acc=0.977±0.005, fit=7.0s
+    HistGradientBoosting: F1=0.955±0.005, BA=0.954±0.005, Acc=0.954±0.005, fit=140.7s
+    XGBoost: F1=0.976±0.005, BA=0.977±0.005, Acc=0.977±0.005, fit=71.6s
+    SVM: F1=0.981±0.006, BA=0.981±0.006, Acc=0.981±0.006, fit=0.3s
+    KNN: F1=0.950±0.005, BA=0.950±0.006, Acc=0.950±0.005, fit=0.1s
+    PLS-DA: F1=0.867±0.005, BA=0.867±0.005, Acc=0.866±0.005, fit=74.2s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/benchmark_random_cv
+
+======================================================================
+Random-CV benchmark on p2
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    RF: F1=0.993±0.004, BA=0.992±0.007, Acc=0.994±0.004, fit=3.5s
+    ExtraTrees: F1=0.996±0.003, BA=0.996±0.004, Acc=0.997±0.003, fit=6.4s
+    HistGradientBoosting: F1=0.954±0.034, BA=0.951±0.036, Acc=0.963±0.027, fit=101.9s
+    XGBoost: F1=0.993±0.006, BA=0.992±0.006, Acc=0.994±0.005, fit=25.2s
+    SVM: F1=0.996±0.006, BA=0.995±0.008, Acc=0.997±0.004, fit=0.3s
+    KNN: F1=0.950±0.011, BA=0.938±0.008, Acc=0.961±0.009, fit=0.1s
+    PLS-DA: F1=0.959±0.008, BA=0.962±0.008, Acc=0.967±0.007, fit=27.2s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    RF: F1=0.970±0.011, BA=0.971±0.010, Acc=0.976±0.009, fit=3.5s
+    ExtraTrees: F1=0.974±0.012, BA=0.982±0.009, Acc=0.979±0.010, fit=6.3s
+    HistGradientBoosting: F1=0.935±0.010, BA=0.941±0.011, Acc=0.947±0.008, fit=83.1s
+    XGBoost: F1=0.955±0.018, BA=0.964±0.018, Acc=0.963±0.015, fit=29.9s
+    SVM: F1=0.978±0.011, BA=0.983±0.009, Acc=0.982±0.009, fit=0.4s
+    KNN: F1=0.931±0.017, BA=0.937±0.020, Acc=0.943±0.014, fit=0.1s
+    PLS-DA: F1=0.932±0.015, BA=0.936±0.011, Acc=0.945±0.014, fit=26.2s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    RF: F1=0.979±0.010, BA=0.977±0.016, Acc=0.984±0.007, fit=3.7s
+    ExtraTrees: F1=0.985±0.013, BA=0.982±0.017, Acc=0.989±0.009, fit=6.6s
+    HistGradientBoosting: F1=0.953±0.012, BA=0.948±0.009, Acc=0.966±0.009, fit=55.8s
+    XGBoost: F1=0.983±0.006, BA=0.986±0.008, Acc=0.988±0.004, fit=25.9s
+    SVM: F1=0.988±0.008, BA=0.991±0.009, Acc=0.991±0.006, fit=0.3s
+    KNN: F1=0.982±0.012, BA=0.979±0.016, Acc=0.987±0.008, fit=0.1s
+    PLS-DA: F1=0.965±0.012, BA=0.976±0.011, Acc=0.973±0.010, fit=25.4s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    RF: F1=0.994±0.007, BA=0.994±0.008, Acc=0.994±0.008, fit=4.0s
+    ExtraTrees: F1=1.000±0.000, BA=1.000±0.000, Acc=1.000±0.000, fit=7.1s
+    HistGradientBoosting: F1=0.974±0.009, BA=0.972±0.009, Acc=0.974±0.009, fit=86.1s
+    XGBoost: F1=0.991±0.006, BA=0.991±0.006, Acc=0.991±0.006, fit=61.9s
+    SVM: F1=0.997±0.004, BA=0.997±0.004, Acc=0.997±0.004, fit=0.2s
+    KNN: F1=0.957±0.012, BA=0.956±0.012, Acc=0.957±0.012, fit=0.1s
+    PLS-DA: F1=0.931±0.009, BA=0.930±0.010, Acc=0.928±0.009, fit=94.2s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    RF: F1=0.938±0.020, BA=0.938±0.021, Acc=0.938±0.020, fit=3.9s
+    ExtraTrees: F1=0.952±0.016, BA=0.952±0.017, Acc=0.952±0.016, fit=6.8s
+    HistGradientBoosting: F1=0.916±0.020, BA=0.916±0.021, Acc=0.917±0.020, fit=201.9s
+    XGBoost: F1=0.954±0.009, BA=0.954±0.009, Acc=0.954±0.010, fit=85.2s
+    SVM: F1=0.932±0.015, BA=0.932±0.015, Acc=0.932±0.015, fit=0.4s
+    KNN: F1=0.800±0.027, BA=0.803±0.024, Acc=0.809±0.023, fit=0.1s
+    PLS-DA: F1=0.779±0.025, BA=0.778±0.024, Acc=0.778±0.024, fit=118.9s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    RF: F1=0.968±0.011, BA=0.968±0.011, Acc=0.968±0.011, fit=3.8s
+    ExtraTrees: F1=0.969±0.011, BA=0.969±0.011, Acc=0.969±0.011, fit=7.0s
+    HistGradientBoosting: F1=0.951±0.013, BA=0.952±0.013, Acc=0.952±0.013, fit=159.2s
+    XGBoost: F1=0.971±0.013, BA=0.970±0.013, Acc=0.971±0.013, fit=75.0s
+    SVM: F1=0.979±0.007, BA=0.979±0.007, Acc=0.979±0.007, fit=0.3s
+    KNN: F1=0.832±0.019, BA=0.834±0.017, Acc=0.834±0.017, fit=0.1s
+    PLS-DA: F1=0.817±0.024, BA=0.815±0.024, Acc=0.815±0.024, fit=102.9s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/benchmark_random_cv
+
+======================================================================
+Random-CV benchmark on p3
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    RF: F1=0.992±0.007, BA=0.990±0.008, Acc=0.993±0.005, fit=3.5s
+    ExtraTrees: F1=0.993±0.004, BA=0.994±0.004, Acc=0.994±0.004, fit=6.4s
+    HistGradientBoosting: F1=0.967±0.008, BA=0.966±0.006, Acc=0.973±0.006, fit=69.5s
+    XGBoost: F1=0.992±0.005, BA=0.992±0.005, Acc=0.993±0.004, fit=25.7s
+    SVM: F1=0.993±0.007, BA=0.995±0.005, Acc=0.994±0.006, fit=0.3s
+    KNN: F1=0.993±0.007, BA=0.996±0.004, Acc=0.994±0.006, fit=0.1s
+    PLS-DA: F1=0.979±0.014, BA=0.981±0.015, Acc=0.983±0.012, fit=26.5s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    RF: F1=0.977±0.010, BA=0.981±0.008, Acc=0.981±0.008, fit=3.5s
+    ExtraTrees: F1=0.976±0.016, BA=0.980±0.013, Acc=0.980±0.013, fit=6.4s
+    HistGradientBoosting: F1=0.945±0.024, BA=0.943±0.025, Acc=0.956±0.019, fit=97.6s
+    XGBoost: F1=0.980±0.009, BA=0.984±0.008, Acc=0.983±0.007, fit=27.6s
+    SVM: F1=0.974±0.011, BA=0.984±0.009, Acc=0.979±0.009, fit=0.4s
+    KNN: F1=0.967±0.022, BA=0.971±0.020, Acc=0.973±0.018, fit=0.1s
+    PLS-DA: F1=0.925±0.017, BA=0.930±0.015, Acc=0.939±0.014, fit=26.1s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    RF: F1=0.980±0.011, BA=0.972±0.017, Acc=0.986±0.008, fit=3.7s
+    ExtraTrees: F1=0.988±0.011, BA=0.982±0.016, Acc=0.991±0.008, fit=6.5s
+    HistGradientBoosting: F1=0.965±0.015, BA=0.958±0.017, Acc=0.974±0.011, fit=64.3s
+    XGBoost: F1=0.983±0.013, BA=0.976±0.019, Acc=0.988±0.009, fit=25.0s
+    SVM: F1=0.990±0.004, BA=0.992±0.004, Acc=0.992±0.003, fit=0.3s
+    KNN: F1=0.986±0.012, BA=0.981±0.016, Acc=0.990±0.008, fit=0.1s
+    PLS-DA: F1=0.982±0.010, BA=0.985±0.006, Acc=0.987±0.007, fit=25.6s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    RF: F1=0.994±0.009, BA=0.993±0.010, Acc=0.994±0.009, fit=4.0s
+    ExtraTrees: F1=0.991±0.009, BA=0.990±0.009, Acc=0.991±0.009, fit=7.1s
+    HistGradientBoosting: F1=0.985±0.014, BA=0.984±0.015, Acc=0.985±0.015, fit=86.6s
+    XGBoost: F1=0.992±0.010, BA=0.992±0.010, Acc=0.992±0.010, fit=62.2s
+    SVM: F1=0.992±0.005, BA=0.992±0.005, Acc=0.992±0.005, fit=0.2s
+    KNN: F1=0.989±0.010, BA=0.988±0.011, Acc=0.989±0.009, fit=0.1s
+    PLS-DA: F1=0.926±0.017, BA=0.925±0.018, Acc=0.923±0.017, fit=99.3s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    RF: F1=0.950±0.008, BA=0.951±0.007, Acc=0.951±0.008, fit=3.8s
+    ExtraTrees: F1=0.953±0.010, BA=0.954±0.010, Acc=0.954±0.010, fit=6.8s
+    HistGradientBoosting: F1=0.935±0.027, BA=0.935±0.028, Acc=0.935±0.027, fit=151.0s
+    XGBoost: F1=0.956±0.010, BA=0.957±0.010, Acc=0.957±0.010, fit=80.3s
+    SVM: F1=0.932±0.019, BA=0.932±0.020, Acc=0.932±0.020, fit=0.4s
+    KNN: F1=0.912±0.020, BA=0.912±0.020, Acc=0.914±0.020, fit=0.1s
+    PLS-DA: F1=0.801±0.028, BA=0.800±0.027, Acc=0.801±0.028, fit=164.3s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    RF: F1=0.969±0.012, BA=0.969±0.012, Acc=0.969±0.012, fit=3.9s
+    ExtraTrees: F1=0.972±0.007, BA=0.972±0.007, Acc=0.972±0.007, fit=7.0s
+    HistGradientBoosting: F1=0.945±0.022, BA=0.946±0.021, Acc=0.946±0.021, fit=137.8s
+    XGBoost: F1=0.969±0.006, BA=0.969±0.006, Acc=0.969±0.006, fit=76.9s
+    SVM: F1=0.973±0.009, BA=0.974±0.009, Acc=0.974±0.009, fit=0.3s
+    KNN: F1=0.950±0.012, BA=0.950±0.013, Acc=0.950±0.013, fit=0.1s
+    PLS-DA: F1=0.872±0.018, BA=0.871±0.018, Acc=0.871±0.018, fit=112.3s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/benchmark_random_cv
+
+======================================================================
+Random-CV benchmark on p4
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    RF: F1=0.985±0.006, BA=0.985±0.005, Acc=0.988±0.005, fit=3.6s
+    ExtraTrees: F1=0.992±0.003, BA=0.992±0.002, Acc=0.993±0.002, fit=6.4s
+    HistGradientBoosting: F1=0.951±0.020, BA=0.946±0.022, Acc=0.961±0.016, fit=77.6s
+    XGBoost: F1=0.986±0.004, BA=0.986±0.005, Acc=0.989±0.004, fit=28.2s
+    SVM: F1=0.745±0.018, BA=0.829±0.013, Acc=0.755±0.017, fit=0.9s
+    KNN: F1=0.989±0.012, BA=0.990±0.011, Acc=0.991±0.010, fit=0.1s
+    PLS-DA: F1=0.867±0.013, BA=0.849±0.014, Acc=0.899±0.010, fit=26.9s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    RF: F1=0.967±0.011, BA=0.967±0.014, Acc=0.973±0.009, fit=3.5s
+    ExtraTrees: F1=0.978±0.008, BA=0.984±0.006, Acc=0.982±0.006, fit=6.5s
+    HistGradientBoosting: F1=0.940±0.026, BA=0.941±0.027, Acc=0.951±0.021, fit=106.2s
+    XGBoost: F1=0.970±0.012, BA=0.973±0.012, Acc=0.976±0.010, fit=28.3s
+    SVM: F1=0.726±0.024, BA=0.810±0.021, Acc=0.735±0.025, fit=0.9s
+    KNN: F1=0.960±0.012, BA=0.963±0.015, Acc=0.968±0.010, fit=0.1s
+    PLS-DA: F1=0.785±0.019, BA=0.752±0.016, Acc=0.852±0.014, fit=24.6s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    RF: F1=0.985±0.011, BA=0.982±0.014, Acc=0.989±0.008, fit=3.6s
+    ExtraTrees: F1=0.994±0.006, BA=0.991±0.009, Acc=0.996±0.004, fit=6.6s
+    HistGradientBoosting: F1=0.963±0.012, BA=0.965±0.012, Acc=0.972±0.009, fit=70.5s
+    XGBoost: F1=0.980±0.009, BA=0.981±0.013, Acc=0.986±0.007, fit=24.5s
+    SVM: F1=0.783±0.018, BA=0.865±0.013, Acc=0.806±0.020, fit=0.7s
+    KNN: F1=0.979±0.006, BA=0.976±0.008, Acc=0.984±0.004, fit=0.1s
+    PLS-DA: F1=0.881±0.021, BA=0.851±0.021, Acc=0.920±0.013, fit=26.7s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    RF: F1=0.989±0.009, BA=0.988±0.010, Acc=0.989±0.009, fit=3.8s
+    ExtraTrees: F1=0.991±0.009, BA=0.990±0.010, Acc=0.991±0.009, fit=7.2s
+    HistGradientBoosting: F1=0.985±0.004, BA=0.986±0.005, Acc=0.985±0.005, fit=90.1s
+    XGBoost: F1=0.988±0.006, BA=0.987±0.006, Acc=0.988±0.006, fit=60.1s
+    SVM: F1=0.739±0.014, BA=0.760±0.014, Acc=0.743±0.013, fit=0.5s
+    KNN: F1=0.977±0.008, BA=0.976±0.009, Acc=0.977±0.009, fit=0.1s
+    PLS-DA: F1=0.841±0.021, BA=0.840±0.020, Acc=0.835±0.023, fit=116.0s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    RF: F1=0.930±0.016, BA=0.930±0.016, Acc=0.931±0.016, fit=3.8s
+    ExtraTrees: F1=0.941±0.015, BA=0.941±0.015, Acc=0.941±0.015, fit=7.0s
+    HistGradientBoosting: F1=0.930±0.013, BA=0.931±0.013, Acc=0.931±0.014, fit=183.3s
+    XGBoost: F1=0.935±0.013, BA=0.935±0.013, Acc=0.935±0.013, fit=80.1s
+    SVM: F1=0.653±0.018, BA=0.672±0.016, Acc=0.664±0.015, fit=0.6s
+    KNN: F1=0.931±0.014, BA=0.931±0.015, Acc=0.931±0.014, fit=0.1s
+    PLS-DA: F1=0.730±0.015, BA=0.726±0.019, Acc=0.725±0.017, fit=64.6s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    RF: F1=0.971±0.011, BA=0.971±0.011, Acc=0.971±0.011, fit=3.8s
+    ExtraTrees: F1=0.970±0.005, BA=0.971±0.005, Acc=0.971±0.005, fit=7.1s
+    HistGradientBoosting: F1=0.952±0.015, BA=0.952±0.015, Acc=0.952±0.015, fit=124.5s
+    XGBoost: F1=0.969±0.008, BA=0.969±0.009, Acc=0.969±0.009, fit=67.6s
+    SVM: F1=0.874±0.013, BA=0.874±0.013, Acc=0.874±0.013, fit=0.4s
+    KNN: F1=0.942±0.024, BA=0.941±0.024, Acc=0.941±0.024, fit=0.1s
+    PLS-DA: F1=0.715±0.021, BA=0.729±0.023, Acc=0.727±0.024, fit=82.6s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/benchmark_random_cv
+
+======================================================================
+Random-CV benchmark on p5
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    RF: F1=0.990±0.010, BA=0.986±0.014, Acc=0.992±0.008, fit=3.5s
+    ExtraTrees: F1=0.992±0.005, BA=0.992±0.005, Acc=0.993±0.004, fit=6.3s
+    HistGradientBoosting: F1=0.931±0.035, BA=0.925±0.039, Acc=0.946±0.028, fit=117.4s
+    XGBoost: F1=0.985±0.008, BA=0.982±0.010, Acc=0.988±0.006, fit=28.9s
+    SVM: F1=0.992±0.005, BA=0.992±0.008, Acc=0.993±0.004, fit=0.3s
+    KNN: F1=0.907±0.019, BA=0.883±0.019, Acc=0.930±0.014, fit=0.1s
+    PLS-DA: F1=0.950±0.010, BA=0.952±0.014, Acc=0.960±0.008, fit=24.5s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    RF: F1=0.956±0.003, BA=0.954±0.006, Acc=0.964±0.003, fit=3.5s
+    ExtraTrees: F1=0.964±0.014, BA=0.968±0.016, Acc=0.971±0.011, fit=6.3s
+    HistGradientBoosting: F1=0.901±0.012, BA=0.902±0.009, Acc=0.920±0.011, fit=77.7s
+    XGBoost: F1=0.958±0.013, BA=0.968±0.014, Acc=0.966±0.011, fit=31.7s
+    SVM: F1=0.974±0.003, BA=0.976±0.008, Acc=0.979±0.002, fit=0.5s
+    KNN: F1=0.884±0.014, BA=0.882±0.016, Acc=0.907±0.011, fit=0.1s
+    PLS-DA: F1=0.882±0.014, BA=0.879±0.019, Acc=0.906±0.010, fit=26.6s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    RF: F1=0.956±0.017, BA=0.944±0.024, Acc=0.969±0.011, fit=3.6s
+    ExtraTrees: F1=0.970±0.020, BA=0.963±0.027, Acc=0.979±0.014, fit=6.4s
+    HistGradientBoosting: F1=0.939±0.024, BA=0.938±0.023, Acc=0.955±0.018, fit=68.9s
+    XGBoost: F1=0.980±0.016, BA=0.978±0.022, Acc=0.986±0.011, fit=27.0s
+    SVM: F1=0.988±0.011, BA=0.985±0.016, Acc=0.991±0.008, fit=0.4s
+    KNN: F1=0.955±0.011, BA=0.937±0.015, Acc=0.968±0.008, fit=0.1s
+    PLS-DA: F1=0.962±0.013, BA=0.967±0.007, Acc=0.971±0.011, fit=27.7s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    RF: F1=0.992±0.005, BA=0.992±0.006, Acc=0.992±0.005, fit=3.8s
+    ExtraTrees: F1=0.995±0.004, BA=0.995±0.004, Acc=0.995±0.004, fit=6.9s
+    HistGradientBoosting: F1=0.970±0.012, BA=0.969±0.012, Acc=0.969±0.012, fit=169.5s
+    XGBoost: F1=0.991±0.006, BA=0.990±0.006, Acc=0.991±0.006, fit=64.9s
+    SVM: F1=0.997±0.004, BA=0.997±0.003, Acc=0.997±0.004, fit=0.3s
+    KNN: F1=0.968±0.012, BA=0.966±0.012, Acc=0.968±0.012, fit=0.1s
+    PLS-DA: F1=0.973±0.010, BA=0.973±0.010, Acc=0.972±0.012, fit=140.1s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    RF: F1=0.892±0.014, BA=0.893±0.013, Acc=0.892±0.014, fit=3.8s
+    ExtraTrees: F1=0.904±0.013, BA=0.905±0.013, Acc=0.904±0.013, fit=6.7s
+    HistGradientBoosting: F1=0.901±0.013, BA=0.902±0.013, Acc=0.901±0.013, fit=294.4s
+    XGBoost: F1=0.921±0.017, BA=0.922±0.018, Acc=0.921±0.018, fit=89.0s
+    SVM: F1=0.929±0.020, BA=0.930±0.020, Acc=0.929±0.020, fit=0.6s
+    KNN: F1=0.756±0.038, BA=0.758±0.038, Acc=0.761±0.035, fit=0.0s
+    PLS-DA: F1=0.782±0.017, BA=0.781±0.018, Acc=0.782±0.017, fit=118.3s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    RF: F1=0.953±0.018, BA=0.953±0.018, Acc=0.953±0.018, fit=3.8s
+    ExtraTrees: F1=0.949±0.007, BA=0.949±0.007, Acc=0.949±0.007, fit=6.7s
+    HistGradientBoosting: F1=0.947±0.020, BA=0.947±0.020, Acc=0.947±0.020, fit=336.4s
+    XGBoost: F1=0.965±0.011, BA=0.965±0.011, Acc=0.965±0.011, fit=78.8s
+    SVM: F1=0.968±0.010, BA=0.968±0.010, Acc=0.968±0.010, fit=0.4s
+    KNN: F1=0.729±0.037, BA=0.740±0.034, Acc=0.740±0.035, fit=0.1s
+    PLS-DA: F1=0.887±0.022, BA=0.885±0.023, Acc=0.886±0.022, fit=125.0s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/benchmark_random_cv
+Indexed 264 rows; best-by-task rows: 6

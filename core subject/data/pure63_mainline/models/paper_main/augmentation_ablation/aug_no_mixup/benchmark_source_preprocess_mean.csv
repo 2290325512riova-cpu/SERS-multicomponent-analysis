@@ -1,0 +1,3 @@
+﻿source_stage,Preprocess,F1_mean,BA_mean,Acc_mean
+augmentation_aug_no_mixup,p1,0.8603048107456864,0.8600694466544875,0.8716783015028269
+augmentation_aug_no_mixup,raw,0.7329851409902942,0.7446665585187984,0.7628433897118814

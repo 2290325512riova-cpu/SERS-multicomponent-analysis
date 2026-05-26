@@ -1,0 +1,2 @@
+﻿source_stage,relative_dir,description,models,variants
+augmentation_no_aug,no_aug,Paper-main augmentation ablation: no_aug.,RamanNet-Lite,p1/raw

@@ -1,0 +1,3 @@
+﻿source_stage,Model,F1_mean,BA_mean,Acc_mean
+dl_candidate_smoke_composition_mixup,PatchTransformer,0.46768905040488856,0.544461631520431,0.5447875156617172
+dl_candidate_smoke_composition_mixup,RamanNet-Lite,0.7452004590622878,0.7573908042445675,0.7596037439302722

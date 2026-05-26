@@ -1,0 +1,17 @@
+Output: /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/benchmark_random_cv
+Models: ['RF', 'ExtraTrees', 'HistGradientBoosting', 'XGBoost', 'SVM', 'KNN', 'PLS-DA', 'LDA']
+Variants: ['raw', 'p1', 'p2', 'p3', 'p4', 'p5']
+Tasks: ['P1_thiram_presence', 'P2_mg_presence', 'P3_mba_presence', 'G1_thiram_molar_grade', 'G2_mg_molar_grade', 'G3_mba_molar_grade']
+
+======================================================================
+Random-CV benchmark on raw
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    RF: F1=0.955±0.023, BA=0.952±0.028, Acc=0.964±0.018, fit=3.5s
+    ExtraTrees: F1=0.970±0.010, BA=0.972±0.010, Acc=0.976±0.008, fit=6.3s
+    HistGradientBoosting: F1=0.959±0.017, BA=0.964±0.020, Acc=0.967±0.014, fit=67.6s
+    XGBoost: F1=0.967±0.009, BA=0.968±0.011, Acc=0.973±0.007, fit=31.5s
+    SVM: F1=0.840±0.015, BA=0.821±0.012, Acc=0.879±0.013, fit=0.9s
+    KNN: F1=0.945±0.012, BA=0.947±0.012, Acc=0.956±0.010, fit=0.3s
+    PLS-DA: F1=0.832±0.013, BA=0.799±0.010, Acc=0.880±0.010, fit=25.8s

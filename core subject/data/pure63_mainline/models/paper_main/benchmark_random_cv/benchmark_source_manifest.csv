@@ -1,0 +1,2 @@
+﻿source_stage,relative_dir,description,models,variants
+paper_main_random_cv,benchmark_random_cv,Paper-main spectrum-level random 5-fold CV benchmark.,1D-CNN/1D-ResNet/ExtraTrees/HistGradientBoosting/KAN-CNN/KNN/LDA/PLS-DA/RF/RamanNet-Lite/SVM/Spectrum-KAN/XGBoost,p1/p2/p3/p4/p5/raw

@@ -1,0 +1,11 @@
+Python: 3.11.10 (main, Sep  7 2024, 18:35:41) [GCC 11.4.0]
+Platform: Linux-5.4.0-159-generic-x86_64-with-glibc2.35
+Torch: 2.4.0+cu121
+CUDA available: True
+CUDA version: 12.1
+GPU: NVIDIA GeForce RTX 3090
+numpy: 2.1.2
+pandas: 3.0.3
+sklearn: 1.8.0
+scipy: 1.17.1
+xgboost: 3.2.0

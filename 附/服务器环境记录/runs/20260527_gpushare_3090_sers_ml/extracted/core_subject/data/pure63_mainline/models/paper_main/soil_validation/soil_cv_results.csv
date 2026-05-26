@@ -1,0 +1,16 @@
+﻿run_id,task,task_name,fold,n_test,n_positive,n_negative,n_blank_test,AUC,macro_f1,balanced_acc
+soil_only_cv_extratrees_p1_20260527_002017,P1_thiram_presence,Thiram Presence,1,18,14,4,2,1.0,1.0,1.0
+soil_only_cv_extratrees_p1_20260527_002017,P1_thiram_presence,Thiram Presence,2,18,14,4,2,0.9821428571428572,0.9259259259259258,0.9642857142857143
+soil_only_cv_extratrees_p1_20260527_002017,P1_thiram_presence,Thiram Presence,3,18,14,4,2,1.0,0.9113300492610837,0.875
+soil_only_cv_extratrees_p1_20260527_002017,P1_thiram_presence,Thiram Presence,4,18,14,4,2,1.0,0.8,0.75
+soil_only_cv_extratrees_p1_20260527_002017,P1_thiram_presence,Thiram Presence,5,17,13,4,2,1.0,0.7976190476190477,0.75
+soil_only_cv_extratrees_p1_20260527_002017,P2_mg_presence,MG Presence,1,18,15,3,2,0.9777777777777779,0.8838709677419355,0.8333333333333333
+soil_only_cv_extratrees_p1_20260527_002017,P2_mg_presence,MG Presence,2,18,15,3,2,0.9111111111111112,0.7339901477832512,0.7666666666666666
+soil_only_cv_extratrees_p1_20260527_002017,P2_mg_presence,MG Presence,3,18,15,3,2,1.0,1.0,1.0
+soil_only_cv_extratrees_p1_20260527_002017,P2_mg_presence,MG Presence,4,18,15,3,2,0.888888888888889,0.71875,0.6666666666666666
+soil_only_cv_extratrees_p1_20260527_002017,P2_mg_presence,MG Presence,5,17,14,3,2,1.0,0.7166666666666667,0.6666666666666666
+soil_only_cv_extratrees_p1_20260527_002017,P3_mba_presence,MBA Presence,1,18,15,3,2,1.0,1.0,1.0
+soil_only_cv_extratrees_p1_20260527_002017,P3_mba_presence,MBA Presence,2,18,14,4,2,1.0,1.0,1.0
+soil_only_cv_extratrees_p1_20260527_002017,P3_mba_presence,MBA Presence,3,18,14,4,2,1.0,0.9113300492610837,0.875
+soil_only_cv_extratrees_p1_20260527_002017,P3_mba_presence,MBA Presence,4,18,14,4,2,0.9285714285714286,0.8,0.75
+soil_only_cv_extratrees_p1_20260527_002017,P3_mba_presence,MBA Presence,5,17,14,3,2,0.9523809523809524,0.8827586206896552,0.8333333333333333

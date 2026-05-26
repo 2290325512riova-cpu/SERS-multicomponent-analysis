@@ -1,0 +1,38 @@
+{
+  "run_id": "shap_feature_selection_extratrees_p1_20260527_001506",
+  "created_at": "2026-05-27T00:18:27",
+  "git_commit": "unknown",
+  "command": "scripts/analysis/run_shap_feature_selection.py",
+  "python": "3.11.10 (main, Sep  7 2024, 18:35:41) [GCC 11.4.0]",
+  "platform": "Linux-5.4.0-200-generic-x86_64-with-glibc2.35",
+  "numpy": "2.1.2",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2",
+  "model": "ExtraTrees",
+  "model_recipe": "ExtraTreesClassifier(class_weight='balanced', min_samples_leaf=2,\n                     n_estimators=400, n_jobs=-1, random_state=42)",
+  "variant": "p1",
+  "tasks": [
+    "P1_thiram_presence",
+    "P2_mg_presence",
+    "P3_mba_presence",
+    "G2_mg_molar_grade",
+    "G3_mba_molar_grade"
+  ],
+  "retention_pct": [
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100
+  ],
+  "mask_report_pct": 30,
+  "shap_source": "/hy-tmp/sers_ml_20260526/core_subject/data/pure63_mainline/models/paper_main/shap_peak_cluster/shap_mean_abs_by_wavenumber.csv",
+  "split_source": "/hy-tmp/sers_ml_20260526/core_subject/data/pure63_mainline/splits/cv_split_random_5fold.csv",
+  "seed": 42,
+  "elapsed_seconds": 201.09317921102047
+}

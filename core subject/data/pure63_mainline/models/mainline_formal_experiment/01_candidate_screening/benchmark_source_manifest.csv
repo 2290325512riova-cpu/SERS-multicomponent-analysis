@@ -1,0 +1,2 @@
+﻿source_stage,relative_dir,description,models,variants
+candidate_screening,01_candidate_screening,Mainline candidate screening under grouped CV.,1D-CNN/Spectrum-KAN/Chem-KAN/PLS-DA/SVM/RF/KNN/HistGradientBoosting,raw/p1/p2/p3/p4

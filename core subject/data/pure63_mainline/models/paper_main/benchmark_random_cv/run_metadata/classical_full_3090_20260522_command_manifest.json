@@ -1,0 +1,31 @@
+{
+  "run_id": "classical_full_3090_20260522",
+  "created_utc": "2026-05-22T03:01:56.923982+00:00",
+  "scope": "paper-main random-CV classical model screening after smoke/profile",
+  "local_stage_dir": "data/pure63_mainline/models/paper_main/benchmark_random_cv/",
+  "remote_repo_dir": "/hy-tmp/SERS-multicomponent-analysis",
+  "git_commit": "60ab0aa0c23a14337273d1b33837aefaed680626",
+  "git_status": "## main...origin/main\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/",
+  "waits_for_run_id": "smoke_3090_20260522",
+  "command": "python3 -u scripts/analysis/run_random_benchmark.py --models RF ExtraTrees HistGradientBoosting XGBoost SVM KNN PLS-DA LDA --variants raw p1 p2 p3 p4 p5 --strict-models",
+  "models": [
+    "RF",
+    "ExtraTrees",
+    "HistGradientBoosting",
+    "XGBoost",
+    "SVM",
+    "KNN",
+    "PLS-DA",
+    "LDA"
+  ],
+  "variants": [
+    "raw",
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5"
+  ],
+  "task_scope": "TASKS main tasks from run_random_benchmark.py",
+  "split": "cv_split_random_5fold.csv"
+}

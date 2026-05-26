@@ -10,7 +10,7 @@ Usage:
     python run_pipeline.py --step report       # Only generate report
     python run_pipeline.py --rebuild           # Force rebuild (ignore caches)
     python run_pipeline.py --models RF SVM     # Only run specific models
-    python run_pipeline.py --preprocess p1     # Use specific preprocessing (raw/p1/p2/p3/p4)
+    python run_pipeline.py --preprocess p1     # Use a registered preprocessing variant
 """
 import argparse
 import sys
@@ -21,14 +21,24 @@ from datetime import datetime
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
-from src.config import TASKS, MODELS_DIR, REPORTS_DIR, N_FOLDS, SEED
-from src.dataset import build_metadata, load_and_preprocess, create_cv_splits
+from src.config import (
+    TASKS, TASKS_SUPPLEMENTARY, TASKS_MT_FULL,
+    MODELS_DIR, REPORTS_DIR, N_FOLDS, SEED,
+    PROCESSED_DIR, SPLITS_DIR, ACTIVE_SPLIT_FILE, DATA_VERSION, TASK_PROFILE,
+    PREPROCESS_TAGS,
+)
+from src.dataset import build_metadata, load_and_preprocess, create_cv_splits, load_preprocessed_variants
 from src.models import MODEL_REGISTRY
 from src.train_eval import run_cv_evaluation, aggregate_results, get_best_models, save_results, load_predictions
 from src.visualize import (
     plot_eda, plot_preprocessing_comparison, plot_confusion_matrices,
     plot_model_comparison, plot_split_distribution,
 )
+
+
+def resolve_result_dir(result_scope: str) -> Path:
+    """Map a logical result scope to the target models directory."""
+    return MODELS_DIR / result_scope
 
 
 def step_data(args):
@@ -44,23 +54,24 @@ def step_data(args):
     print(f"  Families: {meta['family'].value_counts().to_dict()}")
 
     print("\n[1.2] Loading and preprocessing spectra...")
-    wn, X_raw, X_p1, X_p2, X_p3, X_p4 = load_and_preprocess(meta, rebuild=args.rebuild)
-    print(f"  Shape: {X_raw.shape} ({X_raw.shape[1]} wavenumber points)")
+    wn, X_dict = load_and_preprocess(meta, rebuild=args.rebuild, return_dict=True)
+    first_X = next(iter(X_dict.values()))
+    print(f"  Shape: {first_X.shape} ({first_X.shape[1]} wavenumber points)")
 
     print("\n[1.3] Creating CV splits...")
-    meta = create_cv_splits(meta, rebuild=args.rebuild)
+    meta = create_cv_splits(meta, rebuild=args.rebuild, split_filename=args.split_file)
 
-    return meta, wn, X_raw, X_p1, X_p2, X_p3, X_p4
+    return meta, wn, X_dict
 
 
-def step_eda(meta, wn, X_raw, X_p1, X_p2, X_p3, X_p4):
+def step_eda(meta, wn, X_dict):
     """Step 2: Exploratory Data Analysis plots."""
     print("\n" + "=" * 60)
     print("STEP 2: Exploratory Data Analysis")
     print("=" * 60)
 
-    plot_eda(meta, wn, X_raw, X_p1)
-    plot_preprocessing_comparison(wn, X_raw, X_p1, X_p2, X_p3, X_p4)
+    plot_eda(meta, wn, X_dict['raw'], X_dict['p1'])
+    plot_preprocessing_comparison(wn, X_dict)
     plot_split_distribution(meta)
 
 
@@ -71,20 +82,36 @@ def step_train(meta, X_dict, args):
     print("=" * 60)
 
     preprocess_tag = args.preprocess
+    result_dir = resolve_result_dir(args.result_scope)
     X = X_dict[preprocess_tag]
     model_names = args.models if args.models else list(MODEL_REGISTRY.keys())
+    task_group = args.task_group
+    if task_group == 'main':
+        active_tasks = TASKS
+    elif task_group == 'supplementary':
+        active_tasks = TASKS_SUPPLEMENTARY
+    else:
+        active_tasks = TASKS_MT_FULL
 
     print(f"\n  Preprocessing: {preprocess_tag}")
     print(f"  Models: {model_names}")
-    print(f"  Tasks: {len(TASKS)} tasks")
+    print(f"  Task group: {task_group}")
+    print(f"  Tasks: {len(active_tasks)} tasks")
     print(f"  CV: {N_FOLDS}-fold StratifiedGroupKFold")
+    print(f"  Result scope: {args.result_scope}")
+    print(f"  Result dir: {result_dir}")
 
-    res_df = run_cv_evaluation(meta, X, model_names=model_names,
-                               preprocess_tag=preprocess_tag)
+    res_df = run_cv_evaluation(
+        meta,
+        X,
+        model_names=model_names,
+        preprocess_tag=preprocess_tag,
+        tasks_override=active_tasks,
+    )
     agg_df = aggregate_results(res_df)
     best_df = get_best_models(agg_df)
 
-    save_results(res_df, agg_df, tag=preprocess_tag)
+    save_results(res_df, agg_df, tag=preprocess_tag, output_dir=result_dir)
 
     print("\n  === Summary (Best Model per Task) ===")
     for _, row in best_df.iterrows():
@@ -94,7 +121,7 @@ def step_train(meta, X_dict, args):
     return res_df, agg_df
 
 
-def step_report(meta, agg_df, predictions):
+def step_report(meta, agg_df, predictions, result_scope='quick_check'):
     """Step 4: Generate figures and markdown report."""
     print("\n" + "=" * 60)
     print("STEP 4: Visualization & Report")
@@ -102,26 +129,29 @@ def step_report(meta, agg_df, predictions):
 
     plot_confusion_matrices(agg_df, predictions, meta)
     plot_model_comparison(agg_df)
-    generate_report(meta, agg_df)
+    generate_report(meta, agg_df, result_scope=result_scope)
 
 
-def generate_report(meta, agg_df):
+def generate_report(meta, agg_df, result_scope='quick_check'):
     """Generate a markdown evaluation report (Chinese)."""
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     ts = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    report_scope_suffix = '' if result_scope == 'quick_check' else f'_{result_scope}'
 
     best_df = get_best_models(agg_df)
     n_spectra = len(meta)
     n_folders = meta['folder_name'].nunique()
+    task_lookup = {task['id']: task for task in TASKS_MT_FULL}
+    ordered_tasks = [task for task in TASKS_MT_FULL if task['id'] in set(agg_df['Task'])]
 
     # Task name mapping to Chinese
     task_cn = {
-        'Thiram Concentration': '福美双浓度',
-        'MG Concentration': '孔雀石绿浓度',
-        'MBA Concentration': 'MBA浓度',
         'Thiram Presence': '福美双有无',
         'MG Presence': '孔雀石绿有无',
         'MBA Presence': 'MBA有无',
+        'Thiram Positive Molar Grade': '福美双阳性摩尔分级',
+        'MG Positive Molar Grade': '孔雀石绿阳性摩尔分级',
+        'MBA Positive Molar Grade': 'MBA阳性摩尔分级',
         'Mixture Complexity': '混合复杂度',
     }
 
@@ -145,8 +175,10 @@ def generate_report(meta, agg_df):
 | 光谱总数 | {n_spectra} |
 | 文件夹(组)总数 | {n_folders} |
 | 待测物质 | 福美双(Thiram)、孔雀石绿(MG)、MBA (平等对待) |
-| 浓度水平 | 0, 4, 5, 6 ppm |
+| 主数据来源 | pure 主 benchmark（不混入 soil 外部验证） |
+| 浓度体系 | 4/5/6 对应 10^-4 / 10^-5 / 10^-6 M |
 | CV折数 | {N_FOLDS} |
+| 结果命名空间 | {result_scope} |
 
 ### 混合类型分布
 | 混合类型 | 光谱数 | 文件夹数 |
@@ -162,7 +194,7 @@ def generate_report(meta, agg_df):
 | 编号 | 目标列 | 类别 | 任务说明 |
 |------|--------|------|----------|
 """
-    for t in TASKS:
+    for t in ordered_tasks:
         cn = task_cn.get(t['name'], t['name'])
         report += f"| {t['id']} | {t['col']} | {t['classes']} | {cn} |\n"
 
@@ -185,40 +217,40 @@ def generate_report(meta, agg_df):
                 cells.append("—")
         report += f"| {task_name} | " + " | ".join(cells) + f" | **{brow['Model']}** |\n"
 
-    report += """
+    report += f"""
 ## 4. 关键发现
 
-**发现1: 有无检测远优于浓度判别。**
-二分类有无检测任务(F1 0.77–0.89)在所有模型上均大幅优于四分类浓度任务(F1 0.33–0.72)。这与预期一致：光谱指纹对存在/缺失的区分力远强于ppm级别的精细浓度差异。
+**发现1: 有无检测通常优于阳性样本摩尔分级。**
+presence 任务通常比 positive-only molar grading 更稳定，这与预期一致：存在/缺失的判别边界通常强于相邻摩尔浓度等级之间的细粒度差异。
 
-**发现2: 福美双最容易分类。**
-福美双在浓度(PLS-DA F1=0.721)和有无(SVM F1=0.892)两项任务上均取得最高F1值。混淆矩阵显示强对角线优势。这与福美双在AgNPs上强SERS增强效应及其独特光谱特征一致。
+**发现2: 福美双仍可能是最容易的主组分。**
+若福美双 presence 与 positive-only grading 同时占优，这通常意味着其在当前 AgNPs 条件下具有更稳定的可分辨光谱特征。
 
-**发现3: 孔雀石绿浓度是最难的任务(F1≈0.41)。**
-混淆矩阵(T2)显示相邻浓度之间存在严重混淆：6ppm的孔雀石绿有63%被误判为5ppm。这暗示MG的SERS信号强度在较高浓度时趋于饱和或与其他组分严重重叠。
+**发现3: 孔雀石绿摩尔分级通常仍是难点。**
+如果 MG 的 positive-only grading 继续偏弱，优先从相邻浓度等级混淆、谱峰重叠和归一化后峰形差异不足这三方面解释。
 
-**发现4: MBA浓度存在与0ppm混淆。**
-MBA混淆矩阵(T3)显示6ppm样本中60/233被误分为0ppm，5ppm样本分散到所有预测类别。推测MBA光谱特征在某些混合组合中被遮蔽或减弱。
+**发现4: MBA 在部分组合中可能仍存在遮蔽效应。**
+若 MBA 的 positive-only grading 仍弱于 presence，可从共存组分干扰和弱特征峰被覆盖的角度讨论。
 
-**发现5: 孔雀石绿有无检测假阳性率较高。**
-MG有无混淆矩阵(T5)显示108/266的"不含MG"样本被错判为含MG(假阳性率40.6%)，说明福美双或MBA的光谱特征可能与MG谱带重叠。
+**发现5: 假阳性与相邻等级错分都值得单独看混淆矩阵。**
+presence 任务更关注假阳性/假阴性，positive-only grading 更关注相邻等级混淆，这两类错误不能混为一谈。
 
-**发现6: 混合复杂度分类效果良好(F1≈0.77)。**
-RF模型对单/二/三元混合物有较强区分能力。单组分(class=1)最容易被误分为二元(class=2)，这可能是因为主导组分的光谱特征掩盖了次要组分的贡献。
+**发现6: 混合复杂度属于补充任务，不替代主结果。**
+mixture complexity 适合作为结构性补充观察，但不应覆盖 presence + positive-only molar grading 这套主任务定义。
 
 **发现7: 无单一模型在所有任务上占主导地位。**
-PLS-DA擅长福美双浓度和MBA有无(线性潜变量结构适合)；RF在MG相关任务和混合复杂度上胜出(非线性决策边界)；SVM在福美双有无和MBA浓度上最优。提示可考虑集成方法或任务特异性模型选择。
+不同模型家族很可能在不同 analyte / task 上各有优势，因此文章更应该突出系统 benchmark，而不是押注单模型通吃。
 
 **发现8(初步): 深度学习模型(1D-CNN, 1D-ResNet)未优于传统ML基线。**
-仅954个样本和63个分组，数据集对深度架构而言可能太小。数据增强或迁移学习可能有助于改善。
+在当前样本规模下，传统 ML 仍可能与 DL/KAN 形成接近甚至更强的基线，这本身就是 benchmark 结果的一部分。
 
 ## 5. 图表说明
-- `figures/eda/`: EDA可视化 (均值光谱、PCA、划分分布等)
-- `figures/preprocessing/`: 预处理方案对比
-- `figures/models/`: 混淆矩阵、模型对比柱状图
+- `figures/{DATA_VERSION}/eda/`: EDA可视化 (均值光谱、PCA、划分分布等)
+- `figures/{DATA_VERSION}/preprocessing/`: 预处理方案对比
+- `figures/{DATA_VERSION}/models/`: 混淆矩阵、模型对比柱状图
 """
 
-    report_path = REPORTS_DIR / 'evaluation_report.md'
+    report_path = REPORTS_DIR / f'evaluation_report_{DATA_VERSION}{report_scope_suffix}.md'
     report_path.write_text(report, encoding='utf-8')
     print(f"  Report saved to {report_path}")
 
@@ -231,59 +263,61 @@ def main():
                         help='Force rebuild all caches')
     parser.add_argument('--models', nargs='+', default=None,
                         help='Model names to evaluate (default: all)')
-    parser.add_argument('--preprocess', choices=['raw', 'p1', 'p2', 'p3', 'p4'],
+    parser.add_argument('--preprocess', choices=list(PREPROCESS_TAGS),
                         default='p1', help='Preprocessing variant to use')
+    parser.add_argument('--task-group', choices=['main', 'supplementary', 'all'],
+                        default='main', help='Which task group to run')
+    parser.add_argument('--split-file', default=ACTIVE_SPLIT_FILE,
+                        help='Split CSV filename under the active versioned split directory (default from src.config.ACTIVE_SPLIT_FILE)')
+    parser.add_argument('--result-scope', default='quick_check',
+                        help='Result namespace under models; default quick_check saves to models/quick_check. Use benchmark scripts for formal grouped comparisons.')
     args = parser.parse_args()
 
     print(f"SERS Multi-Component Analysis Pipeline")
     print(f"Strategy 3: MBA as regular component")
     print(f"Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"Seed: {SEED}")
+    print(f"Data version: {DATA_VERSION}")
+    print(f"Task profile: {TASK_PROFILE}")
+    print(f"Split file: {args.split_file}")
+    print(f"Result scope: {args.result_scope}")
 
     if args.step in ('data', 'all'):
-        meta, wn, X_raw, X_p1, X_p2, X_p3, X_p4 = step_data(args)
+        meta, wn, X_dict = step_data(args)
     else:
         # Load cached data
-        from src.config import PROCESSED_DIR, SPLITS_DIR
         import numpy as np
         import pandas as pd
-        meta = pd.read_csv(SPLITS_DIR / 'cv_split_v5.csv')
+        meta = pd.read_csv(SPLITS_DIR / args.split_file)
         # Fix boolean columns that may be read as strings from CSV
         for col in ['has_thiram', 'has_mg', 'has_mba']:
             if col in meta.columns:
                 meta[col] = meta[col].astype(str).str.strip().str.lower().map(
                     {'true': 1, 'false': 0, '1': 1, '0': 0, '1.0': 1, '0.0': 0}
                 ).fillna(0).astype(int)
-        wn = np.load(PROCESSED_DIR / 'wavenumber.npy')
-        X_raw = np.load(PROCESSED_DIR / 'X_raw.npy')
-        X_p1 = np.load(PROCESSED_DIR / 'X_p1.npy')
-        X_p2 = np.load(PROCESSED_DIR / 'X_p2.npy')
-        X_p3 = np.load(PROCESSED_DIR / 'X_p3.npy')
-        X_p4 = np.load(PROCESSED_DIR / 'X_p4.npy')
-
-    X_dict = {'raw': X_raw, 'p1': X_p1, 'p2': X_p2, 'p3': X_p3, 'p4': X_p4}
+        wn, X_dict = load_preprocessed_variants()
 
     if args.step in ('eda', 'all'):
-        step_eda(meta, wn, X_raw, X_p1, X_p2, X_p3, X_p4)
+        step_eda(meta, wn, X_dict)
 
     if args.step in ('train', 'all'):
         res_df, agg_df = step_train(meta, X_dict, args)
         predictions = res_df.attrs.get('predictions', {})
 
         if args.step in ('report', 'all'):
-            step_report(meta, agg_df, predictions)
+            step_report(meta, agg_df, predictions, result_scope=args.result_scope)
     elif args.step == 'report':
         # Load results from saved CSV files
         import pandas as pd
-        from src.config import MODELS_DIR
         tag = args.preprocess
-        summary_path = MODELS_DIR / f'cv_results_summary_{tag}.csv'
+        result_dir = resolve_result_dir(args.result_scope)
+        summary_path = result_dir / f'cv_results_summary_{tag}.csv'
         if not summary_path.exists():
             print(f"ERROR: {summary_path} not found. Run --step train first.")
             return
         agg_df = pd.read_csv(summary_path)
-        predictions = load_predictions(tag=tag)
-        step_report(meta, agg_df, predictions)
+        predictions = load_predictions(tag=tag, output_dir=result_dir)
+        step_report(meta, agg_df, predictions, result_scope=args.result_scope)
 
     print("\n" + "=" * 60)
     print("PIPELINE COMPLETE")

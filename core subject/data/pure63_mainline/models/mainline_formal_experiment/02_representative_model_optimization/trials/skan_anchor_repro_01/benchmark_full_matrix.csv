@@ -1,0 +1,7 @@
+﻿Task,TaskName,Model,Preprocess,F1_mean,F1_std,BA_mean,BA_std,Acc_mean,Acc_std,source_stage,source_priority,source_variant_file,variant_scope
+G1_thiram_molar_grade,Thiram Positive Molar Grade,Spectrum-KAN,p4,0.6537184021436825,0.0844184423859846,0.7139177056477083,0.0924676942969277,0.6455892951679094,0.0883912106865635,skan_anchor_repro_01,1,cv_results_summary_p4.csv,p4
+G2_mg_molar_grade,MG Positive Molar Grade,Spectrum-KAN,p4,0.5546015196818799,0.2250480214095854,0.5459515632806619,0.2465315166050481,0.6049774499891377,0.2456333059161532,skan_anchor_repro_01,1,cv_results_summary_p4.csv,p4
+G3_mba_molar_grade,MBA Positive Molar Grade,Spectrum-KAN,p4,0.6347328041544994,0.1295315326940257,0.6504331095631019,0.1337852036709757,0.6258526036765634,0.1415888084733172,skan_anchor_repro_01,1,cv_results_summary_p4.csv,p4
+P1_thiram_presence,Thiram Presence,Spectrum-KAN,p4,0.7413251667390734,0.1729743513086938,0.756875532476083,0.1693238904333931,0.7803373238169682,0.1726129861945602,skan_anchor_repro_01,1,cv_results_summary_p4.csv,p4
+P2_mg_presence,MG Presence,Spectrum-KAN,p4,0.6098446154818651,0.1899274007197713,0.6165249986415224,0.1790990271850324,0.704189247871447,0.1378827569772984,skan_anchor_repro_01,1,cv_results_summary_p4.csv,p4
+P3_mba_presence,MBA Presence,Spectrum-KAN,p4,0.8635300688683584,0.0830197713827777,0.8534512391851943,0.0910204338599516,0.9041864553723372,0.0741633958824369,skan_anchor_repro_01,1,cv_results_summary_p4.csv,p4

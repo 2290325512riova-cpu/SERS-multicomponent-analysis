@@ -1,0 +1,8 @@
+Experiment: Spectrum-KAN targeted audit before full DL augmentation ablation
+Purpose: determine whether Spectrum-KAN G2 anomaly is reproducible and whether no_aug/raw changes it
+Models: Spectrum-KAN
+Variants: p1 raw
+Modes: no_aug aug_no_mixup composition_mixup
+Tasks: TASKS from src.config (6 paper-main tasks)
+Split: data/pure63_mainline/splits/cv_split_random_5fold.csv via fold_id
+Output: data/pure63_mainline/models/paper_main/augmentation_ablation/{mode}/

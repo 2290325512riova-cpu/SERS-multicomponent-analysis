@@ -1,0 +1,3 @@
+﻿source_stage,Model,F1_mean,BA_mean,Acc_mean
+locked_grouped_main_results,RF,0.7675537092403149,0.7819901479702033,0.798685331407408
+locked_grouped_main_results,Spectrum-KAN,0.671889760067555,0.6830638051406539,0.705586308786065

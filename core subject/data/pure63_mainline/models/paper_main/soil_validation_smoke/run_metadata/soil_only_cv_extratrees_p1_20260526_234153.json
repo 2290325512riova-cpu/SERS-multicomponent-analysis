@@ -1,0 +1,28 @@
+{
+  "run_id": "soil_only_cv_extratrees_p1_20260526_234153",
+  "created_at": "2026-05-26T23:42:03",
+  "git_commit": "ba0d2b2",
+  "command": "scripts/analysis/run_soil_only_cv.py --n-permutations 100 --output-dir data/pure63_mainline/models/paper_main/soil_validation_smoke",
+  "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2",
+  "model": "ExtraTrees",
+  "model_recipe": "ExtraTreesClassifier(class_weight='balanced', min_samples_leaf=2,\n                     n_estimators=400, n_jobs=-1, random_state=42)",
+  "variant": "p1",
+  "tasks": [
+    "P1_thiram_presence",
+    "P2_mg_presence",
+    "P3_mba_presence"
+  ],
+  "n_total_soil_cv_samples": 89,
+  "n_design_samples": 79,
+  "n_blank_samples": 10,
+  "include_blanks": true,
+  "n_splits": 5,
+  "threshold": 0.5,
+  "n_permutations": 100,
+  "seed": 42,
+  "elapsed_seconds": 10.29047939999873
+}

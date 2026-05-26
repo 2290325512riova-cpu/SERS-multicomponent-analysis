@@ -1,0 +1,12 @@
+{
+  "processed_files": [
+    "X_p1.npy",
+    "X_p2.npy",
+    "X_p3.npy",
+    "X_p4.npy",
+    "X_p5.npy",
+    "X_raw.npy",
+    "wavenumber.npy"
+  ],
+  "random_split_exists": true
+}

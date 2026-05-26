@@ -1,0 +1,6 @@
+Experiment: DL candidate smoke after full DL augmentation ablation
+Models: RamanNet-Lite PatchTransformer
+Variants: p1 raw
+Tasks: G2_mg_molar_grade G3_mba_molar_grade
+Mode: composition_mixup
+Output: data/pure63_mainline/models/paper_main/dl_candidate_smoke/composition_mixup/

@@ -1,0 +1,3 @@
+Minimal project package uploaded from local workspace.
+Remote directory is not a git clone; source commit below is local HEAD at packaging time.
+Local workspace had documentation/result artifact changes, but src/scripts/data package was used for execution.

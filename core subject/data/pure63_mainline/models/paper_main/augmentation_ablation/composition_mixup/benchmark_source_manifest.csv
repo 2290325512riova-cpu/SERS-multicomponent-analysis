@@ -1,0 +1,2 @@
+﻿source_stage,relative_dir,description,models,variants
+augmentation_composition_mixup,composition_mixup,Paper-main augmentation ablation: composition_mixup.,RamanNet-Lite,p1/raw

@@ -1,0 +1,7 @@
+﻿Task,TaskName,Model,Preprocess,F1_mean,F1_std,BA_mean,BA_std,Acc_mean,Acc_std,source_stage,source_priority,source_variant_file,variant_scope
+G1_thiram_molar_grade,Thiram Positive Molar Grade,PLS-DA,p2,0.8368172742431055,0.1138933643220052,0.8665584153353315,0.1098394904008596,0.8601637041270583,0.0865954019935389,candidate_screening,1,cv_results_summary_p2.csv,p2
+G2_mg_molar_grade,MG Positive Molar Grade,Spectrum-KAN,p4,0.5546015196818799,0.2250480214095854,0.5459515632806619,0.2465315166050481,0.6049774499891377,0.2456333059161532,candidate_screening,1,cv_results_summary_p4.csv,p4
+G3_mba_molar_grade,MBA Positive Molar Grade,Chem-KAN,p2,0.7607616282694858,0.0995347736392781,0.7597757187740504,0.108348725004331,0.7678786774127305,0.1236144518396558,candidate_screening,1,cv_results_summary_p2.csv,p2
+P1_thiram_presence,Thiram Presence,SVM,p2,0.9228941138323028,0.0999082405664802,0.9408038495698502,0.0768062047660173,0.9302450453079508,0.1004057336099982,candidate_screening,1,cv_results_summary_p2.csv,p2
+P2_mg_presence,MG Presence,RF,p4,0.7969558183369632,0.0872944035601086,0.7853904051177255,0.0874583360450109,0.852036065558987,0.0704131546703128,candidate_screening,1,cv_results_summary_p4.csv,p4
+P3_mba_presence,MBA Presence,SVM,p1,0.920198135521353,0.055667886626975,0.9205331457624312,0.0742538500886326,0.9488121516153044,0.0208045641632562,candidate_screening,1,cv_results_summary_p1.csv,p1

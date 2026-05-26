@@ -1,0 +1,223 @@
+=== RamanNet-Lite augmentation ablation started: ramannet_lite_ablation_3090_20260524_182624 ===
+Sun May 24 06:26:23 PM CST 2026
+I28d2dc603800201c4d
+/hy-tmp/SERS-multicomponent-analysis
+=== Environment ===
+Python 3.11.10
+Sun May 24 18:26:23 2026       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.104.05             Driver Version: 535.104.05   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA GeForce RTX 3090        On  | 00000000:E1:00.0 Off |                  N/A |
+| 30%   26C    P8              37W / 350W |      3MiB / 24576MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+=== Code fingerprints ===
+d2d9e569b43e6a9b18f06f588a6f16efab9856e9675b70aa0f4ab9916b442c83  src/models.py
+8484c5201e74648214bb5cf70812f51b86f24bdb67d562d46933b77c06f56509  src/train_eval.py
+d2a13b710d2756aeccc62d24ec0574b91243b64fd66e5eeb9dc048b4c0f0b477  src/dataset.py
+d5dd3df1412df5ccff3010d06d5ecaa632a24af8b7ee0dd8451059f5ee32048c  src/config.py
+414673c40cfff796d528966fed79c280bbb04e3fcdaa7c0bb22adbbbc5f95de0  scripts/analysis/run_augmentation_ablation.py
+=== Model smoke check ===
+RamanNet-Lite in registry: True
+builder: <function get_ramannet_lite at 0x7f75f5b05260>
+=== Pre-run row check ===
+no_aug/p1 rows=24 ramannet=0
+no_aug/raw rows=24 ramannet=0
+aug_no_mixup/p1 rows=24 ramannet=0
+aug_no_mixup/raw rows=24 ramannet=0
+composition_mixup/p1 rows=24 ramannet=0
+composition_mixup/raw rows=24 ramannet=0
+=== Run ablation ===
+
+======================================================================
+Augmentation mode=no_aug, variant=p1
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    RamanNet-Lite: F1=0.967±0.016, BA=0.967±0.017, Acc=0.973±0.013, fit=25.5s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    RamanNet-Lite: F1=0.953±0.018, BA=0.949±0.020, Acc=0.962±0.014, fit=51.5s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    RamanNet-Lite: F1=0.903±0.041, BA=0.935±0.035, Acc=0.922±0.034, fit=13.7s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    RamanNet-Lite: F1=0.987±0.003, BA=0.986±0.003, Acc=0.986±0.003, fit=33.5s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    RamanNet-Lite: F1=0.580±0.037, BA=0.590±0.035, Acc=0.591±0.035, fit=9.9s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    RamanNet-Lite: F1=0.871±0.037, BA=0.871±0.038, Acc=0.871±0.038, fit=17.7s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug
+
+======================================================================
+Augmentation mode=no_aug, variant=raw
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    RamanNet-Lite: F1=0.783±0.039, BA=0.776±0.059, Acc=0.838±0.016, fit=44.4s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    RamanNet-Lite: F1=0.830±0.025, BA=0.804±0.027, Acc=0.876±0.016, fit=61.4s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    RamanNet-Lite: F1=0.763±0.037, BA=0.737±0.031, Acc=0.845±0.030, fit=35.0s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    RamanNet-Lite: F1=0.878±0.017, BA=0.872±0.017, Acc=0.872±0.019, fit=95.5s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    RamanNet-Lite: F1=0.518±0.061, BA=0.569±0.036, Acc=0.576±0.037, fit=21.4s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    RamanNet-Lite: F1=0.779±0.039, BA=0.778±0.037, Acc=0.778±0.038, fit=39.7s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug
+
+======================================================================
+Augmentation mode=aug_no_mixup, variant=p1
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    RamanNet-Lite: F1=0.969±0.020, BA=0.970±0.019, Acc=0.974±0.016, fit=87.7s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    RamanNet-Lite: F1=0.951±0.008, BA=0.946±0.008, Acc=0.961±0.006, fit=266.3s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    RamanNet-Lite: F1=0.956±0.023, BA=0.974±0.015, Acc=0.966±0.018, fit=121.0s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    RamanNet-Lite: F1=0.997±0.004, BA=0.997±0.004, Acc=0.997±0.004, fit=158.9s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    RamanNet-Lite: F1=0.767±0.033, BA=0.768±0.037, Acc=0.766±0.034, fit=71.8s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    RamanNet-Lite: F1=0.888±0.018, BA=0.889±0.018, Acc=0.888±0.018, fit=89.3s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup
+
+======================================================================
+Augmentation mode=aug_no_mixup, variant=raw
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    RamanNet-Lite: F1=0.832±0.018, BA=0.806±0.026, Acc=0.878±0.013, fit=206.7s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    RamanNet-Lite: F1=0.826±0.007, BA=0.788±0.007, Acc=0.879±0.005, fit=234.7s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    RamanNet-Lite: F1=0.806±0.032, BA=0.765±0.032, Acc=0.880±0.016, fit=164.3s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    RamanNet-Lite: F1=0.923±0.024, BA=0.918±0.025, Acc=0.920±0.025, fit=241.6s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    RamanNet-Lite: F1=0.564±0.050, BA=0.608±0.032, Acc=0.624±0.032, fit=64.6s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    RamanNet-Lite: F1=0.756±0.033, BA=0.760±0.031, Acc=0.758±0.030, fit=83.9s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup
+
+======================================================================
+Augmentation mode=composition_mixup, variant=p1
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    RamanNet-Lite: F1=0.961±0.016, BA=0.957±0.019, Acc=0.969±0.012, fit=105.1s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    RamanNet-Lite: F1=0.947±0.017, BA=0.947±0.015, Acc=0.957±0.014, fit=176.1s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    RamanNet-Lite: F1=0.953±0.015, BA=0.974±0.009, Acc=0.963±0.012, fit=112.7s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    RamanNet-Lite: F1=0.998±0.003, BA=0.999±0.003, Acc=0.998±0.003, fit=131.5s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    RamanNet-Lite: F1=0.767±0.018, BA=0.765±0.019, Acc=0.765±0.018, fit=70.9s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    RamanNet-Lite: F1=0.910±0.022, BA=0.911±0.022, Acc=0.910±0.022, fit=87.7s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup
+
+======================================================================
+Augmentation mode=composition_mixup, variant=raw
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    RamanNet-Lite: F1=0.873±0.017, BA=0.865±0.035, Acc=0.901±0.015, fit=257.1s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    RamanNet-Lite: F1=0.834±0.009, BA=0.799±0.010, Acc=0.883±0.005, fit=319.7s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    RamanNet-Lite: F1=0.821±0.039, BA=0.782±0.039, Acc=0.888±0.020, fit=209.6s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    RamanNet-Lite: F1=0.938±0.014, BA=0.935±0.015, Acc=0.937±0.016, fit=352.7s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    RamanNet-Lite: F1=0.565±0.037, BA=0.607±0.018, Acc=0.616±0.011, fit=94.9s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    RamanNet-Lite: F1=0.739±0.089, BA=0.746±0.076, Acc=0.747±0.077, fit=106.8s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup
+=== Verify outputs ===
+--- no_aug ---
+data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug/cv_results_summary_p1.csv rows=30 ramannet_lines=6
+data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug/cv_results_detail_p1.csv rows=150 ramannet_lines=30
+data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug/cv_predictions_p1.csv rows=23410 ramannet_lines=4682
+data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug/cv_results_summary_raw.csv rows=30 ramannet_lines=6
+data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug/cv_results_detail_raw.csv rows=150 ramannet_lines=30
+data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug/cv_predictions_raw.csv rows=23410 ramannet_lines=4682
+--- aug_no_mixup ---
+data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup/cv_results_summary_p1.csv rows=30 ramannet_lines=6
+data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup/cv_results_detail_p1.csv rows=150 ramannet_lines=30
+data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup/cv_predictions_p1.csv rows=23410 ramannet_lines=4682
+data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup/cv_results_summary_raw.csv rows=30 ramannet_lines=6
+data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup/cv_results_detail_raw.csv rows=150 ramannet_lines=30
+data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup/cv_predictions_raw.csv rows=23410 ramannet_lines=4682
+--- composition_mixup ---
+data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup/cv_results_summary_p1.csv rows=30 ramannet_lines=6
+data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup/cv_results_detail_p1.csv rows=150 ramannet_lines=30
+data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup/cv_predictions_p1.csv rows=23410 ramannet_lines=4682
+data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup/cv_results_summary_raw.csv rows=30 ramannet_lines=6
+data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup/cv_results_detail_raw.csv rows=150 ramannet_lines=30
+data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup/cv_predictions_raw.csv rows=23410 ramannet_lines=4682
+=== RamanNet-Lite G2/G3 snapshot ===
+--- no_aug p1
+G2_mg_molar_grade,MG Positive Molar Grade,RamanNet-Lite,p1,0.5795795064978033,0.04136198518932697,0.58962260579842,0.03864129981785624,0.5909375,0.03879844181746246,9.858000949025154,1.9716001898050308,0.013805888593196869
+G3_mba_molar_grade,MBA Positive Molar Grade,RamanNet-Lite,p1,0.8713857057205182,0.041418381349058134,0.87086176612412,0.04294563668313516,0.870581238172479,0.042564656389560036,17.71799872070551,3.543599744141102,0.25491779297590256
+--- no_aug raw
+G2_mg_molar_grade,MG Positive Molar Grade,RamanNet-Lite,raw,0.5175689124669527,0.06852060988341148,0.5685862195018389,0.04009744239114874,0.5756249999999999,0.04158153593744651,21.418903931975365,4.283780786395073,0.11671189963817596
+G3_mba_molar_grade,MBA Positive Molar Grade,RamanNet-Lite,raw,0.7790018848576762,0.043500741131364117,0.7781720358139694,0.041185495776004985,0.7781778859151122,0.04272104962241415,39.741561748087406,7.948312349617481,0.046614304184913635
+--- aug_no_mixup p1
+G2_mg_molar_grade,MG Positive Molar Grade,RamanNet-Lite,p1,0.7674604967925033,0.03730359913584966,0.7680274965322134,0.04086205677366181,0.765625,0.038369029371888325,71.78110051900148,14.356220103800297,0.1967056840658188
+G3_mba_molar_grade,MBA Positive Molar Grade,RamanNet-Lite,p1,0.887933080877841,0.019633101464902082,0.8887757813924368,0.020295023740354672,0.888294133549608,0.019789021401131923,89.30927783250809,17.861855566501617,0.348059244453907
+--- aug_no_mixup raw
+G2_mg_molar_grade,MG Positive Molar Grade,RamanNet-Lite,raw,0.5636878040992392,0.05590016447071357,0.6081114844476141,0.035831213233967374,0.6235576923076923,0.036198443238617393,64.60239778459072,12.920479556918144,0.0183648020029068
+G3_mba_molar_grade,MBA Positive Molar Grade,RamanNet-Lite,raw,0.7561102488847476,0.03662593066255545,0.7600160009260111,0.03421026976995247,0.7575020275750204,0.03354979316832031,83.85249032080173,16.770498064160346,0.11170103400945663
+--- composition_mixup p1
+G2_mg_molar_grade,MG Positive Molar Grade,RamanNet-Lite,p1,0.7665719988511955,0.020600057118107064,0.7653662090596601,0.021360718855239803,0.7654086538461538,0.02034064390730066,70.92515484243631,14.185030968487263,0.09354129433631897
+G3_mba_molar_grade,MBA Positive Molar Grade,RamanNet-Lite,p1,0.9101582240964639,0.024727771940577105,0.9107532582600888,0.024207571984555542,0.9103000811030008,0.02404548586192919,87.68596474081278,17.537192948162556,0.10309628397226334
+--- composition_mixup raw
+G2_mg_molar_grade,MG Positive Molar Grade,RamanNet-Lite,raw,0.5653516218627467,0.04142173394865381,0.6072623905707231,0.02038463064847167,0.6157692307692308,0.012492601360701351,94.89570348709822,18.979140697419645,0.1828160658478737
+G3_mba_molar_grade,MBA Positive Molar Grade,RamanNet-Lite,raw,0.7387199914387452,0.09944552009181115,0.7461813590877979,0.08513305290680426,0.7469370100027034,0.08597063968116544,106.78371773660183,21.356743547320367,0.04069620370864868
+=== Pack return bundle ===

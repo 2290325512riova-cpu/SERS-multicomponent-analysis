@@ -1,0 +1,41 @@
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_best_by_task.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_full_matrix.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_source_manifest.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_source_model_mean.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_source_preprocess_mean.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p1.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p1.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p1.csv
+?? data/pure63_mainline/models/paper_main/augmentation_ablation/logs/
+?? data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p2.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p3.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p4.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p5.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_raw.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p2.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p3.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p4.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p5.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_raw.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p2.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p3.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p4.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p5.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_raw.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/logs/benchmark_completion_3090_20260522.log
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/logs/classical_fast_no_lda_3090_20260522.log
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/logs/classical_full_svd_3090_20260522.log
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/benchmark_completion_3090_20260522.pid
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/benchmark_completion_3090_20260522_command_manifest.json
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/benchmark_completion_3090_20260522_environment.txt
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/benchmark_completion_3090_20260522_pip_freeze.txt
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_fast_no_lda_3090_20260522.pid
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_fast_no_lda_3090_20260522_command_manifest.json
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_fast_no_lda_3090_20260522_environment.txt
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_fast_no_lda_3090_20260522_pip_freeze.txt
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_full_svd_3090_20260522.pid
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_full_svd_3090_20260522_command_manifest.json
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_full_svd_3090_20260522_environment.txt
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_full_svd_3090_20260522_pip_freeze.txt
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/timings/

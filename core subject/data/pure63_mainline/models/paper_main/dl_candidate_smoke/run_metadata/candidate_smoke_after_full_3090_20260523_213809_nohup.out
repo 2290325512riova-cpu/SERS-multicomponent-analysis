@@ -1,0 +1,385 @@
+=== Candidate smoke watcher started: candidate_smoke_after_full_3090_20260523_213809 ===
+Sat May 23 09:38:12 PM CST 2026
+I28d2dc603800201c4d
+/hy-tmp/SERS-multicomponent-analysis
+Waiting for full ablation bundle before starting candidate smoke...
+Sat May 23 09:38:12 PM CST 2026
+   1149    04:25:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    04:25:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    04:25:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    04:25:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    04:25:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 09:43:12 PM CST 2026
+   1149    04:30:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    04:30:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    04:30:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    04:30:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    04:30:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 09:48:12 PM CST 2026
+   1149    04:35:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    04:35:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    04:35:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    04:35:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    04:35:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 09:53:12 PM CST 2026
+   1149    04:40:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    04:40:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    04:40:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    04:40:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    04:40:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 09:58:12 PM CST 2026
+   1149    04:45:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    04:45:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    04:45:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    04:45:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    04:45:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 10:03:12 PM CST 2026
+   1149    04:50:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    04:50:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    04:50:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    04:50:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    04:50:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 10:08:12 PM CST 2026
+   1149    04:55:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    04:55:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    04:55:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    04:55:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    04:55:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 10:13:12 PM CST 2026
+   1149    05:00:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    05:00:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    05:00:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    05:00:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    05:00:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 10:18:12 PM CST 2026
+   1149    05:05:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    05:05:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    05:05:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    05:05:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    05:05:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 10:23:12 PM CST 2026
+   1149    05:10:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    05:10:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    05:10:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    05:10:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    05:10:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 10:28:12 PM CST 2026
+   1149    05:15:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    05:15:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    05:15:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    05:15:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    05:15:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 10:33:12 PM CST 2026
+   1149    05:20:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    05:20:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    05:20:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    05:20:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    05:20:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 10:38:12 PM CST 2026
+   1149    05:25:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    05:25:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    05:25:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    05:25:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    05:25:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 10:43:12 PM CST 2026
+   1149    05:30:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    05:30:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    05:30:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    05:30:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    05:30:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 10:48:12 PM CST 2026
+   1149    05:35:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    05:35:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    05:35:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    05:35:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    05:35:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 10:53:12 PM CST 2026
+   1149    05:40:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    05:40:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    05:40:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    05:40:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    05:40:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 10:58:12 PM CST 2026
+   1149    05:45:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    05:45:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    05:45:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    05:45:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    05:45:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 11:03:12 PM CST 2026
+   1149    05:50:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    05:50:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    05:50:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    05:50:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    05:50:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 11:08:12 PM CST 2026
+   1149    05:55:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    05:55:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    05:55:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    05:55:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    05:55:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 11:13:12 PM CST 2026
+   1149    06:00:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    06:00:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    06:00:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    06:00:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    06:00:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 11:18:12 PM CST 2026
+   1149    06:05:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    06:05:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    06:05:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    06:05:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    06:05:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 11:23:12 PM CST 2026
+   1149    06:10:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    06:10:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    06:10:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    06:10:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    06:10:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 11:28:12 PM CST 2026
+   1149    06:15:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    06:15:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    06:15:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    06:15:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    06:15:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 11:33:12 PM CST 2026
+   1149    06:20:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    06:20:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    06:20:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    06:20:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    06:20:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 11:38:12 PM CST 2026
+   1149    06:25:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    06:25:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    06:25:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    06:25:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    06:25:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 11:43:12 PM CST 2026
+   1149    06:30:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    06:30:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    06:30:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    06:30:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    06:30:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 11:48:12 PM CST 2026
+   1149    06:35:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    06:35:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    06:35:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    06:35:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    06:35:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 11:53:12 PM CST 2026
+   1149    06:40:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    06:40:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    06:40:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    06:40:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    06:40:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sat May 23 11:58:12 PM CST 2026
+   1149    06:45:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    06:45:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    06:45:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    06:45:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    06:45:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 12:03:12 AM CST 2026
+   1149    06:50:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    06:50:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    06:50:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    06:50:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    06:50:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 12:08:12 AM CST 2026
+   1149    06:55:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    06:55:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    06:55:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    06:55:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    06:55:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 12:13:12 AM CST 2026
+   1149    07:00:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    07:00:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    07:00:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    07:00:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    07:00:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 12:18:12 AM CST 2026
+   1149    07:05:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    07:05:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    07:05:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    07:05:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    07:05:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 12:23:12 AM CST 2026
+   1149    07:10:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    07:10:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    07:10:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    07:10:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    07:10:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 12:28:12 AM CST 2026
+   1149    07:15:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    07:15:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    07:15:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    07:15:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    07:15:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 12:33:12 AM CST 2026
+   1149    07:20:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    07:20:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    07:20:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    07:20:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    07:20:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 12:38:12 AM CST 2026
+   1149    07:25:20 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    07:25:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    07:25:20 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    07:25:20 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    07:25:16 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 12:43:12 AM CST 2026
+   1149    07:30:21 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    07:30:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    07:30:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    07:30:21 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    07:30:17 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 12:48:12 AM CST 2026
+   1149    07:35:21 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    07:35:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    07:35:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    07:35:21 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    07:35:17 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 12:53:12 AM CST 2026
+   1149    07:40:21 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    07:40:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    07:40:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    07:40:21 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    07:40:17 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 12:58:13 AM CST 2026
+   1149    07:45:21 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    07:45:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    07:45:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    07:45:21 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    07:45:17 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 01:03:13 AM CST 2026
+   1149    07:50:21 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    07:50:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    07:50:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    07:50:21 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    07:50:17 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 01:08:13 AM CST 2026
+   1149    07:55:21 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    07:55:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    07:55:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    07:55:21 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    07:55:17 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 01:13:13 AM CST 2026
+   1149    08:00:21 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    08:00:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    08:00:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    08:00:21 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    08:00:17 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 01:18:13 AM CST 2026
+   1149    08:05:21 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    08:05:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    08:05:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    08:05:21 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    08:05:17 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 01:23:13 AM CST 2026
+   1149    08:10:21 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    08:10:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    08:10:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    08:10:21 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    08:10:17 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 01:28:13 AM CST 2026
+   1149    08:15:21 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    08:15:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    08:15:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    08:15:21 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    08:15:17 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 01:33:13 AM CST 2026
+   1149    08:20:21 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    08:20:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    08:20:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    08:20:21 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    08:20:17 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+Sun May 24 01:38:13 AM CST 2026
+   1149    08:25:21 bash -c cd /hy-tmp/SERS-multicomponent-analysis && nohup bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh > data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250_nohup.out 2>&1 < /dev/null & echo $!
+   1150    08:25:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1152    08:25:21 bash /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/full_dl_ablation_3090_20260523_171250_run.sh
+   1154    08:25:21 tee -a data/pure63_mainline/models/paper_main/augmentation_ablation/logs/full_dl_ablation_3090_20260523_171250.log
+   1357    08:25:17 python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+=== Full ablation appears complete; starting candidate smoke ===
+Sun May 24 01:43:13 AM CST 2026
+candidate_registry_ok= True
+
+======================================================================
+DL candidate smoke mode=composition_mixup, variant=p1
+======================================================================
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    RamanNet-Lite: F1=0.767±0.018, BA=0.765±0.019, Acc=0.765±0.018, fit=45.4s
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+    PatchTransformer: F1=0.653±0.092, BA=0.666±0.081, Acc=0.665±0.080, fit=107.3s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    RamanNet-Lite: F1=0.910±0.022, BA=0.911±0.022, Acc=0.910±0.022, fit=60.0s
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+    PatchTransformer: F1=0.830±0.042, BA=0.827±0.043, Acc=0.828±0.043, fit=136.8s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/dl_candidate_smoke/composition_mixup
+
+======================================================================
+DL candidate smoke mode=composition_mixup, variant=raw
+======================================================================
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    RamanNet-Lite: F1=0.565±0.037, BA=0.607±0.018, Acc=0.616±0.011, fit=87.8s
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+    PatchTransformer: F1=0.220±0.056, BA=0.351±0.023, Acc=0.350±0.031, fit=100.4s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    RamanNet-Lite: F1=0.739±0.089, BA=0.746±0.076, Acc=0.747±0.077, fit=105.2s
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/usr/local/lib/python3.11/dist-packages/torch/nn/modules/transformer.py:307: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+    PatchTransformer: F1=0.168±0.002, BA=0.333±0.000, Acc=0.336±0.006, fit=96.4s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/dl_candidate_smoke/composition_mixup
+=== Verify candidate outputs ===
+data/pure63_mainline/models/paper_main/dl_candidate_smoke/composition_mixup/benchmark_best_by_task.csv rows=3
+data/pure63_mainline/models/paper_main/dl_candidate_smoke/composition_mixup/benchmark_full_matrix.csv rows=9
+data/pure63_mainline/models/paper_main/dl_candidate_smoke/composition_mixup/benchmark_source_manifest.csv rows=2
+data/pure63_mainline/models/paper_main/dl_candidate_smoke/composition_mixup/benchmark_source_model_mean.csv rows=3
+data/pure63_mainline/models/paper_main/dl_candidate_smoke/composition_mixup/benchmark_source_preprocess_mean.csv rows=3
+data/pure63_mainline/models/paper_main/dl_candidate_smoke/composition_mixup/cv_predictions_p1.csv rows=2659
+data/pure63_mainline/models/paper_main/dl_candidate_smoke/composition_mixup/cv_predictions_raw.csv rows=2659
+data/pure63_mainline/models/paper_main/dl_candidate_smoke/composition_mixup/cv_results_detail_p1.csv rows=21
+data/pure63_mainline/models/paper_main/dl_candidate_smoke/composition_mixup/cv_results_detail_raw.csv rows=21
+data/pure63_mainline/models/paper_main/dl_candidate_smoke/composition_mixup/cv_results_summary_p1.csv rows=5
+data/pure63_mainline/models/paper_main/dl_candidate_smoke/composition_mixup/cv_results_summary_raw.csv rows=5
+data/pure63_mainline/models/paper_main/dl_candidate_smoke/logs/candidate_smoke_after_full_3090_20260523_213809.log rows=-
+data/pure63_mainline/models/paper_main/dl_candidate_smoke/run_metadata/candidate_smoke_after_full_3090_20260523_213809_command_manifest.txt rows=-
+data/pure63_mainline/models/paper_main/dl_candidate_smoke/run_metadata/candidate_smoke_after_full_3090_20260523_213809_nohup.out rows=-
+data/pure63_mainline/models/paper_main/dl_candidate_smoke/run_metadata/candidate_smoke_after_full_3090_20260523_213809_watcher.sh rows=-
+=== Pack candidate bundle ===

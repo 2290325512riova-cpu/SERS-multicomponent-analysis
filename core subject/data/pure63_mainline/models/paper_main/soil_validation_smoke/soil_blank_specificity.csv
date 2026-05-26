@@ -1,0 +1,4 @@
+﻿run_id,task,task_name,n_blanks,n_predicted_negative,n_predicted_positive,specificity,max_prob_positive,mean_prob_positive,blank_training_mode
+soil_only_cv_extratrees_p1_20260526_234153,P1_thiram_presence,Thiram Presence,10,10,0,1.0,0.06499212530614756,0.037407415260595614,included_in_full_soil_training
+soil_only_cv_extratrees_p1_20260526_234153,P2_mg_presence,MG Presence,10,10,0,1.0,0.0606373713485798,0.022459903309277756,included_in_full_soil_training
+soil_only_cv_extratrees_p1_20260526_234153,P3_mba_presence,MBA Presence,10,10,0,1.0,0.08491653103013742,0.03023262364801006,included_in_full_soil_training

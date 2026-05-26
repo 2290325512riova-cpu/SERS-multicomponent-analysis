@@ -1,0 +1,62 @@
+UTC 2026-05-22 08:30:24 UTC
+LOCAL 2026-05-22 16:30:24 CST
+HEAD e5b0aa713ddfbb1a2341a8298d3c1ad7e4260886
+STATUS
+## main...origin/main
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_best_by_task.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_full_matrix.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_source_manifest.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_source_model_mean.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_source_preprocess_mean.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p1.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p1.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p1.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p2.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p3.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p4.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p5.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_raw.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p2.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p3.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p4.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p5.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_raw.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p2.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p3.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p4.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p5.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_raw.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/logs/classical_fast_no_lda_3090_20260522.log
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/logs/classical_full_svd_3090_20260522.log
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/benchmark_completion_3090_20260522_command_manifest.json
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/benchmark_completion_3090_20260522_environment.txt
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_fast_no_lda_3090_20260522.pid
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_fast_no_lda_3090_20260522_command_manifest.json
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_fast_no_lda_3090_20260522_environment.txt
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_fast_no_lda_3090_20260522_pip_freeze.txt
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_full_svd_3090_20260522.pid
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_full_svd_3090_20260522_command_manifest.json
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_full_svd_3090_20260522_environment.txt
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_full_svd_3090_20260522_pip_freeze.txt
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/timings/
+PYTHON Python 3.11.10
+PLATFORM Linux-5.4.0-174-generic-x86_64-with-glibc2.35
+TORCH 2.4.0+cu121
+TORCH_CUDA_AVAILABLE True
+TORCH_CUDA_BUILD 12.1
+XGBOOST 3.2.0
+NVIDIA
+NVIDIA GeForce RTX 3090, 24576 MiB, 535.161.08
+CPU
+CPU(s):                             64
+On-line CPU(s) list:                0-63
+Model name:                         Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz
+NUMA node0 CPU(s):                  0-15,32-47
+NUMA node1 CPU(s):                  16-31,48-63
+MEMORY
+               total        used        free      shared  buff/cache   available
+Mem:           125Gi        18Gi        27Gi       3.6Gi        79Gi       102Gi
+Swap:             0B          0B          0B
+DISK
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1     50G  402M   50G   1% /hy-tmp

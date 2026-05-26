@@ -1,0 +1,39 @@
+{
+  "run_id": "benchmark_completion_3090_20260522",
+  "created_local": "2026-05-22",
+  "scope": "complete paper-main random-CV benchmark: missing DL variants, new DL models, and LDA baseline",
+  "local_stage_dir": "data/pure63_mainline/models/paper_main/benchmark_random_cv/",
+  "remote_repo_dir": "/hy-tmp/SERS-multicomponent-analysis",
+  "remote_git_commit_at_launch": "e5b0aa713ddfbb1a2341a8298d3c1ad7e4260886",
+  "commands": [
+    "python3 -u scripts/analysis/run_random_benchmark.py --models 1D-CNN Spectrum-KAN --variants raw p2 p3 p4 p5 --strict-models",
+    "python3 -u scripts/analysis/run_random_benchmark.py --models 1D-ResNet KAN-CNN --variants raw p1 p2 p3 p4 p5 --strict-models",
+    "python3 -u scripts/analysis/run_random_benchmark.py --models LDA --variants raw p1 p2 p3 p4 p5 --strict-models",
+    "python3 - <<'PY': rebuild benchmark index with full 12-model manifest"
+  ],
+  "expected_final_summary_rows": "72 per variant, 432 total",
+  "expected_models": [
+    "RF",
+    "ExtraTrees",
+    "HistGradientBoosting",
+    "XGBoost",
+    "SVM",
+    "KNN",
+    "PLS-DA",
+    "LDA",
+    "1D-CNN",
+    "1D-ResNet",
+    "Spectrum-KAN",
+    "KAN-CNN"
+  ],
+  "expected_variants": [
+    "raw",
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5"
+  ],
+  "backup_dir": "/hy-tmp/SERS_stage_backup_benchmark_completion_3090_20260522_20260522_163023",
+  "git_status_at_launch": "## main...origin/main\n M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_best_by_task.csv\n M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_full_matrix.csv\n M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_source_manifest.csv\n M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_source_model_mean.csv\n M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_source_preprocess_mean.csv\n M data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p1.csv\n M data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p1.csv\n M data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p1.csv\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p2.csv\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p3.csv\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p4.csv\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p5.csv\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_raw.csv\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p2.csv\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p3.csv\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p4.csv\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p5.csv\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_raw.csv\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p2.csv\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p3.csv\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p4.csv\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p5.csv\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_raw.csv\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/logs/classical_fast_no_lda_3090_20260522.log\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/logs/classical_full_svd_3090_20260522.log\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/benchmark_completion_3090_20260522_command_manifest.json\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_fast_no_lda_3090_20260522.pid\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_fast_no_lda_3090_20260522_command_manifest.json\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_fast_no_lda_3090_20260522_environment.txt\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_fast_no_lda_3090_20260522_pip_freeze.txt\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_full_svd_3090_20260522.pid\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_full_svd_3090_20260522_command_manifest.json\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_full_svd_3090_20260522_environment.txt\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_full_svd_3090_20260522_pip_freeze.txt\n?? data/pure63_mainline/models/paper_main/benchmark_random_cv/timings/"
+}

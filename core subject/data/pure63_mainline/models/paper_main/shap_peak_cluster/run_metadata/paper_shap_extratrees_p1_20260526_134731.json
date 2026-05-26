@@ -1,0 +1,27 @@
+{
+  "run_id": "paper_shap_extratrees_p1_20260526_134731",
+  "created_at": "2026-05-26T13:48:24",
+  "git_commit": "ba0d2b2",
+  "command": "scripts/analysis/run_paper_shap.py --model ExtraTrees --variant p1 --save-full",
+  "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2",
+  "shap": "0.51.0",
+  "model": "ExtraTrees",
+  "model_recipe": "ExtraTreesClassifier(class_weight='balanced', min_samples_leaf=2,\n                     n_estimators=400, n_jobs=-1, random_state=42)",
+  "variant": "p1",
+  "tasks": [
+    "P1_thiram_presence",
+    "P2_mg_presence",
+    "P3_mba_presence",
+    "G2_mg_molar_grade",
+    "G3_mba_molar_grade"
+  ],
+  "top_n": 20,
+  "cluster_window": 15.0,
+  "match_window": 15.0,
+  "wavenumber_path": "D:\\通过拉曼光谱预测物及其浓度\\core subject\\data\\pure63_mainline\\processed\\wavenumber.npy",
+  "seed": 42
+}

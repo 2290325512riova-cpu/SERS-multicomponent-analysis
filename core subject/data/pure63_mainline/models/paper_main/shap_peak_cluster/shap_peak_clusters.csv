@@ -1,0 +1,24 @@
+﻿Task,cluster_min_wn,cluster_max_wn,cluster_center_wn,n_features,rank_min,mean_abs_shap_sum,assignments,substances,has_peak_match
+MBA Presence,1567.0,1576.0,1572.1223680195299,10,1,0.3277,ν(C=C)ring,MBA,True
+MBA Presence,831.0,853.0,848.2169312169312,7,10,0.0378,,,False
+MBA Presence,576.0,576.0,576.0,1,12,0.0068,ν(S–S)+ν(C–S–S),Thiram,True
+MBA Presence,515.0,515.0,515.0,1,18,0.0037,,,False
+MBA Presence,1024.0,1024.0,1024.0,1,19,0.0036,,,False
+MG Molar Grade,1204.0,1215.0,1211.085995085995,9,1,0.0814,,,False
+MG Molar Grade,735.0,738.0,736.5102040816327,4,4,0.0245,,,False
+MG Molar Grade,1759.0,1759.0,1759.0,1,8,0.0064,,,False
+MG Molar Grade,1245.0,1245.0,1245.0,1,9,0.006,,,False
+MG Molar Grade,1169.0,1185.0,1175.1874999999998,3,16,0.012800000000000002,δ(C–H)i.p.; ν(N–C)+ρ(CH₃),MG; Thiram,True
+MG Molar Grade,880.0,881.0,880.4941176470587,2,18,0.0085,,,False
+MG Presence,1286.0,1294.0,1288.5828988529715,9,1,0.1918,,,False
+MG Presence,776.0,779.0,777.4344422700588,4,5,0.0511,,,False
+MG Presence,1615.0,1623.0,1617.6673427991886,5,7,0.0493,ν(C=C)ring,MG,True
+MG Presence,751.0,751.0,751.0,1,14,0.0085,,,False
+MG Presence,1241.0,1241.0,1241.0,1,20,0.0058,,,False
+Thiram Presence,766.0,773.0,770.4123904881102,6,1,0.1598,,,False
+Thiram Presence,1547.0,1549.0,1547.9584352078239,3,5,0.0409,,,False
+Thiram Presence,540.0,542.0,540.93359375,3,8,0.025599999999999998,ν(S–S)+ν(C–S–S),Thiram,True
+Thiram Presence,916.0,920.0,918.4300341296929,4,9,0.0293,ν(C–S),Thiram,True
+Thiram Presence,1127.0,1128.0,1127.5686274509803,2,12,0.0153,,,False
+Thiram Presence,1606.0,1606.0,1605.9999999999998,1,18,0.0051,ν(C=C)ring,MG,True
+Thiram Presence,1332.0,1332.0,1332.0,1,20,0.0046,,,False

@@ -1,0 +1,48 @@
+# ============ Python ============
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+*.egg
+dist/
+build/
+.venv/
+venv/
+env/
+*.so
+
+# ============ Data (too large for GitHub) ============
+# Legacy raw spectral CSV tree.
+混合数据/
+
+# Legacy preprocessed numpy arrays.
+data/processed/*.npy
+!data/processed/wavenumber.npy
+
+# Current large regenerated caches can be committed only by explicit choice.
+# Keep these visible by default because this project currently uses local result snapshots.
+
+# ============ Archive ============
+archive_历史归档/
+
+# ============ IDE / OS ============
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+Thumbs.db
+.DS_Store
+
+# ============ Logs ============
+logs/
+*.log
+# Paper-main remote logs are part of the returned experiment bundle.
+!data/pure63_mainline/models/paper_main/**/logs/
+!data/pure63_mainline/models/paper_main/**/logs/*.log
+
+# ============ Temp ============
+*.tar
+*.tar.gz
+*.zip
+.temp/

@@ -1,0 +1,7 @@
+Python: 3.11.10 (main, Sep  7 2024, 18:35:41) [GCC 11.4.0]
+Platform: Linux-5.4.0-174-generic-x86_64-with-glibc2.35
+Torch: 2.4.0+cu121
+CUDA available: True
+CUDA version: 12.1
+GPU: NVIDIA GeForce RTX 3090
+XGBoost: 3.2.0

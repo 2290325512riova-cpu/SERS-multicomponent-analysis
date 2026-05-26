@@ -1,0 +1,13 @@
+# Claude Code worktrees and session data
+.claude/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# IDE / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

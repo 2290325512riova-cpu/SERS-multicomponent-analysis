@@ -1,0 +1,299 @@
+=== Full 4-DL augmentation ablation started: full_dl_ablation_3090_20260523_171250 ===
+Sat May 23 05:12:52 PM CST 2026
+I28d2dc603800201c4d
+/hy-tmp/SERS-multicomponent-analysis
+=== Source state ===
+local_source_commit=ba0d2b23f22e0a484ac5287c6663c84b21047ec5
+=== Environment ===
+Python 3.11.10
+Python: 3.11.10 (main, Sep  7 2024, 18:35:41) [GCC 11.4.0]
+Platform: Linux-5.4.0-159-generic-x86_64-with-glibc2.35
+Torch: 2.4.0+cu121
+CUDA available: True
+CUDA version: 12.1
+GPU: NVIDIA GeForce RTX 3090
+numpy: 2.1.2
+pandas: 3.0.3
+sklearn: 1.8.0
+scipy: 1.17.1
+xgboost: 3.2.0
+=== Data check ===
+data/pure63_mainline/processed/wavenumber.npy True 11336
+data/pure63_mainline/processed/X_p1.npy True 10098536
+data/pure63_mainline/processed/X_raw.npy True 10098536
+data/pure63_mainline/splits/cv_split_random_5fold.csv True 242789
+X_p1 (901, 1401)
+X_raw (901, 1401)
+split (901, 25) [np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4)]
+=== Command ===
+python3 -u scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+=== Run ===
+
+======================================================================
+Augmentation mode=no_aug, variant=p1
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    1D-CNN: F1=0.926±0.017, BA=0.908±0.027, Acc=0.943±0.011, fit=89.4s
+    1D-ResNet: F1=0.916±0.035, BA=0.923±0.029, Acc=0.931±0.030, fit=48.8s
+    Spectrum-KAN: F1=0.915±0.055, BA=0.928±0.043, Acc=0.928±0.049, fit=64.8s
+    KAN-CNN: F1=0.928±0.007, BA=0.927±0.006, Acc=0.942±0.008, fit=110.6s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    1D-CNN: F1=0.857±0.047, BA=0.828±0.057, Acc=0.898±0.028, fit=124.0s
+    1D-ResNet: F1=0.919±0.017, BA=0.902±0.021, Acc=0.938±0.013, fit=68.5s
+    Spectrum-KAN: F1=0.918±0.021, BA=0.930±0.015, Acc=0.931±0.019, fit=93.8s
+    KAN-CNN: F1=0.839±0.080, BA=0.812±0.085, Acc=0.889±0.048, fit=115.9s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    1D-CNN: F1=0.931±0.021, BA=0.915±0.030, Acc=0.951±0.014, fit=100.1s
+    1D-ResNet: F1=0.914±0.032, BA=0.889±0.041, Acc=0.941±0.021, fit=91.1s
+    Spectrum-KAN: F1=0.939±0.044, BA=0.953±0.029, Acc=0.952±0.037, fit=89.5s
+    KAN-CNN: F1=0.917±0.029, BA=0.899±0.037, Acc=0.942±0.018, fit=123.2s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    1D-CNN: F1=0.929±0.030, BA=0.927±0.033, Acc=0.927±0.031, fit=136.9s
+    1D-ResNet: F1=0.978±0.009, BA=0.978±0.009, Acc=0.979±0.009, fit=78.5s
+    Spectrum-KAN: F1=0.979±0.015, BA=0.978±0.015, Acc=0.978±0.015, fit=112.4s
+    KAN-CNN: F1=0.889±0.017, BA=0.884±0.018, Acc=0.889±0.016, fit=119.2s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    1D-CNN: F1=0.649±0.040, BA=0.669±0.032, Acc=0.667±0.032, fit=49.3s
+    1D-ResNet: F1=0.746±0.034, BA=0.749±0.035, Acc=0.749±0.033, fit=39.2s
+    Spectrum-KAN: F1=0.467±0.115, BA=0.511±0.088, Acc=0.511±0.087, fit=26.8s
+    KAN-CNN: F1=0.563±0.199, BA=0.606±0.137, Acc=0.604±0.135, fit=53.5s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    1D-CNN: F1=0.167±0.003, BA=0.333±0.000, Acc=0.330±0.007, fit=23.0s
+    1D-ResNet: F1=0.223±0.024, BA=0.363±0.013, Acc=0.360±0.016, fit=28.5s
+    Spectrum-KAN: F1=0.614±0.124, BA=0.625±0.121, Acc=0.624±0.122, fit=32.1s
+    KAN-CNN: F1=0.166±0.003, BA=0.333±0.000, Acc=0.330±0.007, fit=26.6s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug
+
+======================================================================
+Augmentation mode=no_aug, variant=raw
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    1D-CNN: F1=0.646±0.033, BA=0.729±0.021, Acc=0.656±0.038, fit=60.4s
+    1D-ResNet: F1=0.702±0.046, BA=0.770±0.049, Acc=0.717±0.045, fit=64.8s
+    Spectrum-KAN: F1=0.615±0.050, BA=0.681±0.050, Acc=0.635±0.061, fit=45.3s
+    KAN-CNN: F1=0.636±0.029, BA=0.738±0.018, Acc=0.640±0.032, fit=57.0s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    1D-CNN: F1=0.723±0.162, BA=0.752±0.099, Acc=0.756±0.176, fit=113.1s
+    1D-ResNet: F1=0.727±0.162, BA=0.735±0.127, Acc=0.821±0.065, fit=69.3s
+    Spectrum-KAN: F1=0.560±0.083, BA=0.622±0.032, Acc=0.589±0.097, fit=38.4s
+    KAN-CNN: F1=0.664±0.169, BA=0.713±0.115, Acc=0.692±0.173, fit=95.5s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    1D-CNN: F1=0.653±0.021, BA=0.702±0.016, Acc=0.695±0.027, fit=60.0s
+    1D-ResNet: F1=0.592±0.143, BA=0.627±0.132, Acc=0.782±0.027, fit=46.5s
+    Spectrum-KAN: F1=0.619±0.026, BA=0.644±0.020, Acc=0.680±0.036, fit=31.8s
+    KAN-CNN: F1=0.639±0.030, BA=0.671±0.044, Acc=0.697±0.024, fit=46.3s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    1D-CNN: F1=0.736±0.034, BA=0.741±0.036, Acc=0.739±0.032, fit=77.2s
+    1D-ResNet: F1=0.712±0.095, BA=0.706±0.098, Acc=0.709±0.095, fit=51.7s
+    Spectrum-KAN: F1=0.759±0.045, BA=0.763±0.045, Acc=0.759±0.044, fit=66.5s
+    KAN-CNN: F1=0.770±0.028, BA=0.773±0.028, Acc=0.774±0.027, fit=63.6s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    1D-CNN: F1=0.576±0.051, BA=0.594±0.021, Acc=0.602±0.017, fit=45.7s
+    1D-ResNet: F1=0.633±0.060, BA=0.640±0.042, Acc=0.645±0.035, fit=81.4s
+    Spectrum-KAN: F1=0.514±0.058, BA=0.536±0.032, Acc=0.546±0.033, fit=35.2s
+    KAN-CNN: F1=0.470±0.153, BA=0.522±0.095, Acc=0.531±0.097, fit=47.6s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    1D-CNN: F1=0.463±0.079, BA=0.497±0.070, Acc=0.495±0.069, fit=28.9s
+    1D-ResNet: F1=0.289±0.098, BA=0.392±0.058, Acc=0.389±0.062, fit=31.8s
+    Spectrum-KAN: F1=0.549±0.080, BA=0.572±0.070, Acc=0.570±0.072, fit=53.3s
+    KAN-CNN: F1=0.166±0.003, BA=0.333±0.000, Acc=0.330±0.007, fit=22.2s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug
+
+======================================================================
+Augmentation mode=aug_no_mixup, variant=p1
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    1D-CNN: F1=0.928±0.027, BA=0.929±0.029, Acc=0.942±0.023, fit=265.0s
+    1D-ResNet: F1=0.936±0.017, BA=0.931±0.016, Acc=0.949±0.014, fit=186.6s
+    Spectrum-KAN: F1=0.954±0.004, BA=0.942±0.010, Acc=0.964±0.003, fit=223.7s
+    KAN-CNN: F1=0.920±0.029, BA=0.918±0.042, Acc=0.937±0.020, fit=305.5s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    1D-CNN: F1=0.911±0.022, BA=0.898±0.023, Acc=0.930±0.017, fit=329.4s
+    1D-ResNet: F1=0.910±0.013, BA=0.895±0.020, Acc=0.930±0.009, fit=247.5s
+    Spectrum-KAN: F1=0.910±0.025, BA=0.917±0.018, Acc=0.926±0.022, fit=235.6s
+    KAN-CNN: F1=0.916±0.012, BA=0.913±0.008, Acc=0.932±0.010, fit=378.6s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    1D-CNN: F1=0.927±0.014, BA=0.909±0.018, Acc=0.949±0.010, fit=310.3s
+    1D-ResNet: F1=0.914±0.033, BA=0.885±0.043, Acc=0.942±0.020, fit=182.4s
+    Spectrum-KAN: F1=0.911±0.062, BA=0.940±0.045, Acc=0.928±0.052, fit=180.2s
+    KAN-CNN: F1=0.872±0.030, BA=0.833±0.034, Acc=0.918±0.016, fit=417.7s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    1D-CNN: F1=0.933±0.018, BA=0.931±0.021, Acc=0.932±0.018, fit=259.5s
+    1D-ResNet: F1=0.929±0.030, BA=0.929±0.034, Acc=0.929±0.031, fit=218.4s
+    Spectrum-KAN: F1=0.992±0.009, BA=0.992±0.009, Acc=0.992±0.008, fit=335.3s
+    KAN-CNN: F1=0.895±0.029, BA=0.893±0.029, Acc=0.894±0.030, fit=282.5s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    1D-CNN: F1=0.677±0.045, BA=0.695±0.039, Acc=0.694±0.036, fit=145.6s
+    1D-ResNet: F1=0.769±0.040, BA=0.775±0.037, Acc=0.773±0.037, fit=125.0s
+    Spectrum-KAN: F1=0.472±0.047, BA=0.494±0.047, Acc=0.495±0.046, fit=87.0s
+    KAN-CNN: F1=0.647±0.027, BA=0.652±0.028, Acc=0.653±0.028, fit=146.2s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    1D-CNN: F1=0.627±0.064, BA=0.648±0.050, Acc=0.648±0.046, fit=159.3s
+    1D-ResNet: F1=0.787±0.066, BA=0.785±0.065, Acc=0.785±0.065, fit=126.0s
+    Spectrum-KAN: F1=0.866±0.038, BA=0.867±0.035, Acc=0.866±0.036, fit=167.4s
+    KAN-CNN: F1=0.677±0.043, BA=0.688±0.039, Acc=0.688±0.040, fit=207.8s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup
+
+======================================================================
+Augmentation mode=aug_no_mixup, variant=raw
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    1D-CNN: F1=0.689±0.100, BA=0.769±0.066, Acc=0.702±0.109, fit=174.7s
+    1D-ResNet: F1=0.742±0.086, BA=0.779±0.070, Acc=0.768±0.091, fit=206.0s
+    Spectrum-KAN: F1=0.665±0.098, BA=0.683±0.068, Acc=0.705±0.109, fit=225.6s
+    KAN-CNN: F1=0.639±0.030, BA=0.735±0.025, Acc=0.646±0.035, fit=151.2s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    1D-CNN: F1=0.879±0.034, BA=0.866±0.048, Acc=0.908±0.022, fit=480.0s
+    1D-ResNet: F1=0.935±0.018, BA=0.944±0.022, Acc=0.947±0.015, fit=442.1s
+    Spectrum-KAN: F1=0.811±0.025, BA=0.778±0.029, Acc=0.868±0.015, fit=469.8s
+    KAN-CNN: F1=0.876±0.027, BA=0.885±0.014, Acc=0.897±0.027, fit=502.5s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    1D-CNN: F1=0.734±0.088, BA=0.766±0.083, Acc=0.778±0.080, fit=253.5s
+    1D-ResNet: F1=0.940±0.013, BA=0.931±0.018, Acc=0.957±0.010, fit=481.9s
+    Spectrum-KAN: F1=0.738±0.052, BA=0.724±0.042, Acc=0.816±0.048, fit=158.5s
+    KAN-CNN: F1=0.623±0.029, BA=0.627±0.035, Acc=0.720±0.023, fit=124.3s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    1D-CNN: F1=0.843±0.070, BA=0.837±0.070, Acc=0.839±0.072, fit=487.9s
+    1D-ResNet: F1=0.946±0.015, BA=0.942±0.015, Acc=0.945±0.015, fit=553.7s
+    Spectrum-KAN: F1=0.883±0.024, BA=0.878±0.024, Acc=0.878±0.025, fit=351.4s
+    KAN-CNN: F1=0.859±0.037, BA=0.857±0.036, Acc=0.857±0.036, fit=498.4s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    1D-CNN: F1=0.636±0.063, BA=0.643±0.043, Acc=0.648±0.037, fit=201.5s
+    1D-ResNet: F1=0.696±0.033, BA=0.690±0.034, Acc=0.691±0.032, fit=200.8s
+    Spectrum-KAN: F1=0.472±0.040, BA=0.517±0.046, Acc=0.530±0.052, fit=102.1s
+    KAN-CNN: F1=0.590±0.075, BA=0.609±0.051, Acc=0.621±0.045, fit=165.9s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    1D-CNN: F1=0.377±0.029, BA=0.423±0.019, Acc=0.423±0.017, fit=70.6s
+    1D-ResNet: F1=0.675±0.182, BA=0.696±0.145, Acc=0.697±0.142, fit=155.6s
+    Spectrum-KAN: F1=0.693±0.077, BA=0.711±0.062, Acc=0.709±0.064, fit=165.9s
+    KAN-CNN: F1=0.341±0.059, BA=0.403±0.041, Acc=0.399±0.042, fit=87.6s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup
+
+======================================================================
+Augmentation mode=composition_mixup, variant=p1
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    1D-CNN: F1=0.939±0.021, BA=0.946±0.021, Acc=0.950±0.017, fit=281.5s
+    1D-ResNet: F1=0.910±0.050, BA=0.918±0.030, Acc=0.925±0.047, fit=240.6s
+    Spectrum-KAN: F1=0.948±0.035, BA=0.944±0.026, Acc=0.958±0.030, fit=209.0s
+    KAN-CNN: F1=0.901±0.015, BA=0.903±0.014, Acc=0.920±0.015, fit=326.6s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    1D-CNN: F1=0.914±0.021, BA=0.898±0.025, Acc=0.933±0.016, fit=295.2s
+    1D-ResNet: F1=0.925±0.010, BA=0.914±0.016, Acc=0.941±0.007, fit=256.0s
+    Spectrum-KAN: F1=0.929±0.018, BA=0.927±0.014, Acc=0.942±0.015, fit=285.1s
+    KAN-CNN: F1=0.918±0.009, BA=0.913±0.016, Acc=0.935±0.008, fit=446.0s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    1D-CNN: F1=0.933±0.017, BA=0.915±0.027, Acc=0.953±0.011, fit=296.4s
+    1D-ResNet: F1=0.925±0.021, BA=0.901±0.032, Acc=0.949±0.013, fit=249.3s
+    Spectrum-KAN: F1=0.980±0.011, BA=0.981±0.017, Acc=0.986±0.008, fit=219.3s
+    KAN-CNN: F1=0.904±0.031, BA=0.874±0.039, Acc=0.936±0.018, fit=411.7s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    1D-CNN: F1=0.903±0.017, BA=0.897±0.018, Acc=0.903±0.014, fit=344.4s
+    1D-ResNet: F1=0.943±0.011, BA=0.944±0.012, Acc=0.943±0.011, fit=237.8s
+    Spectrum-KAN: F1=0.994±0.008, BA=0.994±0.007, Acc=0.994±0.008, fit=394.6s
+    KAN-CNN: F1=0.904±0.043, BA=0.900±0.044, Acc=0.904±0.043, fit=364.9s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    1D-CNN: F1=0.710±0.030, BA=0.719±0.025, Acc=0.718±0.026, fit=180.9s
+    1D-ResNet: F1=0.751±0.069, BA=0.760±0.064, Acc=0.756±0.066, fit=154.3s
+    Spectrum-KAN: F1=0.480±0.033, BA=0.504±0.034, Acc=0.504±0.033, fit=115.9s
+    KAN-CNN: F1=0.678±0.041, BA=0.681±0.044, Acc=0.681±0.041, fit=211.8s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    1D-CNN: F1=0.745±0.043, BA=0.745±0.043, Acc=0.744±0.044, fit=198.5s
+    1D-ResNet: F1=0.779±0.067, BA=0.776±0.070, Acc=0.777±0.071, fit=162.0s
+    Spectrum-KAN: F1=0.891±0.037, BA=0.891±0.037, Acc=0.891±0.037, fit=181.4s
+    KAN-CNN: F1=0.710±0.030, BA=0.716±0.029, Acc=0.716±0.030, fit=217.3s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup
+
+======================================================================
+Augmentation mode=composition_mixup, variant=raw
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    1D-CNN: F1=0.684±0.079, BA=0.735±0.025, Acc=0.709±0.099, fit=244.2s
+    1D-ResNet: F1=0.779±0.098, BA=0.812±0.071, Acc=0.805±0.106, fit=321.7s
+    Spectrum-KAN: F1=0.829±0.070, BA=0.856±0.076, Acc=0.852±0.069, fit=628.2s
+    KAN-CNN: F1=0.643±0.095, BA=0.745±0.069, Acc=0.648±0.101, fit=239.3s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    1D-CNN: F1=0.851±0.048, BA=0.860±0.049, Acc=0.877±0.041, fit=308.9s
+    1D-ResNet: F1=0.912±0.038, BA=0.920±0.044, Acc=0.928±0.029, fit=320.8s
+    Spectrum-KAN: F1=0.829±0.013, BA=0.795±0.013, Acc=0.879±0.008, fit=724.7s
+    KAN-CNN: F1=0.880±0.064, BA=0.890±0.069, Acc=0.901±0.051, fit=634.2s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    1D-CNN: F1=0.760±0.068, BA=0.770±0.054, Acc=0.813±0.065, fit=320.6s
+    1D-ResNet: F1=0.930±0.045, BA=0.917±0.042, Acc=0.950±0.033, fit=519.9s
+    Spectrum-KAN: F1=0.769±0.063, BA=0.757±0.064, Acc=0.838±0.049, fit=366.6s
+    KAN-CNN: F1=0.667±0.108, BA=0.682±0.099, Acc=0.742±0.086, fit=397.2s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    1D-CNN: F1=0.944±0.016, BA=0.940±0.017, Acc=0.943±0.017, fit=671.7s
+    1D-ResNet: F1=0.962±0.029, BA=0.959±0.031, Acc=0.962±0.030, fit=642.4s
+    Spectrum-KAN: F1=0.907±0.069, BA=0.903±0.073, Acc=0.903±0.074, fit=547.5s
+    KAN-CNN: F1=0.835±0.080, BA=0.838±0.075, Acc=0.839±0.073, fit=560.3s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    1D-CNN: F1=0.613±0.073, BA=0.625±0.046, Acc=0.633±0.039, fit=208.9s
+    1D-ResNet: F1=0.676±0.030, BA=0.672±0.032, Acc=0.673±0.033, fit=172.6s
+    Spectrum-KAN: F1=0.588±0.058, BA=0.603±0.050, Acc=0.605±0.047, fit=188.4s
+    KAN-CNN: F1=0.576±0.072, BA=0.611±0.040, Acc=0.624±0.038, fit=176.3s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    1D-CNN: F1=0.423±0.065, BA=0.461±0.043, Acc=0.458±0.047, fit=108.6s
+    1D-ResNet: F1=0.723±0.175, BA=0.741±0.145, Acc=0.738±0.151, fit=188.5s
+    Spectrum-KAN: F1=0.686±0.050, BA=0.693±0.050, Acc=0.693±0.048, fit=186.5s
+    KAN-CNN: F1=0.246±0.102, BA=0.346±0.061, Acc=0.343±0.067, fit=111.7s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup
+=== Verify outputs ===
+--- no_aug ---
+data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug/cv_results_summary_p1.csv rows=25
+data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug/cv_results_detail_p1.csv rows=121
+data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug/cv_predictions_p1.csv rows=18729
+data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug/cv_results_summary_raw.csv rows=25
+data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug/cv_results_detail_raw.csv rows=121
+data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug/cv_predictions_raw.csv rows=18729
+--- aug_no_mixup ---
+data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup/cv_results_summary_p1.csv rows=25
+data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup/cv_results_detail_p1.csv rows=121
+data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup/cv_predictions_p1.csv rows=18729
+data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup/cv_results_summary_raw.csv rows=25
+data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup/cv_results_detail_raw.csv rows=121
+data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup/cv_predictions_raw.csv rows=18729
+--- composition_mixup ---
+data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup/cv_results_summary_p1.csv rows=25
+data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup/cv_results_detail_p1.csv rows=121
+data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup/cv_predictions_p1.csv rows=18729
+data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup/cv_results_summary_raw.csv rows=25
+data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup/cv_results_detail_raw.csv rows=121
+data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup/cv_predictions_raw.csv rows=18729
+=== Pack return bundle ===

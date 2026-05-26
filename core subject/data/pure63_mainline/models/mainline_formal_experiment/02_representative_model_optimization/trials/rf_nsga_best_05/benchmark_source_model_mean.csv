@@ -1,0 +1,2 @@
+﻿source_stage,Model,F1_mean,BA_mean,Acc_mean
+rf_nsga_best_05,RF,0.7700786436351343,0.7843095711164937,0.7999231881139929

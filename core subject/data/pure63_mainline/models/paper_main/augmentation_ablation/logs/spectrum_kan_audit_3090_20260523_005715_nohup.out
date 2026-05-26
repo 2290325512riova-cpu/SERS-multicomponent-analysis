@@ -1,0 +1,221 @@
+=== Spectrum-KAN targeted audit started: spectrum_kan_audit_3090_20260523_005715 ===
+Sat May 23 12:57:17 AM CST 2026
+I28cc30e31600201e1e
+/hy-tmp/SERS-multicomponent-analysis
+=== Git state ===
+e5b0aa713ddfbb1a2341a8298d3c1ad7e4260886
+main
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_best_by_task.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_full_matrix.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_source_manifest.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_source_model_mean.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/benchmark_source_preprocess_mean.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p1.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p1.csv
+ M data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p1.csv
+?? data/pure63_mainline/models/paper_main/augmentation_ablation/logs/
+?? data/pure63_mainline/models/paper_main/augmentation_ablation/run_metadata/
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p2.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p3.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p4.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_p5.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_predictions_raw.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p2.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p3.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p4.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_p5.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_detail_raw.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p2.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p3.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p4.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_p5.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/cv_results_summary_raw.csv
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/logs/benchmark_completion_3090_20260522.log
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/logs/classical_fast_no_lda_3090_20260522.log
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/logs/classical_full_svd_3090_20260522.log
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/benchmark_completion_3090_20260522.pid
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/benchmark_completion_3090_20260522_command_manifest.json
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/benchmark_completion_3090_20260522_environment.txt
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/benchmark_completion_3090_20260522_pip_freeze.txt
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_fast_no_lda_3090_20260522.pid
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_fast_no_lda_3090_20260522_command_manifest.json
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_fast_no_lda_3090_20260522_environment.txt
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_fast_no_lda_3090_20260522_pip_freeze.txt
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_full_svd_3090_20260522.pid
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_full_svd_3090_20260522_command_manifest.json
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_full_svd_3090_20260522_environment.txt
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/run_metadata/classical_full_svd_3090_20260522_pip_freeze.txt
+?? data/pure63_mainline/models/paper_main/benchmark_random_cv/timings/
+=== Environment ===
+Python 3.11.10
+Python: 3.11.10 (main, Sep  7 2024, 18:35:41) [GCC 11.4.0]
+Platform: Linux-5.4.0-174-generic-x86_64-with-glibc2.35
+Torch: 2.4.0+cu121
+CUDA available: True
+CUDA version: 12.1
+GPU: NVIDIA GeForce RTX 3090
+XGBoost: 3.2.0
+=== Command ===
+python3 -u scripts/analysis/run_augmentation_ablation.py --models Spectrum-KAN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup
+=== Run ===
+
+======================================================================
+Augmentation mode=no_aug, variant=p1
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    Spectrum-KAN: F1=0.915±0.055, BA=0.928±0.043, Acc=0.928±0.049, fit=33.5s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    Spectrum-KAN: F1=0.918±0.021, BA=0.930±0.015, Acc=0.931±0.019, fit=48.6s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    Spectrum-KAN: F1=0.939±0.044, BA=0.953±0.029, Acc=0.952±0.037, fit=40.0s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    Spectrum-KAN: F1=0.979±0.015, BA=0.978±0.015, Acc=0.978±0.015, fit=51.9s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    Spectrum-KAN: F1=0.467±0.115, BA=0.511±0.088, Acc=0.511±0.087, fit=12.4s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    Spectrum-KAN: F1=0.614±0.124, BA=0.625±0.121, Acc=0.624±0.122, fit=15.2s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug
+
+======================================================================
+Augmentation mode=no_aug, variant=raw
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    Spectrum-KAN: F1=0.615±0.050, BA=0.681±0.050, Acc=0.635±0.061, fit=21.6s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    Spectrum-KAN: F1=0.560±0.083, BA=0.622±0.032, Acc=0.589±0.097, fit=16.4s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    Spectrum-KAN: F1=0.619±0.026, BA=0.644±0.020, Acc=0.680±0.036, fit=15.4s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    Spectrum-KAN: F1=0.759±0.045, BA=0.763±0.045, Acc=0.759±0.044, fit=30.6s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    Spectrum-KAN: F1=0.514±0.058, BA=0.536±0.032, Acc=0.546±0.033, fit=14.6s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    Spectrum-KAN: F1=0.549±0.080, BA=0.572±0.070, Acc=0.570±0.072, fit=23.6s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug
+
+======================================================================
+Augmentation mode=aug_no_mixup, variant=p1
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    Spectrum-KAN: F1=0.954±0.004, BA=0.942±0.010, Acc=0.964±0.003, fit=111.5s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    Spectrum-KAN: F1=0.910±0.025, BA=0.917±0.018, Acc=0.926±0.022, fit=121.8s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    Spectrum-KAN: F1=0.911±0.062, BA=0.940±0.045, Acc=0.928±0.052, fit=82.5s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    Spectrum-KAN: F1=0.992±0.009, BA=0.992±0.009, Acc=0.992±0.008, fit=164.2s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    Spectrum-KAN: F1=0.472±0.047, BA=0.494±0.047, Acc=0.495±0.046, fit=43.4s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    Spectrum-KAN: F1=0.866±0.038, BA=0.867±0.035, Acc=0.866±0.036, fit=96.7s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup
+
+======================================================================
+Augmentation mode=aug_no_mixup, variant=raw
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    Spectrum-KAN: F1=0.665±0.098, BA=0.683±0.068, Acc=0.705±0.109, fit=118.4s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    Spectrum-KAN: F1=0.811±0.025, BA=0.778±0.029, Acc=0.868±0.015, fit=237.3s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    Spectrum-KAN: F1=0.738±0.052, BA=0.724±0.042, Acc=0.816±0.048, fit=76.6s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    Spectrum-KAN: F1=0.883±0.024, BA=0.878±0.024, Acc=0.878±0.025, fit=180.9s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    Spectrum-KAN: F1=0.472±0.040, BA=0.517±0.046, Acc=0.530±0.052, fit=51.1s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    Spectrum-KAN: F1=0.693±0.077, BA=0.711±0.062, Acc=0.709±0.064, fit=95.6s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup
+
+======================================================================
+Augmentation mode=composition_mixup, variant=p1
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    Spectrum-KAN: F1=0.948±0.035, BA=0.944±0.026, Acc=0.958±0.030, fit=110.4s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    Spectrum-KAN: F1=0.929±0.018, BA=0.927±0.014, Acc=0.942±0.015, fit=169.0s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    Spectrum-KAN: F1=0.980±0.011, BA=0.981±0.017, Acc=0.986±0.008, fit=130.8s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    Spectrum-KAN: F1=0.994±0.008, BA=0.994±0.007, Acc=0.994±0.008, fit=208.8s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    Spectrum-KAN: F1=0.480±0.033, BA=0.504±0.034, Acc=0.504±0.033, fit=50.4s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    Spectrum-KAN: F1=0.891±0.037, BA=0.891±0.037, Acc=0.891±0.037, fit=91.2s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup
+
+======================================================================
+Augmentation mode=composition_mixup, variant=raw
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    Spectrum-KAN: F1=0.829±0.070, BA=0.856±0.076, Acc=0.852±0.069, fit=292.6s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    Spectrum-KAN: F1=0.829±0.013, BA=0.795±0.013, Acc=0.879±0.008, fit=366.0s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    Spectrum-KAN: F1=0.769±0.063, BA=0.757±0.064, Acc=0.838±0.049, fit=182.0s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    Spectrum-KAN: F1=0.907±0.069, BA=0.903±0.073, Acc=0.903±0.074, fit=258.1s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    Spectrum-KAN: F1=0.588±0.058, BA=0.603±0.050, Acc=0.605±0.047, fit=93.9s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    Spectrum-KAN: F1=0.686±0.050, BA=0.693±0.050, Acc=0.693±0.048, fit=88.3s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup
+=== Verify outputs ===
+--- no_aug ---
+data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug/cv_results_summary_p1.csv rows=7
+data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug/cv_results_detail_p1.csv rows=31
+data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug/cv_predictions_p1.csv rows=4683
+data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug/cv_results_summary_raw.csv rows=7
+data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug/cv_results_detail_raw.csv rows=31
+data/pure63_mainline/models/paper_main/augmentation_ablation/no_aug/cv_predictions_raw.csv rows=4683
+--- aug_no_mixup ---
+data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup/cv_results_summary_p1.csv rows=7
+data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup/cv_results_detail_p1.csv rows=31
+data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup/cv_predictions_p1.csv rows=4683
+data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup/cv_results_summary_raw.csv rows=7
+data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup/cv_results_detail_raw.csv rows=31
+data/pure63_mainline/models/paper_main/augmentation_ablation/aug_no_mixup/cv_predictions_raw.csv rows=4683
+--- composition_mixup ---
+data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup/cv_results_summary_p1.csv rows=7
+data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup/cv_results_detail_p1.csv rows=31
+data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup/cv_predictions_p1.csv rows=4683
+data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup/cv_results_summary_raw.csv rows=7
+data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup/cv_results_detail_raw.csv rows=31
+data/pure63_mainline/models/paper_main/augmentation_ablation/composition_mixup/cv_predictions_raw.csv rows=4683
+=== Pack return bundle ===

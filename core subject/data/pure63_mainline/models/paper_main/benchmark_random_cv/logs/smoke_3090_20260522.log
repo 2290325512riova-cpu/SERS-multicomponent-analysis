@@ -1,0 +1,46 @@
+Output: /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/benchmark_random_cv
+Models: ['RF', 'XGBoost', '1D-CNN', 'Spectrum-KAN']
+Variants: ['p1']
+Tasks: ['P1_thiram_presence', 'P2_mg_presence', 'P3_mba_presence', 'G1_thiram_molar_grade', 'G2_mg_molar_grade', 'G3_mba_molar_grade']
+
+======================================================================
+Random-CV benchmark on p1
+======================================================================
+
+  Task: Thiram Presence (has_thiram), classes=[0, 1], samples=901
+    RF: F1=0.992±0.003, BA=0.990±0.006, Acc=0.993±0.002, fit=3.6s
+    XGBoost: F1=0.992±0.005, BA=0.992±0.007, Acc=0.993±0.004, fit=28.3s
+    1D-CNN: F1=0.913±0.032, BA=0.933±0.018, Acc=0.926±0.029, fit=141.1s
+    Spectrum-KAN: F1=0.948±0.035, BA=0.944±0.026, Acc=0.958±0.030, fit=112.7s
+
+  Task: MG Presence (has_mg), classes=[0, 1], samples=901
+    RF: F1=0.985±0.008, BA=0.987±0.008, Acc=0.988±0.006, fit=3.8s
+    XGBoost: F1=0.977±0.010, BA=0.982±0.010, Acc=0.981±0.008, fit=32.0s
+    1D-CNN: F1=0.911±0.028, BA=0.898±0.034, Acc=0.931±0.020, fit=154.9s
+    Spectrum-KAN: F1=0.929±0.018, BA=0.927±0.014, Acc=0.942±0.015, fit=171.6s
+
+  Task: MBA Presence (has_mba), classes=[0, 1], samples=901
+    RF: F1=0.983±0.008, BA=0.980±0.011, Acc=0.988±0.005, fit=3.9s
+    XGBoost: F1=0.986±0.009, BA=0.984±0.012, Acc=0.990±0.006, fit=25.8s
+    1D-CNN: F1=0.933±0.016, BA=0.919±0.021, Acc=0.952±0.011, fit=132.2s
+    Spectrum-KAN: F1=0.980±0.011, BA=0.981±0.017, Acc=0.986±0.008, fit=131.9s
+
+  Task: Thiram Positive Molar Grade (c_thiram), classes=[4, 5, 6], samples=650
+    RF: F1=0.990±0.009, BA=0.990±0.009, Acc=0.991±0.009, fit=3.8s
+    XGBoost: F1=0.989±0.010, BA=0.988±0.010, Acc=0.989±0.009, fit=67.5s
+    1D-CNN: F1=0.904±0.020, BA=0.898±0.020, Acc=0.905±0.017, fit=131.1s
+    Spectrum-KAN: F1=0.994±0.008, BA=0.994±0.007, Acc=0.994±0.008, fit=208.5s
+
+  Task: MG Positive Molar Grade (c_mg), classes=[4, 5, 6], samples=648
+    RF: F1=0.952±0.006, BA=0.952±0.005, Acc=0.952±0.006, fit=3.8s
+    XGBoost: F1=0.958±0.011, BA=0.959±0.011, Acc=0.958±0.011, fit=84.7s
+    1D-CNN: F1=0.703±0.018, BA=0.713±0.011, Acc=0.711±0.013, fit=67.3s
+    Spectrum-KAN: F1=0.480±0.033, BA=0.504±0.034, Acc=0.504±0.033, fit=53.2s
+
+  Task: MBA Positive Molar Grade (c_mba), classes=[4, 5, 6], samples=681
+    RF: F1=0.976±0.005, BA=0.977±0.005, Acc=0.977±0.005, fit=3.9s
+    XGBoost: F1=0.976±0.005, BA=0.977±0.005, Acc=0.977±0.005, fit=79.7s
+    1D-CNN: F1=0.701±0.137, BA=0.710±0.119, Acc=0.708±0.122, fit=65.2s
+    Spectrum-KAN: F1=0.891±0.037, BA=0.891±0.037, Acc=0.891±0.037, fit=92.4s
+  Results saved to /hy-tmp/SERS-multicomponent-analysis/data/pure63_mainline/models/paper_main/benchmark_random_cv
+Indexed 24 rows; best-by-task rows: 6

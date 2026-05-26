@@ -1,0 +1,31 @@
+{
+  "run_id": "classical_full_svd_3090_20260522",
+  "created_utc": "2026-05-22T03:27:30.210641+00:00",
+  "scope": "remote classical paper-main random-CV screening after LDA SVD performance fix",
+  "local_stage_dir": "data/pure63_mainline/models/paper_main/benchmark_random_cv/",
+  "remote_repo_dir": "/hy-tmp/SERS-multicomponent-analysis",
+  "git_commit": "e5b0aa713ddfbb1a2341a8298d3c1ad7e4260886",
+  "git_status": "## main...origin/main",
+  "command": "python3 -u scripts/analysis/run_random_benchmark.py --models RF ExtraTrees HistGradientBoosting XGBoost SVM KNN PLS-DA LDA --variants raw p1 p2 p3 p4 p5 --strict-models",
+  "models": [
+    "RF",
+    "ExtraTrees",
+    "HistGradientBoosting",
+    "XGBoost",
+    "SVM",
+    "KNN",
+    "PLS-DA",
+    "LDA"
+  ],
+  "variants": [
+    "raw",
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5"
+  ],
+  "task_scope": "TASKS main tasks from run_random_benchmark.py",
+  "split": "cv_split_random_5fold.csv",
+  "implementation_note": "LDA baseline uses SVD solver from commit e5b0aa7 after lsqr+auto-shrinkage raw-task bottleneck was observed."
+}

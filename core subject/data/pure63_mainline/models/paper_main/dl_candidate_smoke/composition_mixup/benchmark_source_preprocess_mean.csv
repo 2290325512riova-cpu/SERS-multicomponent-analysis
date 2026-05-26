@@ -1,0 +1,3 @@
+﻿source_stage,Preprocess,F1_mean,BA_mean,Acc_mean
+dl_candidate_smoke_composition_mixup,p1,0.7898850842845075,0.7924709493769118,0.7920907401558632
+dl_candidate_smoke_composition_mixup,raw,0.42300442518266884,0.5093814863880868,0.5123005194361262

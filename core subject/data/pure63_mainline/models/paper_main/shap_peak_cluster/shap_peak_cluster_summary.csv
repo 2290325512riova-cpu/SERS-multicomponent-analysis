@@ -1,0 +1,5 @@
+﻿Task,n_clusters,n_matched_clusters,cluster_match_rate
+MBA Presence,5,2,0.4
+MG Molar Grade,6,1,0.16666666666666666
+MG Presence,5,1,0.2
+Thiram Presence,7,3,0.42857142857142855

@@ -1,0 +1,12 @@
+﻿metric,value
+n_spectra,901.0
+n_wavenumbers,1401.0
+finite_fraction,1.0
+global_mean,-2.91298086396075e-19
+global_std,0.9999999999999996
+global_min,-13.409869453018851
+global_max,16.176288458946935
+row_mean_abs_median,5.071682624982871e-18
+row_std_min,0.9999999999999998
+row_std_median,1.0
+row_std_max,1.0000000000000002

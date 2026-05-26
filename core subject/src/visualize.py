@@ -12,6 +12,7 @@ from sklearn.metrics import confusion_matrix
 
 from src.config import (
     FIG_EDA, FIG_PREPROCESS, FIG_MODELS, SEED, TASKS, N_FOLDS,
+    PREPROCESS_SHORT_LABELS, PREPROCESS_TAGS,
 )
 
 plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'Arial']
@@ -126,7 +127,7 @@ def plot_eda(meta, wn, X, X_p1):
             if len(idx) == 0:
                 continue
             m = X_p1[idx].mean(0)
-            ax.plot(wn, m, label=f'{conc} ppm (n={len(idx)})', lw=1.2)
+            ax.plot(wn, m, label=f'10^-{conc} M (n={len(idx)})', lw=1.2)
         ax.set_title(f'{subst} by Concentration')
         ax.set_xlabel('Raman Shift (cm-1)')
         ax.set_ylabel('P1 Intensity')
@@ -154,15 +155,20 @@ def plot_eda(meta, wn, X, X_p1):
     return pca, scores
 
 
-def plot_preprocessing_comparison(wn, X_raw, X_p1, X_p2, X_p3, X_p4=None, sample_idx=0):
+def plot_preprocessing_comparison(wn, X_raw, X_p1=None, X_p2=None, X_p3=None, X_p4=None, sample_idx=0):
     """Compare raw vs. preprocessing pipelines for one sample."""
     FIG_PREPROCESS.mkdir(parents=True, exist_ok=True)
-    titles = ['Raw (interpolated)', 'P1: Cosmic+SG+ALS+SNV',
-              'P2: SG+ALS+Deriv+SNV', 'P3: ALS+VecNorm']
-    data = [X_raw, X_p1, X_p2, X_p3]
-    if X_p4 is not None:
-        titles.append('P4: Cosmic+SG+ALS (no norm)')
-        data.append(X_p4)
+    if isinstance(X_raw, dict):
+        X_dict = X_raw
+        titles = [f"{tag}: {PREPROCESS_SHORT_LABELS.get(tag, tag)}" for tag in PREPROCESS_TAGS if tag in X_dict]
+        data = [X_dict[tag] for tag in PREPROCESS_TAGS if tag in X_dict]
+    else:
+        titles = ['Raw (interpolated)', 'P1: Cosmic+SG+ALS+SNV',
+                  'P2: SG+ALS+Deriv+SNV', 'P3: ALS+VecNorm']
+        data = [X_raw, X_p1, X_p2, X_p3]
+        if X_p4 is not None:
+            titles.append('P4: Cosmic+SG+ALS (no norm)')
+            data.append(X_p4)
     n = len(data)
     ncols = 3 if n > 4 else 2
     nrows = (n + ncols - 1) // ncols

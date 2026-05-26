@@ -1,112 +1,174 @@
-# SERS 多组分分析项目
+# SERS Multi-Component Pesticide Screening
 
-本项目用于根据 SERS 拉曼光谱同时判断 Thiram、MG、MBA 三种物质的有无与浓度等级，当前仓库代码已经整理为可直接上传服务器运行的 Round 4 版本。
+This repository contains the active SERS plus machine-learning pipeline for simultaneous screening of ternary pesticide mixtures:
 
-## 当前 Round 4 重点
+- Thiram
+- Malachite Green, abbreviated as MG
+- Mercaptobenzoic acid, abbreviated as MBA
 
-- 保留原始 4 类浓度任务：0 / 4 / 5 / 6 ppm
-- 新增 3 类半定量任务：0 / 4 / 5+6 ppm
-- 深度学习损失改为 Focal Loss，并启用类别权重
-- 特征工程新增二阶导特征
-- 评估指标新增 Accuracy
-- 结果保存逻辑已修复，4 类和 3 类结果不会互相覆盖
+The current paper strategy is pragmatic and evidence-bounded:
 
-## 数据与评估
+- Main result: conventional spectrum-level random stratified 5-fold CV.
+- Supplementary validation: grouped/folder-level transfer stress test.
+- External matrix evidence: soil-only CV demonstrates screening feasibility in soil matrices.
+- Interpretability: SHAP is interpreted at peak-window or cluster level unless a verified point-level result supports a stronger claim.
+- Augmentation: composition-constrained spectral mixing is train-fold-only.
+- MG concentration grading is treated as semi-quantitative and physically difficult.
 
-- 光谱数：954
-- 文件夹组数：63
-- 波数点：1401
-- 交叉验证：5 折 StratifiedGroupKFold 思路，实际按已有 fold_id 分折
-- 分组键：folder_name
+## Repository Boundary
 
-## 任务设置
+There are two Git boundaries in the larger workspace. Treat this folder, `core subject/`, as the active code repository.
 
-原始 7 个任务：
+Do not stage the parent directory blindly. The parent repository tracks historical overlapping files and reference assets.
 
-- T1_thiram_conc
-- T2_mg_conc
-- T3_mba_conc
-- T4_thiram_pres
-- T5_mg_pres
-- T6_mba_pres
-- T7_mixture_order
+## Current Data
 
-新增 3 个 3 类任务：
+| Item | Current value |
+| --- | --- |
+| Main data version | `pure63_mainline` |
+| Pure-mixture spectra | 901 |
+| Pure-mixture folders/compositions | 63 |
+| Wavenumber range | 400-1800 cm^-1, 1401 points |
+| Soil spectra detected by current parser | 79 design spectra plus 11 blank/background spectra across 13 folders |
+| Grouped split | `data/pure63_mainline/splits/cv_split_pure63_main.csv` |
+| Random split | `data/pure63_mainline/splits/cv_split_random_5fold.csv` |
+| Preprocessed caches | `X_raw.npy`, `X_p1.npy`, `X_p2.npy`, `X_p3.npy`, `X_p4.npy`, `X_p5.npy` |
 
-- T1b_thiram_3c
-- T2b_mg_3c
-- T3b_mba_3c
+Note: the random split uses a six-label joint stratification key. Two exact-composition strata contain fewer than five spectra, so the split is best-effort joint stratified.
 
-多任务 3 类阶段使用：3 类浓度 + 3 个 presence + mixture_order，共 7 个输出头。
+Note: lightweight RSD QC does not support calling p5 the most repeatable preprocessing. p5 should be treated as a second-derivative feature candidate, especially for interpretability/benchmark comparison.
 
-## 模型
+## Quick Start
 
-仓库当前支持 14 个模型名：
+Install dependencies:
 
-- RF
-- SVM
-- PLS-DA
-- 1D-CNN
-- 1D-ResNet
-- Feature-KAN
-- MT-CNN
-- MT-ResNet
-- MT-KAN-CNN
-- MT-Feature-KAN
-- MT-CNN-3c
-- MT-ResNet-3c
-- MT-KAN-CNN-3c
-- MT-Feature-KAN-3c
-
-说明：1D-CNN、1D-ResNet、Feature-KAN 会同时用于 4 类与 3 类单任务阶段，但模型名保持不变，靠 Task 区分。
-
-## 一键运行
-
-推荐直接运行：
-
-```bash
-python batch_train.py
+```powershell
+pip install -r requirements.txt
 ```
 
-脚本会自动：
+The random benchmark script skips XGBoost by default if it is unavailable. Use `--strict-models` only after installing requirements and verifying the server environment.
 
-- 检查并补齐 cv_split_v5.csv 中的 c_thiram_3c / c_mg_3c / c_mba_3c
-- 自动读取 raw、p1、p2、p3、p4 五种预处理数据
-- 分 6 个阶段完成全部训练与保存
+Run lightweight paper-main preparation tables:
 
-6 个阶段分别是：
+```powershell
+python scripts/analysis/run_data_quality.py
+python scripts/analysis/run_shap_cluster.py
+python scripts/analysis/run_soil_validation.py
+```
 
-1. ML 跑原始 7 任务
-2. ML 跑 3 类任务
-3. 单任务 DL 跑原始 7 任务
-4. 单任务 DL 跑 3 类任务
-5. 多任务模型跑原始 7 任务
-6. 多任务 3 类模型跑 7 输出头任务
+Run a classical-model random-CV benchmark first:
 
-## 结果文件
+```powershell
+python scripts/analysis/run_random_benchmark.py --models RF ExtraTrees HistGradientBoosting SVM KNN PLS-DA LDA --variants raw p1 p2 p3 p4 p5
+```
 
-结果默认写入 data/models：
+Run the full 12-model benchmark after dependencies and runtime are ready:
 
-- cv_results_detail_*.csv
-- cv_results_summary_*.csv
-- cv_predictions_*.csv
+```powershell
+python scripts/analysis/run_random_benchmark.py --strict-models
+```
 
-完整 Round 4 跑完后，每个预处理 summary 文件理论上应包含 116 行：
+Run DL augmentation ablation:
 
-- ML 原始任务 21 行
-- ML 3 类任务 9 行
-- 单任务 DL 原始任务 21 行
-- 单任务 DL 3 类任务 9 行
-- 多任务原始任务 28 行
-- 多任务 3 类任务 28 行
+```powershell
+python scripts/analysis/run_augmentation_ablation.py --variants p5
+```
 
-## 关键文件
+## Active Project Layout
 
-- src/config.py：任务、超参数、路径
-- src/models.py：全部模型定义与注册表
-- src/feature_engineering.py：领域特征与二阶导特征
-- src/train_eval.py：CV、指标汇总、结果合并保存
-- batch_train.py：服务器上一键跑的主脚本
-- SERVER_MANUAL.md：服务器操作手册
-- server_update_prompt.txt：给新服务器 GPT 的对齐提示词
-- reports/experiment_history_archive.md：历史实验归档
+```text
+core subject/
+  project_memory/
+    AGENTS.md
+    CLAUDE.md
+    project_architecture.md
+    DECISIONS.md
+    EXPERIMENT_TRACKER.md
+    CLAIM_EVIDENCE_MATRIX.md
+    FAILURE_LESSONS.md
+    COLLABORATION_PROTOCOL.md
+  reports/
+    全局进度看板.md
+    图表与表格清单.md
+    实验结果摘要.md
+    论文写作路线图.md
+  src/
+    config.py
+    dataset.py
+    models.py
+    train_eval.py
+    result_index.py
+  scripts/analysis/
+    run_random_benchmark.py
+    run_augmentation_ablation.py
+    run_data_quality.py
+    run_shap_cluster.py
+    run_soil_validation.py
+    leakage_analysis.py
+    benchmark_summary.py
+  data/pure63_mainline/
+    processed/
+    splits/
+    models/
+      mainline_formal_experiment/
+      paper_main/
+  archive/
+    MANIFEST.md
+    scripts_negative/
+    03_two_stage_context_aware/
+```
+
+## Historical Results Kept For Supplementary Evidence
+
+Do not move these directories without a new approved migration plan:
+
+- `data/pure63_mainline/models/mainline_formal_experiment/01_candidate_screening/`
+- `data/pure63_mainline/models/mainline_formal_experiment/02_representative_model_optimization/`
+- `data/pure63_mainline/models/mainline_formal_experiment/03b_locked_main_results/`
+- `data/pure63_mainline/models/mainline_formal_experiment/04_leakage_analysis/`
+- `data/pure63_mainline/models/mainline_formal_experiment/05_shap_explainability/`
+
+The locked grouped-CV results in `03b_locked_main_results/` are the supplementary folder-level transfer evidence. They are not the paper-main headline after the strategy change, but they must remain intact.
+
+## Paper Claim Guardrails
+
+Allowed wording:
+
+- conventional spectrum-level validation
+- within-dataset screening benchmark
+- folder-level transfer stress test
+- composition-constrained spectral mixing
+- semi-quantitative MG concentration grading
+
+Forbidden or unsafe wording unless new evidence is generated:
+
+- random CV as external validation
+- leakage-free generalization
+- first-ever Beer-Lambert augmentation
+- SHAP alone proves competitive adsorption
+- 17/20 SHAP peak matching
+- precise MG quantification
+
+## Persistent Memory
+
+Before making strategic or code changes, read:
+
+1. `project_memory/AGENTS.md`
+2. `project_memory/DECISIONS.md`
+3. `project_memory/EXPERIMENT_TRACKER.md`
+4. `project_memory/CLAIM_EVIDENCE_MATRIX.md`
+5. `project_memory/COLLABORATION_PROTOCOL.md`
+6. `project_memory/project_architecture.md`
+
+These files are the anti-forgetting layer for future Codex, Claude/Opus, and human sessions.
+
+Stale editor tabs are not a source of truth. `project_memory/HANDOFF.md`, `project_memory/PROJECT_STATE.md`, and the retired long-form decision diary are not active repository memory files.
+
+## User-Facing Reports
+
+These documents are researcher-facing summaries. Agents still read `reports/全局进度看板.md` during startup:
+
+- `reports/全局进度看板.md` — 项目总览入口
+- `reports/实验结果摘要.md` — 实验结果数字
+- `reports/图表与表格清单.md` — 论文图表状态
+- `reports/论文写作路线图.md` — 论文结构与写作计划
