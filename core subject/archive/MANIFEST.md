@@ -28,8 +28,8 @@ These directories remain in place because the new paper plan still uses them:
 
 | Path | Role |
 | --- | --- |
-| `data/pure63_mainline/models/mainline_formal_experiment/01_candidate_screening/` | Supplementary grouped candidate screening baseline. |
+| `data/pure63_mainline/models/mainline_formal_experiment/01_candidate_screening/` | Historical grouped-CV candidate screening baseline. Preserved for future work. |
 | `data/pure63_mainline/models/mainline_formal_experiment/02_representative_model_optimization/` | Historical optimization and hyperparameter reference. |
-| `data/pure63_mainline/models/mainline_formal_experiment/03b_locked_main_results/` | Locked grouped-CV evidence for supplementary strict validation. |
+| `data/pure63_mainline/models/mainline_formal_experiment/03b_locked_main_results/` | Locked grouped-CV evidence. Preserved for future paper, NOT in current paper per D017. |
 | `data/pure63_mainline/models/mainline_formal_experiment/04_leakage_analysis/` | Spectrum-level vs folder-level validation protocol evidence. |
 | `data/pure63_mainline/models/mainline_formal_experiment/05_shap_explainability/` | Baseline for upgraded peak-cluster SHAP analysis. |

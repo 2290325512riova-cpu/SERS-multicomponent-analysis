@@ -21,7 +21,7 @@ Core narrative:
 
 - AgNPs-SERS spectra are used for simultaneous ternary pesticide-mixture screening.
 - Random stratified spectrum-level 5-fold CV is used as the main within-dataset benchmark because it matches common applied SERS-ML reporting practice.
-- Grouped/folder-level CV is retained as a stricter transfer stress test in supplementary information.
+- Grouped/folder-level CV data is preserved for future work but is NOT included in this paper (neither main nor SI, per D017).
 - Soil-only CV (train and test within soil spectra) demonstrates screening feasibility in complex matrices. The earlier pure→soil transfer experiment failed due to domain shift and serves as motivation for the soil-only approach.
 - The augmentation method is limited to composition-constrained spectral mixing.
 - SHAP is reported at peak-cluster/window level and cross-checked against known Raman/SERS peaks. Literature peak list pending update (add Thiram 930/1510, MG 1220).
@@ -63,7 +63,7 @@ Important caution:
 
 | Split | File | Role |
 | --- | --- | --- |
-| Grouped 5-fold CV | `data/pure63_mainline/splits/cv_split_pure63_main.csv` | Supplementary folder-level transfer stress test |
+| Grouped 5-fold CV | `data/pure63_mainline/splits/cv_split_pure63_main.csv` | Data preserved for future work, NOT in current paper |
 | Random stratified 5-fold CV | `data/pure63_mainline/splits/cv_split_random_5fold.csv` | Main within-dataset benchmark |
 
 Random split QC:
@@ -150,12 +150,12 @@ data/pure63_mainline/models/
     data_quality/
 ```
 
-Historical and supplementary roles:
+Historical data preserved for future work (NOT in current paper per D017):
 
-- `01_candidate_screening/`: grouped-CV baseline landscape for SI.
+- `01_candidate_screening/`: grouped-CV baseline landscape.
 - `02_representative_model_optimization/`: optimization history and hyperparameter reference.
-- `03b_locked_main_results/`: locked grouped-CV strict-validation table for SI. Do not move.
-- `04_leakage_analysis/`: random-vs-grouped protocol comparison for SI/discussion.
+- `03b_locked_main_results/`: locked grouped-CV strict-validation table. Do not move.
+- `04_leakage_analysis/`: random-vs-grouped protocol comparison.
 - `05_shap_explainability/`: point-level SHAP baseline to upgrade into cluster-level analysis.
 
 Archived negative work:
@@ -231,7 +231,7 @@ Within each returned local stage directory, keep generated experiment files in t
 | Final SHAP peak-cluster work | `data/pure63_mainline/models/paper_main/shap_peak_cluster/` | attribution tables, plots, peak-window mapping inputs/outputs, logs, environment snapshot, command metadata | `EXPERIMENT_TRACKER.md`, `CLAIM_EVIDENCE_MATRIX.md`, `reports/实验结果摘要.md`, `reports/图表与表格清单.md` |
 | Soil screening validation | `data/pure63_mainline/models/paper_main/soil_validation/` | metadata/QC, soil-only CV results, predictions, metrics, plots/tables, logs, environment snapshot, command metadata | `EXPERIMENT_TRACKER.md`, `CLAIM_EVIDENCE_MATRIX.md`, `reports/全局进度看板.md`, `reports/实验结果摘要.md`, `reports/图表与表格清单.md` |
 
-Historical grouped-CV directories under `mainline_formal_experiment/` are supplementary evidence. Do not write new paper-main remote outputs into them unless the user approves a supplementary rerun.
+Historical grouped-CV directories under `mainline_formal_experiment/` are preserved for future work (NOT in current paper). Do not write new paper-main remote outputs into them unless the user approves a future rerun.
 
 ### 10.3 Local Verification And Closeout
 

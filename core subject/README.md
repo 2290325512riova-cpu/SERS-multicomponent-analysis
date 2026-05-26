@@ -8,12 +8,13 @@ This repository contains the active SERS plus machine-learning pipeline for simu
 
 The current paper strategy is pragmatic and evidence-bounded:
 
-- Main result: conventional spectrum-level random stratified 5-fold CV.
-- Supplementary validation: grouped/folder-level transfer stress test.
-- External matrix evidence: soil-only CV demonstrates screening feasibility in soil matrices.
+- Main result: conventional spectrum-level random stratified 5-fold CV (13 models × 6 preprocessing).
+- Augmentation ablation: composition-constrained spectral mixing is train-fold-only; ablation proves its contribution.
+- SHAP-guided feature selection: mask non-SHAP regions, retrain, show performance maintained with only chemically interpretable features.
+- Soil-only CV: demonstrates screening feasibility in complex soil matrices.
 - Interpretability: SHAP is interpreted at peak-window or cluster level unless a verified point-level result supports a stronger claim.
-- Augmentation: composition-constrained spectral mixing is train-fold-only.
 - MG concentration grading is treated as semi-quantitative and physically difficult.
+- Grouped CV: data preserved for future work, NOT included in this paper (neither main nor SI).
 
 ## Repository Boundary
 
@@ -118,7 +119,7 @@ core subject/
     03_two_stage_context_aware/
 ```
 
-## Historical Results Kept For Supplementary Evidence
+## Historical Results Kept For Future Work
 
 Do not move these directories without a new approved migration plan:
 
@@ -128,7 +129,7 @@ Do not move these directories without a new approved migration plan:
 - `data/pure63_mainline/models/mainline_formal_experiment/04_leakage_analysis/`
 - `data/pure63_mainline/models/mainline_formal_experiment/05_shap_explainability/`
 
-The locked grouped-CV results in `03b_locked_main_results/` are the supplementary folder-level transfer evidence. They are not the paper-main headline after the strategy change, but they must remain intact.
+The locked grouped-CV results in `03b_locked_main_results/` are preserved for future papers. They are NOT included in the current paper (neither main nor SI) per D017, but must remain intact for potential follow-up work.
 
 ## Paper Claim Guardrails
 
@@ -146,7 +147,7 @@ Forbidden or unsafe wording unless new evidence is generated:
 - leakage-free generalization
 - first-ever Beer-Lambert augmentation
 - SHAP alone proves competitive adsorption
-- 17/20 SHAP peak matching
+- 17/24 SHAP peak matching (actual result; do not round up)
 - precise MG quantification
 
 ## Persistent Memory
