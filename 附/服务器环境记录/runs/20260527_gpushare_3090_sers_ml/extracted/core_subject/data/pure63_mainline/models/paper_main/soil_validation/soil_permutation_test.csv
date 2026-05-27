@@ -1,4 +1,0 @@
-﻿run_id,task,task_name,observed_metric,metric,p_value,n_permutations,null_mean,null_std,permutation_mode
-soil_only_cv_extratrees_p1_20260527_002017,P1_thiram_presence,Thiram Presence,0.9934782608695654,OOF_AUC,9.999000099990002e-05,10000,0.49908818840579705,0.07334253530421439,OOF_score_label_permutation_within_fold
-soil_only_cv_extratrees_p1_20260527_002017,P2_mg_presence,MG Presence,0.954954954954955,OOF_AUC,9.999000099990002e-05,10000,0.5017383783783784,0.08276532126879743,OOF_score_label_permutation_within_fold
-soil_only_cv_extratrees_p1_20260527_002017,P3_mba_presence,MBA Presence,0.9757433489827856,OOF_AUC,9.999000099990002e-05,10000,0.4940853677621283,0.0780627796738922,OOF_score_label_permutation_within_fold

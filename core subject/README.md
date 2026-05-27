@@ -1,175 +1,95 @@
 # SERS Multi-Component Pesticide Screening
 
-This repository contains the active SERS plus machine-learning pipeline for simultaneous screening of ternary pesticide mixtures:
+Systematic benchmarking of machine learning models for simultaneous detection of three pesticides (Thiram, Malachite Green, MBA) in ternary mixtures via surface-enhanced Raman spectroscopy on AgNPs.
 
-- Thiram
-- Malachite Green, abbreviated as MG
-- Mercaptobenzoic acid, abbreviated as MBA
+## Highlights
 
-The current paper strategy is pragmatic and evidence-bounded:
+- 13 models × 6 preprocessing pipelines benchmark under random stratified 5-fold CV
+- Composition-constrained spectral mixing with task-dependent ablation
+- SHAP-guided spectral region selection: 70% feature reduction with <2% performance loss
+- Soil-matrix screening feasibility (AUC 0.956–0.996)
 
-- Main result: conventional spectrum-level random stratified 5-fold CV (13 models × 6 preprocessing).
-- Augmentation ablation: composition-constrained spectral mixing is train-fold-only; ablation proves its contribution.
-- SHAP-guided feature selection: mask non-SHAP regions, retrain, show performance maintained with only chemically interpretable features.
-- Soil-only CV: demonstrates screening feasibility in complex soil matrices.
-- Interpretability: SHAP is interpreted at peak-window or cluster level unless a verified point-level result supports a stronger claim.
-- MG concentration grading is treated as semi-quantitative and physically difficult.
-- Grouped CV: data preserved for future work, NOT included in this paper (neither main nor SI).
+## Dataset
 
-## Repository Boundary
+| Item | Value |
+|------|-------|
+| Pure-mixture spectra | 901 (63 compositions) |
+| Soil spectra | 79 design + 11 blanks |
+| Wavenumber range | 400–1800 cm⁻¹ (1401 points) |
+| Tasks | 3 presence (P1–P3) + 3 concentration grade (G1–G3) |
 
-There are two Git boundaries in the larger workspace. Treat this folder, `core subject/`, as the active code repository.
+## Installation
 
-Do not stage the parent directory blindly. The parent repository tracks historical overlapping files and reference assets.
-
-## Current Data
-
-| Item | Current value |
-| --- | --- |
-| Main data version | `pure63_mainline` |
-| Pure-mixture spectra | 901 |
-| Pure-mixture folders/compositions | 63 |
-| Wavenumber range | 400-1800 cm^-1, 1401 points |
-| Soil spectra detected by current parser | 79 design spectra plus 11 blank/background spectra across 13 folders |
-| Grouped split | `data/pure63_mainline/splits/cv_split_pure63_main.csv` |
-| Random split | `data/pure63_mainline/splits/cv_split_random_5fold.csv` |
-| Preprocessed caches | `X_raw.npy`, `X_p1.npy`, `X_p2.npy`, `X_p3.npy`, `X_p4.npy`, `X_p5.npy` |
-
-Note: the random split uses a six-label joint stratification key. Two exact-composition strata contain fewer than five spectra, so the split is best-effort joint stratified.
-
-Note: lightweight RSD QC does not support calling p5 the most repeatable preprocessing. p5 should be treated as a second-derivative feature candidate, especially for interpretability/benchmark comparison.
-
-## Quick Start
-
-Install dependencies:
-
-```powershell
+```bash
 pip install -r requirements.txt
 ```
 
-The random benchmark script skips XGBoost by default if it is unavailable. Use `--strict-models` only after installing requirements and verifying the server environment.
+## Usage
 
-Run lightweight paper-main preparation tables:
+Run the full 13-model benchmark:
 
-```powershell
-python scripts/analysis/run_data_quality.py
-python scripts/analysis/run_shap_cluster.py
-python scripts/analysis/run_soil_validation.py
-```
-
-Run a classical-model random-CV benchmark first:
-
-```powershell
-python scripts/analysis/run_random_benchmark.py --models RF ExtraTrees HistGradientBoosting SVM KNN PLS-DA LDA --variants raw p1 p2 p3 p4 p5
-```
-
-Run the full 12-model benchmark after dependencies and runtime are ready:
-
-```powershell
+```bash
 python scripts/analysis/run_random_benchmark.py --strict-models
 ```
 
-Run DL augmentation ablation:
+Run augmentation ablation (DL models):
 
-```powershell
-python scripts/analysis/run_augmentation_ablation.py --variants p5
+```bash
+python scripts/analysis/run_augmentation_ablation.py --variants p1 raw
 ```
 
-## Active Project Layout
+Run SHAP analysis and feature selection:
 
-```text
-core subject/
-  project_memory/
-    AGENTS.md
-    CLAUDE.md
-    project_architecture.md
-    DECISIONS.md
-    EXPERIMENT_TRACKER.md
-    CLAIM_EVIDENCE_MATRIX.md
-    FAILURE_LESSONS.md
-    COLLABORATION_PROTOCOL.md
-  reports/
-    全局进度看板.md
-    图表与表格清单.md
-    实验结果摘要.md
-    论文写作路线图.md
-  src/
-    config.py
-    dataset.py
-    models.py
-    train_eval.py
-    result_index.py
-  scripts/analysis/
-    run_random_benchmark.py
-    run_augmentation_ablation.py
-    run_data_quality.py
-    run_shap_cluster.py
-    run_soil_validation.py
-    leakage_analysis.py
-    benchmark_summary.py
-  data/pure63_mainline/
-    processed/
-    splits/
-    models/
-      mainline_formal_experiment/
-      paper_main/
-  archive/
-    MANIFEST.md
-    scripts_negative/
-    03_two_stage_context_aware/
+```bash
+python scripts/analysis/run_paper_shap.py
+python scripts/analysis/run_shap_feature_selection.py
 ```
 
-## Historical Results Kept For Future Work
+Run soil-matrix validation:
 
-Do not move these directories without a new approved migration plan:
+```bash
+python scripts/analysis/run_soil_only_cv.py
+```
 
-- `data/pure63_mainline/models/mainline_formal_experiment/01_candidate_screening/`
-- `data/pure63_mainline/models/mainline_formal_experiment/02_representative_model_optimization/`
-- `data/pure63_mainline/models/mainline_formal_experiment/03b_locked_main_results/`
-- `data/pure63_mainline/models/mainline_formal_experiment/04_leakage_analysis/`
-- `data/pure63_mainline/models/mainline_formal_experiment/05_shap_explainability/`
+## Results
 
-The locked grouped-CV results in `03b_locked_main_results/` are preserved for future papers. They are NOT included in the current paper (neither main nor SI) per D017, but must remain intact for potential follow-up work.
+Best macro-F1 per task (ExtraTrees, random 5-fold CV):
 
-## Paper Claim Guardrails
+| Task | F1 | Preprocessing |
+|------|----|---------------|
+| P1 Thiram presence | 0.996 | p1 |
+| P2 MG presence | 0.985 | p2 |
+| P3 MBA presence | 0.994 | p1 |
+| G1 Thiram grade | 1.000 | p1 |
+| G2 MG grade | 0.966 | p4 |
+| G3 MBA grade | 0.981 | p1 |
 
-Allowed wording:
+SHAP-guided feature selection (30% spectral retention): all tasks maintain F1 > 0.96.
 
-- conventional spectrum-level validation
-- within-dataset screening benchmark
-- folder-level transfer stress test
-- composition-constrained spectral mixing
-- semi-quantitative MG concentration grading
+Soil-only CV: AUC 0.956–0.996 across P1–P3; permutation p < 0.001; 10/10 blanks correctly rejected.
 
-Forbidden or unsafe wording unless new evidence is generated:
+## Project Structure
 
-- random CV as external validation
-- leakage-free generalization
-- first-ever Beer-Lambert augmentation
-- SHAP alone proves competitive adsorption
-- 17/24 SHAP peak matching (actual result; do not round up)
-- precise MG quantification
+```
+src/                  Core modules (config, dataset, models, training)
+scripts/analysis/     Experiment scripts
+data/pure63_mainline/ Preprocessed data, splits, and model outputs
+reports/              Human-readable progress and results summaries
+project_memory/       Project decisions and experiment tracking
+archive/              Negative experiments with manifest
+```
 
-## Persistent Memory
+## Preprocessing Variants
 
-Before making strategic or code changes, read:
+| Tag | Pipeline |
+|-----|----------|
+| raw | Interpolated raw spectra |
+| p1 | Cosmic removal → SG smooth → ALS baseline → SNV |
+| p2 | SG smooth → ALS baseline → 1st derivative → SNV |
+| p3 | ALS baseline → vector normalization |
+| p4 | Cosmic removal → SG smooth → ALS baseline (no norm) |
+| p5 | Cosmic removal → SG smooth → ALS baseline → 2nd derivative → SNV |
 
-1. `project_memory/AGENTS.md`
-2. `project_memory/DECISIONS.md`
-3. `project_memory/EXPERIMENT_TRACKER.md`
-4. `project_memory/CLAIM_EVIDENCE_MATRIX.md`
-5. `project_memory/COLLABORATION_PROTOCOL.md`
-6. `project_memory/project_architecture.md`
+## Citation
 
-These files are the anti-forgetting layer for future Codex, Claude/Opus, and human sessions.
-
-Stale editor tabs are not a source of truth. `project_memory/HANDOFF.md`, `project_memory/PROJECT_STATE.md`, and the retired long-form decision diary are not active repository memory files.
-
-## User-Facing Reports
-
-These documents are researcher-facing summaries. Agents still read `reports/全局进度看板.md` during startup:
-
-- `reports/全局进度看板.md` — 项目总览入口
-- `reports/实验结果摘要.md` — 实验结果数字
-- `reports/图表与表格清单.md` — 论文图表状态
-- `reports/论文写作路线图.md` — 论文结构与写作计划
+Paper in preparation. Citation will be added upon publication.

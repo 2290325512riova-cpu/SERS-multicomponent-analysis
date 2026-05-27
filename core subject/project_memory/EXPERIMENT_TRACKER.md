@@ -4,7 +4,7 @@
 
 Status: done
 Result path: `data/pure63_mainline/models/mainline_formal_experiment/01_candidate_screening/`
-Paper role: supplementary strict baseline
+Paper role: historical data, not in current paper (D017)
 
 Notes:
 
@@ -27,7 +27,7 @@ Notes:
 
 Status: done
 Result path: `data/pure63_mainline/models/mainline_formal_experiment/03b_locked_main_results/`
-Paper role: supplementary folder-level transfer stress test
+Paper role: historical data, not in current paper (D017)
 
 Notes:
 
@@ -44,7 +44,7 @@ Paper role: internal negative result / possible rebuttal evidence
 
 Status: done
 Result path: `data/pure63_mainline/models/mainline_formal_experiment/04_leakage_analysis/`
-Paper role: supplementary validation-protocol analysis
+Paper role: historical protocol comparison, not in current paper (D017)
 
 Notes:
 

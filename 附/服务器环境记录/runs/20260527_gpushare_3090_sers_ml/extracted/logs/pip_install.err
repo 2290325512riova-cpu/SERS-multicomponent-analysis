@@ -1,5 +1,0 @@
-ERROR: Cannot install captum==0.8.0, matplotlib==3.10.5, numpy==2.2.6, pandas==2.3.3, scikit-learn==1.7.2, scipy==1.16.3, seaborn==0.13.2, shap==0.51.0, umap-learn==0.5.8 and xgboost==3.2.0 because these package versions have conflicting dependencies.
-
-[notice] A new release of pip is available: 24.2 -> 26.1.1
-[notice] To update, run: python3 -m pip install --upgrade pip
-ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts

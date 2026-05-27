@@ -1,6 +1,9 @@
 # Claude Code worktrees and session data
 .claude/
 
+# Supplementary local files (not part of the project)
+附/
+
 # Python
 __pycache__/
 *.py[cod]
