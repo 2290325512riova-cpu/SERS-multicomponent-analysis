@@ -1,0 +1,5 @@
+| Analyte   |   Marker peak (cm^-1) | Concentration   | Preprocess   |   n spectra | Metric                        |   Mean band area |   RSD (%) | Figure role                                           |
+|:----------|----------------------:|:----------------|:-------------|------------:|:------------------------------|-----------------:|----------:|:------------------------------------------------------|
+| Thiram    |                  1382 | 1e-4 M          | p1           |          18 | marker-band area (+/-8 cm^-1) |            97.56 |     10.24 | Fig.2b same-concentration pure-standard repeatability |
+| MG        |                  1616 | 1e-4 M          | p1           |          21 | marker-band area (+/-8 cm^-1) |            59.82 |      6.04 | Fig.2b same-concentration pure-standard repeatability |
+| 4-MBA     |                  1080 | 1e-4 M          | p1           |          20 | marker-band area (+/-8 cm^-1) |            63.3  |      2.64 | Fig.2b same-concentration pure-standard repeatability |

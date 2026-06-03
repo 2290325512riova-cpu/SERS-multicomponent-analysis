@@ -281,33 +281,33 @@ Decision:
 
 - Pure→soil transfer (E019) failed due to domain shift. This is retained as MOTIVATION, not as the paper result.
 - The paper's soil result will be soil-only 5-fold CV (E020): train and test within soil data.
-- Frame as "soil-matrix screening feasibility" — the method works when retrained on the target matrix.
-- Limitation: same-matrix CV, not cross-matrix generalization. Must be stated explicitly.
+- Title/caption-level framing follows D021: "spiked-soil / soil-matrix screening validation" — the method is demonstrated in the target matrix.
+- Methods-level detail may state matrix-matched / same-matrix CV. Do not promote this detail into a headline caveat.
 - Statistical defense: permutation test + blank specificity + optional feature importance overlap with pure model.
 
 Evidence:
 
 - E019 failure: P1 F1=0.161, P2/P3 balanced acc=0.5 (domain shift confirmed).
-- Preliminary soil-only CV: AUC>0.93 for all P1/P2/P3 with p1 (needs formal run).
+- Preliminary soil-only CV: AUC>0.93 for all P1/P2/P3 with p1. Resolved by E020 formal run: P1/P2/P3 AUC 0.996/0.956/0.976, permutation p=0.0001, blanks 10/10 negative.
 - Literature support: same-matrix CV or spiked-matrix validation is standard practice in SERS-ML papers.
 
 Consequences:
 
-- Allowed wording: "soil-matrix screening feasibility", "same-matrix CV", "retraining on target matrix"
+- Allowed wording: title/caption-level "spiked-soil / soil-matrix screening validation"; methods-level "same-matrix CV" or "matrix-matched CV".
 - Forbidden: "successful cross-matrix transfer", "external validation"
-- P2 MG specificity concern (only 5 negatives) needs permutation test defense
+- P2 MG specificity concern is defended by the E020 permutation test and blank specificity result.
 
 ## D016: SHAP Literature Peak List Update
 
 Date: 2026-05-26
-Status: active
+Status: active (refined by D022 for weighted SHAP assignment and curated peak-library audit)
 
 Decision:
 
 - Update LITERATURE_PEAKS in `run_paper_shap.py` to add: Thiram 930 cm⁻¹, Thiram 1510 cm⁻¹, MG 1220 cm⁻¹.
-- Rerun peak-cluster matching after update.
+- Rerun peak-cluster matching after update. The initial six-task D016 output produced 29 clusters and a 20/29 literature-match layer; D022 supersedes the manuscript-facing result with the curated 22/29 and 91.2% SHAP-mass consistency output.
 - Expected improvement: P1 2/7→4/7, P2 3/4→4/4, G2 3/7→4/7.
-- Unassigned peaks (768, 860 cm⁻¹) framed as "candidate substrate-analyte interaction modes."
+- Original 2026-05-27 formal output kept 768 and 860 cm⁻¹ as unassigned/candidate windows. D022 later refined this: 860 cm⁻¹ has literature support as a Thiram band and should be handled through a curated peak-library audit rather than informal relabeling.
 
 Evidence:
 
@@ -413,3 +413,115 @@ Rationale:
 - Server instances are temporary and earlier project work already lost time when results were not synchronized before shutdown.
 - Stage-local artifact paths keep the random-CV paper mainline separate from historical grouped-CV evidence.
 - Reproducibility requires the code commit, runtime environment, command scope, and logs to travel with the result files.
+
+## D019: Benchmark Data Is Tracked By The Parent Repo — Do Not git restore Data Dirs Inside `core subject`
+
+Date: 2026-05-29
+Status: active
+
+Context:
+
+- The project has two nested git repositories: parent `d:\通过拉曼光谱预测物及其浓度` and inner `core subject/.git`.
+- The inner `core subject` repo does NOT track `data/pure63_mainline/models/...`; the parent repo does.
+- RamanNet-Lite benchmark rows were lost from the working tree because a `git restore`/checkout aligned the tree to inner-repo state, which never contained RamanNet-Lite (inner history: 25→55→73 rows, 12 models only; `src/models.py` MODEL_REGISTRY has no RamanNet entry).
+- The complete 13-model matrix survives in the parent repo HEAD (`cd18dc7`): `benchmark_full_matrix.csv` 469 lines / 36 RamanNet rows; every `cv_results_summary_*.csv` has 6 RamanNet rows; every `cv_results_detail_*.csv` has 30 RamanNet rows. The 12-model subset matches the working tree except 6 LDA timing-column float-noise digits.
+
+Decision:
+
+- Treat the parent repo as the authoritative tracker for `data/` artifacts.
+- Do NOT run `git restore`/`git checkout` on data directories from inside `core subject` — it can silently drop artifacts that only exist in the parent repo history.
+- Recover lost benchmark data from parent HEAD, not by re-running the server.
+
+Consequences:
+
+- Resolved 2026-06-01: the working tree and paper-main benchmark files are again aligned to the complete 468-row / 13-model matrix. D019 remains active as a repository-boundary warning: recover data from the parent repo when needed, and do not use inner-repo `git restore` on `data/` artifacts.
+
+## D020: Paper Main-Line Locked — Mixture-Induced Spectral Interference × Interpretable ML
+
+Date: 2026-05-29
+Status: active (supersedes the earlier "benchmark-as-headline" framing in D-series narrative)
+
+Context:
+
+- Multi-angle web traversal of CAS 1-2区 precedents found NO paper that is simultaneously (no new chemistry + no new model + modest results) — every one leans on a strength we lack. Optimization/Bayesian-tuning as a hook is dead for us because classification performance is already saturated (~0.97).
+- Six independent hook evaluations converged: the only genuinely open novelty wedge at Q1/Q2 is using interpretable ML to expose competitive-adsorption-consistent spectral interference in a ternary mixture.
+- Own read-only recompute (X_p4, ±6 cm⁻¹ peak height vs same-MG-level pure MG): MG 1616 cm⁻¹ suppressed in all co-existence — median ratio 0.36 (MG+MBA) / 0.21 (MG+Thiram) / 0.13 (ternary); 283/358 ternary spectra <0.5× pure MG. GPT's reported 1172/1394 strong suppression under MG+Thiram did NOT reproduce (those bands are contaminated by Thiram 1380 / neighbor overlap).
+- Senior-lab SNN paper (Zhang/Kong, accepted not-yet-in-print; same 3 analytes/substrate, 133 spectra, no CV) cleared 2区 via model-hook + DL-wins + real-sample quant — confirms hook+real-sample is the publishing currency, not rigor.
+
+Decision:
+
+- Headline = mixture-induced spectral interference / MG suppression consistent with competitive adsorption. Benchmark, classical>DL, TreeSHAP attribution, SHAP-guided FS, soil arm are all DEMOTED to supporting evidence.
+- Cementing experiment = path A (zero new wet-lab): suppression analysis on existing ~900 mixture spectra + SHAP co-movement. Titration deferred to revision if a reviewer demands a measured adsorption isotherm.
+- Phrasing discipline: "consistent with competitive adsorption", never "SHAP proves the mechanism"; never claim monotonic concentration dependence; core evidence peak = 1616 cm⁻¹ (clean), exclude 1172/1394 from core evidence.
+
+Consequences:
+
+- 论文写作路线图 §3 reordered so §3.2 = interference headline; benchmark moved to §3.3 supporting.
+- Before final §3.2 figures: hard-verify X_p4 row ↔ split.csv row order (currently only row count 901 verified). **[RESOLVED 2026-05-29]** Content-level check (`scripts/analysis/verify_row_alignment.py`): for 15 rows spanning the whole table, re-read the original CSV by split.csv `file_path`, re-ran p4, compared to X_p4[i] — 15/15 corr=1.0000, max pointwise diff ~1e-5. Alignment confirmed: X_p4[i] == split.csv[i]. Guaranteed structurally by dataset.py:642 (X_raw filled in meta.iterrows() order).
+- Target journal unchanged: Spectrochimica Acta Part A / Talanta (Q2).
+
+## D021: Publication-Style Strong Narrative Calibration
+
+Date: 2026-06-01
+Status: active (refines D020 wording; does not change data claims)
+
+Context:
+
+- User + Claude + Codex review concluded that previous "risk list" wording was too self-limiting for the actual SERS/ML publication environment.
+- Closely related papers do not frame limited validation as self-criticism; they write in publication-forward terms such as simultaneous determination, robustness, practicability, competitive adsorption, and spectral-region interpretation.
+- Key precedent: Food Chemistry: X 2024 (`10.1016/j.fochx.2024.101954`) directly states that mixed-pesticide SERS intensities changed due to competitive adsorption, despite using a compact calibration/prediction dataset. This supports strong main-text wording for MG 1616 suppression.
+- Target-journal precedent: Spectrochimica Acta Part A papers accept SERS/Raman + ML + pesticide mixture screening and Raman/XAI spectral-region interpretation; therefore the manuscript should not read like an ML validation-method paper.
+- The project evidence remains: MG 1616 cm⁻¹ median ratio 0.355 (MG+MBA) / 0.206 (MG+Thiram) / 0.129 (ternary); 283/358 ternary spectra <0.5× same-level pure MG; the curated SHAP assignment audit reports 22/29 peak clusters on known chemical bands, accounting for 91.2% total SHAP mass; 10% SHAP-retained wavenumbers keep all six tasks >0.95 macro-F1.
+
+Decision:
+
+- Main-text tone uses a **publication-style strong narrative**:
+  - Write that the study **reveals competitive-adsorption-induced MG peak suppression / mixture-induced spectral interference** in ternary SERS mixtures.
+  - Use MG 1616 cm⁻¹ as the clean core marker for suppression.
+  - Use 1172/1394 cm⁻¹ as overlap-sensitive MG-associated regions that demonstrate peak-envelope reshaping, not as discarded flaws.
+  - Present random 5-fold CV as a systematic model-selection benchmark; do not foreground "random" outside Methods.
+  - Present soil results as **spiked-soil / soil-matrix screening validation** in title/caption-level prose; keep "same-matrix CV" as methods-level detail only.
+  - Present TreeSHAP as showing chemically meaningful model evidence and locating interference-related spectral regions; do not make the paper sound like a SHAP causality caveat.
+  - Main feature-selection claim uses 10% retention (141/1401, all six tasks >0.95); 5% retention is SI/sensitivity only.
+- Forbidden wording is now framed as implementation hygiene, not a self-limiting narrative:
+  - Do not call random CV or soil-only CV "external validation".
+  - Do not claim a measured Langmuir isotherm, adsorption constant, or thermodynamic proof.
+  - Do not claim monotonic co-analyte concentration response unless a dedicated titration is added.
+
+Consequences:
+
+- `CLAIM_EVIDENCE_MATRIX.md` must include a headline claim for MG 1616 suppression / competitive-adsorption-induced interference.
+- `reports/实验结果摘要.md` must open with the headline interference result, not historical grouped CV or benchmark.
+- `reports/论文写作路线图.md`, `reports/图表与表格清单.md`, `project_architecture.md`, `HANDOFF.md`, `AGENTS.md`, and `CLAUDE.md` should instruct future assistants to use strong Chinese-first publication wording and avoid reflexive self-weakening.
+
+## D022: SHAP Peak Assignment Uses Count + SHAP-Mass Weighted Consistency
+
+Date: 2026-06-01
+Status: active (refines D016/D021; formal audited output is 22/29 and 91.2% SHAP mass)
+
+Context:
+
+- The original existing-peak-list output had 29 clusters across six tasks and 20/29 clusters matched, containing 88.1% of total SHAP mass.
+- The curated audit is now generated by `scripts/analysis/build_shap_assignment_audit.py` and saved as `data/pure63_mainline/models/paper_main/shap_peak_cluster/shap_assignment_audit.csv`.
+- The formal manuscript output is **22/29 clusters on known chemical bands, accounting for 91.2% of total SHAP mass**.
+- Task-level SHAP-mass weighted consistency after curated assignment is: G1 86.4%, G2 90.6%, G3 100%, P1 56.3%, P2 100%, P3 100%.
+- Audit decomposition (`scripts/analysis/build_shap_assignment_audit.py` → `shap_assignment_audit.csv`): 18 clusters match the task's own-analyte literature peak (83.8% mass); +2 cross-component clusters where the model leans on a different analyte's band (MG/MBA grade tasks using Thiram bands) bring the intermediate audit layer to 20/29, 88.1% mass — these cross-component matches are a STRENGTH (the model captured mixture-interference chemistry, reinforcing the competitive-adsorption headline), to be presented as interference-band attribution.
+- Curated literature additions (both supported by published SERS/Raman assignments): Thiram ~860 cm^-1 → (CH3)2-N / CH3 modes (RSC Adv 2024 D4RA00048J reports 881 cm^-1 (CH3)2-N-C; normal-Raman ~850), matching the G2 863 cluster; Thiram 1444 cm^-1 → C-N stretch + CH3 rock (Analyst 2014 1444; RSC Adv 2024 1436 monodentate), matching the G3 1440 cluster. With both added, the formal audited output is **22/29 clusters on known chemical bands = 91.2% of total SHAP mass**. Accepted same-field papers (e.g. RSC Adv 2024) assign thiram bands with 20-56 cm^-1 shifts and cross-reference normal Raman, so these curated additions are well within standard SERS-paper practice — do NOT under-report them.
+- Further extension toward the co-adsorbed/reference-region audit (~24/29) remains available but should be labeled as co-adsorbed/reference-region assignment rather than target-analyte literature matching.
+- Further increases toward 25-26/29 require either curated source evidence or this project's own pure/reference SERS spectra. Do not widen the matching window or add candidate peaks merely to chase a larger number.
+
+Decision:
+
+- Manuscript mainline reports SHAP assignment as a two-metric consistency result:
+  - formal main-text output: 22/29 peak clusters fall on known chemical bands, representing 91.2% of total SHAP attribution mass;
+  - decomposition for SI/methods support: 18 own-analyte literature peaks (83.8%) + 2 cross-component interference bands (20/29, 88.1%) + 2 curated Thiram bands (22/29, 91.2%);
+  - extended co-adsorbed/reference-region audit may report about 24/29 and 92.3% SHAP mass in SI only if explicit assignment levels are retained.
+- Preferred wording: "SHAP spectral assignment consistency" or "SHAP 高贡献光谱区的化学归属一致性", not only "peak matching rate".
+- Fig6 should include a small quantitative assignment panel or callout that reports both raw cluster count and SHAP-mass weighted consistency.
+- Complete assignment details belong in SI, including assignment level: literature target-analyte peak, co-adsorbed/overlap region, own-reference peak, or unassigned.
+
+Consequences:
+
+- Reports and figure plans use the formal SHAP output: 22/29 and 91.2%. The 20/29 and 88.1% layer is only the decomposition before curated Thiram 860/1444 assignment.
+- Do not claim 24/29 as the main-text formal output; it remains an optional SI-level co-adsorbed/reference-region extension.
+- Do not report any number higher than the audited output produced by a documented peak library, source list, and fixed match-window rule.

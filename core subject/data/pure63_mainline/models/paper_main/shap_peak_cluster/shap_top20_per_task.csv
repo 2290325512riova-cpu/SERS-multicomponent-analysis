@@ -1,101 +1,121 @@
 ﻿task,task_name,rank,feature_index,wavenumber,mean_abs_shap,matched_literature_peak
-G2_mg_molar_grade,MG Positive Molar Grade,1,460,860.0,0.0032243883291439,
-G2_mg_molar_grade,MG Positive Molar Grade,2,808,1208.0,0.0029892543320227,MG_1220(-12.0)
-G2_mg_molar_grade,MG Positive Molar Grade,3,814,1214.0,0.0028658552635438,MG_1220(-6.0)
-G2_mg_molar_grade,MG Positive Molar Grade,4,466,866.0,0.0026237298272291,
-G2_mg_molar_grade,MG Positive Molar Grade,5,761,1161.0,0.0026108931128772,MG_1172(-11.0)
-G2_mg_molar_grade,MG Positive Molar Grade,6,809,1209.0,0.002530461250271,MG_1220(-11.0)
-G2_mg_molar_grade,MG Positive Molar Grade,7,759,1159.0,0.0024241765951433,Thiram_1145(+14.0); MG_1172(-13.0)
-G2_mg_molar_grade,MG Positive Molar Grade,8,1023,1423.0,0.0022686304949126,
-G2_mg_molar_grade,MG Positive Molar Grade,9,760,1160.0,0.0022535264847807,Thiram_1145(+15.0); MG_1172(-12.0)
-G2_mg_molar_grade,MG Positive Molar Grade,10,811,1211.0,0.0022387867067898,MG_1220(-9.0)
-G2_mg_molar_grade,MG Positive Molar Grade,11,807,1207.0,0.0022203533495857,MG_1220(-13.0)
-G2_mg_molar_grade,MG Positive Molar Grade,12,1207,1607.0,0.00218275961253,MG_1616(-9.0)
-G2_mg_molar_grade,MG Positive Molar Grade,13,635,1035.0,0.002088940237184,
-G2_mg_molar_grade,MG Positive Molar Grade,14,465,865.0,0.0020394267132014,
-G2_mg_molar_grade,MG Positive Molar Grade,15,816,1216.0,0.0020040869528555,MG_1220(-4.0)
-G2_mg_molar_grade,MG Positive Molar Grade,16,813,1213.0,0.0019801193487777,MG_1220(-7.0)
-G2_mg_molar_grade,MG Positive Molar Grade,17,784,1184.0,0.0019733361469018,MG_1172(+12.0)
-G2_mg_molar_grade,MG Positive Molar Grade,18,786,1186.0,0.0019678179736639,MG_1172(+14.0)
-G2_mg_molar_grade,MG Positive Molar Grade,19,780,1180.0,0.0019295785107022,MG_1172(+8.0)
-G2_mg_molar_grade,MG Positive Molar Grade,20,787,1187.0,0.0018637482311164,MG_1172(+15.0)
-G3_mba_molar_grade,MBA Positive Molar Grade,1,1171,1571.0,0.0055947201511412,
-G3_mba_molar_grade,MBA Positive Molar Grade,2,1177,1577.0,0.0044744120972985,MBA_1590(-13.0)
-G3_mba_molar_grade,MBA Positive Molar Grade,3,665,1065.0,0.0042949859816125,MBA_1078(-13.0)
-G3_mba_molar_grade,MBA Positive Molar Grade,4,990,1390.0,0.0042807688777179,Thiram_1380(+10.0); MG_1394(-4.0)
-G3_mba_molar_grade,MBA Positive Molar Grade,5,664,1064.0,0.0038795802873691,MBA_1078(-14.0)
-G3_mba_molar_grade,MBA Positive Molar Grade,6,663,1063.0,0.0036847034390851,MBA_1078(-15.0)
-G3_mba_molar_grade,MBA Positive Molar Grade,7,987,1387.0,0.0034393166055652,Thiram_1380(+7.0); MG_1394(-7.0)
-G3_mba_molar_grade,MBA Positive Molar Grade,8,1042,1442.0,0.0033381315223805,
-G3_mba_molar_grade,MBA Positive Molar Grade,9,1180,1580.0,0.0033055150908192,MBA_1590(-10.0)
-G3_mba_molar_grade,MBA Positive Molar Grade,10,1175,1575.0,0.0032567310193083,MBA_1590(-15.0)
-G3_mba_molar_grade,MBA Positive Molar Grade,11,1173,1573.0,0.0032007141889311,
-G3_mba_molar_grade,MBA Positive Molar Grade,12,1174,1574.0,0.0031918235239147,
-G3_mba_molar_grade,MBA Positive Molar Grade,13,986,1386.0,0.0031709081244663,Thiram_1380(+6.0); MG_1394(-8.0)
-G3_mba_molar_grade,MBA Positive Molar Grade,14,983,1383.0,0.003119933647411,Thiram_1380(+3.0); MG_1394(-11.0)
-G3_mba_molar_grade,MBA Positive Molar Grade,15,1170,1570.0,0.0030451683689315,
-G3_mba_molar_grade,MBA Positive Molar Grade,16,1176,1576.0,0.0030221131676254,MBA_1590(-14.0)
-G3_mba_molar_grade,MBA Positive Molar Grade,17,1172,1572.0,0.0028262581845497,
-G3_mba_molar_grade,MBA Positive Molar Grade,18,655,1055.0,0.0028217665692084,
-G3_mba_molar_grade,MBA Positive Molar Grade,19,1037,1437.0,0.0027645713140065,
-G3_mba_molar_grade,MBA Positive Molar Grade,20,1181,1581.0,0.0026375020839414,MBA_1590(-9.0)
-P1_thiram_presence,Thiram Presence,1,520,920.0,0.0047002977300326,Thiram_930(-10.0)
-P1_thiram_presence,Thiram Presence,2,372,772.0,0.0046726903195006,
-P1_thiram_presence,Thiram Presence,3,365,765.0,0.0040559917849909,
-P1_thiram_presence,Thiram Presence,4,1148,1548.0,0.0036074389478967,
-P1_thiram_presence,Thiram Presence,5,363,763.0,0.0032970371323022,
-P1_thiram_presence,Thiram Presence,6,519,919.0,0.003204997074971,Thiram_930(-11.0)
-P1_thiram_presence,Thiram Presence,7,364,764.0,0.0031210956790439,
-P1_thiram_presence,Thiram Presence,8,371,771.0,0.0030102295331909,
-P1_thiram_presence,Thiram Presence,9,523,923.0,0.0029275932008685,Thiram_930(-7.0)
-P1_thiram_presence,Thiram Presence,10,373,773.0,0.0028950390776203,
-P1_thiram_presence,Thiram Presence,11,1187,1587.0,0.0028581152759317,MBA_1590(-3.0)
-P1_thiram_presence,Thiram Presence,12,521,921.0,0.0028301175447872,Thiram_930(-9.0)
-P1_thiram_presence,Thiram Presence,13,975,1375.0,0.0028005393677081,Thiram_1380(-5.0)
-P1_thiram_presence,Thiram Presence,14,526,926.0,0.0027871139884045,Thiram_930(-4.0)
-P1_thiram_presence,Thiram Presence,15,518,918.0,0.0027207565059157,Thiram_930(-12.0)
-P1_thiram_presence,Thiram Presence,16,1110,1510.0,0.0026789247694794,Thiram_1510(+0.0)
-P1_thiram_presence,Thiram Presence,17,1188,1588.0,0.0025947344069229,MBA_1590(-2.0)
-P1_thiram_presence,Thiram Presence,18,525,925.0,0.0025180489512416,Thiram_930(-5.0)
-P1_thiram_presence,Thiram Presence,19,289,689.0,0.0024859525774491,
-P1_thiram_presence,Thiram Presence,20,524,924.0,0.0023176897074721,Thiram_930(-6.0)
-P2_mg_presence,MG Presence,1,1208,1608.0,0.0057595097480764,MG_1616(-8.0)
-P2_mg_presence,MG Presence,2,768,1168.0,0.0057304034377218,MG_1172(-4.0)
-P2_mg_presence,MG Presence,3,1209,1609.0,0.005095157783385,MG_1616(-7.0)
-P2_mg_presence,MG Presence,4,769,1169.0,0.0049209726992252,MG_1172(-3.0)
-P2_mg_presence,MG Presence,5,1210,1610.0,0.0048043010285691,MG_1616(-6.0)
-P2_mg_presence,MG Presence,6,816,1216.0,0.0047375398947246,MG_1220(-4.0)
+G1_thiram_molar_grade,Thiram Positive Molar Grade,1,741,1141.0,0.004623837417107768,Thiram_1145(-4.0)
+G1_thiram_molar_grade,Thiram Positive Molar Grade,2,742,1142.0,0.004264695102947669,Thiram_1145(-3.0)
+G1_thiram_molar_grade,Thiram Positive Molar Grade,3,736,1136.0,0.004123622849848446,Thiram_1145(-9.0)
+G1_thiram_molar_grade,Thiram Positive Molar Grade,4,735,1135.0,0.0038472080270999733,Thiram_1145(-10.0)
+G1_thiram_molar_grade,Thiram Positive Molar Grade,5,1108,1508.0,0.0034456906325778373,Thiram_1510(-2.0)
+G1_thiram_molar_grade,Thiram Positive Molar Grade,6,740,1140.0,0.0033006235602940004,Thiram_1145(-5.0)
+G1_thiram_molar_grade,Thiram Positive Molar Grade,7,977,1377.0,0.0032372866554706446,Thiram_1380(-3.0)
+G1_thiram_molar_grade,Thiram Positive Molar Grade,8,1099,1499.0,0.0032358312478663197,Thiram_1510(-11.0); MBA_1490(+9.0)
+G1_thiram_molar_grade,Thiram Positive Molar Grade,9,1102,1502.0,0.003205144833641133,Thiram_1510(-8.0); MBA_1490(+12.0)
+G1_thiram_molar_grade,Thiram Positive Molar Grade,10,1107,1507.0,0.003004542776850076,Thiram_1510(-3.0)
+G1_thiram_molar_grade,Thiram Positive Molar Grade,11,1103,1503.0,0.003002535090455122,Thiram_1510(-7.0); MBA_1490(+13.0)
+G1_thiram_molar_grade,Thiram Positive Molar Grade,12,1095,1495.0,0.0029782090331856408,Thiram_1510(-15.0); MBA_1490(+5.0)
+G1_thiram_molar_grade,Thiram Positive Molar Grade,13,66,466.0,0.002951276207609528,
+G1_thiram_molar_grade,Thiram Positive Molar Grade,14,64,464.0,0.0029297207244071395,
+G1_thiram_molar_grade,Thiram Positive Molar Grade,15,738,1138.0,0.0029154565756251798,Thiram_1145(-7.0)
+G1_thiram_molar_grade,Thiram Positive Molar Grade,16,318,718.0,0.0028963325250143195,
+G1_thiram_molar_grade,Thiram Positive Molar Grade,17,1100,1500.0,0.002803156298635938,Thiram_1510(-10.0); MBA_1490(+10.0)
+G1_thiram_molar_grade,Thiram Positive Molar Grade,18,745,1145.0,0.0026608149089115784,Thiram_1145(+0.0)
+G1_thiram_molar_grade,Thiram Positive Molar Grade,19,1098,1498.0,0.002543227555212433,Thiram_1510(-12.0); MBA_1490(+8.0)
+G1_thiram_molar_grade,Thiram Positive Molar Grade,20,734,1134.0,0.00248227901184141,Thiram_1145(-11.0)
+G2_mg_molar_grade,MG Positive Molar Grade,1,460,860.0,0.0032243883291439806,
+G2_mg_molar_grade,MG Positive Molar Grade,2,808,1208.0,0.002989254332022741,MG_1220(-12.0)
+G2_mg_molar_grade,MG Positive Molar Grade,3,814,1214.0,0.002865855263543881,MG_1220(-6.0)
+G2_mg_molar_grade,MG Positive Molar Grade,4,466,866.0,0.002623729827229157,
+G2_mg_molar_grade,MG Positive Molar Grade,5,761,1161.0,0.00261089311287725,MG_1172(-11.0)
+G2_mg_molar_grade,MG Positive Molar Grade,6,809,1209.0,0.002530461250271024,MG_1220(-11.0)
+G2_mg_molar_grade,MG Positive Molar Grade,7,759,1159.0,0.002424176595143354,Thiram_1145(+14.0); MG_1172(-13.0)
+G2_mg_molar_grade,MG Positive Molar Grade,8,1023,1423.0,0.0022686304949126553,
+G2_mg_molar_grade,MG Positive Molar Grade,9,760,1160.0,0.0022535264847807347,Thiram_1145(+15.0); MG_1172(-12.0)
+G2_mg_molar_grade,MG Positive Molar Grade,10,811,1211.0,0.0022387867067898363,MG_1220(-9.0)
+G2_mg_molar_grade,MG Positive Molar Grade,11,807,1207.0,0.00222035334958573,MG_1220(-13.0)
+G2_mg_molar_grade,MG Positive Molar Grade,12,1207,1607.0,0.00218275961253007,MG_1616(-9.0)
+G2_mg_molar_grade,MG Positive Molar Grade,13,635,1035.0,0.002088940237184076,
+G2_mg_molar_grade,MG Positive Molar Grade,14,465,865.0,0.0020394267132014337,
+G2_mg_molar_grade,MG Positive Molar Grade,15,816,1216.0,0.002004086952855538,MG_1220(-4.0)
+G2_mg_molar_grade,MG Positive Molar Grade,16,813,1213.0,0.001980119348777752,MG_1220(-7.0)
+G2_mg_molar_grade,MG Positive Molar Grade,17,784,1184.0,0.0019733361469018947,MG_1172(+12.0)
+G2_mg_molar_grade,MG Positive Molar Grade,18,786,1186.0,0.0019678179736639994,MG_1172(+14.0)
+G2_mg_molar_grade,MG Positive Molar Grade,19,780,1180.0,0.001929578510702289,MG_1172(+8.0)
+G2_mg_molar_grade,MG Positive Molar Grade,20,787,1187.0,0.0018637482311164362,MG_1172(+15.0)
+G3_mba_molar_grade,MBA Positive Molar Grade,1,1171,1571.0,0.00559472015114127,
+G3_mba_molar_grade,MBA Positive Molar Grade,2,1177,1577.0,0.004474412097298558,MBA_1590(-13.0)
+G3_mba_molar_grade,MBA Positive Molar Grade,3,665,1065.0,0.00429498598161256,MBA_1078(-13.0)
+G3_mba_molar_grade,MBA Positive Molar Grade,4,990,1390.0,0.004280768877717922,Thiram_1380(+10.0); MG_1394(-4.0)
+G3_mba_molar_grade,MBA Positive Molar Grade,5,664,1064.0,0.0038795802873691533,MBA_1078(-14.0)
+G3_mba_molar_grade,MBA Positive Molar Grade,6,663,1063.0,0.003684703439085189,MBA_1078(-15.0)
+G3_mba_molar_grade,MBA Positive Molar Grade,7,987,1387.0,0.0034393166055652047,Thiram_1380(+7.0); MG_1394(-7.0)
+G3_mba_molar_grade,MBA Positive Molar Grade,8,1042,1442.0,0.0033381315223805887,
+G3_mba_molar_grade,MBA Positive Molar Grade,9,1180,1580.0,0.0033055150908192898,MBA_1590(-10.0)
+G3_mba_molar_grade,MBA Positive Molar Grade,10,1175,1575.0,0.00325673101930834,MBA_1590(-15.0)
+G3_mba_molar_grade,MBA Positive Molar Grade,11,1173,1573.0,0.0032007141889311384,
+G3_mba_molar_grade,MBA Positive Molar Grade,12,1174,1574.0,0.0031918235239147665,
+G3_mba_molar_grade,MBA Positive Molar Grade,13,986,1386.0,0.003170908124466398,Thiram_1380(+6.0); MG_1394(-8.0)
+G3_mba_molar_grade,MBA Positive Molar Grade,14,983,1383.0,0.0031199336474110823,Thiram_1380(+3.0); MG_1394(-11.0)
+G3_mba_molar_grade,MBA Positive Molar Grade,15,1170,1570.0,0.0030451683689315537,
+G3_mba_molar_grade,MBA Positive Molar Grade,16,1176,1576.0,0.0030221131676254494,MBA_1590(-14.0)
+G3_mba_molar_grade,MBA Positive Molar Grade,17,1172,1572.0,0.002826258184549763,
+G3_mba_molar_grade,MBA Positive Molar Grade,18,655,1055.0,0.002821766569208454,
+G3_mba_molar_grade,MBA Positive Molar Grade,19,1037,1437.0,0.0027645713140065156,
+G3_mba_molar_grade,MBA Positive Molar Grade,20,1181,1581.0,0.002637502083941451,MBA_1590(-9.0)
+P1_thiram_presence,Thiram Presence,1,520,920.0,0.004700297730032687,Thiram_930(-10.0)
+P1_thiram_presence,Thiram Presence,2,372,772.0,0.0046726903195006934,
+P1_thiram_presence,Thiram Presence,3,365,765.0,0.004055991784990909,
+P1_thiram_presence,Thiram Presence,4,1148,1548.0,0.0036074389478967274,
+P1_thiram_presence,Thiram Presence,5,363,763.0,0.003297037132302282,
+P1_thiram_presence,Thiram Presence,6,519,919.0,0.0032049970749710123,Thiram_930(-11.0)
+P1_thiram_presence,Thiram Presence,7,364,764.0,0.0031210956790439642,
+P1_thiram_presence,Thiram Presence,8,371,771.0,0.0030102295331909676,
+P1_thiram_presence,Thiram Presence,9,523,923.0,0.0029275932008685107,Thiram_930(-7.0)
+P1_thiram_presence,Thiram Presence,10,373,773.0,0.0028950390776203597,
+P1_thiram_presence,Thiram Presence,11,1187,1587.0,0.002858115275931746,MBA_1590(-3.0)
+P1_thiram_presence,Thiram Presence,12,521,921.0,0.002830117544787251,Thiram_930(-9.0)
+P1_thiram_presence,Thiram Presence,13,975,1375.0,0.0028005393677081104,Thiram_1380(-5.0)
+P1_thiram_presence,Thiram Presence,14,526,926.0,0.0027871139884045174,Thiram_930(-4.0)
+P1_thiram_presence,Thiram Presence,15,518,918.0,0.0027207565059157494,Thiram_930(-12.0)
+P1_thiram_presence,Thiram Presence,16,1110,1510.0,0.002678924769479402,Thiram_1510(+0.0)
+P1_thiram_presence,Thiram Presence,17,1188,1588.0,0.0025947344069229337,MBA_1590(-2.0)
+P1_thiram_presence,Thiram Presence,18,525,925.0,0.0025180489512416577,Thiram_930(-5.0)
+P1_thiram_presence,Thiram Presence,19,289,689.0,0.0024859525774491038,
+P1_thiram_presence,Thiram Presence,20,524,924.0,0.002317689707472176,Thiram_930(-6.0)
+P2_mg_presence,MG Presence,1,1208,1608.0,0.005759509748076405,MG_1616(-8.0)
+P2_mg_presence,MG Presence,2,768,1168.0,0.005730403437721854,MG_1172(-4.0)
+P2_mg_presence,MG Presence,3,1209,1609.0,0.005095157783385024,MG_1616(-7.0)
+P2_mg_presence,MG Presence,4,769,1169.0,0.004920972699225215,MG_1172(-3.0)
+P2_mg_presence,MG Presence,5,1210,1610.0,0.004804301028569199,MG_1616(-6.0)
+P2_mg_presence,MG Presence,6,816,1216.0,0.004737539894724616,MG_1220(-4.0)
 P2_mg_presence,MG Presence,7,1207,1607.0,0.0047367861423936,MG_1616(-9.0)
-P2_mg_presence,MG Presence,8,1206,1606.0,0.004704566852788,MG_1616(-10.0)
-P2_mg_presence,MG Presence,9,1211,1611.0,0.0046965015977785,MG_1616(-5.0)
-P2_mg_presence,MG Presence,10,814,1214.0,0.004356030375241,MG_1220(-6.0)
-P2_mg_presence,MG Presence,11,1213,1613.0,0.004318940229694,MG_1616(-3.0)
-P2_mg_presence,MG Presence,12,813,1213.0,0.0042480458423111,MG_1220(-7.0)
-P2_mg_presence,MG Presence,13,771,1171.0,0.0042412822686473,MG_1172(-1.0)
-P2_mg_presence,MG Presence,14,772,1172.0,0.0040146997704091,MG_1172(+0.0)
-P2_mg_presence,MG Presence,15,1214,1614.0,0.004006685627086,MG_1616(-2.0)
-P2_mg_presence,MG Presence,16,773,1173.0,0.0039683133312553,MG_1172(+1.0)
-P2_mg_presence,MG Presence,17,765,1165.0,0.0035867243856998,MG_1172(-7.0)
-P2_mg_presence,MG Presence,18,1212,1612.0,0.0032469395889714,MG_1616(-4.0)
-P2_mg_presence,MG Presence,19,810,1210.0,0.0031178983086079,MG_1220(-10.0)
-P2_mg_presence,MG Presence,20,994,1394.0,0.0031153188389786,Thiram_1380(+14.0); MG_1394(+0.0)
-P3_mba_presence,MBA Presence,1,672,1072.0,0.0087413580140631,MBA_1078(-6.0)
-P3_mba_presence,MBA Presence,2,1176,1576.0,0.0080482137393489,MBA_1590(-14.0)
-P3_mba_presence,MBA Presence,3,1179,1579.0,0.0080308023623594,MBA_1590(-11.0)
-P3_mba_presence,MBA Presence,4,1174,1574.0,0.0078285295982321,
-P3_mba_presence,MBA Presence,5,1172,1572.0,0.0069740608069591,
-P3_mba_presence,MBA Presence,6,1177,1577.0,0.0068873549999014,MBA_1590(-13.0)
-P3_mba_presence,MBA Presence,7,1178,1578.0,0.0063863004668238,MBA_1590(-12.0)
-P3_mba_presence,MBA Presence,8,661,1061.0,0.0060902410893533,
-P3_mba_presence,MBA Presence,9,1180,1580.0,0.006037144558822,MBA_1590(-10.0)
-P3_mba_presence,MBA Presence,10,1173,1573.0,0.0059305394218454,
-P3_mba_presence,MBA Presence,11,1167,1567.0,0.00587202194918,
-P3_mba_presence,MBA Presence,12,1169,1569.0,0.0056687390314836,
-P3_mba_presence,MBA Presence,13,668,1068.0,0.0056227498834354,MBA_1078(-10.0)
-P3_mba_presence,MBA Presence,14,1171,1571.0,0.005610371449263,
-P3_mba_presence,MBA Presence,15,670,1070.0,0.005553387120641,MBA_1078(-8.0)
-P3_mba_presence,MBA Presence,16,1181,1581.0,0.005540820687807,MBA_1590(-9.0)
-P3_mba_presence,MBA Presence,17,664,1064.0,0.0055161315831544,MBA_1078(-14.0)
-P3_mba_presence,MBA Presence,18,1182,1582.0,0.0053822094782946,MBA_1590(-8.0)
-P3_mba_presence,MBA Presence,19,674,1074.0,0.0052994951014282,MBA_1078(-4.0)
-P3_mba_presence,MBA Presence,20,669,1069.0,0.0052613360534643,MBA_1078(-9.0)
+P2_mg_presence,MG Presence,8,1206,1606.0,0.00470456685278807,MG_1616(-10.0)
+P2_mg_presence,MG Presence,9,1211,1611.0,0.004696501597778546,MG_1616(-5.0)
+P2_mg_presence,MG Presence,10,814,1214.0,0.004356030375241003,MG_1220(-6.0)
+P2_mg_presence,MG Presence,11,1213,1613.0,0.004318940229694051,MG_1616(-3.0)
+P2_mg_presence,MG Presence,12,813,1213.0,0.004248045842311199,MG_1220(-7.0)
+P2_mg_presence,MG Presence,13,771,1171.0,0.004241282268647377,MG_1172(-1.0)
+P2_mg_presence,MG Presence,14,772,1172.0,0.004014699770409152,MG_1172(+0.0)
+P2_mg_presence,MG Presence,15,1214,1614.0,0.004006685627086043,MG_1616(-2.0)
+P2_mg_presence,MG Presence,16,773,1173.0,0.00396831333125539,MG_1172(+1.0)
+P2_mg_presence,MG Presence,17,765,1165.0,0.003586724385699873,MG_1172(-7.0)
+P2_mg_presence,MG Presence,18,1212,1612.0,0.003246939588971444,MG_1616(-4.0)
+P2_mg_presence,MG Presence,19,810,1210.0,0.0031178983086079686,MG_1220(-10.0)
+P2_mg_presence,MG Presence,20,994,1394.0,0.0031153188389786814,Thiram_1380(+14.0); MG_1394(+0.0)
+P3_mba_presence,MBA Presence,1,672,1072.0,0.008741358014063174,MBA_1078(-6.0)
+P3_mba_presence,MBA Presence,2,1176,1576.0,0.008048213739348997,MBA_1590(-14.0)
+P3_mba_presence,MBA Presence,3,1179,1579.0,0.008030802362359406,MBA_1590(-11.0)
+P3_mba_presence,MBA Presence,4,1174,1574.0,0.007828529598232142,
+P3_mba_presence,MBA Presence,5,1172,1572.0,0.006974060806959177,
+P3_mba_presence,MBA Presence,6,1177,1577.0,0.006887354999901413,MBA_1590(-13.0)
+P3_mba_presence,MBA Presence,7,1178,1578.0,0.006386300466823821,MBA_1590(-12.0)
+P3_mba_presence,MBA Presence,8,661,1061.0,0.006090241089353362,
+P3_mba_presence,MBA Presence,9,1180,1580.0,0.0060371445588220185,MBA_1590(-10.0)
+P3_mba_presence,MBA Presence,10,1173,1573.0,0.005930539421845414,
+P3_mba_presence,MBA Presence,11,1167,1567.0,0.005872021949180003,
+P3_mba_presence,MBA Presence,12,1169,1569.0,0.0056687390314836055,
+P3_mba_presence,MBA Presence,13,668,1068.0,0.005622749883435403,MBA_1078(-10.0)
+P3_mba_presence,MBA Presence,14,1171,1571.0,0.005610371449263046,
+P3_mba_presence,MBA Presence,15,670,1070.0,0.0055533871206410925,MBA_1078(-8.0)
+P3_mba_presence,MBA Presence,16,1181,1581.0,0.0055408206878070874,MBA_1590(-9.0)
+P3_mba_presence,MBA Presence,17,664,1064.0,0.005516131583154445,MBA_1078(-14.0)
+P3_mba_presence,MBA Presence,18,1182,1582.0,0.005382209478294684,MBA_1590(-8.0)
+P3_mba_presence,MBA Presence,19,674,1074.0,0.005299495101428201,MBA_1078(-4.0)
+P3_mba_presence,MBA Presence,20,669,1069.0,0.005261336053464367,MBA_1078(-9.0)

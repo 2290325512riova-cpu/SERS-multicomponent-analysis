@@ -1,0 +1,151 @@
+﻿fold_id,n_train,n_test,macro_f1,run_id,task,task_name,retention_pct,n_features
+0,720,181,0.8560362416571567,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,1,15
+1,721,180,0.8844672657252888,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,1,15
+2,721,180,0.8579808582895956,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,1,15
+3,721,180,0.8656898656898657,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,1,15
+4,721,180,0.8774676650782846,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,1,15
+0,720,181,0.8742706307307586,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,2,29
+1,721,180,0.8913930789707187,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,2,29
+2,721,180,0.885528547201809,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,2,29
+3,721,180,0.8656898656898657,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,2,29
+4,721,180,0.8797087685976575,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,2,29
+0,720,181,0.9155450270988119,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,3,43
+1,721,180,0.9214545454545454,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,3,43
+2,721,180,0.885528547201809,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,3,43
+3,721,180,0.8769819573537452,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,3,43
+4,721,180,0.8973042362002568,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,3,43
+0,720,181,0.9466391509433962,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,5,71
+1,721,180,0.9861538461538462,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,5,71
+2,721,180,0.933862433862434,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,5,71
+3,721,180,0.9358151476251604,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,5,71
+4,721,180,0.9529411764705882,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,5,71
+0,720,181,0.9861832061068703,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,10,141
+1,721,180,1.0,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,10,141
+2,721,180,0.9930337861372345,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,10,141
+3,721,180,0.9800524546562742,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,10,141
+4,721,180,0.972640218878249,shap_feature_selection_extratrees_p1_20260529_182607,P1_thiram_presence,Thiram Presence,10,141
+0,720,181,0.8211462450592886,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,1,15
+1,721,180,0.7899929997666588,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,1,15
+2,721,180,0.8055710124054859,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,1,15
+3,721,180,0.784688995215311,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,1,15
+4,721,180,0.7860256240919297,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,1,15
+0,720,181,0.8265424143286739,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,2,29
+1,721,180,0.8019933997799926,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,2,29
+2,721,180,0.8044444444444445,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,2,29
+3,721,180,0.784688995215311,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,2,29
+4,721,180,0.7741381587637035,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,2,29
+0,720,181,0.8539144471347861,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,3,43
+1,721,180,0.8345531914893617,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,3,43
+2,721,180,0.8205741626794258,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,3,43
+3,721,180,0.8235950119968909,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,3,43
+4,721,180,0.8248263364542434,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,3,43
+0,720,181,0.9111998878609475,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,5,71
+1,721,180,0.8865387309146939,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,5,71
+2,721,180,0.8826798394566224,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,5,71
+3,721,180,0.9144705581344348,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,5,71
+4,721,180,0.8579808582895956,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,5,71
+0,720,181,0.9668315924500641,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,10,141
+1,721,180,0.9729567307692308,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,10,141
+2,721,180,0.9735449735449735,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,10,141
+3,721,180,0.9796003173283971,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,10,141
+4,721,180,0.9534557275313066,shap_feature_selection_extratrees_p1_20260529_182607,P2_mg_presence,MG Presence,10,141
+0,720,181,0.897987117552335,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,1,15
+1,721,180,0.9259259259259258,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,1,15
+2,721,180,0.8992161254199328,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,1,15
+3,721,180,0.915874746845303,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,1,15
+4,721,180,0.9105470392599105,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,1,15
+0,720,181,0.9180557270444911,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,2,29
+1,721,180,0.9469496021220158,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,2,29
+2,721,180,0.9338208260141345,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,2,29
+3,721,180,0.9424092145256759,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,2,29
+4,721,180,0.9499503475670308,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,2,29
+0,720,181,0.9408496732026144,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,3,43
+1,721,180,0.9388898319470378,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,3,43
+2,721,180,0.9555555555555555,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,3,43
+3,721,180,0.9424092145256759,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,3,43
+4,721,180,0.9431818181818181,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,3,43
+0,720,181,0.9694978092349175,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,5,71
+1,721,180,0.968944099378882,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,5,71
+2,721,180,0.9849598930481284,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,5,71
+3,721,180,0.9699197860962567,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,5,71
+4,721,180,0.9707981829980532,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,5,71
+0,720,181,0.9847489046174587,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,10,141
+1,721,180,0.968944099378882,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,10,141
+2,721,180,0.9924213717317165,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,10,141
+3,721,180,0.9772641151951498,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,10,141
+4,721,180,0.9851851851851852,shap_feature_selection_extratrees_p1_20260529_182607,P3_mba_presence,MBA Presence,10,141
+0,519,131,0.9608711881461285,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,1,15
+1,519,131,0.9147238695329875,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,1,15
+2,520,130,0.9449398000908679,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,1,15
+3,522,128,0.91096547314578,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,1,15
+4,520,130,0.9274979563604351,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,1,15
+0,519,131,0.9608711881461285,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,2,29
+1,519,131,0.9448457174484571,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,2,29
+2,520,130,0.9672970843183609,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,2,29
+3,522,128,0.9164780799251223,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,2,29
+4,520,130,0.9338314758527524,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,2,29
+0,519,131,0.9686651411136538,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,3,43
+1,519,131,0.9448457174484571,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,3,43
+2,520,130,0.9672970843183609,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,3,43
+3,522,128,0.9334458725409904,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,3,43
+4,520,130,0.9338314758527524,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,3,43
+0,519,131,0.9605447839143492,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,5,71
+1,519,131,0.9603644460787318,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,5,71
+2,520,130,0.9755486816909706,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,5,71
+3,522,128,0.9417621509407342,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,5,71
+4,520,130,0.9338314758527524,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,5,71
+0,519,131,0.9840463257065402,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,10,141
+1,519,131,0.9772956424499074,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,10,141
+2,520,130,1.0,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,10,141
+3,522,128,0.9592568911622621,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,10,141
+4,520,130,0.9759920915124982,shap_feature_selection_extratrees_p1_20260529_182607,G1_thiram_molar_grade,Thiram Positive Molar Grade,10,141
+0,518,130,0.8663476003901537,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,1,15
+1,518,130,0.7988478319103143,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,1,15
+2,520,128,0.7953071083505866,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,1,15
+3,518,130,0.8001005530417297,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,1,15
+4,518,130,0.8040666880832942,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,1,15
+0,518,130,0.8573672704107486,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,2,29
+1,518,130,0.8535940803382663,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,2,29
+2,520,128,0.8435574229691877,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,2,29
+3,518,130,0.8251942599323222,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,2,29
+4,518,130,0.8192889679656675,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,2,29
+0,518,130,0.898004247594658,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,3,43
+1,518,130,0.9004329004329005,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,3,43
+2,520,128,0.8747846683893196,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,3,43
+3,518,130,0.8665223665223665,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,3,43
+4,518,130,0.8996873664096582,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,3,43
+0,518,130,0.9533910245571967,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,5,71
+1,518,130,0.9232692031880673,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,5,71
+2,520,128,0.9456218519953508,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,5,71
+3,518,130,0.9146695208401198,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,5,71
+4,518,130,0.9142821751517404,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,5,71
+0,518,130,0.9612350687401398,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,10,141
+1,518,130,0.9538082933431772,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,10,141
+2,520,128,0.953280077463084,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,10,141
+3,518,130,0.9446755704468952,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,10,141
+4,518,130,0.9532608695652174,shap_feature_selection_extratrees_p1_20260529_182607,G2_mg_molar_grade,MG Positive Molar Grade,10,141
+0,544,137,0.9634260074135762,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,1,15
+1,544,137,0.9347333136153012,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,1,15
+2,544,137,0.9558785300720785,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,1,15
+3,546,135,0.9405715383243473,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,1,15
+4,546,135,0.9553798858146685,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,1,15
+0,544,137,0.9633522612862954,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,2,29
+1,544,137,0.9418552478080245,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,2,29
+2,544,137,0.9633699633699634,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,2,29
+3,546,135,0.9476764795594503,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,2,29
+4,546,135,0.955552811732587,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,2,29
+0,544,137,0.9633522612862954,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,3,43
+1,544,137,0.9563659331337194,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,3,43
+2,544,137,0.9633699633699634,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,3,43
+3,546,135,0.9477934473403846,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,3,43
+4,546,135,0.9704508558441143,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,3,43
+0,544,137,0.9706640876853644,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,5,71
+1,544,137,0.9634635031353485,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,5,71
+2,544,137,0.9706924315619968,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,5,71
+3,546,135,0.9552947052947053,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,5,71
+4,546,135,0.9851851851851853,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,5,71
+0,544,137,0.9707694933501386,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,10,141
+1,544,137,0.9563659331337194,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,10,141
+2,544,137,0.9853462157809983,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,10,141
+3,546,135,0.9702817130760463,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,10,141
+4,546,135,0.9851851851851853,shap_feature_selection_extratrees_p1_20260529_182607,G3_mba_molar_grade,MBA Positive Molar Grade,10,141

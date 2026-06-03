@@ -1,0 +1,30 @@
+task,task_name,cluster_id,center_wavenumber,width,n_features,total_shap,shap_mass_pct,assignment_level,assignment_note,matched_literature_peak
+G1_thiram_molar_grade,Thiram Positive Molar Grade,1,465.0036652770697,2.0,2,0.0058809969320166,1.2901058975834734,unassigned,,
+G1_thiram_molar_grade,Thiram Positive Molar Grade,2,718.0,0.0,1,0.0028963325250143,0.6353643293948303,unassigned,,
+G1_thiram_molar_grade,Thiram Positive Molar Grade,3,1138.936946443845,11.0,8,0.028218537453676,6.190260258762669,literature_target,"Thiram_1145(center=-6.1, nearest=+0.0)","Thiram_1145(center=-6.1, nearest=+0.0)"
+G1_thiram_molar_grade,Thiram Positive Molar Grade,4,1377.0,0.0,1,0.0032372866554706,0.7101589500334584,literature_target,"Thiram_1380(center=-3.0, nearest=-3.0)","Thiram_1380(center=-3.0, nearest=-3.0)"
+G1_thiram_molar_grade,Thiram Positive Molar Grade,5,1501.684751811151,13.0,8,0.0242183374684245,5.312742101187864,literature_target,"Thiram_1510(center=-8.3, nearest=-2.0); MBA_1490(center=+11.7, nearest=+5.0)","Thiram_1510(center=-8.3, nearest=-2.0); MBA_1490(center=+11.7, nearest=+5.0)"
+G2_mg_molar_grade,MG Positive Molar Grade,1,863.288667507863,6.0,3,0.0078875448695745,1.7302794528415186,curated_literature,Thiram_860 (CH3)2-N / CH3 modes (RSC Adv 2024 881; normal-Raman 850),
+G2_mg_molar_grade,MG Positive Molar Grade,2,1035.0,0.0,1,0.002088940237184,0.458247836352194,unassigned,,
+G2_mg_molar_grade,MG Positive Molar Grade,3,1160.0256176241342,2.0,3,0.0072885961928013,1.5988889370518833,literature_target,"Thiram_1145(center=+15.0, nearest=+14.0); MG_1172(center=-12.0, nearest=-11.0)","Thiram_1145(center=+15.0, nearest=+14.0); MG_1172(center=-12.0, nearest=-11.0)"
+G2_mg_molar_grade,MG Positive Molar Grade,4,1184.2338316727453,7.0,4,0.0077344808623846,1.6967020201942722,literature_target,"MG_1172(center=+12.2, nearest=+8.0)","MG_1172(center=+12.2, nearest=+8.0)"
+G2_mg_molar_grade,MG Positive Molar Grade,5,1210.9802803924658,9.0,7,0.0168289172038465,3.691735531509893,literature_target,"MG_1220(center=-9.0, nearest=-4.0)","MG_1220(center=-9.0, nearest=-4.0)"
+G2_mg_molar_grade,MG Positive Molar Grade,6,1423.0,0.0,1,0.0022686304949126,0.4976662315518103,unassigned,,
+G2_mg_molar_grade,MG Positive Molar Grade,7,1607.0,0.0,1,0.00218275961253,0.4788288587265704,literature_target,"MG_1616(center=-9.0, nearest=-9.0)","MG_1616(center=-9.0, nearest=-9.0)"
+G3_mba_molar_grade,MBA Positive Molar Grade,1,1062.3117256771093,10.0,4,0.0146810362772753,3.220557960307456,literature_target,"MBA_1078(center=-15.7, nearest=-13.0)","MBA_1078(center=-15.7, nearest=-13.0)"
+G3_mba_molar_grade,MBA Positive Molar Grade,2,1386.7995610119292,7.0,4,0.0140109272551606,3.0735571011933147,cross_component,"interference band (Thiram_1380(center=+6.8, nearest=+3.0); MG_1394(center=-7.2, nearest=-4.0))","Thiram_1380(center=+6.8, nearest=+3.0); MG_1394(center=-7.2, nearest=-4.0)"
+G3_mba_molar_grade,MBA Positive Molar Grade,3,1439.734961550542,5.0,2,0.0061027028363871,1.3387412051790823,curated_literature,Thiram_1444 C-N stretch + CH3 rock (Analyst 2014 1444; RSC Adv 2024 1436),
+G3_mba_molar_grade,MBA Positive Molar Grade,4,1574.6714444385875,11.0,10,0.0345549578764615,7.580271757068423,literature_target,"MBA_1590(center=-15.3, nearest=-9.0)","MBA_1590(center=-15.3, nearest=-9.0)"
+P1_thiram_presence,Thiram Presence,1,689.0,0.0,1,0.0024859525774491,0.5453398664127832,unassigned,,
+P1_thiram_presence,Thiram Presence,2,768.050308632477,10.0,6,0.0210520835266491,4.61816549610695,unassigned,,
+P1_thiram_presence,Thiram Presence,3,921.73077608359,8.0,8,0.0240066147036935,5.266296780676792,literature_target,"Thiram_930(center=-8.3, nearest=-4.0)","Thiram_930(center=-8.3, nearest=-4.0)"
+P1_thiram_presence,Thiram Presence,4,1375.0,0.0,1,0.0028005393677081,0.6143503212908517,literature_target,"Thiram_1380(center=-5.0, nearest=-5.0)","Thiram_1380(center=-5.0, nearest=-5.0)"
+P1_thiram_presence,Thiram Presence,5,1510.0,0.0,1,0.0026789247694794,0.5876719005705588,literature_target,"Thiram_1510(center=+0.0, nearest=+0.0)","Thiram_1510(center=+0.0, nearest=+0.0)"
+P1_thiram_presence,Thiram Presence,6,1548.0,0.0,1,0.0036074389478967,0.7913587297618261,unassigned,,
+P1_thiram_presence,Thiram Presence,7,1587.4758492454102,1.0,2,0.0054528496828546,1.1961838470258592,cross_component,"interference band (MBA_1590(center=-2.5, nearest=-2.0))","MBA_1590(center=-2.5, nearest=-2.0)"
+P2_mg_presence,MG Presence,1,1169.6168230669305,8.0,6,0.0264623958929588,5.805017992755259,literature_target,"MG_1172(center=-2.4, nearest=+0.0)","MG_1172(center=-2.4, nearest=+0.0)"
+P2_mg_presence,MG Presence,2,1213.559855831585,6.0,4,0.0164595144208847,3.610700170602239,literature_target,"MG_1220(center=-6.4, nearest=-4.0)","MG_1220(center=-6.4, nearest=-4.0)"
+P2_mg_presence,MG Presence,3,1394.0000000000002,0.0,1,0.0031153188389786,0.683403044327221,literature_target,"Thiram_1380(center=+14.0, nearest=+14.0); MG_1394(center=+0.0, nearest=+0.0)","Thiram_1380(center=+14.0, nearest=+14.0); MG_1394(center=+0.0, nearest=+0.0)"
+P2_mg_presence,MG Presence,4,1609.7711143561592,8.0,9,0.0413693885987423,9.075143692067702,literature_target,"MG_1616(center=-6.2, nearest=-2.0)","MG_1616(center=-6.2, nearest=-2.0)"
+P3_mba_presence,MBA Presence,1,1068.4380285354814,13.0,7,0.04208469884554,9.232060279282988,literature_target,"MBA_1078(center=-9.6, nearest=-4.0)","MBA_1078(center=-9.6, nearest=-4.0)"
+P3_mba_presence,MBA Presence,2,1575.35831707211,15.0,13,0.0841971085503208,18.470199450180253,literature_target,"MBA_1590(center=-14.6, nearest=-8.0)","MBA_1590(center=-14.6, nearest=-8.0)"

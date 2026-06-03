@@ -33,6 +33,7 @@ DEFAULT_TASK_IDS = [
     'P1_thiram_presence',
     'P2_mg_presence',
     'P3_mba_presence',
+    'G1_thiram_molar_grade',
     'G2_mg_molar_grade',
     'G3_mba_molar_grade',
 ]

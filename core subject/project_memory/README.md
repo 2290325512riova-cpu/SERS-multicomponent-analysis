@@ -18,7 +18,7 @@ Use these files as the active fact sources:
 | What failed routes must not be rediscovered casually? | `FAILURE_LESSONS.md` and `../archive/MANIFEST.md` |
 | What should the researcher read first? | `../reports/` user-facing reports |
 
-`HANDOFF.md`, `PROJECT_STATE.md`, and the old long-form decision diary are not active fact sources. If an IDE still has one open, treat it as a stale tab and reopen the files listed above from disk.
+`HANDOFF.md` is a compact onboarding summary, but the source of truth is still the decision/evidence stack above. `PROJECT_STATE.md` and the old long-form decision diary are not active fact sources. If an IDE has an old handoff tab open, reopen `HANDOFF.md` from disk before relying on it.
 
 ## Read Order
 

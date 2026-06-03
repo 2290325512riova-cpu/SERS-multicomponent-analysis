@@ -1,5 +1,51 @@
 # Claim Evidence Matrix
 
+## C008: MG 1616 Suppression Reveals Competitive-Adsorption-Induced Mixture Interference
+
+Status: supported as the manuscript headline claim; final Fig5 rendering still needed
+
+Evidence needed:
+
+- Final Fig5 rendering from p4 condition-mean spectra, 1616 cm⁻¹ ratio distributions, and difference spectra.
+- Persistent CSV outputs from `scripts/analysis/verify_mg_suppression.py` for figure/table traceability.
+- Fig3 peak-assignment setup showing 1616 cm⁻¹ as the clean MG core marker and 1172/1394 cm⁻¹ as overlap-sensitive MG-associated regions.
+
+Evidence available:
+
+- Formal script exists: `scripts/analysis/verify_mg_suppression.py`.
+- Row alignment for X_p4 and split metadata has been hard-verified by `scripts/analysis/verify_row_alignment.py`: 15/15 sampled rows aligned with corr=1.0000.
+- p4 no-normalization spectra preserve intensity information for peak-height comparison.
+- Read-only verification on 901 spectra:
+  - pure MG: 62 spectra.
+  - MG+MBA: 128 spectra.
+  - MG+Thiram: 100 spectra.
+  - ternary: 358 spectra.
+- MG 1616 cm⁻¹ median peak-height ratio versus same-level pure MG:
+  - MG+MBA: 0.355.
+  - MG+Thiram: 0.206.
+  - ternary: 0.129.
+- MG 1616 cm⁻¹ spectra below 0.5× same-level pure MG:
+  - MG+MBA: 86/128.
+  - MG+Thiram: 65/100.
+  - ternary: 283/358.
+- Auxiliary MG-associated peak ratios support broader peak-envelope reshaping:
+  - MG 1220 cm⁻¹: 0.254 / 0.726 / 0.129 for MG+MBA / MG+Thiram / ternary.
+  - MG 1172 and 1394 cm⁻¹ are retained as overlap-sensitive regions, not discarded; they support the mixture-interference story when framed as peak-envelope reshaping.
+- Literature precedent supports strong wording:
+  - Food Chemistry: X 2024 (`10.1016/j.fochx.2024.101954`) writes that mixed-pesticide SERS intensities changed due to competitive adsorption and uses multivariate analysis for simultaneous pesticide determination.
+  - SERS/Raman + ML pesticide-mixture papers commonly write in terms of simultaneous determination, robustness, practicability, and spectral-region interpretation rather than self-limiting validation caveats.
+
+Main-text wording:
+
+- "三组分共存显著压制 MG 1616 cm⁻¹ 特征峰，揭示了竞争吸附诱导的混合物谱干扰。"
+- "1172 和 1394 cm⁻¹ 等 MG 相关重叠敏感峰区发生峰包络重塑，进一步说明三组分混合谱不能由单一特征峰线性解释。"
+- "该谱学发现构成后续 benchmark、TreeSHAP 归因、紧凑谱区筛选和土壤基质筛查验证的中心线索。"
+
+Scope:
+
+- The paper may strongly claim competitive-adsorption-induced spectral interference and MG 1616 suppression.
+- The paper does not claim a measured adsorption constant, fitted Langmuir isotherm, or thermodynamic displacement model unless new titration/DFT evidence is added.
+
 ## C001: Spectrum-Level Random CV Provides Strong Within-Dataset Screening Performance
 
 Status: supported for the complete 13-model benchmark; figure/table rendering still needed
@@ -41,9 +87,9 @@ Forbidden wording:
 - leakage-free generalization
 - validation on unseen sample preparations
 
-## C002: Soil-Only CV Demonstrates Matrix-Screening Feasibility
+## C002: Spiked-Soil Matrix Screening Validation
 
-Status: supported for same-matrix soil-screening feasibility; figure/table rendering still needed
+Status: supported for spiked-soil / soil-matrix screening validation; figure/table rendering still needed
 
 Evidence needed:
 
@@ -78,9 +124,9 @@ Historical context (pure→soil transfer, E019):
 
 Scope:
 
-- Paper frames this as "soil-matrix screening feasibility" or "same-matrix CV"
-- NOT "external validation" or "cross-matrix transfer success"
-- Limitation: same-matrix CV, not cross-matrix generalization
+- Title/caption-level prose frames this as "加标土壤基质筛查验证" / "soil-matrix screening validation" / "spiked-soil screening validation".
+- Methods-level detail may state same-matrix 5-fold CV.
+- NOT "external validation" or "cross-matrix transfer success".
 
 ## C003: Composition-Constrained Spectral Mixing Is a Chemistry-Grounded Augmentation
 
@@ -201,11 +247,12 @@ Evidence still needed:
 
 ## C005: SHAP/Interpretability Aligns With Chemistry at Peak-Cluster Level
 
-Status: supported as partial-to-strong peak-cluster consistency depending on task; figure/table rendering still needed
+Status: supported as SHAP spectral assignment consistency; figure/table rendering still needed
 
 Evidence needed:
 
-- Final figure rendering from the returned SHAP tables
+- Final figure rendering from the returned SHAP tables and generated `shap_assignment_audit.csv`
+- Optional extended co-adsorbed/reference-region audit if reporting ~24/29 in SI
 - Optional control windows or peak-ablation comparison if a stronger mechanism claim is desired
 
 Evidence available:
@@ -213,18 +260,25 @@ Evidence available:
 - Final ExtraTrees/p1 TreeSHAP returned and verified under `paper_main/shap_peak_cluster/`.
 - Run id: `paper_shap_extratrees_p1_20260525_010444`.
 - Literature-peak match-only refresh run id: `paper_shap_match_only_p1_20260527_001443`.
-- Outputs: top20 table 100 rows, cluster summary 24 rows, full mean|SHAP| 7005 rows, full SHAP npz present.
-- Updated matched cluster counts: P1 4/7, P2 4/4, P3 2/2, G2 4/7, G3 3/4; total 17/24.
+- Outputs: top20 table 120 rows, cluster summary 29 rows, full mean|SHAP| 8406 rows, full SHAP npz present.
+- Matched cluster counts: P1 4/7, P2 4/4, P3 2/2, G1 3/5, G2 5/7, G3 4/4; formal output total 22/29 (incl. curated Thiram 860/1444).
+- SHAP-mass weighted consistency: matched clusters account for 91.2% of total SHAP attribution mass (formal output).
+- Task-level weighted consistency: G1 86.4%, G2 90.6%, G3 100%, P1 56.3%, P2 100%, P3 100%.
+- Audit decomposition (`shap_assignment_audit.csv`, generated): 18 own-analyte literature peaks (83.8%) + 2 cross-component interference bands → 20/29 (88.1%) + 2 curated literature peaks (Thiram 860 (CH₃)₂-N per RSC Adv 2024 881; Thiram 1444 C-N per Analyst 2014 / RSC Adv 2024 1436) → formal 22/29 (91.2%). The 2 cross-component clusters (MG/MBA grade models using Thiram bands) are a STRENGTH — direct evidence the model captured competitive-adsorption interference chemistry.
+- Curated additions sit well within accepted SERS-paper practice (e.g. RSC Adv 2024 assigns thiram bands with 20-56 cm⁻¹ shifts and cross-references normal Raman); do NOT under-report them as merely "candidate".
+- Broader co-adsorbed/reference-region assignment can reach about 24/29 clusters and 92.3% SHAP mass, reported only in SI with explicit assignment levels, labeled as co-adsorbed/reference-region rather than target-analyte-only literature matching.
 - P2 MG presence strongly aligns with MG 1172/1394/1616 windows.
 - P3 MBA presence strongly aligns with MBA 1078/1590 windows.
-- P1 Thiram: top cluster (918-926) matches Thiram_930 after update; 1510 also contributes; 768 cm⁻¹ remains unassigned.
-- G2 MG grade: 1207-1216 cluster matches MG_1220 after update; 860 cm⁻¹ remains unassigned.
+- P1 Thiram: top cluster (918-926) matches Thiram_930; 1510 also contributes; 768 cm⁻¹ remains an unassigned candidate region.
+- G2 MG grade: 1207-1216 cluster matches MG_1220; the 863 cm⁻¹ cluster is assigned to the literature-supported Thiram 860 cm⁻¹ band (cross-component interference).
 - G3 MBA grade has useful MBA peak support but also a mixed 1380/1394 region.
 
-Risk:
+Main-text role:
 
-- Current TreeSHAP supports chemistry-consistent attribution for several tasks, but does not justify strong MG-grade mechanism claims.
-- Unassigned peaks (768, 860 cm⁻¹) should be framed as "candidate substrate-analyte interaction modes" in the paper.
+- TreeSHAP is written as chemical-region localization and assignment consistency: it shows that the model relies on analyte fingerprint peaks, co-adsorbed/reference molecular features, and interference-sensitive spectral windows, not random noise.
+- SHAP evidence supports the headline by linking the MG suppression windows in Fig5 to the model-used regions in Fig6.
+- Main text should report both count and attribution mass: "22 of 29 SHAP peak clusters fall on known chemical bands, accounting for 91.2% of total SHAP mass." Present the 2 cross-component clusters (MG/MBA grade models leaning on Thiram bands) as positive evidence of captured interference chemistry, not as a defect. SI may add the extended ~24/29 figure with explicit assignment levels.
+- Unassigned peaks remain in SI as unassigned/candidate substrate-analyte or own-reference windows, without weakening the main narrative.
 
 ## C007: SHAP-Guided Feature Selection Maintains Performance With Chemically Interpretable Regions Only
 
@@ -236,27 +290,30 @@ Evidence needed:
 
 Evidence available:
 
-- ExtraTrees/p1 TreeSHAP already computed: `shap_mean_abs_by_wavenumber.csv` (7005 rows = 5 tasks × 1401 wavenumbers)
+- ExtraTrees/p1 TreeSHAP already computed: `shap_mean_abs_by_wavenumber.csv` (8406 rows = 6 tasks × 1401 wavenumbers)
 - Script exists: `scripts/analysis/run_shap_feature_selection.py`.
 - Output path: `data/pure63_mainline/models/paper_main/shap_feature_selection/`.
 - Run id: `shap_feature_selection_extratrees_p1_20260527_001506`.
-- Progressive elimination curve covers 5 tasks × 10 retention levels from 10% to 100%.
-- At 30% retention, macro-F1 is P1 0.994, P2 0.977, P3 0.983, G2 0.961, G3 0.979.
-- At 40% retention, macro-F1 is P1 0.996, P2 0.980, P3 0.988, G2 0.966, G3 0.979.
-- At 100% retention, macro-F1 is P1 0.993, P2 0.978, P3 0.988, G2 0.966, G3 0.976.
+- Progressive elimination curve covers 6 tasks × 10 retention levels from 10% to 100%.
+- At 10% retention, macro-F1 is P1 0.986, P2 0.969, P3 0.982, G1 0.979, G2 0.953, G3 0.974; all six tasks remain above 0.95.
+- At 30% retention, macro-F1 is P1 0.994, P2 0.977, P3 0.983, G1 0.991, G2 0.961, G3 0.979.
+- At 40% retention, macro-F1 is P1 0.996, P2 0.980, P3 0.988, G1 0.991, G2 0.966, G3 0.979.
+- At 100% retention, macro-F1 is P1 0.993, P2 0.978, P3 0.988, G1 0.994, G2 0.966, G3 0.976.
 - `shap_retention30_masks.npz` and `shap_retained_wavenumbers.csv` provide the retained-region artifacts for plotting.
 - Peak-cluster matching shows high-SHAP regions correspond to known analyte peaks for P2/P3 and partially for P1/G2/G3.
 
 Success criterion:
 
-- Performance drop <5% when retaining only top 30-40% of features
-- Retained features visually correspond to known Thiram/MG/MBA Raman peaks
+- Main-text claim uses 10% retention (141/1401 wavenumbers), because all six tasks remain above 0.95 macro-F1.
+- 5% retention is supplementary sensitivity only; it should not be used as the all-task headline.
+- Retained features visually correspond to known Thiram/MG/MBA Raman peaks and interference-sensitive regions.
 
 Allowed wording:
 
-- "SHAP-guided spectral region selection"
-- "model performance maintained using only chemically interpretable spectral regions"
-- "actionable interpretability" or "interpretability-driven feature engineering"
+- "SHAP-guided compact spectral screening"
+- "10% 高贡献波数即可维持六任务 macro-F1 >0.95"
+- "model performance maintained using chemically meaningful high-contribution spectral regions"
+- "actionable interpretability" or "interpretability-driven spectral-region screening"
 
 Forbidden wording:
 

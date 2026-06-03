@@ -1,6 +1,6 @@
 # Collaboration Protocol
 
-Last updated: 2026-05-21
+Last updated: 2026-06-01
 
 This file prevents strategy drift when Codex, Claude/Opus, and the user work on the project across long sessions.
 
@@ -31,6 +31,14 @@ Primary responsibilities:
 
 Claude/Opus should not be the only source of truth. Any accepted decision must be copied into `DECISIONS.md`.
 
+Publication-style calibration for Claude/Opus:
+
+- Strategy critique should be calibrated against accepted SERS/ML pesticide-mixture papers, not an abstract ideal of perfect ML validation.
+- The preferred manuscript posture is publication-forward: highlight the supported headline, keep methodological boundaries in Methods/Discussion, and avoid turning normal field practice into a self-attack.
+- Do not advise "honest but self-weakening" main-text prose when D020/D021/D022 already support a stronger SERS/analytical-chemistry claim.
+- For SHAP, use the D022 assignment-consistency framing: count + SHAP-mass weighted consistency, not a standalone weak "20/29" phrase.
+- Strong narrative still has evidence boundaries: do not invent external validation, cross-matrix transfer success, adsorption constants, Langmuir fits, or continuous calibration curves.
+
 ### Codex
 
 Codex is best used as the execution and integration layer.
@@ -45,6 +53,13 @@ Primary responsibilities:
 - protect existing results and avoid destructive operations
 
 Codex may also critique strategy, but should not overturn frozen decisions without an ADR-style update in `DECISIONS.md` and explicit user approval.
+
+Publication-style calibration for Codex:
+
+- Before giving writing advice, read D020/D021/D022 and the current reports, then answer in Chinese first.
+- When updating documentation, remove stale self-limiting phrasing and align headings, figure plans, and claim matrices to the headline: competitive-adsorption-induced MG 1616 cm⁻¹ suppression plus interpretable ML.
+- Do not preserve old "risk list" language as if it were the manuscript voice. Keep risk controls as internal guardrails, not as title/caption-level wording.
+- **No change-log patches in `reports/` documents.** The user reviews `reports/` files as if they were final drafts. Never insert process scaffolding such as "本轮修正", "含文献支撑", "修正一/二", "现场核实", "上轮调研", "链接供阅读", "待清", or dated edit-notes into them. Edit the content directly into its final state; if a citation belongs in the text, write it as a plain reference line, not as an annotated edit marker. Process history lives in `DECISIONS.md` / `EXPERIMENT_TRACKER.md`, never in reader-facing reports.
 
 ## Decision Flow
 

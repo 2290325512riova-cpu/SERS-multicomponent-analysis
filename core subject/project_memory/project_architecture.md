@@ -1,31 +1,31 @@
 # Project Architecture
 
-Last updated: 2026-05-25
+Last updated: 2026-06-03
 
 This document is the current source of truth for the active repository architecture. Historical grouped-CV work is preserved, but the active paper pipeline now lives under `paper_main/`.
 
 ## 1. Paper Position
 
-Working title direction:
+Main-line (locked 2026-05-29, strengthened 2026-06-01 by D021/D022):
 
-> Systematic Benchmarking of Machine Learning Models for Multi-Pesticide Screening via SERS: Preprocessing Effects, Model Selection, and Chemical Interpretability
+> 三组分 SERS 混合体系中存在竞争吸附诱导的 MG 1616 cm⁻¹ 谱峰压制；可解释 ML 将该混合物谱干扰定位到化学峰区，并转化为紧凑谱区筛查流程。
 
-Core contributions:
+Contribution ordering (headline → supporting):
 
-1. 13模型×6预处理的系统benchmark，揭示预处理×模型交互效应（RF/ExtraTrees在SNV+SG下最优且最稳定）
-2. TreeSHAP峰簇分析证明模型决策基于真实化学振动模式而非噪声
-3. SHAP-guided spectral region selection证明模型性能可在仅保留化学可解释区域时维持（actionable interpretability）
-4. 土壤基质筛查可行性验证（soil-only CV），证明方法在复杂基质中的适用性
+1. **[Headline] Competitive-adsorption-induced MG suppression**: MG 1616 cm⁻¹ is strongly suppressed under co-existence (median ratio 0.355 MG+MBA / 0.206 MG+Thiram / 0.129 ternary; 283/358 ternary spectra <0.5× same-level pure MG). This is written as a discovered mixture-interference phenomenon, not a timid caveat.
+2. **[Supporting] TreeSHAP peak attribution**: model decisions fall back onto real chemical bands and overlap-sensitive interference windows. The formal audited output is 22/29 clusters on known chemical bands, accounting for 91.2% of total SHAP attribution mass; 2 cross-component clusters are framed as captured mixture-interference chemistry. This shows the model captures chemical information rather than random noise.
+3. **[Supporting] SHAP-guided compact screening**: keep 10% wavenumbers (141/1401), retrain, all six tasks remain >0.95 macro-F1 → chemically auditable compact workflow.
+4. **[Supporting/methods] 13×6 benchmark + model selection**: rigor framing; classical ML outperforms DL at this data scale stated objectively (cite Grinsztajn 2022), NOT as "DL failed".
+5. **[Application payoff] Spiked-soil matrix screening validation**: soil-matrix 5-fold CV (AUC 0.956–0.996) + blank specificity + permutation test; `same-matrix CV` is methods-level wording only.
 
 Core narrative:
 
-- AgNPs-SERS spectra are used for simultaneous ternary pesticide-mixture screening.
-- Random stratified spectrum-level 5-fold CV is used as the main within-dataset benchmark because it matches common applied SERS-ML reporting practice.
-- Grouped/folder-level CV data is preserved for future work but is NOT included in this paper (neither main nor SI, per D017).
-- Soil-only CV (train and test within soil spectra) demonstrates screening feasibility in complex matrices. The earlier pure→soil transfer experiment failed due to domain shift and serves as motivation for the soil-only approach.
-- The augmentation method is limited to composition-constrained spectral mixing.
-- SHAP is reported at peak-cluster/window level and cross-checked against known Raman/SERS peaks. Literature peak list pending update (add Thiram 930/1510, MG 1220).
-- Formal Optuna is skipped in the manuscript mainline; downstream interpretation and soil screening use the fixed ExtraTrees/p1 recipe.
+- AgNPs-SERS spectra of a ternary pesticide mixture; co-existence suppresses MG 1616 and reshapes overlap-sensitive MG-associated bands (headline), interpretable ML localizes the interference to chemical bands, a compact band set suffices for screening, and the method is demonstrated in a spiked soil matrix.
+- Random stratified spectrum-level 5-fold CV is the within-dataset benchmark (matches applied SERS-ML practice). Grouped/folder-level CV is NOT in the paper (D017).
+- Soil-only CV supports spiked-soil matrix screening validation; the failed pure→soil transfer is motivation only.
+- Augmentation limited to composition-constrained spectral mixing; reframed as a spectral-additivity probe supporting the interference story.
+- SHAP reported at peak-cluster/window level, cross-checked vs known peaks, and quantified with both raw cluster count and SHAP-mass weighted assignment consistency.
+- Publication-style phrasing: main text says the work reveals competitive-adsorption-induced MG 1616 suppression and mixture interference. 1172/1394 are overlap-sensitive MG-associated regions that support peak-envelope reshaping, not discarded flaws. Avoid only unsupported extras such as adsorption constants, Langmuir fits, or external-validation labels.
 
 ## 2. Repository Boundaries
 
@@ -51,13 +51,13 @@ Rules:
 | Pure spectra | 901 |
 | Pure composition folders | 63 |
 | Wavenumber grid | 400-1800 cm^-1, 1 cm^-1 step, 1401 points |
-| Current soil spectra detected | 90 total (79 design + 11 blanks) across 13 folders |
+| Current soil spectra detected | 89 total (79 design + 10 blanks) |
 | Main tasks | P1/P2/P3 presence and G1/G2/G3 positive concentration grade |
 | Supplementary task | S1 mixture order |
 
 Important caution:
 
-- Soil spectra total 90: 79 design samples (10 folders with analytes) + 11 blanks/controls (3 folders). The parser correctly reports 79 design spectra. Blanks should be included in specificity testing.
+- Formal soil arm uses 79 design samples plus 10 blank/control spectra. Blank specificity is reported as 10/10 blanks rejected.
 
 ## 4. Split Protocols
 
@@ -146,6 +146,7 @@ data/pure63_mainline/models/
     optuna_final/        # reserved legacy placeholder; formal Optuna skipped
     robustness_check/    # optional SI-only ExtraTrees sensitivity if needed
     shap_peak_cluster/
+    shap_feature_selection/
     soil_validation/
     data_quality/
 ```
@@ -169,6 +170,13 @@ archive/
 
 Archived means preserved, not erased.
 
+Figure-generation cleanup note (2026-06-03):
+
+- Superseded v2 figures, early Origin iterations, temporary style-reference downloads, and Python caches were removed after the current figure set was generated.
+- Active figure outputs live in `figures/paper_main/`.
+- The current reproducible figure scripts live in `scripts/figures/`.
+- `make_paper_figures.py` intentionally embeds two retained Origin-clean PNGs from `figures/paper_main_origin/` for the final Fig5/Fig8 spectral panels; do not delete `origin_clean_fig5_mg_suppression.png`, `origin_clean_fig8_soil_spectra.png`, or `sers_ml_origin_clean.opju` unless those panels are redrawn from scratch.
+
 ## 8. Active Scripts
 
 | Script | Purpose | Typical command |
@@ -176,27 +184,29 @@ Archived means preserved, not erased.
 | `scripts/analysis/run_data_quality.py` | RSD and peak-intensity QC tables | `python scripts/analysis/run_data_quality.py` |
 | `scripts/analysis/run_random_benchmark.py` | Main random-CV benchmark | `python scripts/analysis/run_random_benchmark.py --strict-models` |
 | `scripts/analysis/run_augmentation_ablation.py` | DL augmentation comparison | `python scripts/analysis/run_augmentation_ablation.py --models 1D-CNN 1D-ResNet Spectrum-KAN KAN-CNN --variants p1 raw --modes no_aug aug_no_mixup composition_mixup` |
-| `scripts/analysis/run_paper_shap.py` | Final ExtraTrees/p1 TreeSHAP and peak-cluster tables | `python scripts/analysis/run_paper_shap.py --model ExtraTrees --variant p1 --tasks P1_thiram_presence P2_mg_presence P3_mba_presence G2_mg_molar_grade G3_mba_molar_grade --save-full` |
+| `scripts/analysis/run_paper_shap.py` | Final ExtraTrees/p1 TreeSHAP and peak-cluster tables | `python scripts/analysis/run_paper_shap.py --model ExtraTrees --variant p1 --save-full` |
+| `scripts/analysis/run_shap_feature_selection.py` | SHAP-guided spectral masking / compact screening | `python scripts/analysis/run_shap_feature_selection.py` |
 | `scripts/analysis/run_shap_cluster.py` | Legacy converter for existing top-20 SHAP points | `python scripts/analysis/run_shap_cluster.py` |
 | `scripts/analysis/run_soil_validation.py` | Prepare soil metadata/cache and run train-pure -> predict-soil presence validation | `python scripts/analysis/run_soil_validation.py --variants raw p1 p5 --variant p1 --run-validation --model ExtraTrees --tasks P1_thiram_presence P2_mg_presence P3_mba_presence` |
+| `scripts/analysis/run_soil_only_cv.py` | Formal spiked-soil matrix screening validation | `python scripts/analysis/run_soil_only_cv.py` |
+| `scripts/analysis/verify_mg_suppression.py` | MG 1616 suppression analysis for Fig5 headline | `python scripts/analysis/verify_mg_suppression.py` |
+| `scripts/analysis/verify_row_alignment.py` | Verify `X_p4[i]` aligns with split metadata rows | `python scripts/analysis/verify_row_alignment.py` |
 | `scripts/analysis/leakage_analysis.py` | Historical random-vs-grouped analysis | `python scripts/analysis/leakage_analysis.py` |
 | `scripts/analysis/benchmark_summary.py` | Summarize historical benchmark outputs | `python scripts/analysis/benchmark_summary.py` |
+| `scripts/figures/make_paper_figures.py` | Generate current Fig2-Fig8 paper-main figure drafts | `python scripts/figures/make_paper_figures.py` |
+| `scripts/figures/make_paper_tables.py` | Generate T1-T3 and ST1-ST5 manuscript tables | `python scripts/figures/make_paper_tables.py` |
+| `scripts/figures/build_origin_adjusted_project.py` | Rebuild retained Origin-clean spectral panels used by Fig5/Fig8 | `python scripts/figures/build_origin_adjusted_project.py` |
 
 ## 9. Execution Order From Here
 
 Recommended order:
 
-1. Run `run_data_quality.py` and inspect RSD/peak statistics.
-2. Return and verify the first fast classical random-CV benchmark. Done on 2026-05-22.
-3. Return and verify the complete 12-model x 6-preprocessing random-CV benchmark. Done on 2026-05-22.
-4. Append RamanNet-Lite and verify the complete 13-model x 6-preprocessing random-CV benchmark. Done on 2026-05-24.
-5. Generate the benchmark heatmap/table from `benchmark_full_matrix.csv` and `benchmark_best_by_task.csv`.
-6. Use the fixed benchmark result to lock ExtraTrees/p1 as the primary practical model; do not run formal Optuna.
-7. Treat RamanNet-Lite as the strongest DL-family representative, not as a second star model.
-8. Run ExtraTrees/p1 TreeSHAP peak-cluster analysis for P1/P2/P3/G2/G3. Done on 2026-05-25. Pending: update LITERATURE_PEAKS (add Thiram 930/1510, MG 1220) and rerun matching.
-9. Soil screening: (a) Pure→soil transfer failed (E019, domain shift) — serves as motivation. (b) Soil-only 5-fold CV pending formal run — preliminary results show AUC>0.93 for P1/P2/P3 with p1. (c) Blank specificity test pending. (d) Permutation test pending.
-10. Generate benchmark, augmentation, SHAP, and soil figures.
-11. Update `project_memory/CLAIM_EVIDENCE_MATRIX.md` before writing paper claims.
+1. Main experiments are complete and locally verified: 13-model benchmark, 5-DL ablation, six-task TreeSHAP, SHAP-guided feature selection, MG 1616 suppression analysis, soil-only CV, permutation test summary, and blank specificity.
+2. Use D020/D021/D022 as the manuscript spine: Fig5 MG 1616 suppression is the headline; Fig4 benchmark, Fig6 TreeSHAP assignment consistency, Fig7 compact screening, and Fig8 soil matrix validation support it.
+3. Current Fig2-Fig8 and T1-T3/ST1-ST5 drafts are generated; Fig1 and Fig2(a)(b) await user-provided artwork/TEM/UV-Vis assets.
+4. Write the Chinese manuscript draft using publication-forward Chinese-first wording. Do not reopen grouped CV, formal Optuna, or DL-rescue routes unless the user explicitly changes the frozen decisions.
+5. After the Chinese draft stabilizes, perform final figure polishing without changing the locked data story.
+6. Update `CLAIM_EVIDENCE_MATRIX.md`, reports, and this architecture file only when evidence status changes, not when only a figure is redrawn.
 
 ## 10. Server Artifact Return Protocol
 
@@ -250,8 +260,8 @@ Use:
 - "conventional spectrum-level validation"
 - "within-dataset screening benchmark"
 - "folder-level transfer stress test"
-- "soil-matrix screening feasibility" (for soil-only CV results)
-- "same-matrix CV" (for soil-only CV)
+- "soil-matrix screening validation" / "spiked-soil screening validation" (title/caption-level)
+- "same-matrix CV" (methods-level detail for soil-only CV)
 - "composition-constrained spectral mixing"
 - "semi-quantitative MG grade screening"
 
@@ -259,11 +269,12 @@ Do not use without new evidence:
 
 - "external validation" for random CV
 - "leakage-free generalization" for spectrum-level random CV
-- "first-ever Beer-Lambert augmentation"
+- "first-ever Beer-Lambert augmentation" (use "composition-constrained spectral mixing")
 - "SHAP proves competitive adsorption"
-- "17/20 SHAP peak matching"
+- any SHAP peak-matching number higher than the documented audited output. Current formal output is 22/29 plus 91.2% SHAP-mass consistency; ~24/29 is SI-level extended co-adsorbed/reference-region assignment unless additional own-reference evidence upgrades it.
 - "precise MG quantification"
 - "successful cross-matrix transfer" (pure→soil transfer failed)
+- any mention of grouped CV as paper content (not in paper per D017)
 
 ## 12. Memory Update Rules
 

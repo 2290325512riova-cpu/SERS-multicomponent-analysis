@@ -1,0 +1,5 @@
+| run_id                                     | task               | task_name       |   observed_metric | metric   |   p_value |   n_permutations |   null_mean |   null_std | permutation_mode                        |
+|:-------------------------------------------|:-------------------|:----------------|------------------:|:---------|----------:|-----------------:|------------:|-----------:|:----------------------------------------|
+| soil_only_cv_extratrees_p1_20260527_002017 | P1_thiram_presence | Thiram Presence |          0.993478 | OOF_AUC  | 9.999e-05 |            10000 |    0.499088 |  0.0733425 | OOF_score_label_permutation_within_fold |
+| soil_only_cv_extratrees_p1_20260527_002017 | P2_mg_presence     | MG Presence     |          0.954955 | OOF_AUC  | 9.999e-05 |            10000 |    0.501738 |  0.0827653 | OOF_score_label_permutation_within_fold |
+| soil_only_cv_extratrees_p1_20260527_002017 | P3_mba_presence    | MBA Presence    |          0.975743 | OOF_AUC  | 9.999e-05 |            10000 |    0.494085 |  0.0780628 | OOF_score_label_permutation_within_fold |

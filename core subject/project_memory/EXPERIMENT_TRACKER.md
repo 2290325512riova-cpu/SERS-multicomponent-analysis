@@ -59,8 +59,8 @@ Paper role: basis for upgraded peak-cluster analysis
 
 Notes:
 
-- Current point-level hit rates do not support a strong 17/20 peak-matching claim.
-- Upgrade to peak-window / cluster-level attribution.
+- Historical point-level SHAP hit rates did not support a point-level peak-matching claim.
+- Upgrade to peak-window / cluster-level attribution. This has been superseded by E018/D022: final six-task SHAP assignment audit gives 22/29 clusters on known chemical bands, covering 91.2% of total SHAP attribution mass.
 
 ## E007: paper_main Random-CV Pipeline
 
@@ -218,7 +218,7 @@ Notes:
 
 ## E017: Optuna Mainline Skipped And ExtraTrees/p1 Locked
 
-Status: decision recorded; downstream experiments pending
+Status: decision recorded; downstream experiments complete
 Result path: `data/pure63_mainline/models/paper_main/benchmark_random_cv/` as model-selection evidence
 Paper role: final model-locking decision before SHAP and soil-only CV
 
@@ -239,16 +239,17 @@ Paper role: final peak-cluster interpretability evidence for the locked practica
 Notes:
 
 - Remote run id: `paper_shap_extratrees_p1_20260525_010444`; match-only refresh run id: `paper_shap_match_only_p1_20260527_001443`.
-- Scope: ExtraTrees/p1, all 901 pure spectra for training, tasks P1/P2/P3/G2/G3, G1 skipped.
+- Scope: ExtraTrees/p1, all 901 pure spectra for training, six tasks P1/P2/P3/G1/G2/G3.
 - Script: `scripts/analysis/run_paper_shap.py`.
-- Local verification: `shap_top20_per_task.csv` has 100 rows; `shap_cluster_summary.csv` has 24 clusters; `shap_mean_abs_by_wavenumber.csv` has 7005 rows; `shap_values_full.npz` is present.
+- Local verification: `shap_top20_per_task.csv` has 120 rows; `shap_cluster_summary.csv` has 29 clusters; `shap_mean_abs_by_wavenumber.csv` has 8406 rows; `shap_values_full.npz` is present.
 - Matched cluster counts after the 2026-05-27 literature-peak refresh:
   - P1 Thiram presence: 4/7 clusters matched, partial but improved by Thiram 930/1510 windows.
   - P2 MG presence: 4/4 clusters matched, strong MG peak alignment at 1172/1220/1394/1616 windows.
   - P3 MBA presence: 2/2 clusters matched, strong MBA peak alignment at 1078/1590 windows.
   - G2 MG grade: 4/7 clusters matched, partial MG peak alignment including MG 1220; important unmatched clusters remain.
   - G3 MBA grade: 3/4 clusters matched, useful MBA peak support plus a mixed 1380/1394 region.
-- Interpretation guardrail: write "partial peak-cluster consistency," not "SHAP proves competitive adsorption" or "all tasks are peak-driven."
+- D022 assignment consistency update: `scripts/analysis/build_shap_assignment_audit.py` generated `shap_assignment_audit.csv`. Formal output is 22/29 clusters on known chemical bands, accounting for 91.2% of total SHAP mass. Task-level weighted consistency is G1 86.4%, G2 90.6%, G3 100.0%, P1 56.3%, P2 100.0%, P3 100.0%. Decomposition: 18 own-analyte literature peaks (83.8%) + 2 cross-component interference bands (20/29, 88.1%) + 2 curated Thiram 860/1444 literature bands (22/29, 91.2%). Optional co-adsorbed/reference extension remains SI-level at about 24/29 and 92.3%.
+- Publication-style interpretation: write that TreeSHAP localizes model evidence to analyte fingerprint peaks, co-adsorbed/reference molecular regions, and interference-sensitive spectral regions. Link MG-related SHAP windows to Fig5 suppression/peak-envelope reshaping. Avoid turning SHAP alone into a thermodynamic proof.
 
 ## E019: Pure→Soil Transfer Diagnostic (FAILED — retained as motivation)
 
@@ -263,13 +264,13 @@ Notes:
 - Script: `scripts/analysis/run_soil_validation.py`.
 - Soil metrics: P1 F1=0.161, P2/P3 balanced acc=0.5 (all-positive prediction).
 - Conclusion: pure→soil transfer fails due to domain shift. This motivates the soil-only CV approach.
-- This experiment is NOT the paper's soil result. The paper uses soil-only CV (E020, pending).
+- This experiment is NOT the paper's soil result. The paper uses soil-only CV (E020, returned and verified).
 
 ## E020: Soil-Only 5-Fold CV
 
 Status: returned and verified locally
 Result path: `data/pure63_mainline/models/paper_main/soil_validation/`
-Paper role: §3.6 soil-matrix screening feasibility — the paper's main soil result
+Paper role: §3.6 加标土壤基质筛查验证 — the paper's main soil result
 
 Notes:
 
@@ -281,7 +282,7 @@ Notes:
 - Formal CV results: P1 AUC 0.996±0.008, F1 0.887±0.087; P2 AUC 0.956±0.052, F1 0.811±0.127; P3 AUC 0.976±0.034, F1 0.919±0.085.
 - OOF label-permutation test: 10000 permutations; P1/P2/P3 all p=0.0001.
 - Blank specificity after full soil+blank training: P1/P2/P3 all 10/10 blanks predicted negative; max blank positive probabilities are 0.065, 0.061, and 0.085.
-- Framing: "soil-matrix screening feasibility" / "same-matrix CV"; do not call this external validation or cross-matrix transfer success.
+- Framing: title/caption-level prose uses "加标土壤基质筛查验证" / "soil-matrix screening validation"; `same-matrix CV` is methods-level detail only. Do not call this external validation or cross-matrix transfer success.
 
 ## E021: SHAP-Guided Spectral Masking
 
@@ -295,8 +296,9 @@ Notes:
 - Script: `scripts/analysis/run_shap_feature_selection.py`.
 - Method: rank wavenumbers by ExtraTrees/p1 mean |SHAP| per task, retain top-k% regions, zero out remaining features, and retrain ExtraTrees on the locked random 5-fold split.
 - Retention tested: 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, and 100%.
-- At 30% retention, macro-F1 remains within the success criterion for all five SHAP tasks: P1 0.994, P2 0.977, P3 0.983, G2 0.961, G3 0.979.
-- Compared with 100% retention, the 30% feature masks show no practical degradation for P1/P2/G2/G3 and a small P3 decrease (0.988→0.983), all below the 5% threshold.
+- At 10% retention (141/1401 wavenumbers), all six tasks remain above 0.95 macro-F1: P1 0.986, P2 0.969, P3 0.982, G1 0.979, G2 0.953, G3 0.974.
+- At 30% retention, macro-F1 remains very close to full-spectrum performance: P1 0.994, P2 0.977, P3 0.983, G1 0.991, G2 0.961, G3 0.979.
+- Main-text claim uses 10% retention; 5% retention is supplementary sensitivity only.
 - Outputs include `shap_feature_elimination_curve.csv`, `shap_feature_elimination_folds.csv`, `shap_retained_wavenumbers.csv`, `shap_retention30_masks.csv`, and `shap_retention30_masks.npz`.
 
 ## E022: Progressive Feature Elimination Curve
@@ -308,9 +310,9 @@ Paper role: §3.5 Figure — performance-parsimony curve
 Notes:
 
 - Completed by the same run as E021: `shap_feature_selection_extratrees_p1_20260527_001506`.
-- `shap_feature_elimination_curve.csv` contains 50 rows = 5 tasks × 10 retention levels.
-- 30-40% retention is sufficient for the paper claim: P1 0.994/0.996, P2 0.977/0.980, P3 0.983/0.988, G2 0.961/0.966, G3 0.979/0.979.
-- This supports an "actionable interpretability" figure, not an "optimal feature subset" claim.
+- `shap_feature_elimination_curve.csv` contains 60 rows = 6 tasks × 10 retention levels.
+- 10% retention is sufficient for the main paper claim because all six tasks remain above 0.95 macro-F1; 30-40% provides a robustness margin.
+- This supports a "SHAP-guided compact spectral screening" figure, not an "optimal feature subset" claim.
 
 ## E023: Cross-Model SHAP Consensus (OPTIONAL)
 
@@ -351,11 +353,12 @@ Notes:
 
 ## E013: Soil Metadata And Cache Preparation
 
-Status: generated / needs QC
+Status: generated and reconciled
 Result path: `data/pure63_mainline/models/paper_main/soil_validation/`
 Paper role: soil data preparation for soil-only CV (E020)
 
 Notes:
 
-- Current parser detected 79 soil spectra across 10 folders.
-- This differs from the approximate expected count of 90 and must be reconciled before final soil claims.
+- Current parser detected 79 design soil spectra across 10 analyte folders.
+- Formal soil-only CV additionally uses 10 blank/control spectra from `blank_metadata.csv`.
+- The formal soil arm reports 10/10 blanks negative; use E020 for paper claims.

@@ -27,8 +27,8 @@ If the requested action conflicts with an active decision, stop and ask for expl
 - Grouped CV is NOT in the paper (neither main nor SI). Data preserved for future use.
 - `03b_locked_main_results/` must stay in place; it is the locked grouped-CV evidence for future papers.
 - Negative and failed experiments are archived with a manifest, not deleted.
-- Soil screening uses soil-only CV (train and test within soil data) to demonstrate matrix-screening feasibility. The earlier pure→soil transfer (E019) failed due to domain shift and is retained as motivation, not as the paper's soil result.
-- SHAP must be interpreted at peak-cluster/window level unless new point-level evidence proves otherwise. Literature peak list pending update (Thiram 930/1510, MG 1220).
+- Soil screening uses soil-only CV (train and test within soil data) to support spiked-soil / soil-matrix screening validation.
+- SHAP must be interpreted at peak-cluster/window level unless new point-level evidence proves otherwise.
 - SHAP-guided spectral region selection (E021/E022) is a core contribution: mask non-SHAP regions, retrain, show performance maintained.
 - Composition-constrained spectral mixing must be train-fold-only.
 - MG concentration grading is semi-quantitative, not precise quantification.
@@ -60,8 +60,15 @@ If a change is needed:
 
 ## Paper Claim Guardrails
 
+- Follow D021/D022 publication-style narrative calibration: write Chinese-first, evidence-forward prose. Do not default to self-weakening caveat lists when the project data support a strong SERS/analytical-chemistry claim.
+- Follow D022 for SHAP assignment wording: the formal audited output is 22/29 peak clusters on known chemical bands, accounting for 91.2% of total SHAP mass. The older 20/29 and 88.1% number is only the intermediate decomposition layer before curated Thiram 860/1444 assignment; do not present it as the final baseline.
+- Calibrate wording against accepted SERS/ML pesticide-mixture papers, not against an abstract "perfect ML validation" ideal. The manuscript voice should be publication-forward: headline strong, methods precise, limitations placed where they belong.
+- Main-text headline: the study reveals competitive-adsorption-induced MG 1616 cm⁻¹ peak suppression and mixture-induced spectral interference in ternary pesticide SERS mixtures.
+- 1172/1394 cm⁻¹ are overlap-sensitive MG-associated regions demonstrating peak-envelope reshaping; do not frame them as discarded flaws in main-text planning.
+- Present soil as spiked-soil / soil-matrix screening validation in title/caption-level prose; reserve "same-matrix CV" for methods-level detail.
 - Do not call random split "external validation" or "leakage-free generalization".
 - Use "conventional spectrum-level validation" or "within-dataset screening benchmark" for random CV.
-- Use "folder-level transfer stress test" for grouped CV.
-- Do not claim "17/20 SHAP peak matching" until a verified result file supports it.
+- Grouped CV is NOT in the paper — do not reference it as supplementary evidence.
+- SHAP peak assignment formal output is 22/29 clusters plus 91.2% SHAP-mass consistency. Optional ~24/29 extended co-adsorbed/reference-region assignment stays SI-level unless additional own-reference evidence makes it the better-supported main claim.
 - Do not claim Beer-Lambert spectral mixing is first-ever; frame it as composition-constrained spectral mixing for ternary pesticide SERS.
+- Soil result is title/caption-level "spiked-soil / soil-matrix screening validation"; method-level truth is matrix-matched/same-matrix CV. It is not "external validation" or "cross-matrix transfer".

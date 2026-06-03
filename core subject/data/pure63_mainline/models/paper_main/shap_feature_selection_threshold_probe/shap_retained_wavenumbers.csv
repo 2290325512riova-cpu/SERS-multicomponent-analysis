@@ -1,0 +1,679 @@
+﻿run_id,task,task_name,retention_pct,selection_rank,feature_index,wavenumber,mean_abs_shap
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,1,520,920.0,0.0047002977300326
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,2,372,772.0,0.0046726903195006
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,3,365,765.0,0.0040559917849909
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,4,1148,1548.0,0.0036074389478967
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,5,363,763.0,0.0032970371323022
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,6,519,919.0,0.003204997074971
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,7,364,764.0,0.0031210956790439
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,8,371,771.0,0.0030102295331909
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,9,523,923.0,0.0029275932008685
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,10,373,773.0,0.0028950390776203
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,11,1187,1587.0,0.0028581152759317
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,12,521,921.0,0.0028301175447872
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,13,975,1375.0,0.0028005393677081
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,14,526,926.0,0.0027871139884045
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,15,518,918.0,0.0027207565059157
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,16,1110,1510.0,0.0026789247694794
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,17,1188,1588.0,0.0025947344069229
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,18,525,925.0,0.0025180489512416
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,19,289,689.0,0.0024859525774491
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,20,524,924.0,0.0023176897074721
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,21,374,774.0,0.0023112257138869
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,22,977,1377.0,0.0023001380603346
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,23,1103,1503.0,0.0022487087998102
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,24,157,557.0,0.0022457500977654
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,25,974,1374.0,0.0022353003761277
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,26,1108,1508.0,0.0021951394806909
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,27,370,770.0,0.0021939121690982
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,28,1099,1499.0,0.0021259288247469
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,29,1109,1509.0,0.002114756324216
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,30,1107,1507.0,0.0020895779904198
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,31,159,559.0,0.0020814851620902
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,32,1115,1515.0,0.0019967109193368
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,33,1113,1513.0,0.0019420828457364
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,34,1150,1550.0,0.0019383691009029
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,35,1100,1500.0,0.0019269574399939
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,36,928,1328.0,0.0019213203225131
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,37,931,1331.0,0.0019148496375759
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,38,731,1131.0,0.0018955358207203
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,39,354,754.0,0.0018922195507427
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,40,145,545.0,0.0018899603483991
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,41,1007,1407.0,0.0018694811482438
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,42,743,1143.0,0.0018692343179533
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,43,1111,1511.0,0.001864733931751
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,44,375,775.0,0.0018557989822389
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,45,1116,1516.0,0.0018333746401892
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,46,522,922.0,0.0018306718466218
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,47,287,687.0,0.0018283182256988
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,48,1026,1426.0,0.0018082292553855
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,49,1147,1547.0,0.0018063154787143
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,50,1112,1512.0,0.0017958886651314
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,51,379,779.0,0.001792953264394
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,52,367,767.0,0.0017813180222943
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,53,288,688.0,0.0017695163910421
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,54,1117,1517.0,0.0017584441499315
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,55,891,1291.0,0.0017245203143726
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,56,980,1380.0,0.0017210162413319
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,57,1186,1586.0,0.0017054243289571
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,58,517,917.0,0.0017038097240975
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,59,369,769.0,0.0016818205118434
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,60,153,553.0,0.0016645754688465
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,61,146,546.0,0.0016537350450247
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,62,933,1333.0,0.0016086044777778
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,63,934,1334.0,0.001607136267221
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,64,139,539.0,0.0016036817616945
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,65,1120,1520.0,0.0015927465834506
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,66,662,1062.0,0.0015833221139485
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,67,1106,1506.0,0.0015808421824231
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,68,516,916.0,0.0015758443899289
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,69,725,1125.0,0.0015677245220964
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,70,976,1376.0,0.0015599938187709
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,71,727,1127.0,0.0015430832280741
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,72,1149,1549.0,0.0015419570276845
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,73,738,1138.0,0.0015318096990358
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,74,156,556.0,0.001503942769241
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,75,160,560.0,0.0014982818920558
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,76,1101,1501.0,0.0014968013530964
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,77,366,766.0,0.0014914975573076
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,78,730,1130.0,0.0014851227576254
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,79,562,962.0,0.0014846914197812
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,80,141,541.0,0.0014804310237313
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,81,384,784.0,0.0014746941798869
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,82,1012,1412.0,0.0014746133471663
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,83,972,1372.0,0.001462244964934
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,84,602,1002.0,0.0014511451299702
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,85,183,583.0,0.0014293038045737
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,86,578,978.0,0.0014288660663868
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,87,147,547.0,0.0014189882197702
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,88,729,1129.0,0.0014172182027661
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,89,528,928.0,0.0014107801337311
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,90,785,1185.0,0.0014075465860207
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,91,527,927.0,0.0013969910546562
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,92,151,551.0,0.0013927296142581
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,93,377,777.0,0.0013899162163342
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,94,380,780.0,0.0013827776301476
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,95,1097,1497.0,0.0013783417549972
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,96,930,1330.0,0.0013586672812382
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,97,1185,1585.0,0.0013428106528259
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,98,362,762.0,0.0013418542255824
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,99,1028,1428.0,0.0013270981278417
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,100,1027,1427.0,0.001320372185788
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,101,927,1327.0,0.0013125553819941
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,102,726,1126.0,0.0013120670774731
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,103,386,786.0,0.0013078143524979
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,104,368,768.0,0.0013025129320573
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,105,1104,1504.0,0.0012955116389013
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,106,742,1142.0,0.0012936433337811
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,107,267,667.0,0.0012822583463384
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,108,1013,1413.0,0.001276817234071
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,109,982,1382.0,0.0012735857626757
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,110,140,540.0,0.001265228213942
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,111,979,1379.0,0.0012579528417207
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,112,1189,1589.0,0.0012520378771521
+shap_feature_selection_extratrees_p1_20260529_183134,P1_thiram_presence,Thiram Presence,8,113,142,542.0,0.0012467412454578
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,1,1208,1608.0,0.0057595097480764
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,2,768,1168.0,0.0057304034377218
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,3,1209,1609.0,0.005095157783385
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,4,769,1169.0,0.0049209726992252
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,5,1210,1610.0,0.0048043010285691
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,6,816,1216.0,0.0047375398947246
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,7,1207,1607.0,0.0047367861423936
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,8,1206,1606.0,0.004704566852788
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,9,1211,1611.0,0.0046965015977785
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,10,814,1214.0,0.004356030375241
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,11,1213,1613.0,0.004318940229694
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,12,813,1213.0,0.0042480458423111
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,13,771,1171.0,0.0042412822686473
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,14,772,1172.0,0.0040146997704091
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,15,1214,1614.0,0.004006685627086
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,16,773,1173.0,0.0039683133312553
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,17,765,1165.0,0.0035867243856998
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,18,1212,1612.0,0.0032469395889714
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,19,810,1210.0,0.0031178983086079
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,20,994,1394.0,0.0031153188389786
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,21,766,1166.0,0.0031011222729819
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,22,1204,1604.0,0.0029572603519159
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,23,812,1212.0,0.0028617191984152
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,24,770,1170.0,0.0028521642320478
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,25,1215,1615.0,0.0028167811375855
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,26,764,1164.0,0.0026457007188895
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,27,991,1391.0,0.0025702566137884
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,28,1222,1622.0,0.0024226042234461
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,29,762,1162.0,0.0024169847144642
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,30,1218,1618.0,0.0023856694309222
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,31,811,1211.0,0.0023508614038871
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,32,1219,1619.0,0.0023163660870669
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,33,992,1392.0,0.0022889791668335
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,34,767,1167.0,0.0022734628185914
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,35,1205,1605.0,0.0021768758283644
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,36,761,1161.0,0.0021691887126987
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,37,815,1215.0,0.0020311357914266
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,38,888,1288.0,0.0019062652641579
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,39,1223,1623.0,0.0018983605004028
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,40,774,1174.0,0.0018075962216863
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,41,809,1209.0,0.0018033327962388
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,42,382,782.0,0.0017803496121907
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,43,993,1393.0,0.001776479319598
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,44,890,1290.0,0.0017694362268707
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,45,1220,1620.0,0.0017671853890306
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,46,1122,1522.0,0.0017637811426341
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,47,1216,1616.0,0.0017636694407781
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,48,775,1175.0,0.0017406423290145
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,49,776,1176.0,0.0017368274598085
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,50,893,1293.0,0.0016434927787151
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,51,763,1163.0,0.0016383135223674
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,52,897,1297.0,0.0016221445786586
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,53,817,1217.0,0.001602297345195
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,54,743,1143.0,0.0015652210061179
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,55,386,786.0,0.0015504164940888
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,56,163,563.0,0.0015487975007346
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,57,760,1160.0,0.0015256640790751
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,58,11,411.0,0.0015173074469589
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,59,388,788.0,0.0015079488126286
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,60,887,1287.0,0.001505951931227
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,61,995,1395.0,0.0014868078842847
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,62,1289,1689.0,0.001485888064681
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,63,10,410.0,0.0014750923783939
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,64,1224,1624.0,0.0014704363896138
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,65,738,1138.0,0.0014616689621808
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,66,886,1286.0,0.0014226476553992
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,67,680,1080.0,0.0014040061054097
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,68,777,1177.0,0.0014003388530212
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,69,1225,1625.0,0.0013972026217121
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,70,29,429.0,0.0013856996788664
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,71,885,1285.0,0.0013657700135118
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,72,14,414.0,0.0013653831471821
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,73,12,412.0,0.0013535041562965
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,74,313,713.0,0.0013236123047402
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,75,944,1344.0,0.0012856104670166
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,76,485,885.0,0.0012723773689726
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,77,1221,1621.0,0.0012701692800493
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,78,328,728.0,0.0012345725103426
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,79,139,539.0,0.0012225175233963
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,80,394,794.0,0.0012191062160546
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,81,695,1095.0,0.001217220648618
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,82,384,784.0,0.0011882650746357
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,83,697,1097.0,0.0011871861512273
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,84,990,1390.0,0.0011619924666447
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,85,486,886.0,0.0011556073107054
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,86,895,1295.0,0.0011469399265408
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,87,1217,1617.0,0.0011262442691968
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,88,1203,1603.0,0.0011193562132739
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,89,8,408.0,0.00111471001456
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,90,9,409.0,0.0011091540252117
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,91,331,731.0,0.0010978566163597
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,92,860,1260.0,0.0010959822410011
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,93,808,1208.0,0.0010955233954721
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,94,146,546.0,0.0010947389673589
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,95,140,540.0,0.0010921190090443
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,96,3,403.0,0.0010877402188233
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,97,142,542.0,0.0010834302439766
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,98,488,888.0,0.00107935029305
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,99,859,1259.0,0.0010783024935749
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,100,892,1292.0,0.0010729494687921
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,101,1298,1698.0,0.0010670617499127
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,102,312,712.0,0.00104994936466
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,103,314,714.0,0.0010483767233458
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,104,162,562.0,0.0010399057236161
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,105,1028,1428.0,0.0010219242717407
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,106,996,1396.0,0.0010106672862335
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,107,103,503.0,0.0009998691237591
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,108,894,1294.0,0.000993375328338
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,109,1106,1506.0,0.0009837036762194
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,110,141,541.0,0.0009816484748827
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,111,164,564.0,0.0009774577953807
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,112,444,844.0,0.0009669284787037
+shap_feature_selection_extratrees_p1_20260529_183134,P2_mg_presence,MG Presence,8,113,31,431.0,0.0009594833969339
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,1,672,1072.0,0.0087413580140631
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,2,1176,1576.0,0.0080482137393489
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,3,1179,1579.0,0.0080308023623594
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,4,1174,1574.0,0.0078285295982321
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,5,1172,1572.0,0.0069740608069591
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,6,1177,1577.0,0.0068873549999014
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,7,1178,1578.0,0.0063863004668238
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,8,661,1061.0,0.0060902410893533
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,9,1180,1580.0,0.006037144558822
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,10,1173,1573.0,0.0059305394218454
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,11,1167,1567.0,0.00587202194918
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,12,1169,1569.0,0.0056687390314836
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,13,668,1068.0,0.0056227498834354
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,14,1171,1571.0,0.005610371449263
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,15,670,1070.0,0.005553387120641
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,16,1181,1581.0,0.005540820687807
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,17,664,1064.0,0.0055161315831544
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,18,1182,1582.0,0.0053822094782946
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,19,674,1074.0,0.0052994951014282
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,20,669,1069.0,0.0052613360534643
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,21,666,1066.0,0.0051002062115708
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,22,1183,1583.0,0.0050850571591209
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,23,671,1071.0,0.005012360230199
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,24,1175,1575.0,0.0048107213655654
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,25,444,844.0,0.004637857850354
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,26,663,1063.0,0.0046012228628868
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,27,673,1073.0,0.0045580348031537
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,28,445,845.0,0.0044926128655303
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,29,659,1059.0,0.0044732541106469
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,30,662,1062.0,0.0044354565342128
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,31,665,1065.0,0.0043611749982504
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,32,1168,1568.0,0.0043017031290045
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,33,429,829.0,0.0042137420496421
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,34,675,1075.0,0.0033259764970779
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,35,1170,1570.0,0.0032805538168178
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,36,1166,1566.0,0.003168106603638
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,37,676,1076.0,0.0031551351883949
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,38,677,1077.0,0.0031543460910223
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,39,173,573.0,0.0030884672208019
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,40,436,836.0,0.0030263407373238
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,41,1185,1585.0,0.0028714896274195
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,42,430,830.0,0.0028127130886676
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,43,667,1067.0,0.0027378324698428
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,44,426,826.0,0.0027236108355119
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,45,47,447.0,0.0027200727970592
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,46,433,833.0,0.0026750423726487
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,47,428,828.0,0.0026712756411682
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,48,658,1058.0,0.0026572637379426
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,49,443,843.0,0.0023700962828256
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,50,654,1054.0,0.0022392011483161
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,51,448,848.0,0.0022276411335577
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,52,655,1055.0,0.0021596325450071
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,53,423,823.0,0.0020577260196195
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,54,450,850.0,0.0020243313836825
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,55,657,1057.0,0.0020070376060791
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,56,172,572.0,0.0019650407231804
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,57,1164,1564.0,0.0019530757132788
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,58,43,443.0,0.0019309468431839
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,59,435,835.0,0.0019303720630938
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,60,441,841.0,0.0019233710070299
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,61,424,824.0,0.0018858919393286
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,62,439,839.0,0.0018472690632614
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,63,446,846.0,0.0018418965690851
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,64,1184,1584.0,0.001836680165214
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,65,678,1078.0,0.0018293688489425
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,66,165,565.0,0.0018210558185328
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,67,660,1060.0,0.0017376448320391
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,68,175,575.0,0.0017228846525885
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,69,652,1052.0,0.0016974860384973
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,70,164,564.0,0.0016768121034562
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,71,1165,1565.0,0.0016763053637385
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,72,59,459.0,0.0016676666804234
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,73,432,832.0,0.0016477277539907
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,74,44,444.0,0.0016425395644987
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,75,162,562.0,0.0016143009242165
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,76,51,451.0,0.0015602195161876
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,77,48,448.0,0.0015498569264527
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,78,418,818.0,0.0015427274011067
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,79,176,576.0,0.0015216438833612
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,80,438,838.0,0.0015030791406666
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,81,1218,1618.0,0.0014807041525473
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,82,170,570.0,0.0014342907191364
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,83,49,449.0,0.0014317022568247
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,84,457,857.0,0.0014247064401473
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,85,648,1048.0,0.001413120279023
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,86,442,842.0,0.001388184607222
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,87,431,831.0,0.001382076649643
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,88,414,814.0,0.0013753997133263
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,89,398,798.0,0.0013650435697894
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,90,177,577.0,0.0013641891284295
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,91,451,851.0,0.0013516646032092
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,92,160,560.0,0.0013512802483253
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,93,679,1079.0,0.0013343020637755
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,94,58,458.0,0.0012971566622964
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,95,440,840.0,0.001279420835566
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,96,636,1036.0,0.0012686210318068
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,97,455,855.0,0.0012534729294761
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,98,61,461.0,0.0012424603762579
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,99,174,574.0,0.0012373433850602
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,100,396,796.0,0.001233485526618
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,101,437,837.0,0.0012101530519271
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,102,452,852.0,0.0012087096675846
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,103,60,460.0,0.0011967720210577
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,104,163,563.0,0.0011945562798317
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,105,392,792.0,0.0011818716736197
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,106,56,456.0,0.0011712309924106
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,107,434,834.0,0.0011415972877606
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,108,146,546.0,0.0011385404641074
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,109,656,1056.0,0.0011238949605622
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,110,53,453.0,0.0011215497714914
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,111,54,454.0,0.0011139312448164
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,112,449,849.0,0.0011066545879915
+shap_feature_selection_extratrees_p1_20260529_183134,P3_mba_presence,MBA Presence,8,113,178,578.0,0.0011038560353347
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,1,741,1141.0,0.0046238374171077
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,2,742,1142.0,0.0042646951029476
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,3,736,1136.0,0.0041236228498484
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,4,735,1135.0,0.0038472080270999
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,5,1108,1508.0,0.0034456906325778
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,6,740,1140.0,0.003300623560294
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,7,977,1377.0,0.0032372866554706
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,8,1099,1499.0,0.0032358312478663
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,9,1102,1502.0,0.0032051448336411
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,10,1107,1507.0,0.00300454277685
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,11,1103,1503.0,0.0030025350904551
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,12,1095,1495.0,0.0029782090331856
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,13,66,466.0,0.0029512762076095
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,14,64,464.0,0.0029297207244071
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,15,738,1138.0,0.0029154565756251
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,16,318,718.0,0.0028963325250143
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,17,1100,1500.0,0.0028031562986359
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,18,745,1145.0,0.0026608149089115
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,19,1098,1498.0,0.0025432275552124
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,20,734,1134.0,0.0024822790118414
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,21,1115,1515.0,0.0024579881180786
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,22,1110,1510.0,0.0024500981511885
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,23,1097,1497.0,0.0023786853141001
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,24,319,719.0,0.0023596938105438
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,25,744,1144.0,0.0023522312032003
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,26,1106,1506.0,0.0023509534617666
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,27,1114,1514.0,0.0023274539607093
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,28,477,877.0,0.0022953608283609
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,29,737,1137.0,0.0022712568880834
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,30,731,1131.0,0.0022585565976223
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,31,77,477.0,0.0021884823376985
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,32,974,1374.0,0.0021854627174683
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,33,743,1143.0,0.0021225274317983
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,34,1094,1494.0,0.002104777628211
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,35,729,1129.0,0.0021026503804441
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,36,971,1371.0,0.002032318559235
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,37,1104,1504.0,0.001970660291188
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,38,82,482.0,0.0019310778492681
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,39,67,467.0,0.0018980701167709
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,40,474,874.0,0.001896432160854
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,41,1096,1496.0,0.0018952418425276
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,42,1122,1522.0,0.0018585976764014
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,43,1113,1513.0,0.0018438953762727
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,44,1105,1505.0,0.0018402659982137
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,45,1111,1511.0,0.0018032223117189
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,46,747,1147.0,0.0017817916421863
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,47,750,1150.0,0.0017792237639292
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,48,1109,1509.0,0.0017743481143429
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,49,1117,1517.0,0.0017741742101472
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,50,295,695.0,0.0017552667983985
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,51,65,465.0,0.0017465165329251
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,52,63,463.0,0.0017435427534106
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,53,728,1128.0,0.0016992883505411
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,54,294,694.0,0.0016984801769181
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,55,739,1139.0,0.0016525940735251
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,56,1116,1516.0,0.001651406377468
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,57,62,462.0,0.0016500606210571
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,58,970,1370.0,0.001620970420504
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,59,746,1146.0,0.0016109802730054
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,60,83,483.0,0.0015862097734059
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,61,972,1372.0,0.0015693567039704
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,62,969,1369.0,0.0015636954323234
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,63,297,697.0,0.0015584398640844
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,64,81,481.0,0.0015418809156247
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,65,478,878.0,0.0015217673773012
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,66,473,873.0,0.0014972241876608
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,67,975,1375.0,0.0013640054371243
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,68,1120,1520.0,0.0013560284329831
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,69,475,875.0,0.0013360565113746
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,70,751,1151.0,0.0013113446891406
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,71,726,1126.0,0.001289592740346
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,72,298,698.0,0.0012890861964015
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,73,80,480.0,0.001262303951277
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,74,400,800.0,0.0012506899825873
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,75,973,1373.0,0.0012295328206254
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,76,75,475.0,0.001203629797022
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,77,74,474.0,0.0011975052026929
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,78,76,476.0,0.0011767946784646
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,79,979,1379.0,0.0011748460614397
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,80,73,473.0,0.0011551486641062
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,81,476,876.0,0.0011535123149859
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,82,164,564.0,0.0011527427467838
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,83,1400,1800.0,0.0011464565456191
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,84,725,1125.0,0.0011365485105421
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,85,401,801.0,0.0011325383334711
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,86,153,553.0,0.0011192220016584
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,87,978,1378.0,0.0011165787021786
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,88,317,717.0,0.0011119842827538
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,89,522,922.0,0.001095794691197
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,90,299,699.0,0.0010906078174302
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,91,832,1232.0,0.0010841796450483
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,92,470,870.0,0.0010788716929
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,93,1124,1524.0,0.0010735690017755
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,94,472,872.0,0.001068019747673
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,95,1379,1779.0,0.0010625634379731
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,96,1205,1605.0,0.0010595260891841
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,97,1093,1493.0,0.0010576689036545
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,98,1170,1570.0,0.0010541762485774
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,99,471,871.0,0.001053380085372
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,100,831,1231.0,0.0010527660677814
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,101,157,557.0,0.0010402110459289
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,102,399,799.0,0.0010139905750401
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,103,723,1123.0,0.0010124742509002
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,104,42,442.0,0.0010110750328127
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,105,1090,1490.0,0.0010097932183143
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,106,484,884.0,0.0010069513987917
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,107,1128,1528.0,0.000997933161137
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,108,79,479.0,0.0009967096956196
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,109,1092,1492.0,0.0009912556134577
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,110,1378,1778.0,0.0009867159496569
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,111,480,880.0,0.0009752337441367
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,112,36,436.0,0.0009720831554613
+shap_feature_selection_extratrees_p1_20260529_183134,G1_thiram_molar_grade,Thiram Positive Molar Grade,8,113,313,713.0,0.0009705842923896
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,1,460,860.0,0.0032243883291439
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,2,808,1208.0,0.0029892543320227
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,3,814,1214.0,0.0028658552635438
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,4,466,866.0,0.0026237298272291
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,5,761,1161.0,0.0026108931128772
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,6,809,1209.0,0.002530461250271
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,7,759,1159.0,0.0024241765951433
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,8,1023,1423.0,0.0022686304949126
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,9,760,1160.0,0.0022535264847807
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,10,811,1211.0,0.0022387867067898
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,11,807,1207.0,0.0022203533495857
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,12,1207,1607.0,0.00218275961253
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,13,635,1035.0,0.002088940237184
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,14,465,865.0,0.0020394267132014
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,15,816,1216.0,0.0020040869528555
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,16,813,1213.0,0.0019801193487777
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,17,784,1184.0,0.0019733361469018
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,18,786,1186.0,0.0019678179736639
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,19,780,1180.0,0.0019295785107022
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,20,787,1187.0,0.0018637482311164
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,21,812,1212.0,0.0018047899009578
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,22,810,1210.0,0.0017906174415062
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,23,634,1034.0,0.0017337773563176
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,24,467,867.0,0.0017129502949172
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,25,1206,1606.0,0.0017055352750112
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,26,637,1037.0,0.0016479444404942
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,27,771,1171.0,0.0016383972151986
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,28,806,1206.0,0.001600294069872
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,29,1019,1419.0,0.001585351937247
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,30,633,1033.0,0.0015835635016116
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,31,468,868.0,0.0015517783699777
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,32,762,1162.0,0.001544284038533
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,33,815,1215.0,0.0015432321354122
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,34,472,872.0,0.0015236865776689
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,35,781,1181.0,0.0015011476264642
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,36,788,1188.0,0.0014824173904987
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,37,444,844.0,0.0014806923709382
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,38,454,854.0,0.0014785346495369
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,39,628,1028.0,0.0014691720965577
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,40,506,906.0,0.0014544037620718
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,41,1256,1656.0,0.0014470215404253
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,42,641,1041.0,0.0014176667422086
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,43,639,1039.0,0.0014076401916638
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,44,758,1158.0,0.0013609771575721
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,45,691,1091.0,0.0013547809435799
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,46,684,1084.0,0.0013401472185094
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,47,685,1085.0,0.0013280279176787
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,48,631,1031.0,0.0013048239075578
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,49,774,1174.0,0.001292971071802
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,50,447,847.0,0.0012811745845998
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,51,636,1036.0,0.0012747384853688
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,52,778,1178.0,0.0012743541277201
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,53,1022,1422.0,0.0012741791216139
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,54,452,852.0,0.0012734960295194
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,55,81,481.0,0.0012726239871686
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,56,623,1023.0,0.0012585440871475
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,57,785,1185.0,0.0012273857783709
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,58,469,869.0,0.0012218229446981
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,59,1025,1425.0,0.0012196594803691
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,60,1208,1608.0,0.0012184229494698
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,61,690,1090.0,0.0012174223897266
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,62,87,487.0,0.0011909417787936
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,63,279,679.0,0.0011814193924774
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,64,752,1152.0,0.0011488911125342
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,65,457,857.0,0.0011477967734035
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,66,819,1219.0,0.0011469264363172
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,67,783,1183.0,0.0011442897861826
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,68,323,723.0,0.0011423357502596
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,69,505,905.0,0.0011370369845638
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,70,757,1157.0,0.0011358210913425
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,71,886,1286.0,0.0011314108675269
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,72,1204,1604.0,0.0011267263439303
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,73,1242,1642.0,0.0011256465309947
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,74,688,1088.0,0.0011216855312663
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,75,805,1205.0,0.0011173274453994
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,76,602,1002.0,0.0011102755968577
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,77,462,862.0,0.0011091531738543
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,78,446,846.0,0.0011088886421043
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,79,775,1175.0,0.0011007965027758
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,80,1205,1605.0,0.0010906753499239
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,81,754,1154.0,0.0010863088115904
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,82,463,863.0,0.0010757031009215
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,83,448,848.0,0.0010746062592705
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,84,325,725.0,0.0010669324435335
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,85,782,1182.0,0.0010621258160917
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,86,445,845.0,0.0010612291890472
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,87,507,907.0,0.0010536225764622
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,88,88,488.0,0.0010508133979484
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,89,769,1169.0,0.0010498267952338
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,90,476,876.0,0.0010449342364473
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,91,281,681.0,0.0010434444678821
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,92,459,859.0,0.0010364903523609
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,93,464,864.0,0.0010281884943934
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,94,327,727.0,0.0010229908445326
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,95,473,873.0,0.0010215927100827
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,96,453,853.0,0.0010168913603521
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,97,1026,1426.0,0.0010091235823313
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,98,629,1029.0,0.0009978644346177
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,99,576,976.0,0.0009970635306651
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,100,456,856.0,0.0009959090757132
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,101,503,903.0,0.000995208781346
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,102,1017,1417.0,0.0009931622587859
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,103,753,1153.0,0.000990362017647
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,104,773,1173.0,0.0009878008097331
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,105,471,871.0,0.0009774256681153
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,106,917,1317.0,0.0009753192922653
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,107,1257,1657.0,0.0009704655640185
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,108,1079,1479.0,0.0009679482924001
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,109,626,1026.0,0.0009592583699668
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,110,19,419.0,0.0009587744183586
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,111,766,1166.0,0.0009582100499817
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,112,776,1176.0,0.0009565773544395
+shap_feature_selection_extratrees_p1_20260529_183134,G2_mg_molar_grade,MG Positive Molar Grade,8,113,918,1318.0,0.000956161016157
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,1,1171,1571.0,0.0055947201511412
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,2,1177,1577.0,0.0044744120972985
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,3,665,1065.0,0.0042949859816125
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,4,990,1390.0,0.0042807688777179
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,5,664,1064.0,0.0038795802873691
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,6,663,1063.0,0.0036847034390851
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,7,987,1387.0,0.0034393166055652
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,8,1042,1442.0,0.0033381315223805
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,9,1180,1580.0,0.0033055150908192
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,10,1175,1575.0,0.0032567310193083
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,11,1173,1573.0,0.0032007141889311
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,12,1174,1574.0,0.0031918235239147
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,13,986,1386.0,0.0031709081244663
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,14,983,1383.0,0.003119933647411
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,15,1170,1570.0,0.0030451683689315
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,16,1176,1576.0,0.0030221131676254
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,17,1172,1572.0,0.0028262581845497
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,18,655,1055.0,0.0028217665692084
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,19,1037,1437.0,0.0027645713140065
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,20,1181,1581.0,0.0026375020839414
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,21,984,1384.0,0.0026282880599022
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,22,654,1054.0,0.0026067909996196
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,23,989,1389.0,0.0025897895826924
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,24,666,1066.0,0.0025846221791402
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,25,672,1072.0,0.0025660760927543
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,26,669,1069.0,0.0025016825059469
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,27,991,1391.0,0.0024262583048036
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,28,992,1392.0,0.0024110419204518
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,29,1043,1443.0,0.0023641668316321
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,30,1183,1583.0,0.0022934913864454
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,31,668,1068.0,0.0022471478512071
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,32,1178,1578.0,0.0022151769364458
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,33,671,1071.0,0.0022127099518756
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,34,1182,1582.0,0.002143283297038
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,35,994,1394.0,0.0020968578218595
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,36,1004,1404.0,0.0020478716046601
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,37,1044,1444.0,0.0020169241286639
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,38,1179,1579.0,0.0020157034725971
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,39,657,1057.0,0.0019935348793672
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,40,1035,1435.0,0.0019595590224021
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,41,306,706.0,0.0019165353078224
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,42,1036,1436.0,0.0019017799508126
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,43,1001,1401.0,0.0018962343284415
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,44,1041,1441.0,0.001894746856984
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,45,1040,1440.0,0.0018913236076117
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,46,1033,1433.0,0.0018857042385585
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,47,662,1062.0,0.0018832077547851
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,48,653,1053.0,0.0018473048615854
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,49,1046,1446.0,0.0018432436070666
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,50,1071,1471.0,0.0018174623273474
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,51,656,1056.0,0.0018164797957993
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,52,676,1076.0,0.0018113856514397
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,53,1049,1449.0,0.001776842829962
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,54,304,704.0,0.0017660528943488
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,55,1038,1438.0,0.0017515407341961
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,56,1034,1434.0,0.0017514812619994
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,57,996,1396.0,0.0016922298752409
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,58,1047,1447.0,0.0016800006422032
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,59,660,1060.0,0.0016668626206284
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,60,1039,1439.0,0.0016356353053844
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,61,540,940.0,0.0015945923352491
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,62,661,1061.0,0.0015854631199597
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,63,1073,1473.0,0.0015650879418641
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,64,1000,1400.0,0.0015589984935639
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,65,459,859.0,0.0015572507329671
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,66,457,857.0,0.0015477921917655
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,67,1169,1569.0,0.00153810610816
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,68,1160,1560.0,0.0015305451999826
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,69,652,1052.0,0.0015152933534067
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,70,670,1070.0,0.0015151475738858
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,71,977,1377.0,0.0015045246567891
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,72,1070,1470.0,0.0014976339893117
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,73,608,1008.0,0.0014965523300321
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,74,309,709.0,0.0014917738465684
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,75,1045,1445.0,0.0014890925143854
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,76,963,1363.0,0.0014853746661408
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,77,1168,1568.0,0.0014591057538709
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,78,674,1074.0,0.0014547862715702
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,79,982,1382.0,0.0014464056923907
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,80,310,710.0,0.0014312112412161
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,81,985,1385.0,0.0014195635454659
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,82,673,1073.0,0.001411778541335
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,83,667,1067.0,0.0014056334258454
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,84,1013,1413.0,0.0013978708216108
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,85,539,939.0,0.0013900920962834
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,86,988,1388.0,0.0013811173692789
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,87,114,514.0,0.0013458258032819
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,88,978,1378.0,0.0013364662684341
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,89,542,942.0,0.0013358208233629
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,90,606,1006.0,0.0013292344592471
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,91,975,1375.0,0.0013269755272761
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,92,1031,1431.0,0.0013253178008113
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,93,463,863.0,0.0013248509153355
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,94,541,941.0,0.0013170695523881
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,95,128,528.0,0.0012864988280809
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,96,537,937.0,0.0012743685318776
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,97,981,1381.0,0.0012375384863408
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,98,1167,1567.0,0.001217437252056
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,99,1050,1450.0,0.0011920746080111
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,100,465,865.0,0.0011792710867056
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,101,452,852.0,0.0011680155972675
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,102,1002,1402.0,0.0011652355419001
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,103,1159,1559.0,0.0011402220933498
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,104,611,1011.0,0.0011328939838764
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,105,658,1058.0,0.001125892680629
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,106,133,533.0,0.0011258442774412
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,107,649,1049.0,0.0011186343144997
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,108,1157,1557.0,0.0011176566723823
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,109,1075,1475.0,0.0011098472669746
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,110,1030,1430.0,0.001109507276528
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,111,1202,1602.0,0.0011031968640683
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,112,1018,1418.0,0.0010920884330449
+shap_feature_selection_extratrees_p1_20260529_183134,G3_mba_molar_grade,MBA Positive Molar Grade,8,113,659,1059.0,0.0010864807119553
