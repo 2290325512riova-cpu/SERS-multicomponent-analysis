@@ -9,6 +9,12 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 
+# LaTeX build artifacts and retired manuscript versions
+latex_manuscript/build/
+*_v[0-9].pdf
+*_v[0-9].tex
+*_v[0-9].docx
+
 # IDE / OS
 .vscode/
 .idea/
