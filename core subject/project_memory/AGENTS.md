@@ -72,3 +72,11 @@ If a change is needed:
 - SHAP peak assignment formal output is 22/29 clusters plus 91.2% SHAP-mass consistency. Optional ~24/29 extended co-adsorbed/reference-region assignment stays SI-level unless additional own-reference evidence makes it the better-supported main claim.
 - Do not claim Beer-Lambert spectral mixing is first-ever; frame it as composition-constrained spectral mixing for ternary pesticide SERS.
 - Soil result is title/caption-level "spiked-soil / soil-matrix screening validation"; method-level truth is matrix-matched/same-matrix CV. It is not "external validation" or "cross-matrix transfer".
+
+## Manuscript Drafting Protocol
+
+- During Chinese manuscript rewriting, work paragraph by paragraph or section by section.
+- Before drafting a paragraph/section, find the closest published-paper precedent for that exact section role. Prefer `附/参考文献/正式写作参考背书/`, then `附/参考文献/新文献/`, then `附/参考文献/A组`-`H组`, then `附/师兄论文_full.txt`, then web/open literature. If no suitable source is available, ask the user to download a better paper instead of forcing a weak draft.
+- Present the supporting paper and corresponding paragraph-level Chinese rendering before proposing the adapted manuscript text. Preserve source paragraph elements where present: citation markers, figure/table references, formulas, variables, and section placement.
+- Do not use isolated sentence snippets from unrelated sections as "support" for a new paragraph. Prefer complete Methods-to-Methods, Results-to-Results, Introduction-to-Introduction, and Conclusion-to-Conclusion matches.
+- Methods may define task labels, model candidates, validation strategy, metrics, peak-ratio calculations, and SHAP/feature-selection formulas. Results should contain model comparison, best-model selection, MG suppression numbers, SHAP assignment numbers, feature-retention performance, and soil validation outcomes.

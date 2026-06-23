@@ -1,19 +1,34 @@
 # Claude Code worktrees and session data
 .claude/
 
-# Supplementary local files (not part of the project)
+# Supplementary local files and private reference PDFs
 附/
 
 # Python
+.venv/
 __pycache__/
 *.py[cod]
 *.egg-info/
 
+# Temporary and render-check workspaces
+tmp/
+paper_rewriting_output/
+latex_manuscript/_render_check/
+
 # LaTeX build artifacts and retired manuscript versions
 latex_manuscript/build/
+*.aux
+*.log
+*.out
+*.spl
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+texput.log
 *_v[0-9].pdf
 *_v[0-9].tex
 *_v[0-9].docx
+*_更新版.pdf
 
 # IDE / OS
 .vscode/

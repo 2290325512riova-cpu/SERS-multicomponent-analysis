@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering
+\caption{Raw and p1--p5 spectral input matrices and preprocessing steps.}
+\label{tab:s1_preprocessing_inputs}
+\small
+\begin{tabularx}{\textwidth}{L{1.4cm}Y}
+\toprule
+Input matrix & Preprocessing steps \\
+\midrule
+raw & Original spectra interpolated to the 400--1800 cm$^{-1}$ fingerprint region. \\
+p1 & Spike removal, Savitzky--Golay smoothing, ALS baseline correction and SNV. \\
+p2 & Savitzky--Golay smoothing, ALS baseline correction, first derivative and SNV. \\
+p3 & ALS baseline correction and vector normalization. \\
+p4 & Spike removal, Savitzky--Golay smoothing and ALS baseline correction, without normalization. \\
+p5 & Spike removal, Savitzky--Golay smoothing, ALS baseline correction, second derivative and SNV. \\
+\bottomrule
+\end{tabularx}
+\end{table}

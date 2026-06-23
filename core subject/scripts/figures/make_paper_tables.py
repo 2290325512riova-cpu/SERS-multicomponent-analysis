@@ -81,6 +81,121 @@ def table_3_soil_metrics() -> pd.DataFrame:
     )
 
 
+def table_4_soil_g_metrics() -> pd.DataFrame:
+    summary = pd.read_csv(PAPER / "soil_grade_validation" / "soil_g_input_comparison_summary.csv")
+    perm = pd.read_csv(PAPER / "soil_grade_validation" / "soil_g_permutation_test.csv")
+    df = summary.merge(perm[["feature_set", "p_value"]], on="feature_set", how="left")
+    order = [
+        "mg1616_single_band_area",
+        "manual_marker_band_areas",
+        "shap_global_top10pct",
+        "full_p1_spectrum",
+    ]
+    labels = {
+        "mg1616_single_band_area": "MG 1616 cm^-1 single-band window",
+        "manual_marker_band_areas": "Manual marker-band windows",
+        "shap_global_top10pct": "SHAP top 10% wavenumbers",
+        "full_p1_spectrum": "Full p1 spectrum",
+    }
+    df = df.set_index("feature_set").reindex(order).reset_index()
+    return pd.DataFrame(
+        {
+            "Input set": [labels[x] for x in df.feature_set],
+            "Features": df.n_features.astype(int),
+            "Macro-F1": df.apply(lambda r: f"{r.macro_f1_mean:.3f} +/- {r.macro_f1_std:.3f}", axis=1),
+            "Balanced accuracy": df.apply(
+                lambda r: f"{r.balanced_accuracy_mean:.3f} +/- {r.balanced_accuracy_std:.3f}", axis=1
+            ),
+            "Accuracy": df.apply(lambda r: f"{r.accuracy_mean:.3f} +/- {r.accuracy_std:.3f}", axis=1),
+            "OOF Macro-F1": df.oof_macro_f1.map(lambda x: f"{x:.3f}"),
+            "Permutation p": df.p_value.map(lambda x: "<1.0e-4" if x < 1e-4 else f"{x:.3f}"),
+        }
+    )
+
+
+def table_literature_comparison() -> pd.DataFrame:
+    rows = [
+        {
+            "Reference": "Hu et al., Talanta, 2020",
+            "Research system": "Mixed pesticide residues",
+            "Sample / matrix": "Fruit surface",
+            "Main method": "SERS + self-modeling mixture analysis",
+            "Competition / mixture interference": "Mixed-spectrum resolution",
+            "Multicomponent": "Yes",
+            "XAI / SHAP": "No",
+            "Soil validation": "No",
+            "Main difference from this work": "Focused on rapid nondestructive detection of mixed residues on fruit surfaces; did not include SHAP spectral-zone attribution or spiked-soil concentration grading.",
+        },
+        {
+            "Reference": "Shi et al., Food Chemistry: X, 2024",
+            "Research system": "Pymetrozine / carbendazim binary pesticides",
+            "Sample / matrix": "Apple",
+            "Main method": "SERS + multivariate analysis",
+            "Competition / mixture interference": "Discussed coexistence effects on characteristic peak intensity and quantification",
+            "Multicomponent": "Yes, binary",
+            "XAI / SHAP": "No",
+            "Soil validation": "No",
+            "Main difference from this work": "Showed that single-peak intensity in mixtures can be affected by coexisting components; this work extends the design to a ternary system and adds SHAP spectral-zone attribution.",
+        },
+        {
+            "Reference": "Tian et al., JFCA, 2025",
+            "Research system": "Thiabendazole / pymetrozine binary pesticides",
+            "Sample / matrix": "Apple",
+            "Main method": "DFT + SERS",
+            "Competition / mixture interference": "Explicitly analysed competitive adsorption",
+            "Multicomponent": "Yes, binary",
+            "XAI / SHAP": "No",
+            "Soil validation": "No",
+            "Main difference from this work": "Provided DFT-supported evidence for binary adsorption competition; this work focuses on ternary coexistence, MG 1616 cm^-1 suppression and interpretable modelling.",
+        },
+        {
+            "Reference": "Ma et al., Food Control, 2023",
+            "Research system": "Mixed pesticide residues",
+            "Sample / matrix": "Agricultural samples",
+            "Main method": "Portable Raman + SERS",
+            "Competition / mixture interference": "Involved mixed-residue detection",
+            "Multicomponent": "Yes",
+            "XAI / SHAP": "No",
+            "Soil validation": "No",
+            "Main difference from this work": "Emphasized portable detection and multianalyte application; did not trace model contribution back to chemically interpretable spectral zones.",
+        },
+        {
+            "Reference": "Dong et al., Analytical Chemistry, 2025",
+            "Research system": "Single-target thiram detection",
+            "Sample / matrix": "Soil",
+            "Main method": "3D Au supercrystal SERS substrate + ML",
+            "Competition / mixture interference": "Not centred on multicomponent competitive adsorption",
+            "Multicomponent": "No, single target",
+            "XAI / SHAP": "No",
+            "Soil validation": "Yes",
+            "Main difference from this work": "Focused on substrate engineering and single-target soil detection; this work uses conventional AgNPs and emphasizes ternary interference, SHAP attribution and spiked-soil concentration grading.",
+        },
+        {
+            "Reference": "Contreras et al., Analytical Chemistry, 2024",
+            "Research system": "Spectral deep-learning interpretability",
+            "Sample / matrix": "Spectral datasets",
+            "Main method": "Spectral zones-based SHAP / LIME",
+            "Competition / mixture interference": "Focused on grouped spectral-zone interpretability",
+            "Multicomponent": "Dataset dependent",
+            "XAI / SHAP": "Yes",
+            "Soil validation": "No",
+            "Main difference from this work": "Provided a spectral-zone XAI methodology; this work applies a related idea to ternary SERS mixtures and spiked-soil screening.",
+        },
+        {
+            "Reference": "Yang et al., Spectrochimica Acta Part A, 2026",
+            "Research system": "Raman spectral classification",
+            "Sample / matrix": "Raman datasets",
+            "Main method": "SHAP + spectral segmentation",
+            "Competition / mixture interference": "Focused on continuous spectral-zone interpretation",
+            "Multicomponent": "Dataset dependent",
+            "XAI / SHAP": "Yes",
+            "Soil validation": "No",
+            "Main difference from this work": "Provided a Raman segmentation-SHAP reference; this work further combines SERS mixture competition and spiked-soil concentration grading.",
+        },
+    ]
+    return pd.DataFrame(rows)
+
+
 def table_representative_rsd() -> pd.DataFrame:
     meta = pd.read_csv(SPLIT)
     processed = ROOT / "data" / "pure63_mainline" / "processed"
@@ -141,6 +256,10 @@ def supplementary_tables() -> dict[str, pd.DataFrame]:
     rsd = table_representative_rsd()
     write_table(rsd, "ST5_representative_peak_rsd")
     tables["ST5_representative_RSD"] = rsd
+
+    lit = table_literature_comparison()
+    write_table(lit, "ST6_representative_literature_comparison")
+    tables["ST6_literature_comparison"] = lit
     return tables
 
 
@@ -172,8 +291,9 @@ def write_main_tables_docx(tables: dict[str, pd.DataFrame]) -> None:
         "T1_peak_assignment": "Table 1. Characteristic SERS bands and their manuscript roles.",
         "T2_best_by_task": "Table 2. Best model and preprocessing combination for each screening task.",
         "T3_soil_metrics": "Table 3. Spiked-soil matrix screening performance for pesticide presence tasks.",
+        "T4_soil_g_metrics": "Table 4. Input-set comparison for ternary spiked-soil concentration grading.",
     }
-    for key in ["T1_peak_assignment", "T2_best_by_task", "T3_soil_metrics"]:
+    for key in ["T1_peak_assignment", "T2_best_by_task", "T3_soil_metrics", "T4_soil_g_metrics"]:
         df = tables[key]
         doc.add_paragraph(captions[key])
         table = doc.add_table(rows=1, cols=len(df.columns))
@@ -197,10 +317,12 @@ def main() -> None:
         "T1_peak_assignment": table_1_peak_assignment(),
         "T2_best_by_task": table_2_best_by_task(),
         "T3_soil_metrics": table_3_soil_metrics(),
+        "T4_soil_g_metrics": table_4_soil_g_metrics(),
     }
     write_table(main_tables["T1_peak_assignment"], "T1_peak_assignment")
     write_table(main_tables["T2_best_by_task"], "T2_best_by_task_performance")
     write_table(main_tables["T3_soil_metrics"], "T3_soil_screening_metrics")
+    write_table(main_tables["T4_soil_g_metrics"], "T4_soil_g_input_comparison")
     supp = supplementary_tables()
     write_excel_workbook({**main_tables, **supp})
     write_main_tables_docx(main_tables)

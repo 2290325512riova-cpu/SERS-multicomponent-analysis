@@ -1,0 +1,26 @@
+{
+  "run_id": "soil_g_extratrees_p1_20260622_142659",
+  "created_at": "2026-06-22T14:28:15",
+  "git_commit": "299c8c5",
+  "command": "core subject\\scripts\\analysis\\run_soil_grade_validation.py",
+  "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "sklearn": "1.7.2",
+  "model": "ExtraTrees",
+  "model_recipe": "ExtraTreesClassifier(class_weight='balanced', min_samples_leaf=2,\n                     n_estimators=400, n_jobs=-1, random_state=42)",
+  "variant": "p1",
+  "n_splits": 5,
+  "n_permutations": 10000,
+  "band_half_width_cm-1": 5.0,
+  "shap_retention_pct": 10.0,
+  "n_ternary_soil_spectra": 56,
+  "soil_g_counts": {
+    "low": 24,
+    "high": 21,
+    "middle": 11
+  },
+  "seed": 42,
+  "elapsed_seconds": 75.8985253000028
+}

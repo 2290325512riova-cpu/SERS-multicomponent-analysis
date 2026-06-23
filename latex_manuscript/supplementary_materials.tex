@@ -1,0 +1,835 @@
+
+\clearpage
+\section*{补充材料}
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\setcounter{table}{0}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\figurename}{补充图}
+\renewcommand{\tablename}{补充表}
+
+\subsection*{补充图}
+
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{figS1_full_benchmark_matrix.pdf}
+  \caption{完整模型-预处理-任务 benchmark 矩阵。六个面板分别对应 P1--P3 存在性任务和 G1--G3 离散浓度档判别任务；每个面板显示 13 类模型在 raw 和 p1--p5 六种光谱输入下的 macro-F1，黑框标出该任务中的最高值。}
+  \label{fig:s1_full_benchmark}
+\end{figure}
+
+
+\clearpage
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{figS2_augmentation_ablation.pdf}
+  \caption{深度学习候选模型的数据增强消融结果。a，三种增强策略下各任务的最佳深度学习 macro-F1；b，各深度学习模型跨任务平均最佳 macro-F1。}
+  \label{fig:s2_augmentation}
+\end{figure}
+
+
+\clearpage
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{figS3_preprocessing_effects.pdf}
+  \caption{同一样品在 raw 和 p1--p5 输入矩阵中的光谱形态变化示例。各曲线经归一化并纵向平移，仅用于展示预处理对峰形、归一化和导数输入的影响。}
+  \label{fig:s3_preprocessing}
+\end{figure}
+
+
+\clearpage
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{figS4_embedding_overview.pdf}
+  \caption{p1 光谱输入的无监督嵌入概览。PCA、t-SNE 和 UMAP 均按单组分、二元和三元混合复杂度着色，用于观察混合复杂度对全谱分布的影响。}
+  \label{fig:s4_embedding}
+\end{figure}
+
+
+\clearpage
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.98\textwidth]{figS5_extended_rsd.pdf}
+  \caption{扩展重复性与 RSD 质控结果。a，仅保留含对应目标物的文件夹后，不同预处理输入下三个代表峰的 RSD 分布；虚线为 15\% 参考水平。b，各代表峰和预处理输入的中位 RSD。}
+  \label{fig:s5_rsd}
+\end{figure}
+
+
+\clearpage
+\subsection*{补充表}
+
+
+{\small
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{longtable}{L{1.5cm}L{13.2cm}}
+\caption{Raw and p1--p5 spectral input matrices and preprocessing steps.}\label{tab:s1_preprocessing_inputs}\\
+\toprule
+Input & Preprocessing steps \\
+\midrule
+\endfirsthead
+\toprule
+Input & Preprocessing steps \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+raw & Original spectra interpolated to the 400--1800 cm$^{-1}$ fingerprint region. \\
+p1 & Spike removal, Savitzky--Golay smoothing, ALS baseline correction and SNV. \\
+p2 & Savitzky--Golay smoothing, ALS baseline correction, first derivative and SNV. \\
+p3 & ALS baseline correction and vector normalization. \\
+p4 & Spike removal, Savitzky--Golay smoothing and ALS baseline correction, without normalization. \\
+p5 & Spike removal, Savitzky--Golay smoothing, ALS baseline correction, second derivative and SNV. \\
+\end{longtable}
+}
+
+
+{\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{longtable}{L{1.7cm}L{1.3cm}L{7.3cm}L{4.2cm}}
+\caption{Major SERS peak assignments and manuscript roles.}\label{tab:s2_peak_assignment}\\
+\toprule
+Analyte & Shift & Assignment & Role \\
+\midrule
+\endfirsthead
+\toprule
+Analyte & Shift & Assignment & Role \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+Thiram & 560 & S-S stretching / skeletal mode & core marker \\
+Thiram & 860 & (CH3)2-N / CH3 mode & assigned Thiram band \\
+Thiram & 930 & C-S symmetric stretching & core marker \\
+Thiram & 1145 & C-N stretching & core marker \\
+Thiram & 1380 & CH3 deformation / C-N & overlap-sensitive region \\
+Thiram & 1444 & C-N stretching + CH3 rocking & assigned Thiram band \\
+Thiram & 1510 & C=N / C-N related mode & core marker \\
+MG & 908 & ring vibration & marker \\
+MG & 1172 & C-H in-plane bending & MG-associated overlap-sensitive region \\
+MG & 1220 & C-H in-plane bending & marker \\
+MG & 1394 & aromatic C-C / C-N mode & MG-associated overlap-sensitive region \\
+MG & 1616 & aromatic C=C stretching & clean MG suppression marker \\
+4-MBA & 1078 & ring breathing / C-S related mode & core marker \\
+4-MBA & 1180 & C-H bending & overlap-sensitive region \\
+4-MBA & 1490 & aromatic C-C stretching & marker \\
+4-MBA & 1590 & aromatic C=C stretching & core marker \\
+\end{longtable}
+}
+
+
+{\tiny
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{longtable}{L{2.35cm}L{2.4cm}L{1.0cm}L{2.35cm}L{2.25cm}L{2.25cm}L{1.45cm}}
+\caption{Full model-by-preprocessing benchmark matrix.}\label{tab:s3_full_benchmark}\\
+\toprule
+Task & Model & Input & Macro-F1 & BA & Accuracy & Fit s/fold \\
+\midrule
+\endfirsthead
+\toprule
+Task & Model & Input & Macro-F1 & BA & Accuracy & Fit s/fold \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+P1 Thiram & PLS-DA & raw & 0.832 $\pm$ 0.014 & 0.799 $\pm$ 0.012 & 0.880 $\pm$ 0.012 & 5.16 \\
+P1 Thiram & PLS-DA & p1 & 0.975 $\pm$ 0.008 & 0.974 $\pm$ 0.008 & 0.980 $\pm$ 0.006 & 5.32 \\
+P1 Thiram & PLS-DA & p2 & 0.959 $\pm$ 0.009 & 0.962 $\pm$ 0.009 & 0.967 $\pm$ 0.008 & 5.44 \\
+P1 Thiram & PLS-DA & p3 & 0.979 $\pm$ 0.016 & 0.981 $\pm$ 0.016 & 0.983 $\pm$ 0.013 & 5.31 \\
+P1 Thiram & PLS-DA & p4 & 0.867 $\pm$ 0.015 & 0.849 $\pm$ 0.016 & 0.899 $\pm$ 0.011 & 5.38 \\
+P1 Thiram & PLS-DA & p5 & 0.950 $\pm$ 0.012 & 0.952 $\pm$ 0.016 & 0.960 $\pm$ 0.009 & 4.91 \\
+P1 Thiram & LDA & raw & 0.720 $\pm$ 0.021 & 0.745 $\pm$ 0.026 & 0.756 $\pm$ 0.019 & 0.39 \\
+P1 Thiram & LDA & p1 & 0.862 $\pm$ 0.023 & 0.880 $\pm$ 0.026 & 0.883 $\pm$ 0.020 & 0.38 \\
+P1 Thiram & LDA & p2 & 0.757 $\pm$ 0.027 & 0.782 $\pm$ 0.027 & 0.789 $\pm$ 0.025 & 0.36 \\
+P1 Thiram & LDA & p3 & 0.676 $\pm$ 0.040 & 0.703 $\pm$ 0.039 & 0.711 $\pm$ 0.040 & 0.37 \\
+P1 Thiram & LDA & p4 & 0.743 $\pm$ 0.047 & 0.769 $\pm$ 0.058 & 0.777 $\pm$ 0.040 & 0.40 \\
+P1 Thiram & LDA & p5 & 0.813 $\pm$ 0.048 & 0.831 $\pm$ 0.050 & 0.841 $\pm$ 0.041 & 0.37 \\
+P1 Thiram & SVM & raw & 0.840 $\pm$ 0.017 & 0.821 $\pm$ 0.013 & 0.879 $\pm$ 0.014 & 0.18 \\
+P1 Thiram & SVM & p1 & 0.992 $\pm$ 0.007 & 0.994 $\pm$ 0.005 & 0.993 $\pm$ 0.006 & 0.05 \\
+P1 Thiram & SVM & p2 & 0.996 $\pm$ 0.006 & 0.995 $\pm$ 0.009 & 0.997 $\pm$ 0.005 & 0.05 \\
+P1 Thiram & SVM & p3 & 0.993 $\pm$ 0.008 & 0.995 $\pm$ 0.006 & 0.994 $\pm$ 0.007 & 0.06 \\
+P1 Thiram & SVM & p4 & 0.745 $\pm$ 0.020 & 0.829 $\pm$ 0.014 & 0.755 $\pm$ 0.020 & 0.18 \\
+P1 Thiram & SVM & p5 & 0.992 $\pm$ 0.006 & 0.992 $\pm$ 0.008 & 0.993 $\pm$ 0.005 & 0.07 \\
+P1 Thiram & KNN & raw & 0.945 $\pm$ 0.013 & 0.947 $\pm$ 0.013 & 0.956 $\pm$ 0.011 & 0.02 \\
+P1 Thiram & KNN & p1 & 0.996 $\pm$ 0.006 & 0.998 $\pm$ 0.003 & 0.997 $\pm$ 0.005 & 0.02 \\
+P1 Thiram & KNN & p2 & 0.950 $\pm$ 0.012 & 0.938 $\pm$ 0.009 & 0.961 $\pm$ 0.010 & 0.02 \\
+P1 Thiram & KNN & p3 & 0.993 $\pm$ 0.008 & 0.996 $\pm$ 0.005 & 0.994 $\pm$ 0.007 & 0.02 \\
+P1 Thiram & KNN & p4 & 0.989 $\pm$ 0.014 & 0.990 $\pm$ 0.013 & 0.991 $\pm$ 0.012 & 0.01 \\
+P1 Thiram & KNN & p5 & 0.907 $\pm$ 0.021 & 0.883 $\pm$ 0.021 & 0.930 $\pm$ 0.016 & 0.01 \\
+P1 Thiram & RF & raw & 0.955 $\pm$ 0.026 & 0.952 $\pm$ 0.031 & 0.964 $\pm$ 0.020 & 0.71 \\
+P1 Thiram & RF & p1 & 0.992 $\pm$ 0.003 & 0.990 $\pm$ 0.007 & 0.993 $\pm$ 0.002 & 0.72 \\
+P1 Thiram & RF & p2 & 0.993 $\pm$ 0.005 & 0.992 $\pm$ 0.008 & 0.994 $\pm$ 0.004 & 0.69 \\
+P1 Thiram & RF & p3 & 0.992 $\pm$ 0.008 & 0.990 $\pm$ 0.009 & 0.993 $\pm$ 0.006 & 0.70 \\
+P1 Thiram & RF & p4 & 0.985 $\pm$ 0.007 & 0.985 $\pm$ 0.006 & 0.988 $\pm$ 0.006 & 0.72 \\
+P1 Thiram & RF & p5 & 0.990 $\pm$ 0.011 & 0.986 $\pm$ 0.015 & 0.992 $\pm$ 0.008 & 0.70 \\
+P1 Thiram & ExtraTrees & raw & 0.970 $\pm$ 0.011 & 0.972 $\pm$ 0.011 & 0.976 $\pm$ 0.009 & 1.26 \\
+P1 Thiram & ExtraTrees & p1 & 0.993 $\pm$ 0.000 & 0.992 $\pm$ 0.003 & 0.994 $\pm$ 0.000 & 1.30 \\
+P1 Thiram & ExtraTrees & p2 & 0.996 $\pm$ 0.004 & 0.996 $\pm$ 0.004 & 0.997 $\pm$ 0.003 & 1.27 \\
+P1 Thiram & ExtraTrees & p3 & 0.993 $\pm$ 0.005 & 0.994 $\pm$ 0.004 & 0.994 $\pm$ 0.004 & 1.28 \\
+P1 Thiram & ExtraTrees & p4 & 0.992 $\pm$ 0.003 & 0.992 $\pm$ 0.003 & 0.993 $\pm$ 0.002 & 1.28 \\
+P1 Thiram & ExtraTrees & p5 & 0.992 $\pm$ 0.006 & 0.992 $\pm$ 0.005 & 0.993 $\pm$ 0.005 & 1.26 \\
+P1 Thiram & XGBoost & raw & 0.967 $\pm$ 0.011 & 0.968 $\pm$ 0.012 & 0.973 $\pm$ 0.008 & 6.22 \\
+P1 Thiram & XGBoost & p1 & 0.992 $\pm$ 0.006 & 0.992 $\pm$ 0.008 & 0.993 $\pm$ 0.005 & 5.60 \\
+P1 Thiram & XGBoost & p2 & 0.993 $\pm$ 0.007 & 0.992 $\pm$ 0.007 & 0.994 $\pm$ 0.006 & 5.05 \\
+P1 Thiram & XGBoost & p3 & 0.992 $\pm$ 0.006 & 0.992 $\pm$ 0.005 & 0.993 $\pm$ 0.005 & 5.14 \\
+P1 Thiram & XGBoost & p4 & 0.986 $\pm$ 0.005 & 0.986 $\pm$ 0.005 & 0.989 $\pm$ 0.004 & 5.64 \\
+P1 Thiram & XGBoost & p5 & 0.985 $\pm$ 0.009 & 0.982 $\pm$ 0.011 & 0.988 $\pm$ 0.007 & 5.79 \\
+P1 Thiram & HistGradientBoosting & raw & 0.959 $\pm$ 0.019 & 0.964 $\pm$ 0.022 & 0.967 $\pm$ 0.016 & 8.04 \\
+P1 Thiram & HistGradientBoosting & p1 & 0.949 $\pm$ 0.023 & 0.946 $\pm$ 0.023 & 0.959 $\pm$ 0.019 & 5.69 \\
+P1 Thiram & HistGradientBoosting & p2 & 0.954 $\pm$ 0.039 & 0.951 $\pm$ 0.040 & 0.963 $\pm$ 0.030 & 20.39 \\
+P1 Thiram & HistGradientBoosting & p3 & 0.967 $\pm$ 0.009 & 0.966 $\pm$ 0.007 & 0.973 $\pm$ 0.007 & 13.90 \\
+P1 Thiram & HistGradientBoosting & p4 & 0.951 $\pm$ 0.023 & 0.946 $\pm$ 0.024 & 0.961 $\pm$ 0.018 & 15.53 \\
+P1 Thiram & HistGradientBoosting & p5 & 0.931 $\pm$ 0.039 & 0.925 $\pm$ 0.043 & 0.946 $\pm$ 0.031 & 23.48 \\
+P1 Thiram & 1D-CNN & raw & 0.696 $\pm$ 0.091 & 0.740 $\pm$ 0.038 & 0.728 $\pm$ 0.114 & 17.55 \\
+P1 Thiram & 1D-CNN & p1 & 0.913 $\pm$ 0.036 & 0.933 $\pm$ 0.020 & 0.926 $\pm$ 0.033 & 28.23 \\
+P1 Thiram & 1D-CNN & p2 & 0.905 $\pm$ 0.033 & 0.924 $\pm$ 0.018 & 0.919 $\pm$ 0.031 & 24.39 \\
+P1 Thiram & 1D-CNN & p3 & 0.518 $\pm$ 0.222 & 0.582 $\pm$ 0.184 & 0.764 $\pm$ 0.095 & 14.49 \\
+P1 Thiram & 1D-CNN & p4 & 0.655 $\pm$ 0.073 & 0.744 $\pm$ 0.048 & 0.664 $\pm$ 0.082 & 17.44 \\
+P1 Thiram & 1D-CNN & p5 & 0.891 $\pm$ 0.024 & 0.878 $\pm$ 0.029 & 0.916 $\pm$ 0.018 & 16.89 \\
+P1 Thiram & 1D-ResNet & raw & 0.694 $\pm$ 0.132 & 0.762 $\pm$ 0.096 & 0.707 $\pm$ 0.142 & 24.76 \\
+P1 Thiram & 1D-ResNet & p1 & 0.931 $\pm$ 0.012 & 0.928 $\pm$ 0.010 & 0.944 $\pm$ 0.012 & 28.41 \\
+P1 Thiram & 1D-ResNet & p2 & 0.931 $\pm$ 0.020 & 0.931 $\pm$ 0.019 & 0.945 $\pm$ 0.016 & 30.44 \\
+P1 Thiram & 1D-ResNet & p3 & 0.909 $\pm$ 0.063 & 0.906 $\pm$ 0.078 & 0.930 $\pm$ 0.042 & 45.77 \\
+P1 Thiram & 1D-ResNet & p4 & 0.788 $\pm$ 0.035 & 0.783 $\pm$ 0.043 & 0.835 $\pm$ 0.022 & 17.34 \\
+P1 Thiram & 1D-ResNet & p5 & 0.887 $\pm$ 0.026 & 0.871 $\pm$ 0.040 & 0.915 $\pm$ 0.017 & 24.98 \\
+P1 Thiram & Spectrum-KAN & raw & 0.829 $\pm$ 0.078 & 0.856 $\pm$ 0.086 & 0.852 $\pm$ 0.077 & 51.39 \\
+P1 Thiram & Spectrum-KAN & p1 & 0.948 $\pm$ 0.039 & 0.944 $\pm$ 0.029 & 0.958 $\pm$ 0.033 & 22.53 \\
+P1 Thiram & Spectrum-KAN & p2 & 0.962 $\pm$ 0.014 & 0.955 $\pm$ 0.019 & 0.970 $\pm$ 0.011 & 18.55 \\
+P1 Thiram & Spectrum-KAN & p3 & 0.959 $\pm$ 0.011 & 0.967 $\pm$ 0.009 & 0.967 $\pm$ 0.010 & 49.16 \\
+P1 Thiram & Spectrum-KAN & p4 & 0.930 $\pm$ 0.023 & 0.949 $\pm$ 0.020 & 0.941 $\pm$ 0.019 & 44.67 \\
+P1 Thiram & Spectrum-KAN & p5 & 0.957 $\pm$ 0.013 & 0.954 $\pm$ 0.018 & 0.966 $\pm$ 0.010 & 26.30 \\
+P1 Thiram & KAN-CNN & raw & 0.676 $\pm$ 0.132 & 0.769 $\pm$ 0.089 & 0.683 $\pm$ 0.140 & 26.14 \\
+P1 Thiram & KAN-CNN & p1 & 0.915 $\pm$ 0.021 & 0.921 $\pm$ 0.012 & 0.930 $\pm$ 0.021 & 36.83 \\
+P1 Thiram & KAN-CNN & p2 & 0.899 $\pm$ 0.030 & 0.917 $\pm$ 0.028 & 0.915 $\pm$ 0.028 & 39.92 \\
+P1 Thiram & KAN-CNN & p3 & 0.554 $\pm$ 0.209 & 0.617 $\pm$ 0.183 & 0.740 $\pm$ 0.103 & 22.57 \\
+P1 Thiram & KAN-CNN & p4 & 0.694 $\pm$ 0.031 & 0.770 $\pm$ 0.029 & 0.706 $\pm$ 0.032 & 27.36 \\
+P1 Thiram & KAN-CNN & p5 & 0.863 $\pm$ 0.028 & 0.866 $\pm$ 0.035 & 0.889 $\pm$ 0.027 & 28.64 \\
+P1 Thiram & RamanNet-Lite & raw & 0.873 $\pm$ 0.019 & 0.865 $\pm$ 0.039 & 0.901 $\pm$ 0.016 & 36.60 \\
+P1 Thiram & RamanNet-Lite & p1 & 0.961 $\pm$ 0.018 & 0.957 $\pm$ 0.021 & 0.969 $\pm$ 0.014 & 18.69 \\
+P1 Thiram & RamanNet-Lite & p2 & 0.960 $\pm$ 0.017 & 0.964 $\pm$ 0.006 & 0.967 $\pm$ 0.016 & 23.47 \\
+P1 Thiram & RamanNet-Lite & p3 & 0.937 $\pm$ 0.065 & 0.957 $\pm$ 0.039 & 0.945 $\pm$ 0.061 & 37.87 \\
+P1 Thiram & RamanNet-Lite & p4 & 0.960 $\pm$ 0.021 & 0.959 $\pm$ 0.026 & 0.968 $\pm$ 0.016 & 31.71 \\
+P1 Thiram & RamanNet-Lite & p5 & 0.965 $\pm$ 0.016 & 0.974 $\pm$ 0.013 & 0.971 $\pm$ 0.013 & 25.03 \\
+P2 MG & PLS-DA & raw & 0.715 $\pm$ 0.033 & 0.687 $\pm$ 0.029 & 0.817 $\pm$ 0.018 & 5.04 \\
+P2 MG & PLS-DA & p1 & 0.941 $\pm$ 0.020 & 0.947 $\pm$ 0.025 & 0.952 $\pm$ 0.016 & 5.12 \\
+P2 MG & PLS-DA & p2 & 0.932 $\pm$ 0.017 & 0.936 $\pm$ 0.012 & 0.945 $\pm$ 0.016 & 5.24 \\
+P2 MG & PLS-DA & p3 & 0.925 $\pm$ 0.019 & 0.930 $\pm$ 0.016 & 0.939 $\pm$ 0.016 & 5.21 \\
+P2 MG & PLS-DA & p4 & 0.785 $\pm$ 0.022 & 0.752 $\pm$ 0.018 & 0.852 $\pm$ 0.016 & 4.93 \\
+P2 MG & PLS-DA & p5 & 0.882 $\pm$ 0.016 & 0.879 $\pm$ 0.021 & 0.906 $\pm$ 0.011 & 5.32 \\
+P2 MG & LDA & raw & 0.603 $\pm$ 0.028 & 0.627 $\pm$ 0.033 & 0.642 $\pm$ 0.030 & 0.40 \\
+P2 MG & LDA & p1 & 0.803 $\pm$ 0.024 & 0.825 $\pm$ 0.021 & 0.831 $\pm$ 0.023 & 0.36 \\
+P2 MG & LDA & p2 & 0.703 $\pm$ 0.063 & 0.734 $\pm$ 0.057 & 0.732 $\pm$ 0.065 & 0.37 \\
+P2 MG & LDA & p3 & 0.639 $\pm$ 0.043 & 0.675 $\pm$ 0.048 & 0.667 $\pm$ 0.042 & 0.36 \\
+P2 MG & LDA & p4 & 0.668 $\pm$ 0.022 & 0.691 $\pm$ 0.026 & 0.706 $\pm$ 0.022 & 0.38 \\
+P2 MG & LDA & p5 & 0.780 $\pm$ 0.024 & 0.800 $\pm$ 0.026 & 0.811 $\pm$ 0.021 & 0.36 \\
+P2 MG & SVM & raw & 0.765 $\pm$ 0.014 & 0.749 $\pm$ 0.012 & 0.822 $\pm$ 0.015 & 0.20 \\
+P2 MG & SVM & p1 & 0.970 $\pm$ 0.008 & 0.981 $\pm$ 0.007 & 0.976 $\pm$ 0.006 & 0.09 \\
+P2 MG & SVM & p2 & 0.978 $\pm$ 0.012 & 0.983 $\pm$ 0.010 & 0.982 $\pm$ 0.010 & 0.08 \\
+P2 MG & SVM & p3 & 0.974 $\pm$ 0.013 & 0.984 $\pm$ 0.010 & 0.979 $\pm$ 0.011 & 0.09 \\
+P2 MG & SVM & p4 & 0.726 $\pm$ 0.026 & 0.810 $\pm$ 0.024 & 0.735 $\pm$ 0.028 & 0.18 \\
+P2 MG & SVM & p5 & 0.974 $\pm$ 0.003 & 0.976 $\pm$ 0.009 & 0.979 $\pm$ 0.002 & 0.09 \\
+P2 MG & KNN & raw & 0.915 $\pm$ 0.019 & 0.906 $\pm$ 0.023 & 0.933 $\pm$ 0.015 & 0.01 \\
+P2 MG & KNN & p1 & 0.962 $\pm$ 0.024 & 0.965 $\pm$ 0.023 & 0.969 $\pm$ 0.019 & 0.01 \\
+P2 MG & KNN & p2 & 0.931 $\pm$ 0.020 & 0.937 $\pm$ 0.022 & 0.943 $\pm$ 0.015 & 0.01 \\
+P2 MG & KNN & p3 & 0.967 $\pm$ 0.025 & 0.971 $\pm$ 0.022 & 0.973 $\pm$ 0.021 & 0.02 \\
+P2 MG & KNN & p4 & 0.960 $\pm$ 0.014 & 0.963 $\pm$ 0.017 & 0.968 $\pm$ 0.011 & 0.02 \\
+P2 MG & KNN & p5 & 0.884 $\pm$ 0.016 & 0.882 $\pm$ 0.018 & 0.907 $\pm$ 0.013 & 0.02 \\
+P2 MG & RF & raw & 0.932 $\pm$ 0.029 & 0.930 $\pm$ 0.034 & 0.946 $\pm$ 0.024 & 0.72 \\
+P2 MG & RF & p1 & 0.985 $\pm$ 0.009 & 0.987 $\pm$ 0.009 & 0.988 $\pm$ 0.007 & 0.76 \\
+P2 MG & RF & p2 & 0.970 $\pm$ 0.012 & 0.971 $\pm$ 0.011 & 0.976 $\pm$ 0.010 & 0.71 \\
+P2 MG & RF & p3 & 0.977 $\pm$ 0.011 & 0.981 $\pm$ 0.009 & 0.981 $\pm$ 0.009 & 0.70 \\
+P2 MG & RF & p4 & 0.967 $\pm$ 0.012 & 0.967 $\pm$ 0.016 & 0.973 $\pm$ 0.010 & 0.71 \\
+P2 MG & RF & p5 & 0.956 $\pm$ 0.004 & 0.954 $\pm$ 0.006 & 0.964 $\pm$ 0.003 & 0.70 \\
+P2 MG & ExtraTrees & raw & 0.934 $\pm$ 0.028 & 0.933 $\pm$ 0.036 & 0.947 $\pm$ 0.022 & 1.25 \\
+P2 MG & ExtraTrees & p1 & 0.978 $\pm$ 0.012 & 0.985 $\pm$ 0.009 & 0.982 $\pm$ 0.010 & 1.31 \\
+P2 MG & ExtraTrees & p2 & 0.974 $\pm$ 0.013 & 0.982 $\pm$ 0.010 & 0.979 $\pm$ 0.011 & 1.26 \\
+P2 MG & ExtraTrees & p3 & 0.976 $\pm$ 0.018 & 0.980 $\pm$ 0.015 & 0.980 $\pm$ 0.014 & 1.28 \\
+P2 MG & ExtraTrees & p4 & 0.978 $\pm$ 0.009 & 0.984 $\pm$ 0.006 & 0.982 $\pm$ 0.007 & 1.29 \\
+P2 MG & ExtraTrees & p5 & 0.964 $\pm$ 0.015 & 0.968 $\pm$ 0.018 & 0.971 $\pm$ 0.012 & 1.26 \\
+P2 MG & XGBoost & raw & 0.941 $\pm$ 0.013 & 0.946 $\pm$ 0.017 & 0.952 $\pm$ 0.010 & 6.45 \\
+P2 MG & XGBoost & p1 & 0.977 $\pm$ 0.011 & 0.982 $\pm$ 0.011 & 0.981 $\pm$ 0.009 & 5.91 \\
+P2 MG & XGBoost & p2 & 0.955 $\pm$ 0.021 & 0.964 $\pm$ 0.020 & 0.963 $\pm$ 0.017 & 5.98 \\
+P2 MG & XGBoost & p3 & 0.980 $\pm$ 0.010 & 0.984 $\pm$ 0.009 & 0.983 $\pm$ 0.008 & 5.52 \\
+P2 MG & XGBoost & p4 & 0.970 $\pm$ 0.013 & 0.973 $\pm$ 0.014 & 0.976 $\pm$ 0.011 & 5.66 \\
+P2 MG & XGBoost & p5 & 0.958 $\pm$ 0.014 & 0.968 $\pm$ 0.016 & 0.966 $\pm$ 0.012 & 6.34 \\
+P2 MG & HistGradientBoosting & raw & 0.936 $\pm$ 0.018 & 0.942 $\pm$ 0.021 & 0.948 $\pm$ 0.015 & 4.78 \\
+P2 MG & HistGradientBoosting & p1 & 0.938 $\pm$ 0.026 & 0.932 $\pm$ 0.035 & 0.951 $\pm$ 0.019 & 4.34 \\
+P2 MG & HistGradientBoosting & p2 & 0.935 $\pm$ 0.011 & 0.941 $\pm$ 0.013 & 0.947 $\pm$ 0.008 & 16.61 \\
+P2 MG & HistGradientBoosting & p3 & 0.945 $\pm$ 0.026 & 0.943 $\pm$ 0.028 & 0.956 $\pm$ 0.021 & 19.52 \\
+P2 MG & HistGradientBoosting & p4 & 0.940 $\pm$ 0.029 & 0.941 $\pm$ 0.030 & 0.951 $\pm$ 0.024 & 21.24 \\
+P2 MG & HistGradientBoosting & p5 & 0.901 $\pm$ 0.014 & 0.902 $\pm$ 0.010 & 0.920 $\pm$ 0.012 & 15.54 \\
+P2 MG & 1D-CNN & raw & 0.848 $\pm$ 0.025 & 0.849 $\pm$ 0.028 & 0.877 $\pm$ 0.020 & 26.80 \\
+P2 MG & 1D-CNN & p1 & 0.911 $\pm$ 0.032 & 0.898 $\pm$ 0.038 & 0.931 $\pm$ 0.022 & 30.97 \\
+P2 MG & 1D-CNN & p2 & 0.873 $\pm$ 0.042 & 0.845 $\pm$ 0.050 & 0.908 $\pm$ 0.026 & 24.15 \\
+P2 MG & 1D-CNN & p3 & 0.658 $\pm$ 0.322 & 0.750 $\pm$ 0.190 & 0.685 $\pm$ 0.311 & 28.65 \\
+P2 MG & 1D-CNN & p4 & 0.808 $\pm$ 0.039 & 0.822 $\pm$ 0.039 & 0.839 $\pm$ 0.038 & 21.27 \\
+P2 MG & 1D-CNN & p5 & 0.836 $\pm$ 0.043 & 0.811 $\pm$ 0.057 & 0.882 $\pm$ 0.024 & 19.71 \\
+P2 MG & 1D-ResNet & raw & 0.916 $\pm$ 0.038 & 0.924 $\pm$ 0.048 & 0.931 $\pm$ 0.030 & 38.07 \\
+P2 MG & 1D-ResNet & p1 & 0.917 $\pm$ 0.013 & 0.909 $\pm$ 0.012 & 0.935 $\pm$ 0.011 & 31.13 \\
+P2 MG & 1D-ResNet & p2 & 0.899 $\pm$ 0.022 & 0.882 $\pm$ 0.037 & 0.923 $\pm$ 0.013 & 27.20 \\
+P2 MG & 1D-ResNet & p3 & 0.890 $\pm$ 0.055 & 0.882 $\pm$ 0.069 & 0.916 $\pm$ 0.035 & 53.82 \\
+P2 MG & 1D-ResNet & p4 & 0.895 $\pm$ 0.042 & 0.900 $\pm$ 0.046 & 0.915 $\pm$ 0.034 & 37.25 \\
+P2 MG & 1D-ResNet & p5 & 0.873 $\pm$ 0.029 & 0.858 $\pm$ 0.044 & 0.903 $\pm$ 0.019 & 25.64 \\
+P2 MG & Spectrum-KAN & raw & 0.829 $\pm$ 0.014 & 0.795 $\pm$ 0.015 & 0.879 $\pm$ 0.009 & 63.58 \\
+P2 MG & Spectrum-KAN & p1 & 0.929 $\pm$ 0.020 & 0.927 $\pm$ 0.016 & 0.942 $\pm$ 0.017 & 34.31 \\
+P2 MG & Spectrum-KAN & p2 & 0.924 $\pm$ 0.020 & 0.927 $\pm$ 0.015 & 0.938 $\pm$ 0.018 & 23.49 \\
+P2 MG & Spectrum-KAN & p3 & 0.869 $\pm$ 0.036 & 0.872 $\pm$ 0.036 & 0.893 $\pm$ 0.034 & 33.06 \\
+P2 MG & Spectrum-KAN & p4 & 0.897 $\pm$ 0.016 & 0.914 $\pm$ 0.023 & 0.913 $\pm$ 0.013 & 45.69 \\
+P2 MG & Spectrum-KAN & p5 & 0.913 $\pm$ 0.012 & 0.914 $\pm$ 0.019 & 0.930 $\pm$ 0.009 & 20.06 \\
+P2 MG & KAN-CNN & raw & 0.836 $\pm$ 0.066 & 0.843 $\pm$ 0.086 & 0.872 $\pm$ 0.037 & 47.61 \\
+P2 MG & KAN-CNN & p1 & 0.913 $\pm$ 0.015 & 0.900 $\pm$ 0.015 & 0.932 $\pm$ 0.012 & 37.36 \\
+P2 MG & KAN-CNN & p2 & 0.907 $\pm$ 0.019 & 0.899 $\pm$ 0.033 & 0.927 $\pm$ 0.014 & 33.12 \\
+P2 MG & KAN-CNN & p3 & 0.776 $\pm$ 0.243 & 0.810 $\pm$ 0.184 & 0.796 $\pm$ 0.246 & 59.72 \\
+P2 MG & KAN-CNN & p4 & 0.834 $\pm$ 0.054 & 0.876 $\pm$ 0.041 & 0.851 $\pm$ 0.052 & 57.38 \\
+P2 MG & KAN-CNN & p5 & 0.870 $\pm$ 0.026 & 0.861 $\pm$ 0.045 & 0.899 $\pm$ 0.015 & 33.10 \\
+P2 MG & RamanNet-Lite & raw & 0.834 $\pm$ 0.010 & 0.799 $\pm$ 0.011 & 0.883 $\pm$ 0.005 & 52.90 \\
+P2 MG & RamanNet-Lite & p1 & 0.947 $\pm$ 0.019 & 0.947 $\pm$ 0.016 & 0.957 $\pm$ 0.015 & 46.55 \\
+P2 MG & RamanNet-Lite & p2 & 0.925 $\pm$ 0.019 & 0.929 $\pm$ 0.016 & 0.939 $\pm$ 0.016 & 58.18 \\
+P2 MG & RamanNet-Lite & p3 & 0.927 $\pm$ 0.060 & 0.944 $\pm$ 0.038 & 0.937 $\pm$ 0.056 & 82.02 \\
+P2 MG & RamanNet-Lite & p4 & 0.892 $\pm$ 0.057 & 0.890 $\pm$ 0.068 & 0.915 $\pm$ 0.043 & 46.66 \\
+P2 MG & RamanNet-Lite & p5 & 0.890 $\pm$ 0.015 & 0.903 $\pm$ 0.020 & 0.908 $\pm$ 0.012 & 17.25 \\
+P3 4-MBA & PLS-DA & raw & 0.810 $\pm$ 0.023 & 0.777 $\pm$ 0.025 & 0.877 $\pm$ 0.012 & 5.33 \\
+P3 4-MBA & PLS-DA & p1 & 0.963 $\pm$ 0.012 & 0.974 $\pm$ 0.005 & 0.972 $\pm$ 0.010 & 5.29 \\
+P3 4-MBA & PLS-DA & p2 & 0.965 $\pm$ 0.014 & 0.976 $\pm$ 0.012 & 0.973 $\pm$ 0.011 & 5.07 \\
+P3 4-MBA & PLS-DA & p3 & 0.982 $\pm$ 0.011 & 0.985 $\pm$ 0.007 & 0.987 $\pm$ 0.008 & 5.11 \\
+P3 4-MBA & PLS-DA & p4 & 0.881 $\pm$ 0.023 & 0.851 $\pm$ 0.023 & 0.920 $\pm$ 0.014 & 5.33 \\
+P3 4-MBA & PLS-DA & p5 & 0.962 $\pm$ 0.015 & 0.967 $\pm$ 0.008 & 0.971 $\pm$ 0.012 & 5.54 \\
+P3 4-MBA & LDA & raw & 0.709 $\pm$ 0.023 & 0.731 $\pm$ 0.020 & 0.766 $\pm$ 0.027 & 0.37 \\
+P3 4-MBA & LDA & p1 & 0.840 $\pm$ 0.014 & 0.878 $\pm$ 0.025 & 0.870 $\pm$ 0.008 & 0.37 \\
+P3 4-MBA & LDA & p2 & 0.710 $\pm$ 0.032 & 0.762 $\pm$ 0.036 & 0.749 $\pm$ 0.029 & 0.37 \\
+P3 4-MBA & LDA & p3 & 0.645 $\pm$ 0.045 & 0.698 $\pm$ 0.048 & 0.684 $\pm$ 0.047 & 0.37 \\
+P3 4-MBA & LDA & p4 & 0.754 $\pm$ 0.033 & 0.767 $\pm$ 0.033 & 0.809 $\pm$ 0.028 & 0.38 \\
+P3 4-MBA & LDA & p5 & 0.844 $\pm$ 0.016 & 0.878 $\pm$ 0.024 & 0.875 $\pm$ 0.013 & 0.37 \\
+P3 4-MBA & SVM & raw & 0.830 $\pm$ 0.031 & 0.792 $\pm$ 0.033 & 0.891 $\pm$ 0.015 & 0.17 \\
+P3 4-MBA & SVM & p1 & 0.991 $\pm$ 0.003 & 0.993 $\pm$ 0.005 & 0.993 $\pm$ 0.002 & 0.05 \\
+P3 4-MBA & SVM & p2 & 0.988 $\pm$ 0.009 & 0.991 $\pm$ 0.010 & 0.991 $\pm$ 0.006 & 0.06 \\
+P3 4-MBA & SVM & p3 & 0.990 $\pm$ 0.004 & 0.992 $\pm$ 0.005 & 0.992 $\pm$ 0.003 & 0.05 \\
+P3 4-MBA & SVM & p4 & 0.783 $\pm$ 0.020 & 0.865 $\pm$ 0.015 & 0.806 $\pm$ 0.023 & 0.14 \\
+P3 4-MBA & SVM & p5 & 0.988 $\pm$ 0.012 & 0.985 $\pm$ 0.018 & 0.991 $\pm$ 0.008 & 0.07 \\
+P3 4-MBA & KNN & raw & 0.933 $\pm$ 0.017 & 0.917 $\pm$ 0.020 & 0.952 $\pm$ 0.012 & 0.02 \\
+P3 4-MBA & KNN & p1 & 0.992 $\pm$ 0.010 & 0.989 $\pm$ 0.014 & 0.994 $\pm$ 0.007 & 0.02 \\
+P3 4-MBA & KNN & p2 & 0.982 $\pm$ 0.013 & 0.979 $\pm$ 0.018 & 0.987 $\pm$ 0.009 & 0.01 \\
+P3 4-MBA & KNN & p3 & 0.986 $\pm$ 0.013 & 0.981 $\pm$ 0.018 & 0.990 $\pm$ 0.009 & 0.02 \\
+P3 4-MBA & KNN & p4 & 0.979 $\pm$ 0.007 & 0.976 $\pm$ 0.009 & 0.984 $\pm$ 0.005 & 0.02 \\
+P3 4-MBA & KNN & p5 & 0.955 $\pm$ 0.013 & 0.937 $\pm$ 0.016 & 0.968 $\pm$ 0.009 & 0.02 \\
+P3 4-MBA & RF & raw & 0.947 $\pm$ 0.017 & 0.932 $\pm$ 0.019 & 0.962 $\pm$ 0.012 & 0.72 \\
+P3 4-MBA & RF & p1 & 0.983 $\pm$ 0.009 & 0.980 $\pm$ 0.013 & 0.988 $\pm$ 0.006 & 0.73 \\
+P3 4-MBA & RF & p2 & 0.979 $\pm$ 0.012 & 0.977 $\pm$ 0.017 & 0.984 $\pm$ 0.008 & 0.73 \\
+P3 4-MBA & RF & p3 & 0.980 $\pm$ 0.012 & 0.972 $\pm$ 0.019 & 0.986 $\pm$ 0.008 & 0.75 \\
+P3 4-MBA & RF & p4 & 0.985 $\pm$ 0.012 & 0.982 $\pm$ 0.016 & 0.989 $\pm$ 0.009 & 0.72 \\
+P3 4-MBA & RF & p5 & 0.956 $\pm$ 0.019 & 0.944 $\pm$ 0.027 & 0.969 $\pm$ 0.013 & 0.72 \\
+P3 4-MBA & ExtraTrees & raw & 0.949 $\pm$ 0.016 & 0.940 $\pm$ 0.017 & 0.963 $\pm$ 0.011 & 1.27 \\
+P3 4-MBA & ExtraTrees & p1 & 0.988 $\pm$ 0.012 & 0.982 $\pm$ 0.018 & 0.991 $\pm$ 0.008 & 1.29 \\
+P3 4-MBA & ExtraTrees & p2 & 0.985 $\pm$ 0.015 & 0.982 $\pm$ 0.019 & 0.989 $\pm$ 0.010 & 1.31 \\
+P3 4-MBA & ExtraTrees & p3 & 0.988 $\pm$ 0.012 & 0.982 $\pm$ 0.018 & 0.991 $\pm$ 0.008 & 1.31 \\
+P3 4-MBA & ExtraTrees & p4 & 0.994 $\pm$ 0.006 & 0.991 $\pm$ 0.010 & 0.996 $\pm$ 0.005 & 1.31 \\
+P3 4-MBA & ExtraTrees & p5 & 0.970 $\pm$ 0.023 & 0.963 $\pm$ 0.030 & 0.979 $\pm$ 0.015 & 1.28 \\
+P3 4-MBA & XGBoost & raw & 0.952 $\pm$ 0.020 & 0.946 $\pm$ 0.026 & 0.966 $\pm$ 0.014 & 6.50 \\
+P3 4-MBA & XGBoost & p1 & 0.986 $\pm$ 0.010 & 0.984 $\pm$ 0.013 & 0.990 $\pm$ 0.007 & 5.13 \\
+P3 4-MBA & XGBoost & p2 & 0.983 $\pm$ 0.006 & 0.986 $\pm$ 0.009 & 0.988 $\pm$ 0.005 & 5.18 \\
+P3 4-MBA & XGBoost & p3 & 0.983 $\pm$ 0.014 & 0.976 $\pm$ 0.021 & 0.988 $\pm$ 0.010 & 5.01 \\
+P3 4-MBA & XGBoost & p4 & 0.980 $\pm$ 0.010 & 0.981 $\pm$ 0.015 & 0.986 $\pm$ 0.007 & 4.90 \\
+P3 4-MBA & XGBoost & p5 & 0.980 $\pm$ 0.018 & 0.978 $\pm$ 0.025 & 0.986 $\pm$ 0.013 & 5.41 \\
+P3 4-MBA & HistGradientBoosting & raw & 0.937 $\pm$ 0.024 & 0.931 $\pm$ 0.026 & 0.955 $\pm$ 0.017 & 5.63 \\
+P3 4-MBA & HistGradientBoosting & p1 & 0.958 $\pm$ 0.018 & 0.948 $\pm$ 0.018 & 0.970 $\pm$ 0.013 & 3.86 \\
+P3 4-MBA & HistGradientBoosting & p2 & 0.953 $\pm$ 0.013 & 0.948 $\pm$ 0.010 & 0.966 $\pm$ 0.010 & 11.16 \\
+P3 4-MBA & HistGradientBoosting & p3 & 0.965 $\pm$ 0.017 & 0.958 $\pm$ 0.019 & 0.974 $\pm$ 0.013 & 12.87 \\
+P3 4-MBA & HistGradientBoosting & p4 & 0.963 $\pm$ 0.013 & 0.965 $\pm$ 0.014 & 0.972 $\pm$ 0.010 & 14.11 \\
+P3 4-MBA & HistGradientBoosting & p5 & 0.939 $\pm$ 0.027 & 0.938 $\pm$ 0.026 & 0.955 $\pm$ 0.020 & 13.77 \\
+P3 4-MBA & 1D-CNN & raw & 0.736 $\pm$ 0.075 & 0.755 $\pm$ 0.064 & 0.788 $\pm$ 0.070 & 18.94 \\
+P3 4-MBA & 1D-CNN & p1 & 0.933 $\pm$ 0.018 & 0.919 $\pm$ 0.023 & 0.952 $\pm$ 0.012 & 26.44 \\
+P3 4-MBA & 1D-CNN & p2 & 0.917 $\pm$ 0.033 & 0.893 $\pm$ 0.047 & 0.943 $\pm$ 0.020 & 23.13 \\
+P3 4-MBA & 1D-CNN & p3 & 0.864 $\pm$ 0.031 & 0.835 $\pm$ 0.043 & 0.910 $\pm$ 0.016 & 28.80 \\
+P3 4-MBA & 1D-CNN & p4 & 0.850 $\pm$ 0.075 & 0.869 $\pm$ 0.077 & 0.885 $\pm$ 0.061 & 28.38 \\
+P3 4-MBA & 1D-CNN & p5 & 0.859 $\pm$ 0.068 & 0.827 $\pm$ 0.081 & 0.911 $\pm$ 0.033 & 19.26 \\
+P3 4-MBA & 1D-ResNet & raw & 0.914 $\pm$ 0.037 & 0.900 $\pm$ 0.028 & 0.938 $\pm$ 0.028 & 43.91 \\
+P3 4-MBA & 1D-ResNet & p1 & 0.929 $\pm$ 0.030 & 0.916 $\pm$ 0.034 & 0.950 $\pm$ 0.020 & 26.00 \\
+P3 4-MBA & 1D-ResNet & p2 & 0.954 $\pm$ 0.019 & 0.944 $\pm$ 0.023 & 0.967 $\pm$ 0.014 & 39.72 \\
+P3 4-MBA & 1D-ResNet & p3 & 0.821 $\pm$ 0.218 & 0.840 $\pm$ 0.192 & 0.903 $\pm$ 0.081 & 35.13 \\
+P3 4-MBA & 1D-ResNet & p4 & 0.948 $\pm$ 0.016 & 0.941 $\pm$ 0.012 & 0.962 $\pm$ 0.013 & 48.13 \\
+P3 4-MBA & 1D-ResNet & p5 & 0.923 $\pm$ 0.037 & 0.906 $\pm$ 0.053 & 0.947 $\pm$ 0.023 & 31.13 \\
+P3 4-MBA & Spectrum-KAN & raw & 0.769 $\pm$ 0.071 & 0.757 $\pm$ 0.072 & 0.838 $\pm$ 0.055 & 33.58 \\
+P3 4-MBA & Spectrum-KAN & p1 & 0.980 $\pm$ 0.012 & 0.981 $\pm$ 0.018 & 0.986 $\pm$ 0.008 & 26.37 \\
+P3 4-MBA & Spectrum-KAN & p2 & 0.952 $\pm$ 0.053 & 0.963 $\pm$ 0.028 & 0.962 $\pm$ 0.044 & 19.16 \\
+P3 4-MBA & Spectrum-KAN & p3 & 0.901 $\pm$ 0.030 & 0.934 $\pm$ 0.019 & 0.921 $\pm$ 0.026 & 31.70 \\
+P3 4-MBA & Spectrum-KAN & p4 & 0.920 $\pm$ 0.030 & 0.914 $\pm$ 0.031 & 0.942 $\pm$ 0.021 & 21.87 \\
+P3 4-MBA & Spectrum-KAN & p5 & 0.970 $\pm$ 0.015 & 0.974 $\pm$ 0.019 & 0.978 $\pm$ 0.011 & 21.26 \\
+P3 4-MBA & KAN-CNN & raw & 0.682 $\pm$ 0.096 & 0.690 $\pm$ 0.103 & 0.768 $\pm$ 0.059 & 30.54 \\
+P3 4-MBA & KAN-CNN & p1 & 0.878 $\pm$ 0.026 & 0.841 $\pm$ 0.032 & 0.920 $\pm$ 0.016 & 35.18 \\
+P3 4-MBA & KAN-CNN & p2 & 0.934 $\pm$ 0.026 & 0.928 $\pm$ 0.024 & 0.952 $\pm$ 0.019 & 41.42 \\
+P3 4-MBA & KAN-CNN & p3 & 0.896 $\pm$ 0.046 & 0.901 $\pm$ 0.042 & 0.922 $\pm$ 0.035 & 65.69 \\
+P3 4-MBA & KAN-CNN & p4 & 0.746 $\pm$ 0.032 & 0.824 $\pm$ 0.030 & 0.771 $\pm$ 0.031 & 31.99 \\
+P3 4-MBA & KAN-CNN & p5 & 0.904 $\pm$ 0.024 & 0.887 $\pm$ 0.027 & 0.932 $\pm$ 0.017 & 35.74 \\
+P3 4-MBA & RamanNet-Lite & raw & 0.821 $\pm$ 0.043 & 0.782 $\pm$ 0.044 & 0.888 $\pm$ 0.022 & 29.95 \\
+P3 4-MBA & RamanNet-Lite & p1 & 0.953 $\pm$ 0.017 & 0.974 $\pm$ 0.011 & 0.963 $\pm$ 0.013 & 27.91 \\
+P3 4-MBA & RamanNet-Lite & p2 & 0.933 $\pm$ 0.014 & 0.943 $\pm$ 0.010 & 0.949 $\pm$ 0.011 & 28.91 \\
+P3 4-MBA & RamanNet-Lite & p3 & 0.901 $\pm$ 0.066 & 0.929 $\pm$ 0.037 & 0.919 $\pm$ 0.062 & 35.42 \\
+P3 4-MBA & RamanNet-Lite & p4 & 0.924 $\pm$ 0.031 & 0.914 $\pm$ 0.022 & 0.944 $\pm$ 0.024 & 28.56 \\
+P3 4-MBA & RamanNet-Lite & p5 & 0.951 $\pm$ 0.015 & 0.967 $\pm$ 0.012 & 0.962 $\pm$ 0.012 & 25.73 \\
+G1 Thiram grade & PLS-DA & raw & 0.852 $\pm$ 0.020 & 0.852 $\pm$ 0.022 & 0.848 $\pm$ 0.019 & 15.32 \\
+G1 Thiram grade & PLS-DA & p1 & 0.922 $\pm$ 0.014 & 0.920 $\pm$ 0.015 & 0.920 $\pm$ 0.013 & 16.47 \\
+G1 Thiram grade & PLS-DA & p2 & 0.931 $\pm$ 0.010 & 0.930 $\pm$ 0.011 & 0.928 $\pm$ 0.010 & 18.83 \\
+G1 Thiram grade & PLS-DA & p3 & 0.926 $\pm$ 0.019 & 0.925 $\pm$ 0.020 & 0.923 $\pm$ 0.019 & 19.85 \\
+G1 Thiram grade & PLS-DA & p4 & 0.841 $\pm$ 0.024 & 0.840 $\pm$ 0.022 & 0.835 $\pm$ 0.026 & 23.20 \\
+G1 Thiram grade & PLS-DA & p5 & 0.973 $\pm$ 0.012 & 0.973 $\pm$ 0.012 & 0.972 $\pm$ 0.013 & 28.03 \\
+G1 Thiram grade & LDA & raw & 0.957 $\pm$ 0.023 & 0.958 $\pm$ 0.022 & 0.955 $\pm$ 0.024 & 0.24 \\
+G1 Thiram grade & LDA & p1 & 0.882 $\pm$ 0.038 & 0.881 $\pm$ 0.041 & 0.883 $\pm$ 0.038 & 0.22 \\
+G1 Thiram grade & LDA & p2 & 0.798 $\pm$ 0.016 & 0.797 $\pm$ 0.014 & 0.800 $\pm$ 0.017 & 0.23 \\
+G1 Thiram grade & LDA & p3 & 0.849 $\pm$ 0.020 & 0.848 $\pm$ 0.017 & 0.849 $\pm$ 0.019 & 0.23 \\
+G1 Thiram grade & LDA & p4 & 0.923 $\pm$ 0.023 & 0.926 $\pm$ 0.021 & 0.921 $\pm$ 0.023 & 0.23 \\
+G1 Thiram grade & LDA & p5 & 0.871 $\pm$ 0.026 & 0.870 $\pm$ 0.025 & 0.871 $\pm$ 0.026 & 0.23 \\
+G1 Thiram grade & SVM & raw & 0.791 $\pm$ 0.016 & 0.784 $\pm$ 0.018 & 0.783 $\pm$ 0.016 & 0.10 \\
+G1 Thiram grade & SVM & p1 & 0.998 $\pm$ 0.004 & 0.998 $\pm$ 0.004 & 0.998 $\pm$ 0.003 & 0.05 \\
+G1 Thiram grade & SVM & p2 & 0.997 $\pm$ 0.004 & 0.997 $\pm$ 0.005 & 0.997 $\pm$ 0.004 & 0.05 \\
+G1 Thiram grade & SVM & p3 & 0.992 $\pm$ 0.005 & 0.992 $\pm$ 0.006 & 0.992 $\pm$ 0.006 & 0.05 \\
+G1 Thiram grade & SVM & p4 & 0.739 $\pm$ 0.016 & 0.760 $\pm$ 0.015 & 0.743 $\pm$ 0.014 & 0.11 \\
+G1 Thiram grade & SVM & p5 & 0.997 $\pm$ 0.004 & 0.997 $\pm$ 0.004 & 0.997 $\pm$ 0.004 & 0.07 \\
+G1 Thiram grade & KNN & raw & 0.953 $\pm$ 0.019 & 0.950 $\pm$ 0.020 & 0.952 $\pm$ 0.019 & 0.01 \\
+G1 Thiram grade & KNN & p1 & 0.985 $\pm$ 0.014 & 0.984 $\pm$ 0.015 & 0.986 $\pm$ 0.014 & 0.01 \\
+G1 Thiram grade & KNN & p2 & 0.957 $\pm$ 0.013 & 0.956 $\pm$ 0.014 & 0.957 $\pm$ 0.013 & 0.01 \\
+G1 Thiram grade & KNN & p3 & 0.989 $\pm$ 0.011 & 0.988 $\pm$ 0.012 & 0.989 $\pm$ 0.010 & 0.01 \\
+G1 Thiram grade & KNN & p4 & 0.977 $\pm$ 0.009 & 0.976 $\pm$ 0.010 & 0.977 $\pm$ 0.010 & 0.01 \\
+G1 Thiram grade & KNN & p5 & 0.968 $\pm$ 0.014 & 0.966 $\pm$ 0.014 & 0.968 $\pm$ 0.014 & 0.01 \\
+G1 Thiram grade & RF & raw & 0.956 $\pm$ 0.025 & 0.955 $\pm$ 0.027 & 0.955 $\pm$ 0.025 & 0.79 \\
+G1 Thiram grade & RF & p1 & 0.990 $\pm$ 0.010 & 0.990 $\pm$ 0.011 & 0.991 $\pm$ 0.010 & 0.80 \\
+G1 Thiram grade & RF & p2 & 0.994 $\pm$ 0.008 & 0.994 $\pm$ 0.009 & 0.994 $\pm$ 0.008 & 0.81 \\
+G1 Thiram grade & RF & p3 & 0.994 $\pm$ 0.010 & 0.993 $\pm$ 0.011 & 0.994 $\pm$ 0.010 & 0.81 \\
+G1 Thiram grade & RF & p4 & 0.989 $\pm$ 0.010 & 0.988 $\pm$ 0.011 & 0.989 $\pm$ 0.010 & 0.77 \\
+G1 Thiram grade & RF & p5 & 0.992 $\pm$ 0.006 & 0.992 $\pm$ 0.006 & 0.992 $\pm$ 0.005 & 0.76 \\
+G1 Thiram grade & ExtraTrees & raw & 0.970 $\pm$ 0.018 & 0.968 $\pm$ 0.020 & 0.969 $\pm$ 0.018 & 1.42 \\
+G1 Thiram grade & ExtraTrees & p1 & 0.994 $\pm$ 0.006 & 0.993 $\pm$ 0.007 & 0.994 $\pm$ 0.007 & 1.38 \\
+G1 Thiram grade & ExtraTrees & p2 & 1.000 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.42 \\
+G1 Thiram grade & ExtraTrees & p3 & 0.991 $\pm$ 0.010 & 0.990 $\pm$ 0.011 & 0.991 $\pm$ 0.010 & 1.41 \\
+G1 Thiram grade & ExtraTrees & p4 & 0.991 $\pm$ 0.010 & 0.990 $\pm$ 0.011 & 0.991 $\pm$ 0.010 & 1.44 \\
+G1 Thiram grade & ExtraTrees & p5 & 0.995 $\pm$ 0.004 & 0.995 $\pm$ 0.005 & 0.995 $\pm$ 0.004 & 1.37 \\
+G1 Thiram grade & XGBoost & raw & 0.962 $\pm$ 0.032 & 0.960 $\pm$ 0.034 & 0.961 $\pm$ 0.032 & 15.07 \\
+G1 Thiram grade & XGBoost & p1 & 0.989 $\pm$ 0.011 & 0.988 $\pm$ 0.012 & 0.989 $\pm$ 0.010 & 13.74 \\
+G1 Thiram grade & XGBoost & p2 & 0.991 $\pm$ 0.006 & 0.991 $\pm$ 0.006 & 0.991 $\pm$ 0.006 & 12.38 \\
+G1 Thiram grade & XGBoost & p3 & 0.992 $\pm$ 0.011 & 0.992 $\pm$ 0.011 & 0.992 $\pm$ 0.011 & 12.43 \\
+G1 Thiram grade & XGBoost & p4 & 0.988 $\pm$ 0.007 & 0.987 $\pm$ 0.007 & 0.988 $\pm$ 0.007 & 12.01 \\
+G1 Thiram grade & XGBoost & p5 & 0.991 $\pm$ 0.006 & 0.990 $\pm$ 0.007 & 0.991 $\pm$ 0.006 & 12.98 \\
+G1 Thiram grade & HistGradientBoosting & raw & 0.945 $\pm$ 0.028 & 0.944 $\pm$ 0.028 & 0.944 $\pm$ 0.029 & 5.50 \\
+G1 Thiram grade & HistGradientBoosting & p1 & 0.980 $\pm$ 0.013 & 0.979 $\pm$ 0.014 & 0.980 $\pm$ 0.013 & 7.79 \\
+G1 Thiram grade & HistGradientBoosting & p2 & 0.974 $\pm$ 0.010 & 0.972 $\pm$ 0.011 & 0.974 $\pm$ 0.010 & 17.21 \\
+G1 Thiram grade & HistGradientBoosting & p3 & 0.985 $\pm$ 0.016 & 0.984 $\pm$ 0.017 & 0.985 $\pm$ 0.017 & 17.32 \\
+G1 Thiram grade & HistGradientBoosting & p4 & 0.985 $\pm$ 0.005 & 0.986 $\pm$ 0.005 & 0.985 $\pm$ 0.005 & 18.03 \\
+G1 Thiram grade & HistGradientBoosting & p5 & 0.970 $\pm$ 0.013 & 0.969 $\pm$ 0.013 & 0.969 $\pm$ 0.013 & 33.90 \\
+G1 Thiram grade & 1D-CNN & raw & 0.933 $\pm$ 0.024 & 0.928 $\pm$ 0.026 & 0.932 $\pm$ 0.025 & 41.94 \\
+G1 Thiram grade & 1D-CNN & p1 & 0.904 $\pm$ 0.023 & 0.898 $\pm$ 0.023 & 0.905 $\pm$ 0.019 & 26.23 \\
+G1 Thiram grade & 1D-CNN & p2 & 0.936 $\pm$ 0.017 & 0.931 $\pm$ 0.019 & 0.935 $\pm$ 0.018 & 27.30 \\
+G1 Thiram grade & 1D-CNN & p3 & 0.923 $\pm$ 0.028 & 0.921 $\pm$ 0.028 & 0.922 $\pm$ 0.027 & 35.11 \\
+G1 Thiram grade & 1D-CNN & p4 & 0.883 $\pm$ 0.058 & 0.881 $\pm$ 0.058 & 0.891 $\pm$ 0.054 & 34.00 \\
+G1 Thiram grade & 1D-CNN & p5 & 0.882 $\pm$ 0.027 & 0.877 $\pm$ 0.029 & 0.881 $\pm$ 0.027 & 27.04 \\
+G1 Thiram grade & 1D-ResNet & raw & 0.960 $\pm$ 0.026 & 0.957 $\pm$ 0.027 & 0.960 $\pm$ 0.027 & 55.75 \\
+G1 Thiram grade & 1D-ResNet & p1 & 0.936 $\pm$ 0.026 & 0.937 $\pm$ 0.028 & 0.937 $\pm$ 0.027 & 29.07 \\
+G1 Thiram grade & 1D-ResNet & p2 & 0.944 $\pm$ 0.019 & 0.943 $\pm$ 0.021 & 0.943 $\pm$ 0.020 & 23.97 \\
+G1 Thiram grade & 1D-ResNet & p3 & 0.934 $\pm$ 0.043 & 0.931 $\pm$ 0.045 & 0.934 $\pm$ 0.043 & 45.41 \\
+G1 Thiram grade & 1D-ResNet & p4 & 0.952 $\pm$ 0.022 & 0.951 $\pm$ 0.023 & 0.952 $\pm$ 0.022 & 30.79 \\
+G1 Thiram grade & 1D-ResNet & p5 & 0.843 $\pm$ 0.024 & 0.841 $\pm$ 0.024 & 0.841 $\pm$ 0.025 & 20.41 \\
+G1 Thiram grade & Spectrum-KAN & raw & 0.907 $\pm$ 0.078 & 0.903 $\pm$ 0.082 & 0.903 $\pm$ 0.083 & 45.22 \\
+G1 Thiram grade & Spectrum-KAN & p1 & 0.994 $\pm$ 0.009 & 0.994 $\pm$ 0.008 & 0.994 $\pm$ 0.008 & 41.71 \\
+G1 Thiram grade & Spectrum-KAN & p2 & 0.999 $\pm$ 0.003 & 0.999 $\pm$ 0.003 & 0.998 $\pm$ 0.003 & 28.76 \\
+G1 Thiram grade & Spectrum-KAN & p3 & 0.921 $\pm$ 0.024 & 0.919 $\pm$ 0.026 & 0.918 $\pm$ 0.025 & 31.63 \\
+G1 Thiram grade & Spectrum-KAN & p4 & 0.972 $\pm$ 0.010 & 0.971 $\pm$ 0.010 & 0.971 $\pm$ 0.010 & 27.87 \\
+G1 Thiram grade & Spectrum-KAN & p5 & 0.996 $\pm$ 0.004 & 0.995 $\pm$ 0.004 & 0.995 $\pm$ 0.004 & 35.21 \\
+G1 Thiram grade & KAN-CNN & raw & 0.848 $\pm$ 0.101 & 0.849 $\pm$ 0.095 & 0.851 $\pm$ 0.094 & 49.10 \\
+G1 Thiram grade & KAN-CNN & p1 & 0.903 $\pm$ 0.030 & 0.897 $\pm$ 0.032 & 0.904 $\pm$ 0.028 & 32.13 \\
+G1 Thiram grade & KAN-CNN & p2 & 0.947 $\pm$ 0.008 & 0.944 $\pm$ 0.009 & 0.946 $\pm$ 0.008 & 41.46 \\
+G1 Thiram grade & KAN-CNN & p3 & 0.819 $\pm$ 0.228 & 0.832 $\pm$ 0.195 & 0.839 $\pm$ 0.185 & 51.98 \\
+G1 Thiram grade & KAN-CNN & p4 & 0.865 $\pm$ 0.056 & 0.860 $\pm$ 0.056 & 0.869 $\pm$ 0.053 & 55.40 \\
+G1 Thiram grade & KAN-CNN & p5 & 0.858 $\pm$ 0.042 & 0.853 $\pm$ 0.042 & 0.860 $\pm$ 0.037 & 26.04 \\
+G1 Thiram grade & RamanNet-Lite & raw & 0.938 $\pm$ 0.016 & 0.935 $\pm$ 0.017 & 0.937 $\pm$ 0.017 & 59.10 \\
+G1 Thiram grade & RamanNet-Lite & p1 & 0.998 $\pm$ 0.004 & 0.999 $\pm$ 0.003 & 0.998 $\pm$ 0.003 & 34.06 \\
+G1 Thiram grade & RamanNet-Lite & p2 & 0.998 $\pm$ 0.004 & 0.998 $\pm$ 0.004 & 0.998 $\pm$ 0.003 & 29.41 \\
+G1 Thiram grade & RamanNet-Lite & p3 & 0.976 $\pm$ 0.026 & 0.976 $\pm$ 0.026 & 0.975 $\pm$ 0.026 & 34.78 \\
+G1 Thiram grade & RamanNet-Lite & p4 & 0.972 $\pm$ 0.010 & 0.972 $\pm$ 0.010 & 0.971 $\pm$ 0.010 & 54.00 \\
+G1 Thiram grade & RamanNet-Lite & p5 & 0.990 $\pm$ 0.004 & 0.990 $\pm$ 0.004 & 0.989 $\pm$ 0.004 & 18.29 \\
+G2 MG grade & PLS-DA & raw & 0.621 $\pm$ 0.031 & 0.620 $\pm$ 0.027 & 0.628 $\pm$ 0.031 & 8.73 \\
+G2 MG grade & PLS-DA & p1 & 0.822 $\pm$ 0.023 & 0.822 $\pm$ 0.023 & 0.821 $\pm$ 0.023 & 24.27 \\
+G2 MG grade & PLS-DA & p2 & 0.779 $\pm$ 0.028 & 0.778 $\pm$ 0.027 & 0.778 $\pm$ 0.027 & 23.78 \\
+G2 MG grade & PLS-DA & p3 & 0.801 $\pm$ 0.031 & 0.800 $\pm$ 0.030 & 0.801 $\pm$ 0.031 & 32.87 \\
+G2 MG grade & PLS-DA & p4 & 0.730 $\pm$ 0.017 & 0.726 $\pm$ 0.021 & 0.725 $\pm$ 0.019 & 12.93 \\
+G2 MG grade & PLS-DA & p5 & 0.782 $\pm$ 0.019 & 0.781 $\pm$ 0.020 & 0.782 $\pm$ 0.019 & 23.66 \\
+G2 MG grade & LDA & raw & 0.674 $\pm$ 0.041 & 0.673 $\pm$ 0.042 & 0.671 $\pm$ 0.042 & 0.24 \\
+G2 MG grade & LDA & p1 & 0.716 $\pm$ 0.035 & 0.722 $\pm$ 0.033 & 0.722 $\pm$ 0.033 & 0.22 \\
+G2 MG grade & LDA & p2 & 0.616 $\pm$ 0.038 & 0.624 $\pm$ 0.036 & 0.625 $\pm$ 0.037 & 0.22 \\
+G2 MG grade & LDA & p3 & 0.659 $\pm$ 0.078 & 0.669 $\pm$ 0.073 & 0.668 $\pm$ 0.076 & 0.23 \\
+G2 MG grade & LDA & p4 & 0.615 $\pm$ 0.046 & 0.613 $\pm$ 0.047 & 0.613 $\pm$ 0.046 & 0.23 \\
+G2 MG grade & LDA & p5 & 0.661 $\pm$ 0.036 & 0.668 $\pm$ 0.037 & 0.667 $\pm$ 0.036 & 0.24 \\
+G2 MG grade & SVM & raw & 0.552 $\pm$ 0.013 & 0.602 $\pm$ 0.008 & 0.589 $\pm$ 0.013 & 0.12 \\
+G2 MG grade & SVM & p1 & 0.931 $\pm$ 0.015 & 0.930 $\pm$ 0.016 & 0.931 $\pm$ 0.015 & 0.08 \\
+G2 MG grade & SVM & p2 & 0.932 $\pm$ 0.016 & 0.932 $\pm$ 0.017 & 0.932 $\pm$ 0.017 & 0.09 \\
+G2 MG grade & SVM & p3 & 0.932 $\pm$ 0.022 & 0.932 $\pm$ 0.022 & 0.932 $\pm$ 0.022 & 0.08 \\
+G2 MG grade & SVM & p4 & 0.653 $\pm$ 0.020 & 0.672 $\pm$ 0.018 & 0.664 $\pm$ 0.016 & 0.12 \\
+G2 MG grade & SVM & p5 & 0.929 $\pm$ 0.023 & 0.930 $\pm$ 0.022 & 0.929 $\pm$ 0.022 & 0.11 \\
+G2 MG grade & KNN & raw & 0.882 $\pm$ 0.018 & 0.883 $\pm$ 0.020 & 0.883 $\pm$ 0.019 & 0.01 \\
+G2 MG grade & KNN & p1 & 0.922 $\pm$ 0.011 & 0.922 $\pm$ 0.010 & 0.923 $\pm$ 0.011 & 0.01 \\
+G2 MG grade & KNN & p2 & 0.800 $\pm$ 0.030 & 0.803 $\pm$ 0.027 & 0.809 $\pm$ 0.025 & 0.01 \\
+G2 MG grade & KNN & p3 & 0.912 $\pm$ 0.023 & 0.912 $\pm$ 0.023 & 0.914 $\pm$ 0.023 & 0.01 \\
+G2 MG grade & KNN & p4 & 0.931 $\pm$ 0.015 & 0.931 $\pm$ 0.017 & 0.931 $\pm$ 0.015 & 0.01 \\
+G2 MG grade & KNN & p5 & 0.756 $\pm$ 0.043 & 0.758 $\pm$ 0.042 & 0.761 $\pm$ 0.039 & 0.01 \\
+G2 MG grade & RF & raw & 0.900 $\pm$ 0.032 & 0.900 $\pm$ 0.032 & 0.900 $\pm$ 0.032 & 0.77 \\
+G2 MG grade & RF & p1 & 0.952 $\pm$ 0.007 & 0.952 $\pm$ 0.006 & 0.952 $\pm$ 0.007 & 0.78 \\
+G2 MG grade & RF & p2 & 0.938 $\pm$ 0.022 & 0.938 $\pm$ 0.023 & 0.938 $\pm$ 0.022 & 0.78 \\
+G2 MG grade & RF & p3 & 0.950 $\pm$ 0.009 & 0.951 $\pm$ 0.008 & 0.951 $\pm$ 0.009 & 0.76 \\
+G2 MG grade & RF & p4 & 0.930 $\pm$ 0.017 & 0.930 $\pm$ 0.018 & 0.931 $\pm$ 0.018 & 0.76 \\
+G2 MG grade & RF & p5 & 0.892 $\pm$ 0.016 & 0.893 $\pm$ 0.015 & 0.892 $\pm$ 0.015 & 0.77 \\
+G2 MG grade & ExtraTrees & raw & 0.908 $\pm$ 0.025 & 0.907 $\pm$ 0.025 & 0.907 $\pm$ 0.025 & 1.36 \\
+G2 MG grade & ExtraTrees & p1 & 0.966 $\pm$ 0.009 & 0.967 $\pm$ 0.009 & 0.966 $\pm$ 0.009 & 1.36 \\
+G2 MG grade & ExtraTrees & p2 & 0.952 $\pm$ 0.018 & 0.952 $\pm$ 0.019 & 0.952 $\pm$ 0.017 & 1.37 \\
+G2 MG grade & ExtraTrees & p3 & 0.953 $\pm$ 0.011 & 0.954 $\pm$ 0.011 & 0.954 $\pm$ 0.011 & 1.37 \\
+G2 MG grade & ExtraTrees & p4 & 0.941 $\pm$ 0.017 & 0.941 $\pm$ 0.017 & 0.941 $\pm$ 0.017 & 1.40 \\
+G2 MG grade & ExtraTrees & p5 & 0.904 $\pm$ 0.015 & 0.905 $\pm$ 0.015 & 0.904 $\pm$ 0.015 & 1.35 \\
+G2 MG grade & XGBoost & raw & 0.901 $\pm$ 0.031 & 0.900 $\pm$ 0.031 & 0.901 $\pm$ 0.032 & 17.58 \\
+G2 MG grade & XGBoost & p1 & 0.958 $\pm$ 0.013 & 0.959 $\pm$ 0.012 & 0.958 $\pm$ 0.013 & 17.42 \\
+G2 MG grade & XGBoost & p2 & 0.954 $\pm$ 0.011 & 0.954 $\pm$ 0.010 & 0.954 $\pm$ 0.011 & 17.03 \\
+G2 MG grade & XGBoost & p3 & 0.956 $\pm$ 0.012 & 0.957 $\pm$ 0.011 & 0.957 $\pm$ 0.012 & 16.06 \\
+G2 MG grade & XGBoost & p4 & 0.935 $\pm$ 0.015 & 0.935 $\pm$ 0.014 & 0.935 $\pm$ 0.015 & 16.01 \\
+G2 MG grade & XGBoost & p5 & 0.921 $\pm$ 0.019 & 0.922 $\pm$ 0.020 & 0.921 $\pm$ 0.020 & 17.80 \\
+G2 MG grade & HistGradientBoosting & raw & 0.867 $\pm$ 0.015 & 0.867 $\pm$ 0.015 & 0.867 $\pm$ 0.016 & 5.81 \\
+G2 MG grade & HistGradientBoosting & p1 & 0.947 $\pm$ 0.022 & 0.947 $\pm$ 0.023 & 0.948 $\pm$ 0.022 & 19.48 \\
+G2 MG grade & HistGradientBoosting & p2 & 0.916 $\pm$ 0.022 & 0.916 $\pm$ 0.023 & 0.917 $\pm$ 0.022 & 40.38 \\
+G2 MG grade & HistGradientBoosting & p3 & 0.935 $\pm$ 0.030 & 0.935 $\pm$ 0.031 & 0.935 $\pm$ 0.030 & 30.21 \\
+G2 MG grade & HistGradientBoosting & p4 & 0.930 $\pm$ 0.015 & 0.931 $\pm$ 0.015 & 0.931 $\pm$ 0.015 & 36.67 \\
+G2 MG grade & HistGradientBoosting & p5 & 0.901 $\pm$ 0.014 & 0.902 $\pm$ 0.015 & 0.901 $\pm$ 0.014 & 58.89 \\
+G2 MG grade & 1D-CNN & raw & 0.618 $\pm$ 0.061 & 0.627 $\pm$ 0.041 & 0.634 $\pm$ 0.035 & 14.40 \\
+G2 MG grade & 1D-CNN & p1 & 0.703 $\pm$ 0.020 & 0.713 $\pm$ 0.013 & 0.711 $\pm$ 0.015 & 13.46 \\
+G2 MG grade & 1D-CNN & p2 & 0.677 $\pm$ 0.053 & 0.682 $\pm$ 0.049 & 0.684 $\pm$ 0.051 & 9.45 \\
+G2 MG grade & 1D-CNN & p3 & 0.168 $\pm$ 0.002 & 0.329 $\pm$ 0.007 & 0.335 $\pm$ 0.009 & 6.47 \\
+G2 MG grade & 1D-CNN & p4 & 0.660 $\pm$ 0.016 & 0.659 $\pm$ 0.011 & 0.667 $\pm$ 0.007 & 10.31 \\
+G2 MG grade & 1D-CNN & p5 & 0.650 $\pm$ 0.030 & 0.659 $\pm$ 0.026 & 0.660 $\pm$ 0.030 & 8.31 \\
+G2 MG grade & 1D-ResNet & raw & 0.683 $\pm$ 0.027 & 0.679 $\pm$ 0.030 & 0.679 $\pm$ 0.029 & 17.75 \\
+G2 MG grade & 1D-ResNet & p1 & 0.743 $\pm$ 0.079 & 0.754 $\pm$ 0.071 & 0.750 $\pm$ 0.074 & 13.62 \\
+G2 MG grade & 1D-ResNet & p2 & 0.675 $\pm$ 0.063 & 0.682 $\pm$ 0.054 & 0.685 $\pm$ 0.053 & 14.39 \\
+G2 MG grade & 1D-ResNet & p3 & 0.538 $\pm$ 0.156 & 0.573 $\pm$ 0.126 & 0.575 $\pm$ 0.126 & 22.53 \\
+G2 MG grade & 1D-ResNet & p4 & 0.687 $\pm$ 0.069 & 0.684 $\pm$ 0.070 & 0.687 $\pm$ 0.070 & 14.74 \\
+G2 MG grade & 1D-ResNet & p5 & 0.691 $\pm$ 0.023 & 0.689 $\pm$ 0.025 & 0.687 $\pm$ 0.023 & 12.43 \\
+G2 MG grade & Spectrum-KAN & raw & 0.588 $\pm$ 0.065 & 0.603 $\pm$ 0.055 & 0.605 $\pm$ 0.052 & 16.87 \\
+G2 MG grade & Spectrum-KAN & p1 & 0.480 $\pm$ 0.037 & 0.504 $\pm$ 0.039 & 0.504 $\pm$ 0.037 & 10.65 \\
+G2 MG grade & Spectrum-KAN & p2 & 0.598 $\pm$ 0.151 & 0.622 $\pm$ 0.133 & 0.622 $\pm$ 0.127 & 10.04 \\
+G2 MG grade & Spectrum-KAN & p3 & 0.383 $\pm$ 0.159 & 0.448 $\pm$ 0.100 & 0.447 $\pm$ 0.100 & 9.97 \\
+G2 MG grade & Spectrum-KAN & p4 & 0.581 $\pm$ 0.026 & 0.576 $\pm$ 0.030 & 0.579 $\pm$ 0.032 & 9.28 \\
+G2 MG grade & Spectrum-KAN & p5 & 0.583 $\pm$ 0.039 & 0.615 $\pm$ 0.027 & 0.609 $\pm$ 0.026 & 10.57 \\
+G2 MG grade & KAN-CNN & raw & 0.581 $\pm$ 0.084 & 0.611 $\pm$ 0.050 & 0.624 $\pm$ 0.044 & 15.96 \\
+G2 MG grade & KAN-CNN & p1 & 0.678 $\pm$ 0.045 & 0.681 $\pm$ 0.047 & 0.681 $\pm$ 0.044 & 16.39 \\
+G2 MG grade & KAN-CNN & p2 & 0.668 $\pm$ 0.029 & 0.683 $\pm$ 0.020 & 0.687 $\pm$ 0.014 & 17.13 \\
+G2 MG grade & KAN-CNN & p3 & 0.204 $\pm$ 0.076 & 0.354 $\pm$ 0.045 & 0.359 $\pm$ 0.045 & 12.65 \\
+G2 MG grade & KAN-CNN & p4 & 0.634 $\pm$ 0.026 & 0.637 $\pm$ 0.021 & 0.642 $\pm$ 0.014 & 11.21 \\
+G2 MG grade & KAN-CNN & p5 & 0.636 $\pm$ 0.051 & 0.661 $\pm$ 0.031 & 0.671 $\pm$ 0.031 & 16.77 \\
+G2 MG grade & RamanNet-Lite & raw & 0.565 $\pm$ 0.041 & 0.607 $\pm$ 0.020 & 0.616 $\pm$ 0.012 & 13.96 \\
+G2 MG grade & RamanNet-Lite & p1 & 0.767 $\pm$ 0.021 & 0.765 $\pm$ 0.021 & 0.765 $\pm$ 0.020 & 18.25 \\
+G2 MG grade & RamanNet-Lite & p2 & 0.766 $\pm$ 0.026 & 0.765 $\pm$ 0.030 & 0.765 $\pm$ 0.027 & 18.33 \\
+G2 MG grade & RamanNet-Lite & p3 & 0.561 $\pm$ 0.051 & 0.578 $\pm$ 0.042 & 0.582 $\pm$ 0.035 & 13.51 \\
+G2 MG grade & RamanNet-Lite & p4 & 0.709 $\pm$ 0.026 & 0.709 $\pm$ 0.024 & 0.707 $\pm$ 0.022 & 16.07 \\
+G2 MG grade & RamanNet-Lite & p5 & 0.759 $\pm$ 0.034 & 0.757 $\pm$ 0.035 & 0.758 $\pm$ 0.033 & 15.11 \\
+G3 4-MBA grade & PLS-DA & raw & 0.685 $\pm$ 0.011 & 0.703 $\pm$ 0.010 & 0.701 $\pm$ 0.012 & 14.76 \\
+G3 4-MBA grade & PLS-DA & p1 & 0.867 $\pm$ 0.005 & 0.867 $\pm$ 0.006 & 0.866 $\pm$ 0.005 & 14.85 \\
+G3 4-MBA grade & PLS-DA & p2 & 0.817 $\pm$ 0.026 & 0.815 $\pm$ 0.027 & 0.815 $\pm$ 0.027 & 20.58 \\
+G3 4-MBA grade & PLS-DA & p3 & 0.872 $\pm$ 0.020 & 0.871 $\pm$ 0.020 & 0.871 $\pm$ 0.020 & 22.46 \\
+G3 4-MBA grade & PLS-DA & p4 & 0.715 $\pm$ 0.024 & 0.729 $\pm$ 0.025 & 0.727 $\pm$ 0.026 & 16.53 \\
+G3 4-MBA grade & PLS-DA & p5 & 0.887 $\pm$ 0.025 & 0.885 $\pm$ 0.025 & 0.886 $\pm$ 0.025 & 24.99 \\
+G3 4-MBA grade & LDA & raw & 0.674 $\pm$ 0.011 & 0.673 $\pm$ 0.013 & 0.672 $\pm$ 0.013 & 0.26 \\
+G3 4-MBA grade & LDA & p1 & 0.782 $\pm$ 0.047 & 0.787 $\pm$ 0.044 & 0.787 $\pm$ 0.042 & 0.24 \\
+G3 4-MBA grade & LDA & p2 & 0.692 $\pm$ 0.056 & 0.698 $\pm$ 0.053 & 0.698 $\pm$ 0.051 & 0.24 \\
+G3 4-MBA grade & LDA & p3 & 0.712 $\pm$ 0.040 & 0.717 $\pm$ 0.037 & 0.717 $\pm$ 0.037 & 0.25 \\
+G3 4-MBA grade & LDA & p4 & 0.764 $\pm$ 0.013 & 0.764 $\pm$ 0.012 & 0.764 $\pm$ 0.013 & 0.25 \\
+G3 4-MBA grade & LDA & p5 & 0.718 $\pm$ 0.063 & 0.722 $\pm$ 0.058 & 0.723 $\pm$ 0.056 & 0.25 \\
+G3 4-MBA grade & SVM & raw & 0.723 $\pm$ 0.017 & 0.735 $\pm$ 0.019 & 0.733 $\pm$ 0.019 & 0.13 \\
+G3 4-MBA grade & SVM & p1 & 0.981 $\pm$ 0.007 & 0.981 $\pm$ 0.006 & 0.981 $\pm$ 0.007 & 0.05 \\
+G3 4-MBA grade & SVM & p2 & 0.979 $\pm$ 0.008 & 0.979 $\pm$ 0.008 & 0.979 $\pm$ 0.008 & 0.07 \\
+G3 4-MBA grade & SVM & p3 & 0.973 $\pm$ 0.010 & 0.974 $\pm$ 0.010 & 0.974 $\pm$ 0.010 & 0.06 \\
+G3 4-MBA grade & SVM & p4 & 0.874 $\pm$ 0.015 & 0.874 $\pm$ 0.014 & 0.874 $\pm$ 0.015 & 0.09 \\
+G3 4-MBA grade & SVM & p5 & 0.968 $\pm$ 0.011 & 0.968 $\pm$ 0.011 & 0.968 $\pm$ 0.011 & 0.09 \\
+G3 4-MBA grade & KNN & raw & 0.906 $\pm$ 0.016 & 0.906 $\pm$ 0.016 & 0.906 $\pm$ 0.016 & 0.01 \\
+G3 4-MBA grade & KNN & p1 & 0.950 $\pm$ 0.006 & 0.950 $\pm$ 0.006 & 0.950 $\pm$ 0.006 & 0.01 \\
+G3 4-MBA grade & KNN & p2 & 0.832 $\pm$ 0.021 & 0.834 $\pm$ 0.020 & 0.834 $\pm$ 0.019 & 0.01 \\
+G3 4-MBA grade & KNN & p3 & 0.950 $\pm$ 0.014 & 0.950 $\pm$ 0.014 & 0.950 $\pm$ 0.014 & 0.01 \\
+G3 4-MBA grade & KNN & p4 & 0.942 $\pm$ 0.026 & 0.941 $\pm$ 0.027 & 0.941 $\pm$ 0.027 & 0.01 \\
+G3 4-MBA grade & KNN & p5 & 0.729 $\pm$ 0.041 & 0.740 $\pm$ 0.037 & 0.740 $\pm$ 0.039 & 0.01 \\
+G3 4-MBA grade & RF & raw & 0.928 $\pm$ 0.008 & 0.928 $\pm$ 0.008 & 0.928 $\pm$ 0.008 & 0.78 \\
+G3 4-MBA grade & RF & p1 & 0.976 $\pm$ 0.006 & 0.977 $\pm$ 0.006 & 0.977 $\pm$ 0.006 & 0.77 \\
+G3 4-MBA grade & RF & p2 & 0.968 $\pm$ 0.013 & 0.968 $\pm$ 0.013 & 0.968 $\pm$ 0.013 & 0.76 \\
+G3 4-MBA grade & RF & p3 & 0.969 $\pm$ 0.013 & 0.969 $\pm$ 0.013 & 0.969 $\pm$ 0.013 & 0.77 \\
+G3 4-MBA grade & RF & p4 & 0.971 $\pm$ 0.012 & 0.971 $\pm$ 0.012 & 0.971 $\pm$ 0.012 & 0.76 \\
+G3 4-MBA grade & RF & p5 & 0.953 $\pm$ 0.021 & 0.953 $\pm$ 0.021 & 0.953 $\pm$ 0.020 & 0.75 \\
+G3 4-MBA grade & ExtraTrees & raw & 0.927 $\pm$ 0.016 & 0.927 $\pm$ 0.016 & 0.927 $\pm$ 0.016 & 1.38 \\
+G3 4-MBA grade & ExtraTrees & p1 & 0.976 $\pm$ 0.006 & 0.976 $\pm$ 0.006 & 0.977 $\pm$ 0.006 & 1.41 \\
+G3 4-MBA grade & ExtraTrees & p2 & 0.969 $\pm$ 0.012 & 0.969 $\pm$ 0.012 & 0.969 $\pm$ 0.012 & 1.40 \\
+G3 4-MBA grade & ExtraTrees & p3 & 0.972 $\pm$ 0.008 & 0.972 $\pm$ 0.008 & 0.972 $\pm$ 0.008 & 1.40 \\
+G3 4-MBA grade & ExtraTrees & p4 & 0.970 $\pm$ 0.005 & 0.971 $\pm$ 0.005 & 0.971 $\pm$ 0.005 & 1.42 \\
+G3 4-MBA grade & ExtraTrees & p5 & 0.949 $\pm$ 0.008 & 0.949 $\pm$ 0.008 & 0.949 $\pm$ 0.008 & 1.34 \\
+G3 4-MBA grade & XGBoost & raw & 0.925 $\pm$ 0.007 & 0.925 $\pm$ 0.007 & 0.925 $\pm$ 0.007 & 18.12 \\
+G3 4-MBA grade & XGBoost & p1 & 0.976 $\pm$ 0.006 & 0.977 $\pm$ 0.006 & 0.977 $\pm$ 0.006 & 14.33 \\
+G3 4-MBA grade & XGBoost & p2 & 0.971 $\pm$ 0.015 & 0.970 $\pm$ 0.015 & 0.971 $\pm$ 0.015 & 15.00 \\
+G3 4-MBA grade & XGBoost & p3 & 0.969 $\pm$ 0.006 & 0.969 $\pm$ 0.007 & 0.969 $\pm$ 0.006 & 15.39 \\
+G3 4-MBA grade & XGBoost & p4 & 0.969 $\pm$ 0.009 & 0.969 $\pm$ 0.010 & 0.969 $\pm$ 0.010 & 13.51 \\
+G3 4-MBA grade & XGBoost & p5 & 0.965 $\pm$ 0.012 & 0.965 $\pm$ 0.012 & 0.965 $\pm$ 0.012 & 15.77 \\
+G3 4-MBA grade & HistGradientBoosting & raw & 0.894 $\pm$ 0.027 & 0.894 $\pm$ 0.026 & 0.894 $\pm$ 0.027 & 10.43 \\
+G3 4-MBA grade & HistGradientBoosting & p1 & 0.955 $\pm$ 0.006 & 0.954 $\pm$ 0.006 & 0.954 $\pm$ 0.006 & 28.13 \\
+G3 4-MBA grade & HistGradientBoosting & p2 & 0.951 $\pm$ 0.015 & 0.952 $\pm$ 0.015 & 0.952 $\pm$ 0.015 & 31.84 \\
+G3 4-MBA grade & HistGradientBoosting & p3 & 0.945 $\pm$ 0.024 & 0.946 $\pm$ 0.024 & 0.946 $\pm$ 0.023 & 27.56 \\
+G3 4-MBA grade & HistGradientBoosting & p4 & 0.952 $\pm$ 0.016 & 0.952 $\pm$ 0.017 & 0.952 $\pm$ 0.017 & 24.90 \\
+G3 4-MBA grade & HistGradientBoosting & p5 & 0.947 $\pm$ 0.023 & 0.947 $\pm$ 0.022 & 0.947 $\pm$ 0.023 & 67.28 \\
+G3 4-MBA grade & 1D-CNN & raw & 0.424 $\pm$ 0.074 & 0.462 $\pm$ 0.050 & 0.460 $\pm$ 0.054 & 7.47 \\
+G3 4-MBA grade & 1D-CNN & p1 & 0.701 $\pm$ 0.153 & 0.710 $\pm$ 0.133 & 0.708 $\pm$ 0.137 & 13.03 \\
+G3 4-MBA grade & 1D-CNN & p2 & 0.720 $\pm$ 0.068 & 0.724 $\pm$ 0.061 & 0.724 $\pm$ 0.062 & 12.42 \\
+G3 4-MBA grade & 1D-CNN & p3 & 0.193 $\pm$ 0.011 & 0.340 $\pm$ 0.009 & 0.338 $\pm$ 0.013 & 6.79 \\
+G3 4-MBA grade & 1D-CNN & p4 & 0.650 $\pm$ 0.174 & 0.656 $\pm$ 0.166 & 0.657 $\pm$ 0.165 & 14.53 \\
+G3 4-MBA grade & 1D-CNN & p5 & 0.604 $\pm$ 0.036 & 0.611 $\pm$ 0.032 & 0.610 $\pm$ 0.032 & 7.90 \\
+G3 4-MBA grade & 1D-ResNet & raw & 0.623 $\pm$ 0.235 & 0.658 $\pm$ 0.190 & 0.654 $\pm$ 0.194 & 18.18 \\
+G3 4-MBA grade & 1D-ResNet & p1 & 0.788 $\pm$ 0.073 & 0.785 $\pm$ 0.076 & 0.785 $\pm$ 0.076 & 15.69 \\
+G3 4-MBA grade & 1D-ResNet & p2 & 0.780 $\pm$ 0.071 & 0.778 $\pm$ 0.073 & 0.778 $\pm$ 0.073 & 15.92 \\
+G3 4-MBA grade & 1D-ResNet & p3 & 0.778 $\pm$ 0.117 & 0.790 $\pm$ 0.102 & 0.792 $\pm$ 0.098 & 33.53 \\
+G3 4-MBA grade & 1D-ResNet & p4 & 0.871 $\pm$ 0.040 & 0.870 $\pm$ 0.039 & 0.871 $\pm$ 0.040 & 26.35 \\
+G3 4-MBA grade & 1D-ResNet & p5 & 0.594 $\pm$ 0.042 & 0.597 $\pm$ 0.041 & 0.596 $\pm$ 0.040 & 11.89 \\
+G3 4-MBA grade & Spectrum-KAN & raw & 0.686 $\pm$ 0.055 & 0.693 $\pm$ 0.056 & 0.693 $\pm$ 0.053 & 16.21 \\
+G3 4-MBA grade & Spectrum-KAN & p1 & 0.891 $\pm$ 0.042 & 0.891 $\pm$ 0.042 & 0.891 $\pm$ 0.042 & 18.47 \\
+G3 4-MBA grade & Spectrum-KAN & p2 & 0.925 $\pm$ 0.031 & 0.925 $\pm$ 0.031 & 0.925 $\pm$ 0.032 & 25.70 \\
+G3 4-MBA grade & Spectrum-KAN & p3 & 0.883 $\pm$ 0.029 & 0.882 $\pm$ 0.028 & 0.883 $\pm$ 0.028 & 31.63 \\
+G3 4-MBA grade & Spectrum-KAN & p4 & 0.734 $\pm$ 0.028 & 0.743 $\pm$ 0.026 & 0.742 $\pm$ 0.026 & 12.26 \\
+G3 4-MBA grade & Spectrum-KAN & p5 & 0.861 $\pm$ 0.026 & 0.860 $\pm$ 0.026 & 0.861 $\pm$ 0.025 & 15.51 \\
+G3 4-MBA grade & KAN-CNN & raw & 0.247 $\pm$ 0.117 & 0.346 $\pm$ 0.069 & 0.343 $\pm$ 0.074 & 9.94 \\
+G3 4-MBA grade & KAN-CNN & p1 & 0.700 $\pm$ 0.028 & 0.708 $\pm$ 0.030 & 0.709 $\pm$ 0.030 & 19.74 \\
+G3 4-MBA grade & KAN-CNN & p2 & 0.702 $\pm$ 0.113 & 0.716 $\pm$ 0.094 & 0.716 $\pm$ 0.096 & 23.16 \\
+G3 4-MBA grade & KAN-CNN & p3 & 0.692 $\pm$ 0.112 & 0.714 $\pm$ 0.093 & 0.715 $\pm$ 0.095 & 55.90 \\
+G3 4-MBA grade & KAN-CNN & p4 & 0.532 $\pm$ 0.161 & 0.564 $\pm$ 0.120 & 0.564 $\pm$ 0.115 & 11.76 \\
+G3 4-MBA grade & KAN-CNN & p5 & 0.523 $\pm$ 0.082 & 0.563 $\pm$ 0.048 & 0.562 $\pm$ 0.053 & 10.88 \\
+G3 4-MBA grade & RamanNet-Lite & raw & 0.739 $\pm$ 0.099 & 0.746 $\pm$ 0.085 & 0.747 $\pm$ 0.086 & 17.19 \\
+G3 4-MBA grade & RamanNet-Lite & p1 & 0.910 $\pm$ 0.025 & 0.911 $\pm$ 0.024 & 0.910 $\pm$ 0.024 & 20.02 \\
+G3 4-MBA grade & RamanNet-Lite & p2 & 0.893 $\pm$ 0.018 & 0.891 $\pm$ 0.018 & 0.891 $\pm$ 0.018 & 20.87 \\
+G3 4-MBA grade & RamanNet-Lite & p3 & 0.888 $\pm$ 0.023 & 0.887 $\pm$ 0.023 & 0.887 $\pm$ 0.023 & 17.86 \\
+G3 4-MBA grade & RamanNet-Lite & p4 & 0.765 $\pm$ 0.066 & 0.767 $\pm$ 0.063 & 0.767 $\pm$ 0.063 & 12.14 \\
+G3 4-MBA grade & RamanNet-Lite & p5 & 0.836 $\pm$ 0.026 & 0.836 $\pm$ 0.027 & 0.836 $\pm$ 0.027 & 14.68 \\
+\end{longtable}
+}
+
+
+{\tiny
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{longtable}{L{2.1cm}L{1.0cm}L{1.25cm}L{1.0cm}L{1.1cm}L{2.0cm}L{2.2cm}L{3.8cm}}
+\caption{Full SHAP peak-cluster assignment audit.}\label{tab:s4_shap_assignment}\\
+\toprule
+Task & Cluster & Center & Width & SHAP \% & Level & Matched peak & Assignment note \\
+\midrule
+\endfirsthead
+\toprule
+Task & Cluster & Center & Width & SHAP \% & Level & Matched peak & Assignment note \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+G1 Thiram grade & 1 & 465.0 & 2.0 & 1.29 & unassigned &  &  \\
+G1 Thiram grade & 2 & 718.0 & 0.0 & 0.64 & unassigned &  &  \\
+G1 Thiram grade & 3 & 1138.9 & 11.0 & 6.19 & literature\_target & Thiram 1145(center=-6.1, nearest=+0.0) & Thiram 1145(center=-6.1, nearest=+0.0) \\
+G1 Thiram grade & 4 & 1377.0 & 0.0 & 0.71 & literature\_target & Thiram 1380(center=-3.0, nearest=-3.0) & Thiram 1380(center=-3.0, nearest=-3.0) \\
+G1 Thiram grade & 5 & 1501.7 & 13.0 & 5.31 & literature\_target & Thiram 1510(center=-8.3, nearest=-2.0); MBA 1490(center=+11.7, nearest=+5.0) & Thiram 1510(center=-8.3, nearest=-2.0); MBA 1490(center=+11.7, nearest=+5.0) \\
+G2 MG grade & 1 & 863.3 & 6.0 & 1.73 & curated\_literature &  & Thiram 860 (CH3)2-N / CH3 modes (RSC Adv 2024 881; normal-Raman 850) \\
+G2 MG grade & 2 & 1035.0 & 0.0 & 0.46 & unassigned &  &  \\
+G2 MG grade & 3 & 1160.0 & 2.0 & 1.60 & literature\_target & Thiram 1145(center=+15.0, nearest=+14.0); MG 1172(center=-12.0, nearest=-11.0) & Thiram 1145(center=+15.0, nearest=+14.0); MG 1172(center=-12.0, nearest=-11.0) \\
+G2 MG grade & 4 & 1184.2 & 7.0 & 1.70 & literature\_target & MG 1172(center=+12.2, nearest=+8.0) & MG 1172(center=+12.2, nearest=+8.0) \\
+G2 MG grade & 5 & 1211.0 & 9.0 & 3.69 & literature\_target & MG 1220(center=-9.0, nearest=-4.0) & MG 1220(center=-9.0, nearest=-4.0) \\
+G2 MG grade & 6 & 1423.0 & 0.0 & 0.50 & unassigned &  &  \\
+G2 MG grade & 7 & 1607.0 & 0.0 & 0.48 & literature\_target & MG 1616(center=-9.0, nearest=-9.0) & MG 1616(center=-9.0, nearest=-9.0) \\
+G3 4-MBA grade & 1 & 1062.3 & 10.0 & 3.22 & literature\_target & MBA 1078(center=-15.7, nearest=-13.0) & MBA 1078(center=-15.7, nearest=-13.0) \\
+G3 4-MBA grade & 2 & 1386.8 & 7.0 & 3.07 & cross\_component & Thiram 1380(center=+6.8, nearest=+3.0); MG 1394(center=-7.2, nearest=-4.0) & interference band (Thiram 1380(center=+6.8, nearest=+3.0); MG 1394(center=-7.2, nearest=-4.0)) \\
+G3 4-MBA grade & 3 & 1439.7 & 5.0 & 1.34 & curated\_literature &  & Thiram 1444 C-N stretch + CH3 rock (Analyst 2014 1444; RSC Adv 2024 1436) \\
+G3 4-MBA grade & 4 & 1574.7 & 11.0 & 7.58 & literature\_target & MBA 1590(center=-15.3, nearest=-9.0) & MBA 1590(center=-15.3, nearest=-9.0) \\
+P1 Thiram & 1 & 689.0 & 0.0 & 0.55 & unassigned &  &  \\
+P1 Thiram & 2 & 768.1 & 10.0 & 4.62 & unassigned &  &  \\
+P1 Thiram & 3 & 921.7 & 8.0 & 5.27 & literature\_target & Thiram 930(center=-8.3, nearest=-4.0) & Thiram 930(center=-8.3, nearest=-4.0) \\
+P1 Thiram & 4 & 1375.0 & 0.0 & 0.61 & literature\_target & Thiram 1380(center=-5.0, nearest=-5.0) & Thiram 1380(center=-5.0, nearest=-5.0) \\
+P1 Thiram & 5 & 1510.0 & 0.0 & 0.59 & literature\_target & Thiram 1510(center=+0.0, nearest=+0.0) & Thiram 1510(center=+0.0, nearest=+0.0) \\
+P1 Thiram & 6 & 1548.0 & 0.0 & 0.79 & unassigned &  &  \\
+P1 Thiram & 7 & 1587.5 & 1.0 & 1.20 & cross\_component & MBA 1590(center=-2.5, nearest=-2.0) & interference band (MBA 1590(center=-2.5, nearest=-2.0)) \\
+P2 MG & 1 & 1169.6 & 8.0 & 5.81 & literature\_target & MG 1172(center=-2.4, nearest=+0.0) & MG 1172(center=-2.4, nearest=+0.0) \\
+P2 MG & 2 & 1213.6 & 6.0 & 3.61 & literature\_target & MG 1220(center=-6.4, nearest=-4.0) & MG 1220(center=-6.4, nearest=-4.0) \\
+P2 MG & 3 & 1394.0 & 0.0 & 0.68 & literature\_target & Thiram 1380(center=+14.0, nearest=+14.0); MG 1394(center=+0.0, nearest=+0.0) & Thiram 1380(center=+14.0, nearest=+14.0); MG 1394(center=+0.0, nearest=+0.0) \\
+P2 MG & 4 & 1609.8 & 8.0 & 9.08 & literature\_target & MG 1616(center=-6.2, nearest=-2.0) & MG 1616(center=-6.2, nearest=-2.0) \\
+P3 4-MBA & 1 & 1068.4 & 13.0 & 9.23 & literature\_target & MBA 1078(center=-9.6, nearest=-4.0) & MBA 1078(center=-9.6, nearest=-4.0) \\
+P3 4-MBA & 2 & 1575.4 & 15.0 & 18.47 & literature\_target & MBA 1590(center=-14.6, nearest=-8.0) & MBA 1590(center=-14.6, nearest=-8.0) \\
+\end{longtable}
+}
+
+
+{\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{longtable}{L{4.0cm}L{2.4cm}L{2.4cm}L{4.2cm}}
+\caption{Complete SHAP-guided feature-retention scan.}\label{tab:s5_feature_selection_curve}\\
+\toprule
+Task & Retained \% & Features & Macro-F1 \\
+\midrule
+\endfirsthead
+\toprule
+Task & Retained \% & Features & Macro-F1 \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+G1 Thiram grade & 10 & 141 & 0.979 $\pm$ 0.015 \\
+G1 Thiram grade & 20 & 281 & 0.989 $\pm$ 0.011 \\
+G1 Thiram grade & 30 & 421 & 0.991 $\pm$ 0.009 \\
+G1 Thiram grade & 40 & 561 & 0.991 $\pm$ 0.009 \\
+G1 Thiram grade & 50 & 701 & 0.994 $\pm$ 0.006 \\
+G1 Thiram grade & 60 & 841 & 0.995 $\pm$ 0.004 \\
+G1 Thiram grade & 70 & 981 & 0.992 $\pm$ 0.008 \\
+G1 Thiram grade & 80 & 1121 & 0.992 $\pm$ 0.008 \\
+G1 Thiram grade & 90 & 1261 & 0.994 $\pm$ 0.006 \\
+G1 Thiram grade & 100 & 1401 & 0.994 $\pm$ 0.006 \\
+G2 MG grade & 10 & 141 & 0.953 $\pm$ 0.006 \\
+G2 MG grade & 20 & 281 & 0.961 $\pm$ 0.010 \\
+G2 MG grade & 30 & 421 & 0.961 $\pm$ 0.006 \\
+G2 MG grade & 40 & 561 & 0.966 $\pm$ 0.010 \\
+G2 MG grade & 50 & 701 & 0.970 $\pm$ 0.009 \\
+G2 MG grade & 60 & 841 & 0.967 $\pm$ 0.010 \\
+G2 MG grade & 70 & 981 & 0.969 $\pm$ 0.017 \\
+G2 MG grade & 80 & 1121 & 0.963 $\pm$ 0.014 \\
+G2 MG grade & 90 & 1261 & 0.966 $\pm$ 0.009 \\
+G2 MG grade & 100 & 1401 & 0.966 $\pm$ 0.009 \\
+G3 4-MBA grade & 10 & 141 & 0.974 $\pm$ 0.012 \\
+G3 4-MBA grade & 20 & 281 & 0.981 $\pm$ 0.004 \\
+G3 4-MBA grade & 30 & 421 & 0.979 $\pm$ 0.003 \\
+G3 4-MBA grade & 40 & 561 & 0.979 $\pm$ 0.008 \\
+G3 4-MBA grade & 50 & 701 & 0.981 $\pm$ 0.007 \\
+G3 4-MBA grade & 60 & 841 & 0.978 $\pm$ 0.000 \\
+G3 4-MBA grade & 70 & 981 & 0.981 $\pm$ 0.004 \\
+G3 4-MBA grade & 80 & 1121 & 0.978 $\pm$ 0.009 \\
+G3 4-MBA grade & 90 & 1261 & 0.978 $\pm$ 0.005 \\
+G3 4-MBA grade & 100 & 1401 & 0.976 $\pm$ 0.006 \\
+P1 Thiram & 10 & 141 & 0.986 $\pm$ 0.011 \\
+P1 Thiram & 20 & 281 & 0.992 $\pm$ 0.006 \\
+P1 Thiram & 30 & 421 & 0.994 $\pm$ 0.003 \\
+P1 Thiram & 40 & 561 & 0.996 $\pm$ 0.004 \\
+P1 Thiram & 50 & 701 & 0.994 $\pm$ 0.003 \\
+P1 Thiram & 60 & 841 & 0.993 $\pm$ 0.000 \\
+P1 Thiram & 70 & 981 & 0.993 $\pm$ 0.000 \\
+P1 Thiram & 80 & 1121 & 0.993 $\pm$ 0.000 \\
+P1 Thiram & 90 & 1261 & 0.993 $\pm$ 0.000 \\
+P1 Thiram & 100 & 1401 & 0.993 $\pm$ 0.000 \\
+P2 MG & 10 & 141 & 0.969 $\pm$ 0.010 \\
+P2 MG & 20 & 281 & 0.974 $\pm$ 0.014 \\
+P2 MG & 30 & 421 & 0.977 $\pm$ 0.014 \\
+P2 MG & 40 & 561 & 0.980 $\pm$ 0.016 \\
+P2 MG & 50 & 701 & 0.977 $\pm$ 0.014 \\
+P2 MG & 60 & 841 & 0.980 $\pm$ 0.016 \\
+P2 MG & 70 & 981 & 0.981 $\pm$ 0.013 \\
+P2 MG & 80 & 1121 & 0.974 $\pm$ 0.014 \\
+P2 MG & 90 & 1261 & 0.980 $\pm$ 0.015 \\
+P2 MG & 100 & 1401 & 0.978 $\pm$ 0.012 \\
+P3 4-MBA & 10 & 141 & 0.982 $\pm$ 0.009 \\
+P3 4-MBA & 20 & 281 & 0.986 $\pm$ 0.012 \\
+P3 4-MBA & 30 & 421 & 0.983 $\pm$ 0.014 \\
+P3 4-MBA & 40 & 561 & 0.988 $\pm$ 0.009 \\
+P3 4-MBA & 50 & 701 & 0.988 $\pm$ 0.013 \\
+P3 4-MBA & 60 & 841 & 0.986 $\pm$ 0.015 \\
+P3 4-MBA & 70 & 981 & 0.989 $\pm$ 0.013 \\
+P3 4-MBA & 80 & 1121 & 0.988 $\pm$ 0.012 \\
+P3 4-MBA & 90 & 1261 & 0.986 $\pm$ 0.012 \\
+P3 4-MBA & 100 & 1401 & 0.988 $\pm$ 0.012 \\
+\end{longtable}
+}
+
+
+{\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{longtable}{L{2.0cm}L{1.35cm}L{1.35cm}L{2.1cm}L{2.1cm}L{2.4cm}L{1.7cm}}
+\caption{Performance of three-target presence screening in the spiked soil matrix.}\label{tab:s6_soil_screening_metrics}\\
+\toprule
+Task & Soil spectra & Blank controls & AUC & Macro-F1 & Balanced accuracy & Blank specificity \\
+\midrule
+\endfirsthead
+\toprule
+Task & Soil spectra & Blank controls & AUC & Macro-F1 & Balanced accuracy & Blank specificity \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+P1 Thiram & 89 & 10 & 0.996 +/- 0.008 & 0.887 +/- 0.087 & 0.868 +/- 0.117 & 1.0 \\
+P2 MG & 89 & 10 & 0.956 +/- 0.052 & 0.811 +/- 0.127 & 0.787 +/- 0.139 & 1.0 \\
+P3 4-MBA & 89 & 10 & 0.976 +/- 0.034 & 0.919 +/- 0.085 & 0.892 +/- 0.109 & 1.0 \\
+\end{longtable}
+}
+
+
+{\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{longtable}{L{3.0cm}L{1.7cm}L{1.5cm}L{1.7cm}L{1.6cm}L{2.0cm}L{1.6cm}}
+\caption{Soil presence-screening permutation test summary.}\label{tab:s7_soil_permutation}\\
+\toprule
+Task & Metric & Observed & Null mean & Null SD & Permutations & p \\
+\midrule
+\endfirsthead
+\toprule
+Task & Metric & Observed & Null mean & Null SD & Permutations & p \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+P1 Thiram & OOF\_AUC & 0.993 & 0.499 & 0.073 & 10000 & $<10^{-4}$ \\
+P2 MG & OOF\_AUC & 0.955 & 0.502 & 0.083 & 10000 & $<10^{-4}$ \\
+P3 4-MBA & OOF\_AUC & 0.976 & 0.494 & 0.078 & 10000 & $<10^{-4}$ \\
+\end{longtable}
+}
+
+
+{\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{longtable}{L{1.4cm}L{1.25cm}L{2.3cm}L{3.3cm}L{2.2cm}L{4.1cm}}
+\caption{Representative same-concentration marker-band repeatability used for Fig. 2.}\label{tab:s8_representative_rsd}\\
+\toprule
+Analyte & Marker & Sample & Metric & Value & Role \\
+\midrule
+\endfirsthead
+\toprule
+Analyte & Marker & Sample & Metric & Value & Role \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+Thiram & 1382 & 1e-4 M; p1; n=18 & marker-band area ($\pm$8 cm$^{-1}$) & mean=97.56; RSD=10.24\% & Fig.2b same-concentration pure-standard repeatability \\
+MG & 1616 & 1e-4 M; p1; n=21 & marker-band area ($\pm$8 cm$^{-1}$) & mean=59.82; RSD=6.04\% & Fig.2b same-concentration pure-standard repeatability \\
+4-MBA & 1080 & 1e-4 M; p1; n=20 & marker-band area ($\pm$8 cm$^{-1}$) & mean=63.3; RSD=2.64\% & Fig.2b same-concentration pure-standard repeatability \\
+\end{longtable}
+}
+
+
+{\tiny
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{longtable}{L{2.55cm}L{3.0cm}L{3.4cm}L{2.45cm}L{4.05cm}}
+\caption{Representative literature comparison for SERS mixture analysis, soil SERS detection and spectral XAI.}\label{tab:s9_literature_comparison}\\
+\toprule
+Reference & System / matrix & Method / focus & Scope & Difference from this work \\
+\midrule
+\endfirsthead
+\toprule
+Reference & System / matrix & Method / focus & Scope & Difference from this work \\
+\midrule
+\endhead
+\endfoot
+\bottomrule
+\endlastfoot
+Hu et al., Talanta, 2020 & Mixed pesticide residues; Fruit surface & SERS + self-modeling mixture analysis; Mixed-spectrum resolution & Multicomponent: Yes; XAI/SHAP: No; Soil: No & Focused on rapid nondestructive detection of mixed residues on fruit surfaces; did not include SHAP spectral-zone attribution or spiked-soil concentration grading. \\
+Shi et al., Food Chemistry: X, 2024 & Pymetrozine / carbendazim binary pesticides; Apple & SERS + multivariate analysis; Discussed coexistence effects on characteristic peak intensity and quantification & Multicomponent: Yes, binary; XAI/SHAP: No; Soil: No & Showed that single-peak intensity in mixtures can be affected by coexisting components; this work extends the design to a ternary system and adds SHAP spectral-zone attribution. \\
+Tian et al., JFCA, 2025 & Thiabendazole / pymetrozine binary pesticides; Apple & DFT + SERS; Explicitly analysed competitive adsorption & Multicomponent: Yes, binary; XAI/SHAP: No; Soil: No & Provided DFT-supported evidence for binary adsorption competition; this work focuses on ternary coexistence, MG 1616 cm$^{-1}$ suppression and interpretable modelling. \\
+Ma et al., Food Control, 2023 & Mixed pesticide residues; Agricultural samples & Portable Raman + SERS; Involved mixed-residue detection & Multicomponent: Yes; XAI/SHAP: No; Soil: No & Emphasized portable detection and multianalyte application; did not trace model contribution back to chemically interpretable spectral zones. \\
+Dong et al., Analytical Chemistry, 2025 & Single-target thiram detection; Soil & 3D Au supercrystal SERS substrate + ML; Not centred on multicomponent competitive adsorption & Multicomponent: No, single target; XAI/SHAP: No; Soil: Yes & Focused on substrate engineering and single-target soil detection; this work uses conventional AgNPs and emphasizes ternary interference, SHAP attribution and spiked-soil concentration grading. \\
+Contreras et al., Analytical Chemistry, 2024 & Spectral deep-learning interpretability; Spectral datasets & Spectral zones-based SHAP / LIME; Focused on grouped spectral-zone interpretability & Multicomponent: Dataset dependent; XAI/SHAP: Yes; Soil: No & Provided a spectral-zone XAI methodology; this work applies a related idea to ternary SERS mixtures and spiked-soil screening. \\
+Yang et al., Spectrochimica Acta Part A, 2026 & Raman spectral classification; Raman datasets & SHAP + spectral segmentation; Focused on continuous spectral-zone interpretation & Multicomponent: Dataset dependent; XAI/SHAP: Yes; Soil: No & Provided a Raman segmentation-SHAP reference; this work further combines SERS mixture competition and spiked-soil concentration grading. \\
+\end{longtable}
+}

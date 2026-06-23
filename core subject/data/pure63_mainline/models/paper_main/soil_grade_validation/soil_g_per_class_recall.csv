@@ -1,0 +1,13 @@
+﻿run_id,feature_set,grade_label,grade,recall,support
+soil_g_extratrees_p1_20260622_142841,mg1616_single_band_area,0,low,0.375,24
+soil_g_extratrees_p1_20260622_142841,mg1616_single_band_area,1,middle,0.6363636363636364,11
+soil_g_extratrees_p1_20260622_142841,mg1616_single_band_area,2,high,0.23809523809523808,21
+soil_g_extratrees_p1_20260622_142841,manual_marker_band_areas,0,low,0.7083333333333334,24
+soil_g_extratrees_p1_20260622_142841,manual_marker_band_areas,1,middle,1.0,11
+soil_g_extratrees_p1_20260622_142841,manual_marker_band_areas,2,high,0.9523809523809523,21
+soil_g_extratrees_p1_20260622_142841,shap_global_top10pct,0,low,0.8333333333333334,24
+soil_g_extratrees_p1_20260622_142841,shap_global_top10pct,1,middle,0.9090909090909091,11
+soil_g_extratrees_p1_20260622_142841,shap_global_top10pct,2,high,1.0,21
+soil_g_extratrees_p1_20260622_142841,full_p1_spectrum,0,low,0.8333333333333334,24
+soil_g_extratrees_p1_20260622_142841,full_p1_spectrum,1,middle,1.0,11
+soil_g_extratrees_p1_20260622_142841,full_p1_spectrum,2,high,1.0,21

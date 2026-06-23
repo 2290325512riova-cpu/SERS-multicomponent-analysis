@@ -30,11 +30,11 @@ TASK_LABEL = {
 }
 
 ANALYTE_COLORS = {
-    "Thiram": "#0072B2",
-    "MG": "#D55E00",
-    "MBA": "#009E73",
-    "4-MBA": "#009E73",
-    "Blank": "#999999",
+    "Thiram": "#2F6FAE",
+    "MG": "#C76A2A",
+    "MBA": "#2A9D8F",
+    "4-MBA": "#2A9D8F",
+    "Blank": "#8A8F98",
 }
 
 TASK_COLORS = {

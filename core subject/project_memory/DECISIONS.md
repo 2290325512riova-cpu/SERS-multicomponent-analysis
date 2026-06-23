@@ -525,3 +525,38 @@ Consequences:
 - Reports and figure plans use the formal SHAP output: 22/29 and 91.2%. The 20/29 and 88.1% layer is only the decomposition before curated Thiram 860/1444 assignment.
 - Do not claim 24/29 as the main-text formal output; it remains an optional SI-level co-adsorbed/reference-region extension.
 - Do not report any number higher than the audited output produced by a documented peak library, source list, and fixed match-window rule.
+
+## D023: Chinese Manuscript Rewriting Must Be Literature-Anchored And Section-Bounded
+
+Date: 2026-06-07
+Status: active (manuscript-writing protocol; complements D020-D022)
+
+Context:
+
+- Long, high-turn manuscript drafting caused drift: paragraphs began to sound generic, AI-like, or report-like when not anchored to the exact structure of published papers.
+- The user requires the Chinese manuscript to be rewritten paragraph by paragraph or section by section, with each unit designed against the closest available published-paper precedent.
+- The local library now contains purpose-built writing references under `附/参考文献/正式写作参考背书/`, `附/参考文献/新文献/`, A-H topic folders, and `附/师兄论文_full.txt`; these must be searched before defaulting to web search or generic memory.
+- Published-paper structure matters. A paragraph from Methods should not be used as if it were Results, and a Results model-selection paragraph should not be prematurely moved into Methods.
+
+Decision:
+
+- Chinese manuscript drafting proceeds only in paragraph-level or section-level units approved by the user.
+- Before drafting each unit, Codex must identify the best matching local or web paper(s), read the corresponding paragraph(s), and present a Chinese rendering that preserves source structure as much as feasible, including citations, figure/table mentions, formulas, variables, and section placement when present.
+- Literature search priority:
+  1. `附/参考文献/正式写作参考背书/`
+  2. `附/参考文献/新文献/`
+  3. `附/参考文献/A组`-`H组`
+  4. `附/师兄论文_full.txt`
+  5. web/open literature; if a non-open source is needed, provide DOI/link for the user to download.
+- Do not fabricate a precedent by stitching isolated sentences from unrelated sections. Use complete, section-matched examples where possible.
+- Adapt the precedent to this project's route instead of copying generic prose: SERS AgNPs, Thiram/MG/4-MBA, presence + discrete grade tasks, MG 1616 cm^-1 suppression, TreeSHAP chemical-region localization, SHAP-guided compact spectral-region screening, and spiked-soil matrix screening.
+- Maintain section boundaries:
+  - Methods: sample/material preparation, AgNPs preparation, SERS acquisition, preprocessing, task definitions, model implementation, validation strategy, metric formulas, MG peak-ratio calculation, TreeSHAP/feature-selection computation.
+  - Results: spectra and peak assignment, model comparison and main-model selection, MG suppression results, SHAP 22/29 and 91.2% results, 10% feature-retention performance, soil screening AUC/blank/permutation results.
+- If the local library lacks a suitable precedent, pause the writing unit and ask for a better paper or DOI rather than forcing a weak, unsupported paragraph.
+
+Consequences:
+
+- `COLLABORATION_PROTOCOL.md`, `AGENTS.md`, and `HANDOFF.md` must remind future agents to restore this writing protocol after context compression.
+- Manuscript-writing advice should not rely on chat memory alone. Future sessions must re-read this decision and the active writing staging file before continuing.
+- The current staging file is the single paragraph-rewrite workspace: root `论文中文重修段落汇总.md`. The old LaTeX draft is not the source of truth until approved sections are transferred.

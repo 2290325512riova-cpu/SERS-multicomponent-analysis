@@ -1,6 +1,6 @@
 # Collaboration Protocol
 
-Last updated: 2026-06-01
+Last updated: 2026-06-07
 
 This file prevents strategy drift when Codex, Claude/Opus, and the user work on the project across long sessions.
 
@@ -60,6 +60,27 @@ Publication-style calibration for Codex:
 - When updating documentation, remove stale self-limiting phrasing and align headings, figure plans, and claim matrices to the headline: competitive-adsorption-induced MG 1616 cm⁻¹ suppression plus interpretable ML.
 - Do not preserve old "risk list" language as if it were the manuscript voice. Keep risk controls as internal guardrails, not as title/caption-level wording.
 - **No change-log patches in `reports/` documents.** The user reviews `reports/` files as if they were final drafts. Never insert process scaffolding such as "本轮修正", "含文献支撑", "修正一/二", "现场核实", "上轮调研", "链接供阅读", "待清", or dated edit-notes into them. Edit the content directly into its final state; if a citation belongs in the text, write it as a plain reference line, not as an annotated edit marker. Process history lives in `DECISIONS.md` / `EXPERIMENT_TRACKER.md`, never in reader-facing reports.
+
+## Manuscript Rewriting Protocol
+
+This protocol is mandatory during the Chinese manuscript phase and is intended to prevent drift after long conversations or context compression.
+
+- Write the manuscript **section by section or paragraph by paragraph**. Do not generate large unsupervised blocks and then defend them afterward.
+- Before designing a paragraph or section, first find the closest published-paper precedent for that exact rhetorical job. Prefer local sources in this order:
+  1. `附/参考文献/正式写作参考背书/`
+  2. `附/参考文献/新文献/`
+  3. `附/参考文献/A组` through `H组`
+  4. `附/师兄论文_full.txt`
+  5. web search for highly relevant SERS/ML/pesticide/food-safety or spectroscopy papers when local sources are not enough.
+- If no suitable precedent is available locally and the source is not openly accessible, tell the user exactly which paper/DOI/link to download rather than forcing a weak paragraph.
+- For each proposed paragraph/section, present the supporting paper(s) and the corresponding source paragraph structure before drafting. Preserve the original paragraph's visible elements in the Chinese rendering as much as feasible: citations such as `[xx]`, figure/table references, formulas, variable definitions, and whether the paragraph appears in Methods, Results, Introduction, or Conclusion.
+- Do not splice isolated sentences from unrelated places to fabricate a precedent. Use complete, section-matched paragraphs whenever possible.
+- Design the new manuscript text by following the published-article pattern first, then adapting to this project's data and D020/D021/D022/D023 decisions. Avoid defaulting to generic AI-style academic prose.
+- Keep section boundaries strict:
+  - Methods define samples, acquisition, preprocessing, task labels, model implementation, validation strategy, metric formulas, peak-ratio calculations, and SHAP/feature-selection computation.
+  - Results compare models, select the main model, report MG suppression, report SHAP assignment results, report feature-selection performance, and report soil screening performance.
+  - Do not move Results-style model-selection claims into Methods, but do include enough model/task/metric details in Methods for reproducibility.
+- The user will judge drafts against real papers. Do not claim a paragraph is literature-backed unless the backing source has actually been checked at paragraph level.
 
 ## Decision Flow
 

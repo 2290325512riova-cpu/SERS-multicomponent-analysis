@@ -10,10 +10,12 @@
 \usepackage{tabularx}
 \usepackage{array}
 \usepackage{threeparttable}
+\usepackage{longtable}
 \usepackage{float}
 \usepackage{placeins}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{url}
 \usepackage{hyperref}
 \hypersetup{hidelinks}
 
@@ -37,22 +39,14 @@
 \setlength{\floatsep}{12pt plus 3pt minus 3pt}
 
 \journal{Spectrochimica Acta Part A / Talanta}
-\graphicspath{{figures/}}
+\graphicspath{{latex_manuscript/figures/}}
 
 \newcommand{\cmone}{cm$^{-1}$}
-\newcommand{\molA}{$10^{-4}$ M}
-\newcommand{\molB}{$10^{-5}$ M}
-\newcommand{\molC}{$10^{-6}$ M}
+\newcommand{\molA}{$10^{-4}$}
+\newcommand{\molB}{$10^{-5}$}
+\newcommand{\molC}{$10^{-6}$}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
-\newcommand{\figureplaceholder}[2]{%
-  \fbox{%
-    \begin{minipage}[c][#1][c]{0.94\textwidth}
-      \centering\small #2
-    \end{minipage}%
-  }%
-}
-
 \captionsetup{font=small,labelfont=bf,labelsep=period}
 \renewcommand{\figurename}{图}
 \renewcommand{\tablename}{表}
@@ -68,291 +62,348 @@
 
 \begin{frontmatter}
 
-\title{三组分混合物 SERS 同步筛查与分级：竞争吸附诱导的孔雀石绿 1616 \texorpdfstring{cm$^{-1}$}{cm-1} 特征峰压制及可解释机器学习分析}
+\title{三组分混合物 SERS 同步筛查与离散浓度分级：MG 1616 \texorpdfstring{cm$^{-1}$}{cm-1} 标志峰压制及 SHAP 谱区归因}
 
 \author[inst1]{作者姓名}
 \affiliation[inst1]{organization={辽宁石油化工大学人工智能与软件学院}, city={抚顺}, postcode={113001}, country={China}}
 
 \begin{abstract}
-多组分残留物的快速筛查是表面增强拉曼光谱（SERS）从单一标准品检测走向复杂样品应用的关键环节。本文以福美双（Thiram）、孔雀石绿（MG）和 4-巯基苯甲酸（4-MBA）三组分体系为对象，构建了基于柠檬酸银纳米颗粒胶体的 SERS-机器学习同步筛查流程，并同时设置目标物存在性识别与 \molA、\molB、\molC\ 三档离散浓度分级任务。混合物光谱显示出显著的共存干扰特征：MG 1616 \cmone\ 核心标志峰在 MG+MBA、MG+Thiram 和三元混合体系中的中位峰强比分别降至 0.355、0.206 和 0.129，其中 283/358 条三元混合谱低于同浓度档纯 MG 的 0.5 倍，表明竞争吸附可显著重塑混合物 SERS 峰强。13 类模型、6 种预处理策略和 6 个任务的系统比较显示，树集成模型在固定波数 SERS 指纹数据上表现稳定，各任务最优 macro-F1 达到 0.966--1.000。TreeSHAP 进一步将模型判别依据定位到化学相关谱区，22/29 个高贡献峰簇落在已知化学谱带上，覆盖 91.2\% 的总 SHAP 归因权重，说明模型主要依赖分子指纹峰和干扰敏感峰区完成判别。基于 SHAP 排序的谱区筛选显示，仅保留 10\% 高贡献波数（141/1401）时，六个任务的 macro-F1 仍全部高于 0.95。加标土壤基质筛查中，三个存在性任务获得 0.956--0.996 的 AUC，且 10 条空白/对照土壤光谱均被判定为阴性。该结果表明，三组分 SERS 混合物的关键难点不只是分类建模，而是共存吸附造成的目标峰压制；TreeSHAP 可将这一谱学干扰读出为化学相关判别峰区。
+多组分残留的 SERS 同步筛查常受到竞争吸附、谱峰重叠和基质背景共同影响，混合体系中的核心标志峰强度往往难以沿用纯组分读数关系。本文以 Thiram、孔雀石绿（MG）和 4-巯基苯甲酸（4-MBA）构建三组分 SERS 模型体系，采集纯组分、二元及三元混合物的 AgNPs-SERS 指纹谱，并建立目标物存在性筛查和低/中/高浓度档判别模型。三元体系中，MG 1616 \cmone 核心标志峰的中位强度降至同浓度纯 MG 的 12.9\%，显示共存组分显著削弱了 MG 指纹信号。通过系统比较多类分类器和光谱输入，树集成模型在六项存在性/分级任务中取得 0.966--1.000 的最优 macro-F1。SHAP 归因显示，22/29 个高贡献峰簇可归属于 Thiram、MG 和 4-MBA 的已知指纹峰或共存敏感窗口，并贡献 91.2\% 的总归因权重；仅保留前 10\% 高贡献波数后，六项任务仍保持 macro-F1 $>$ 0.95。加标土壤基质评估进一步获得 0.956--0.996 的存在性筛查 AUC；在三元加标土壤低/中/高浓度档判别中，MG 1616 \cmone 单峰窗口输入的 macro-F1 仅为 0.369，而 SHAP 筛选谱区和完整 p1 光谱输入分别达到 0.900 和 0.931。这些结果表明，SHAP 引导的多谱区建模可在竞争吸附干扰下实现多目标 SERS 筛查，并为加标土壤基质中的离散浓度档判别提供化学可解释依据。
 \end{abstract}
 
 \begin{keyword}
-表面增强拉曼光谱 \sep 三组分混合物 \sep 孔雀石绿 \sep 竞争吸附 \sep TreeSHAP \sep 机器学习 \sep 土壤基质筛查
+表面增强拉曼光谱 \sep 三组分混合物 \sep 孔雀石绿 \sep 竞争吸附 \sep SHAP 谱区归因 \sep 可解释机器学习 \sep 加标土壤基质
 \end{keyword}
 
 \end{frontmatter}
 
 \section{引言}
 
-农药、染料和非法添加物的多组分共存使快速筛查比单一残留检测更接近真实样品场景。SERS 能在一次光谱采集中给出分子指纹信息，因此被用于果蔬、土壤和水体中污染物的快速识别\cite{HuApple,SMAMixture,SoilThiram}。在这类应用中，真正限制方法推广的往往不是单个分子的最低检出限，而是多个分子同时存在时的峰区重叠、信号压制和基质背景扰动。
+农药在现代农业生产中广泛用于防治病害、虫害和杂草，是保障作物产量和农产品质量的重要手段。然而，随着化学农药种类和施用场景增加，多种残留物可能同时出现在同一样品中，并进入农产品、环境介质和食物链，对生态环境和人体健康造成潜在风险\cite{ref1,ref2}。Thiram 是典型的二硫代氨基甲酸酯类杀菌剂，广泛用于种子处理和作物病害防治；MG 属于三苯甲烷类染料，虽已在水产养殖等食品相关场景中受到严格限制，其非法使用和残留问题仍受到关注\cite{ref22,ref23,ref24}。因此，建立灵敏、快速且可同时识别多目标物的筛查方法，对食品安全和环境监测具有实际应用价值。GC、HPLC、GC-MS 和 LC-MS/MS 等色谱/质谱方法已被广泛用于农药和染料残留的确证分析，但复杂前处理、仪器成本、分析时间和专业操作要求限制了其在快速、高通量筛查场景中的现场适用性\cite{ref2,ref5}。
 
-已有研究已经证明 SERS 结合化学计量学可以处理二元混合残留。Hu 等将 SERS 与 self-modeling mixture analysis 结合，用于水果表面混合农药残留的快速无损检测\cite{SMAMixture}；Shi 等在苹果样品中使用 SERS 和多变量分析同时测定 pymetrozine 与 carbendazim，并指出混合溶液中两种农药的 SERS 强度显著低于单一溶液，竞争吸附会影响定量准确性\cite{HuApple}。Tian 等进一步将 DFT 计算与 SERS 实验结合，讨论 thiabendazole 与 pymetrozine 在银表面的竞争吸附，并用单组分与混合溶液的强度差异验证吸附竞争\cite{TianJFCA2025}；Altun 等也利用 SERS 强度变化敏感读出竞争性分子吸附过程\cite{CompetitiveAdsorption}。这些工作奠定了混合残留 SERS 分析基础，但主要围绕二元农药体系、连续定量或吸附模拟展开。
+表面增强拉曼光谱（SERS）兼具金属纳米结构的信号增强效应和 Raman 光谱的分子指纹识别能力，可在短时采集内获得目标物的振动特征信息，因而被广泛用于复杂样品中小分子残留的快速筛查\cite{ref1,ref5,ref25,ref26}。近年来，SERS 已从单一残留检测扩展到果面、饮品、水体和土壤等基质中的多目标分析，为混合农药和小分子污染物的快速筛查提供了有效技术基础\cite{ref1,ref2,ref5,ref6,ref7,ref22,ref23,ref24}。然而，多数 SERS 筛查仍集中于单一目标物或二元混合物；当多种残留物在同一金属纳米表面共存时，竞争吸附、邻近峰重叠和基质诱导峰形变化会削弱单峰强度与浓度之间的简单对应关系\cite{ref2,ref3,ref4,ref5}。
 
-机器学习为多组分 SERS 光谱提供了全谱判别能力，但模型本身仍需要谱学解释支撑。光谱解释方法已经用于 Raman、SERS 和其他光谱模型中，以定位重要波数并将模型判别与化学峰带联系起来\cite{SHAPLIME,SHAPSegmentation,XAIDLSERS,ZnOSHAP}。不过，在三组分 SERS 混合物中，将竞争吸附诱导的特征峰压制、同步筛查/分级模型和 TreeSHAP 化学归因放在同一研究设计中结合报道的工作仍然有限。尤其是当目标峰被共存组分系统性压制时，模型究竟读取目标物自身指纹，还是读取共存干扰留下的谱学线索，是三组分筛查中必须回答的问题。
+不同分析物的 Raman/SERS 特征谱带虽为单次采集中的多组分识别提供了可能，但真实混合谱图并非多个纯组分光谱的线性叠加。当多种分子同时接近银纳米结构表面时，不同分子与金属热点之间的相互作用差异可引发竞争吸附，从而使同一浓度目标物在纯组分体系和混合体系中的 SERS 峰强发生明显偏移\cite{ref2,ref3,ref4}。邻近特征峰的重叠和峰包络重塑也会增加组分区分难度。因此，将混合 SERS 全谱或目标相关谱区用于机器学习建模，有望降低对单一峰强读数的依赖，并从复杂指纹谱中提取目标物存在性和离散浓度档信息\cite{ref7,ref18,ref25,ref26}。
 
-基于上述问题，本文以 Thiram、MG 和 4-MBA 为三组分模型体系，采用柠檬酸 AgNPs 胶体采集纯组分、二元和三元混合物 SERS 谱，并建立机器学习筛查/分级模型。本文首先构建 \molA、\molB\ 和 \molC\ 三档离散浓度下的存在性筛查和分级任务，然后比较 13 类模型与 6 种预处理策略的任务性能；在此基础上，重点分析 MG 1616 \cmone\ 特征峰在二元和三元共存条件下的压制，并利用 TreeSHAP 将模型判别谱区映射到已知化学峰带。最后，本文评估 SHAP 引导的 10\% 波数保留策略，并在加标土壤基质中验证存在性筛查表现。实验与建模设计如图~\ref{fig:workflow} 所示。
+针对混合物 SERS 解析难题，现有研究主要沿两条路线推进：一类通过 SMA、多变量分析或便携 Raman 平台缓解二元混合谱中的峰重叠和竞争吸附干扰\cite{ref1,ref2,ref5}；另一类将 SERS 与深度学习模型结合，以提升复杂基质中的预测能力和应用范围\cite{ref6,ref7}。这些工作显著推动了混合残留 SERS 分析，但多数工作仍以全谱经验建模、二元混合物分析或黑箱预测为主；对于三元共存下核心标志峰压制如何影响模型判别，以及模型依据能否回到化学可解释谱区，讨论仍相对有限。光谱 XAI 研究也正在从孤立波数点解释转向连续谱区或 spectral zones 层面的归因分析，GRASS 和 spectral zones-based SHAP/LIME 等方法均强调，连续峰区解释更符合 Raman/SERS 峰带的物理形态\cite{ref8,ref9}。这些研究为谱区层面的模型解释提供了方法基础。对于核心标志峰在三组分共存中明显受抑的 SERS 谱图，固定波数指纹能否同时支撑多目标筛查、离散浓度档判别和化学可解释归因，仍有待进一步考察。
+
+本文以 Thiram、MG 和 4-MBA 构建三组分 SERS 模型体系。4-MBA 是常用的巯基芳香 SERS 模型分子，可通过 Ag--S 相互作用吸附于银表面，并在 1078 和 1590 \cmone 附近提供清晰的芳香指纹峰\cite{ref6}。将其引入 Thiram/MG 共存体系，可在保留明确峰位归属的同时增加共吸附竞争，使三组分模型体系更适合考察混合谱中的峰强压制和谱区归因。本文考察 MG 1616 \cmone 标志峰在共存条件下的响应变化，并结合树集成模型和 SHAP 谱区归因分析多目标筛查与离散浓度档判别所依赖的光谱信息。
 
 \begin{figure}[!htbp]
   \centering
-  \IfFileExists{fig1_workflow.pdf}{%
-    \includegraphics[width=0.96\textwidth]{fig1_workflow.pdf}%
-  }{%
-    \figureplaceholder{6.4cm}{\textbf{图 1 研究流程示意图}\\[0.6em]
-    柠檬酸 AgNP 胶体基底、Thiram/MG/4-MBA 三组分样品设计、SERS 光谱采集、同步筛查与分级、MG 1616 \cmone\ 峰压制、TreeSHAP 归因、紧凑谱区筛选和加标土壤基质验证。}%
-  }
-  \caption{基于柠檬酸 AgNPs 胶体的三组分 SERS-机器学习分析流程。}
+  \includegraphics[width=0.96\textwidth]{fig1_workflow.png}
+  \caption{三组分 SERS 筛查与 SHAP 谱区归因流程示意图。Thiram、MG 和 4-MBA 共存体系用于评估 MG 1616 \cmone 峰压制、多任务筛查/分级、SHAP 谱区归因及加标土壤基质验证。}
   \label{fig:workflow}
 \end{figure}
 \FloatBarrier
 
 \section{材料与方法}
 
-\subsection{试剂、仪器与 AgNPs 胶体制备}
+\subsection{试剂、材料、仪器与 AgNPs 胶体制备}
 
-Thiram、MG、4-MBA、硝酸银和柠檬酸钠均为分析纯或以上等级。Thiram（97\%）和 AgNO$_3$（99\%）购自 Innochem Technology Co., Ltd.，柠檬酸钠（99\%）购自 Sinopharm Chemical Reagent Co., Ltd.，4-MBA（90\%）和 MG（AR）购自 Shanghai Aladdin Biochemical Technology Co., Ltd.。SERS 光谱由便携式拉曼光谱仪采集（BWS465-785S, B\&W-Tek, USA），激发波长为 785 nm，仪器采集范围为 110--2000 \cmone。建模和图谱分析使用 400--1800 \cmone\ 指纹区。AgNPs 胶体的光学吸收由 Agilent Cary 系列 UV-Vis-NIR 分光光度计记录，纳米颗粒形貌由电子显微镜表征。
+Thiram（C₆H₁₂N₂S₄，97\%）和硝酸银（AgNO₃，99\%）购自 Innochem Technology Co., Ltd.；柠檬酸钠（C₆H₅Na₃O₇，99\%）购自国药集团化学试剂有限公司；4-MBA（C₇H₆O₂S，90\%）和 MG（C₂₃H₂₅ClN₂，AR）购自 Shanghai Aladdin Biochemical Technology Co., Ltd.。土壤样品取自本实验室花盆土壤，去除可见植物残体和石块后作为加标土壤基质，用于评估该 SERS-机器学习流程在复杂基质中的筛查和离散档判别能力。实验用水为超纯水。所有用于 AgNPs 制备和 SERS 测定的玻璃器皿均以王水预清洗，并用超纯水充分冲洗后使用。除特别说明外，所有试剂均未经进一步纯化直接使用。
 
-AgNPs 采用柠檬酸钠还原法制备，该路线也是银胶体 SERS 基底中常用的快速制备方法\cite{TianJFCA2025}。玻璃器皿先经王水（HNO$_3$:HCl = 1:3, v/v）清洗，再用超纯水充分冲洗。将 0.0342 g AgNO$_3$ 溶于 200 mL 超纯水，在 250 r/min 搅拌下加热至回流并保持 25 min；随后快速加入 4 mL 0.01 mol/L 柠檬酸钠溶液，并在 100 $^\circ$C 下继续反应 20 min。反应液自然冷却至室温后，以 1500 r/min 离心 5 min，收集下层浊色胶体用于 SERS 检测。
+SERS 光谱使用便携式 Raman 光谱仪（BWS465-785S，B\&W-Tek，USA）采集，激发波长为 785 nm，仪器采集范围为 110–2000 \cmone。AgNPs 胶体的 UV-Vis 吸收光谱由 Agilent Cary 系列 UV-Vis-NIR 分光光度计（Agilent Technologies，USA）记录，纳米颗粒形貌由 SU8010 电子显微镜（Hitachi，Japan）表征。AgNPs 制备过程中使用 DF-101S 加热型磁力搅拌器。光谱预处理、机器学习建模、TreeSHAP 归因和统计分析在 Python 环境中完成，深度学习模型训练在配备 NVIDIA GeForce RTX 3090 GPU 的计算平台上运行。
 
-\subsection{三组分样品设计与加标土壤样品制备}
+AgNPs 胶体采用 Lee-Meisel 柠檬酸钠还原法制备\cite{ref11}。将 0.0342 g AgNO₃ 溶解于 200 mL 超纯水中，在持续搅拌下加热至回流；随后快速加入 4 mL 0.01 mol/L 柠檬酸钠溶液，并在 100 °C 条件下继续反应 20 min。反应结束后，胶体自然冷却至室温，以 1500 r/min 离心 5 min，收集下层浊色胶体作为 SERS 测定的增强基底。所得 AgNPs 胶体的形貌和光学吸收特征见图~\ref{fig:quality}a、b；纯组分重复 SERS 测定用于评估基底和点样条件下的信号稳定性（图~\ref{fig:quality}c、d；扩展 RSD 质控见补充图 S5 和补充表 S8）。
 
-Thiram、MG 和 4-MBA 分别配制为 \molA、\molB\ 和 \molC\ 三个离散浓度档。纯组分、二元混合物和三元混合物按目标配方现配，用于建立三组分 SERS 指纹数据集。每个目标物同时参与两类任务：P1/P2/P3 用于判断 Thiram、MG 和 4-MBA 是否存在，G1/G2/G3 用于判断目标物处于 \molA、\molB\ 或 \molC\ 三个浓度档中的哪一档。该任务设计对应快速筛查中常见的“有无判断 + 离散风险档分级”模式。
+\subsection{标准溶液、混合体系与加标土壤样品制备}
 
-土壤基质样品参照 Dong 等土壤 SERS-机器学习工作中的加标-萃取流程处理\cite{SoilThiram}。土壤样品经干燥、除杂、研磨和均质化后称取约 1.0 g，加入 Thiram、MG 和 4-MBA 混合标准溶液并混匀，自然干燥后得到加标土壤样品；未加标土壤按相同流程处理作为空白/对照样品。随后加入约 1 mL 乙醇萃取土壤中的目标物，涡旋振荡约 1 min 后静置分层，取上清液用于 AgNPs 辅助 SERS 采集。共采集 79 条加标土壤 SERS 光谱和 10 条土壤空白/对照光谱，用于评价模型在土壤基质中的存在性筛查性能。
+Thiram 和 4-MBA 分别以乙醇为溶剂配制储备液，MG 以超纯水为溶剂配制储备液，并根据实验设计进一步稀释至 \molA、\molB 和 \molC mol/L 三个工作浓度。不同组成关系的混合体系通过等体积混合相应工作液制备，包括单一目标物、二元共存体系和三元共存体系。为保持不同配方之间的总体积和溶剂比例一致，未加入 Thiram 或 4-MBA 的位置以等体积乙醇补足，未加入 MG 的位置以等体积超纯水补足。所有混合溶液均现配现用，并在 SERS 测定前与 AgNPs 胶体混合。
+
+土壤样品取自实验室花盆，在 80 °C 烘箱中干燥 30 min 后去除可见植物残体、石块等杂质，并经研磨和过筛后备用。每份样品称取约 1.0 g 处理后的土壤，加入 100 μL 相应目标物组合的混合工作液并充分混匀，自然干燥后得到加标土壤样品；未加入目标物的土壤按相同步骤处理作为空白/对照样品。最终用于模型评价的土壤相关光谱共 89 条，其中 79 条为加标土壤光谱，10 条为空白/对照土壤光谱。79 条加标土壤光谱包括 56 条三元加标土壤谱和 23 条二元加标土壤谱；三元加标谱进一步按 Thiram、MG 和 4-MBA 的加标浓度组合划分为低档（\(2.1\times10^{-5}\) mol/L，n=24）、中档（\(3.0\times10^{-5}\) mol/L，n=11）和高档（\(1.2\times10^{-4}\) mol/L，n=21），括号中数值为三种目标物加标浓度之和。SERS 测定前，向每份土壤样品中加入 1.0 mL 乙醇，涡旋振荡 1 min 后静置分层，取上层提取液与 AgNPs 胶体混合用于光谱采集。该乙醇提取流程参照土壤 SERS 检测中常用的快速提取方式\cite{ref6}。
 
 \subsection{SERS 光谱采集与预处理}
 
-标准品和混合物样品采用滴加式 SERS 采集方式。每次取 2 $\mu$L 待测溶液滴加于商业硅胶板或等效惰性载体表面，随后加入 2 $\mu$L AgNPs 胶体形成检测点，并在不同采样位置采集重复光谱；土壤基质样品经萃取后按相同 AgNPs 辅助流程采集。每条光谱经统一波数校准后截取 400--1800 \cmone\ 区间，共包含 1401 个波数点。
+SERS 测定前，将待测混合溶液或土壤上层提取液与 AgNPs 胶体充分混合。取 2 μL 样品液滴加于洁净硅胶板表面，并加入 2 μL AgNPs 胶体形成待测区域。待液滴在室温下自然干燥后，使用 785 nm 便携式 Raman 光谱仪在不同采样点采集 SERS 光谱，积分时间为 5 s，每条光谱平均 2 次，仪器采集范围为 110–2000 \cmone。每个配方或土壤提取液在多个采样点采集光谱，并按相同预处理流程转换为固定波数输入。
 
-本文比较原始谱与 p1--p5 共 6 种输入形式。其中 p1 为宇宙射线校正、Savitzky--Golay 平滑、ALS 基线校正和 SNV；p2 为平滑、ALS 基线校正、一阶导数和 SNV；p3 为 ALS 基线校正和向量归一化；p4 为宇宙射线校正、平滑和 ALS 基线校正；p5 为宇宙射线校正、平滑、ALS 基线校正、二阶导数和 SNV。系统模型比较、TreeSHAP 归因、谱区筛选和土壤基质验证采用 p1 作为主输入；MG 1616 \cmone\ 峰压制分析采用未归一化的 p4 光谱，以保留峰强变化信息。为量化共存组分对 MG 特征峰的压制，定义同一 MG 浓度档下混合谱与纯 MG 参考谱的峰强比：
-\begin{equation}
-R_{c}^{1616}=\frac{I_{mix,c}^{1616}}{I_{pure,c}^{1616}},
-\end{equation}
-其中 $I_{mix,c}^{1616}$ 和 $I_{pure,c}^{1616}$ 分别表示浓度档 $c$ 下混合物和纯 MG 光谱中 1616 \cmone\ 峰强。正文以各共存条件下 $R_{c}^{1616}$ 的中位数作为峰压制程度的主要表征。
+采集后的 SERS 光谱截取 400–1800 \cmone 指纹区，并以 1 \cmone 间隔插值到统一波数轴，得到每条光谱 1401 个波数变量。除插值后的原始光谱（raw）外，另构建 p1–p5 五种预处理输入矩阵，具体组合见补充表 S1，代表性预处理光谱见补充图 S3。p1–p5 预处理组合用于覆盖三类光谱建模需求：保留原始峰强差异的基线校正输入、削弱整体强度波动的归一化输入，以及突出局部峰形和斜率变化的一阶/二阶导数输入。Savitzky-Golay 平滑窗口为 11 点，多项式阶数为 3；ALS 基线校正参数为 λ = 10⁶、p = 0.01，迭代 10 次。Savitzky-Golay 平滑、ALS 基线校正和 SNV 分别参照经典光谱预处理文献实现\cite{ref12,ref13,ref14}。raw 和 p1–p5 均纳入系统模型比较；MG 1616 \cmone 峰强压制分析使用未归一化输入以保留竞争吸附引起的真实峰强差异；SHAP 谱区归因和 SHAP 引导谱区筛选则基于后续表现最稳定的 ExtraTrees/p1 配置完成。
 
-\subsection{机器学习建模与评价指标}
+\subsection{建模任务与性能评价}
 
-本文比较 13 类模型，包括 Random Forest、ExtraTrees、HistGradientBoosting、XGBoost、SVM、KNN、PLS-DA、LDA、1D-CNN、1D-ResNet、Spectrum-KAN、KAN-CNN 和 RamanNet-Lite。每种模型与 6 种预处理策略、6 个任务组合，形成 468 个模型-预处理-任务实验点。模型性能采用分层五折交叉验证评估，主要指标为 macro-F1，balanced accuracy 和 accuracy 作为辅助指标。
+三组分混合体系的 SERS 光谱建模被设置为目标物存在性识别和离散浓度档判别两类分类任务。对于每条经统一波数轴处理后的光谱，记其指纹区强度向量为 \(x_i \in \mathbb{R}^{p}\)，其中 \(p\) 为波数变量数。针对 Thiram、MG 和 4-MBA 分别建立存在性识别任务 P1、P2 和 P3，标签 \(y_i^{P}\in\{0,1\}\) 表示对应目标物是否存在于混合体系中。目标物阳性样本用于建立三档浓度档判别任务 G1、G2 和 G3，标签 \(y_i^{G}\in\{1,2,3\}\) 分别对应低、中、高三个离散浓度档。浓度信息在建模中作为有序分类标签使用，而不作为连续定量回归变量处理。
 
-对于第 $k$ 个类别，precision、recall 和 F1 定义为：
-\begin{equation}
-P_k=\frac{TP_k}{TP_k+FP_k}, \quad
-R_k=\frac{TP_k}{TP_k+FN_k}, \quad
-F1_k=\frac{2P_kR_k}{P_k+R_k}.
-\end{equation}
-多分类任务的 macro-F1 和 balanced accuracy 分别计算为：
-\begin{equation}
-\mathrm{Macro\text{-}F1}=\frac{1}{K}\sum_{k=1}^{K}F1_k, \quad
-\mathrm{BA}=\frac{1}{K}\sum_{k=1}^{K}\frac{TP_k}{TP_k+FN_k}.
-\end{equation}
-土壤存在性筛查任务同时报告 ROC-AUC、空白特异性和标签置换检验结果。所有数据整理和统计分析在 Python 环境中完成，传统机器学习模型主要基于 scikit-learn 和 XGBoost 实现，深度学习对照模型基于 PyTorch 实现，TreeSHAP 归因使用 SHAP 软件包计算。
+加标土壤数据用于两个基质评估任务。第一类任务评价 Thiram、MG 和 4-MBA 在土壤基质中的存在性筛查能力，标签按对应目标物是否加入土壤样品定义；二元加标土壤中未包含某一目标物时，该样品在对应目标物任务中标记为阴性，空白土壤在三个任务中均标记为阴性。第二类任务仅使用三元加标土壤光谱，按 Thiram、MG 和 4-MBA 的加标浓度组合划分为低、中、高三个浓度水平，用于评价加标土壤基质中的离散浓度档判别能力。该任务按低、中、高离散浓度水平进行分类建模。
 
-\subsection{TreeSHAP 归因与紧凑谱区筛选}
+模型比较覆盖线性判别、距离度量、核方法、偏最小二乘判别、树集成、梯度提升和一维神经网络，形成 13 类模型 × 6 种光谱输入 × 6 项任务的系统筛选框架。候选模型包括 LDA、KNN、SVM、PLS-DA、Random Forest、ExtraTrees、HistGradientBoosting、XGBoost、1D-CNN、1D-ResNet、RamanNet-Lite、Spectrum-KAN 和 KAN-CNN（表~\ref{tab:modelcompare}）。XGBoost、scikit-learn、RamanNet 和 KAN 相关模型分别参照相应算法或光谱建模文献\cite{ref15,ref16,ref19,ref20,ref21}。raw 和 p1–p5 六种光谱矩阵均纳入模型比较；每个模型在六项任务上分别训练和评价，并采用分层五折交叉验证保持各折中的类别比例。对于每一折，模型仅使用训练部分拟合参数，并在未参与该折训练的验证部分上计算性能指标；最终结果以五折平均值表示。
 
-综合模型比较结果，ExtraTrees/p1 被选为 TreeSHAP 归因、谱区筛选和土壤基质筛查的主模型。对 P1/P2/P3/G1/G2/G3 六个任务分别计算每个波数的平均绝对 SHAP 贡献：
-\begin{equation}
-S_j^{(t)}=\frac{1}{n}\sum_{i=1}^{n}\left|\phi_{ij}^{(t)}\right|,
-\end{equation}
-其中 $S_j^{(t)}$ 表示任务 $t$ 下第 $j$ 个波数的贡献强度，$\phi_{ij}^{(t)}$ 为第 $i$ 条光谱在该波数处的 SHAP 值。高贡献波数进一步聚类为峰簇，并根据 Thiram、MG 和 4-MBA 的已知 SERS/Raman 特征峰及本实验纯谱峰库进行化学归属。化学峰带归属一致性按贡献权重计算：
-\begin{equation}
-M=\frac{\sum_{j\in C_{matched}}S_j}{\sum_{j\in C_{all}}S_j},
-\end{equation}
-其中 $C_{matched}$ 表示落在已知化学谱带上的高贡献峰簇，$C_{all}$ 表示全部高贡献峰簇。
+考虑到存在性识别和离散浓度档判别均属于分类任务，模型性能主要采用 macro-F1 评价。对于第 \(k\) 个类别，记其精确率和召回率分别为 \(P_k\) 和 \(R_k\)，对应的 F1 值为：
 
-为将模型解释转化为紧凑谱区筛查策略，本文按 $S_j^{(t)}$ 对 1401 个波数排序，仅保留前 $q$ 比例的高贡献波数，其余波数置零：
-\begin{equation}
-x'_j=x_j\cdot \mathbb{I}\left(j\in \mathrm{Top}_{q}(S^{(t)})\right).
-\end{equation}
-随后在相同五折设置下重训 ExtraTrees，并比较不同保留比例下的筛查/分级性能。
+\[
+F1_k=\frac{2P_kR_k}{P_k+R_k}
+\]
+
+对于包含 \(K\) 个类别的任务，macro-F1 计算为各类别 F1 的算术平均值：
+
+\[
+\mathrm{Macro\text{-}F1}=\frac{1}{K}\sum_{k=1}^{K}F1_k
+\]
+
+同时计算 accuracy 和 balanced accuracy，其中 balanced accuracy 为各类别召回率的平均值。存在性筛查任务同时报告 ROC-AUC。土壤基质样品的存在性筛查评价在相同指标体系下进行，并结合空白样品判别和置换检验评估基质样品中的筛查稳定性。三元加标土壤离散浓度档判别为三分类任务，主要报告 macro-F1、balanced accuracy、accuracy、out-of-fold macro-F1 和各浓度档召回率；置换检验以 out-of-fold 预测标签和真实标签的 macro-F1 为观测统计量。
+
+主模型按照跨任务稳定性、G2/MG 分级表现和 TreeSHAP 兼容性综合确定。未作为主模型的候选算法保留为基准比较结果；最终 ExtraTrees/p1 用于 SHAP 归因分析、波数筛选以及加标土壤基质验证。
+
+\subsection{SHAP 谱区归因与 SHAP 引导谱区筛选}
+
+为将高性能树集成模型的判别逻辑转化为可解释的光谱证据，本文对 ExtraTrees/p1 模型进行逐任务 TreeSHAP 归因分析。TreeSHAP 可将树模型预测分解为各输入特征的加性贡献，从而量化不同波数对目标物存在性和浓度档判别的贡献\cite{ref17}。解释模型参数设置为 \texttt{n\_estimators = 400}、\texttt{max\_depth = None}、\texttt{min\_samples\_leaf = 2}、\texttt{max\_features = sqrt}、\texttt{class\_weight = balanced}，并固定随机种子。对于 P1、P2、P3、G1、G2 和 G3 六个任务，按照相应任务定义筛选样本并拟合模型；随后使用 \texttt{shap.TreeExplainer} 计算每个样本、每个波数变量及每个类别输出对应的 SHAP 值。多类别任务保留类别维度上的 SHAP 贡献，并用于全局波数重要性计算。
+
+记任务 \(t\) 中第 \(i\) 条光谱在第 \(j\) 个波数、类别 \(c\) 上的 SHAP 值为 \(\phi_{i,j,c}^{(t)}\)。该波数在任务 \(t\) 中的全局重要性定义为所有样本和类别上绝对 SHAP 值的平均：
+
+\[
+I_j^{(t)}=\frac{1}{n_t C_t}\sum_{i=1}^{n_t}\sum_{c=1}^{C_t}\left|\phi_{i,j,c}^{(t)}\right|
+\]
+
+其中 \(n_t\) 为任务 \(t\) 的样本数，\(C_t\) 为该任务的类别数。根据 \(I_j^{(t)}\) 对 400–1800 \cmone 指纹区内 1401 个波数变量进行排序，获得每个任务的高贡献波数列表。参照 Raman 光谱中连续谱区解释的思路\cite{ref8,ref9}，每个任务中排名前 20 的高贡献波数按谱区合并；相邻高贡献波数间距不超过 15 \cmone 时归为同一峰簇，以将孤立波数贡献转化为更符合 Raman/SERS 峰形特征的谱区归因结果。每个峰簇的中心波数按 SHAP 重要性加权计算：
+
+\[
+\bar{\nu}_m^{(t)}=\frac{\sum_{j\in C_m} I_j^{(t)}\nu_j}{\sum_{j\in C_m} I_j^{(t)}}
+\]
+
+其中 \(C_m\) 表示第 \(m\) 个峰簇内的波数集合，\(\nu_j\) 为第 \(j\) 个波数。峰簇的中心波数、成员波数、排序范围和 SHAP 贡献量同时记录，用于谱峰归属和贡献汇总（表~\ref{tab:shap_clusters}）。本文将峰簇内成员波数的 \(I_j^{(t)}\) 求和作为该峰簇的 SHAP 贡献量；图~\ref{fig:shap}a 中的 91.2\% 定义为 22 个可归属峰簇的 SHAP 贡献量之和占全部 29 个高贡献峰簇贡献量之和的比例。
+
+SHAP 引导谱区筛选基于同一套全局重要性排序完成。对每个任务，按照 \(I_j^{(t)}\) 从高到低分别保留前 10\%、20\%、…、100\% 的波数变量，未保留波数置零以保持输入维度一致；在相同五折划分下重新训练 ExtraTrees/p1 模型，并以 macro-F1 记录不同保留比例下的分类性能变化。
+
+\subsection{加标土壤基质筛查与离散浓度档判别评估}
+
+土壤光谱按照与混合体系相同的 400–1800 \cmone 指纹区截取和 p1 预处理流程转换为固定波数矩阵。加标土壤存在性筛查使用 79 条加标土壤光谱和 10 条空白/对照土壤光谱，在 Thiram、MG 和 4-MBA 三个存在性任务中分别进行五折交叉验证。每一折中，模型使用四折土壤光谱训练，并在剩余一折上输出对应目标物的阳性概率；三项存在性任务分别计算 ROC-AUC、macro-F1 和 balanced accuracy。所有折的预测结果合并为 out-of-fold 预测，以报告整体筛查性能。out-of-fold 阳性概率同时用于标签置换检验：在保持每一折预测概率不变的条件下，于折内随机置换真实标签并重新计算 AUC，重复 10000 次形成零分布；置换检验的 \(p\) 值按观测 AUC 不低于零分布 AUC 的比例计算。空白/对照土壤样品单独统计其被判定为阴性的比例，并记录最高阳性概率。
+
+三元加标土壤离散浓度档判别使用 56 条三元加标土壤光谱，按低、中、高三个加标浓度水平进行分层五折交叉验证。为检验竞争吸附条件下单一 MG 标志峰读数与多谱区输入之间的差异，该判别任务比较四类输入：MG 1616 \cmone 单峰窗口积分输入（±5 \cmone，1 个特征）、人工指认特征峰窗口积分、六项混合体系任务平均 SHAP 贡献排序得到的前 10\% 高贡献波数（141 个波数）以及完整 p1 光谱（1401 个波数）。人工指认特征峰窗口包括 Thiram 的 560、860、930、1145、1380、1444 和 1510 \cmone，MG 的 908、1172、1220、1394 和 1616 \cmone，以及 4-MBA 的 1078、1180、1490 和 1590 \cmone，共 16 个峰区，均以 ±5 \cmone 窗口积分得到。四类输入均使用同一 ExtraTrees 配置训练，并报告五折 macro-F1、balanced accuracy、accuracy、out-of-fold macro-F1 和各浓度档召回率。置换检验在保持 out-of-fold 预测标签不变的条件下于折内随机置换真实档位标签，重复 10000 次后计算 macro-F1 零分布。
 
 \section{结果与讨论}
 
-\subsection{纯组分 SERS 指纹与检测重复性}
+\subsection{AgNPs 胶体表征、重复性与三组分 SERS 指纹谱}
 
-纯组分重复光谱为三组分筛查提供了分子指纹基础（图~\ref{fig:repeatability}）。Thiram、MG 和 4-MBA 均呈现清晰且可重复的特征峰。代表峰面积 RSD 分别为 Thiram 1382 \cmone\ 的 10.2\%、MG 1616 \cmone\ 的 6.0\% 和 4-MBA 1080 \cmone\ 的 2.6\%，与已发表 SERS 方法中用于支撑基底重复性的 RSD 水平相当\cite{HuApple,TianJFCA2025,SoilThiram}。这一重复性水平构成了后续比较混合体系与纯 MG 参考谱中 1616 \cmone\ 峰强的稳定基线。
+AgNPs 胶体的 SEM 图像和 UV-Vis 吸收光谱如图~\ref{fig:quality}a、b 所示。颗粒主要呈近球形并伴有少量短柱状结构，局部颗粒之间存在接触和聚集；UV-Vis 光谱在约 410 nm 处出现明显吸收峰，可归属于银纳米颗粒的表面等离子体共振特征\cite{ref11}。在该胶体增强下，Thiram、MG 和 4-MBA 纯标准溶液在 \(10^{-4}\) M 条件下均出现清晰的分子指纹峰，同一目标物的重复光谱在主要峰位处保持相近谱形（图~\ref{fig:quality}c）。以代表性标志峰带面积计算相对标准偏差（RSD），Thiram 1382 \cmone、MG 1616 \cmone 和 4-MBA 1080 \cmone 的 RSD 分别为 10.2\%、6.0\% 和 2.6\%（图~\ref{fig:quality}d），均低于 15\% 参考线。这些 RSD 值显示，柠檬酸盐还原 AgNPs 胶体在本研究点样和自然干燥条件下可提供稳定、可重复的纯组分 SERS 响应，为混合体系峰强比较和机器学习建模提供了可靠数据基础\cite{ref1,ref6}。
+
+Thiram、MG 和 4-MBA 的纯组分 SERS 光谱及主要峰位归属见图~\ref{fig:spectra}和补充表 S2。Thiram 的特征峰主要出现在 560、930、1145、1380 和 1510 \cmone 附近，其中 1380 \cmone 附近的强峰与 C-N/CH₃ 相关振动有关（图~\ref{fig:spectra}a）\cite{ref2,ref5,ref24}。MG 在 908、1172、1220、1394 和 1616 \cmone 附近呈现多个芳香骨架相关峰，1616 \cmone 峰位于较高波数区且峰形相对独立（图~\ref{fig:spectra}b）\cite{ref22,ref23}。4-MBA 的主要特征峰位于 1078、1180、1490 和 1590 \cmone 附近，其中 1078 和 1590 \cmone 是最具代表性的指纹峰（图~\ref{fig:spectra}c）\cite{ref6}。三种纯组分平均谱叠加后，不同目标物既保留了可区分的特征峰，也出现局部邻近或重叠的谱区（图~\ref{fig:spectra}d）。MG 1172 和 1394 \cmone 附近与其他目标物峰区相邻，在混合体系中更容易受到峰包络变化影响；1616 \cmone 则位于较少重叠的高波数窗口，可作为混合体系中 MG 响应变化的主要观察峰。
 
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.96\textwidth]{fig2_quality_panels.pdf}
-  \caption{纯组分重复 SERS 光谱与代表峰面积重复性。a，Thiram、MG 和 4-MBA 在 \molA\ 下的重复光谱；b，代表峰面积 RSD。}
-  \label{fig:repeatability}
+  \caption{AgNPs 胶体表征及纯标准溶液的 SERS 重复性评估。a，AgNPs 的 SEM 图像；b，AgNPs 胶体的 UV-Vis 吸收光谱；c，Thiram、MG 和 4-MBA 在 \(10^{-4}\) M 条件下的重复 SERS 光谱；d，三个代表性峰带面积的相对标准偏差（RSD），虚线表示 15\% 参考线。}
+  \label{fig:quality}
 \end{figure}
-\FloatBarrier
-
-三种分析物的纯组分 SERS 谱进一步显示出可用于识别和归属的典型峰带（图~\ref{fig:spectra}）。Thiram 在 560、930、1380 和 1510 \cmone\ 附近具有代表性峰；MG 在 1172、1220、1394 和 1616 \cmone\ 附近呈现特征指纹；4-MBA 在 1078 和 1590 \cmone\ 附近具有稳定峰带。表~\ref{tab:peaks} 总结了正文使用的核心峰归属。MG 1616 \cmone\ 位于相对干净的高波数区，可作为 MG 信号变化的核心标志峰；1172 和 1394 \cmone\ 虽与 MG 相关，但处于更容易发生邻近峰干扰和峰包络重塑的窗口，因此在本文中作为 MG 相关重叠敏感峰区处理。
 
 \begin{figure}[!htbp]
   \centering
-  \includegraphics[width=0.96\textwidth]{fig3_spectra.pdf}
-  \caption{Thiram、MG 和 4-MBA 的纯组分 SERS 谱及特征峰归属。MG 1616 \cmone\ 作为核心标志峰用于后续压制分析，1172/1394 \cmone\ 作为 MG 相关重叠敏感峰区。}
+  \includegraphics[width=0.88\textwidth]{fig3_spectra.pdf}
+  \caption{Thiram、MG 和 4-MBA 的纯组分 SERS 指纹谱与平均谱叠加。a，Thiram；b，MG；c，4-MBA；d，三种纯组分平均谱叠加。}
   \label{fig:spectra}
 \end{figure}
 
+\subsection{多任务模型比较揭示 MG 分级任务的模型敏感性}
+
+13 类分类模型和 6 种光谱输入形式的比较结果见图~\ref{fig:modelcompare}和表~\ref{tab:modelcompare}。在存在性识别任务中，P1/Thiram、P2/MG 和 P3/4-MBA 均取得较高 macro-F1；对应最优组合分别为 KNN/p1、RF/p1 和 ExtraTrees/p4，macro-F1 为 0.996、0.985 和 0.994（图~\ref{fig:modelcompare}a）。离散浓度档判别任务同样保持高性能，G1/Thiram、G2/MG 和 G3/4-MBA 的最优 macro-F1 分别达到 1.000、0.966 和 0.981，说明固定波数 SERS 指纹不仅可用于目标物有无筛查，也保留了区分低/中/高浓度档所需的信息。
+
+预处理方式会影响单项任务的最优输入组合，但未改变树集成模型整体占优的趋势（完整模型-预处理矩阵见补充图 S1 和补充表 S3）。按每个模型-任务组合的最佳预处理输入计算，ExtraTrees 的跨任务平均 macro-F1 最高（0.985），RF 和 XGBoost 也保持在 0.981 左右；相比之下，LDA、1D-CNN 和 KAN-CNN 的平均表现较低，显示经典树集成模型更适合当前固定波数、高维且峰区稀疏的 SERS 指纹数据。深度学习候选模型的数据增强消融结果见补充图 S2。树模型在类似表格数据上的稳定性也已在机器学习基准研究中被报道\cite{ref18}。在当前样本规模和固定波数输入条件下，树集成模型更容易利用局部峰强差异和非线性阈值关系，也更适合进行 TreeSHAP 归因分析。基于跨任务稳定性、G2/MG 分级表现和 TreeSHAP 兼容性，ExtraTrees/p1 被选为 SHAP 归因、SHAP 引导谱区筛选和土壤基质筛查的主模型。
+
+任务间差异在图~\ref{fig:modelcompare}b中更为明显。P1、P2、P3 和 G1 的 macro-F1 分布主要集中在高分区间，中位 macro-F1 分别为 0.967、0.945、0.980 和 0.989；G3/4-MBA 分级的中位 macro-F1 为 0.925。G2/MG 分级呈现最宽的模型跨度，13 类模型的最佳 macro-F1 从 0.598 延伸至 0.966，中位数仅为 0.822。p1 光谱的 PCA、t-SNE 和 UMAP 嵌入显示，单组分、二元和三元样品在全谱空间中呈现由混合复杂度驱动的分布差异（补充图 S4）。MG 的存在性识别相对稳定，而其浓度档判别显著依赖模型选择，说明三元共存下 MG 浓度档信息受到峰强压制和峰包络重塑的影响更明显。PLS-DA、SVM 和神经网络模型已在同一任务体系中作为常用化学计量学和深度学习基线纳入比较；ExtraTrees/p1 的使用主要基于跨任务稳定性、G2/MG 分级表现和 TreeSHAP 兼容性。
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.96\textwidth]{fig4_benchmark_heatmap.pdf}
+  \caption{多模型、多预处理和多任务分类结果。a，各模型在六项任务中的最佳 macro-F1（每个模型-任务组合取六种光谱输入中的最优值）；b，各任务跨模型 macro-F1 分布及最佳模型组合。}
+  \label{fig:modelcompare}
+\end{figure}
+\FloatBarrier
+
 \begin{table}[!htbp]
 \centering
-\caption{Thiram、MG 和 4-MBA 的正文核心 SERS 峰及振动归属。}
-\label{tab:peaks}
+\caption{六项存在性/分级任务的最优模型组合及交叉验证性能。}
+\label{tab:modelcompare}
 \small
-\begin{tabularx}{\textwidth}{L{1.55cm}L{1.55cm}Y L{3.35cm}}
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{L{2.6cm}L{2.2cm}L{1.5cm}L{2.3cm}L{2.8cm}L{2.3cm}}
 \toprule
-分析物 & 位移 (\cmone) & 振动归属 & 正文用途 \\
+任务 & 最优模型 & 输入 & Macro-F1 & Balanced accuracy & Accuracy \\
 \midrule
-Thiram & 560 & S--S 伸缩/骨架振动 & Thiram 指纹峰 \\
-Thiram & 930 & C--S 对称伸缩 & Thiram 指纹峰 \\
-Thiram & 1380 & CH$_3$ 变形/C--N 相关振动 & Thiram 主要峰，重叠敏感区 \\
-Thiram & 1510 & C=N/C--N 相关振动 & Thiram 指纹峰 \\
-MG & 1172 & C--H 面内弯曲 & MG 相关重叠敏感峰区 \\
-MG & 1220 & C--H 面内弯曲 & MG 指纹峰 \\
-MG & 1394 & 芳环 C--C/C--N 相关振动 & MG 相关重叠敏感峰区 \\
-MG & 1616 & 芳环 C=C 伸缩 & MG 压制分析核心标志峰 \\
-4-MBA & 1078 & 环呼吸/C--S 相关振动 & 4-MBA 指纹峰 \\
-4-MBA & 1590 & 芳环 C=C 伸缩 & 4-MBA 指纹峰 \\
+P1 Thiram & KNN & p1 & 0.996 $\pm$ 0.006 & 0.998 $\pm$ 0.003 & 0.997 $\pm$ 0.005 \\
+P2 MG & RF & p1 & 0.985 $\pm$ 0.009 & 0.987 $\pm$ 0.009 & 0.988 $\pm$ 0.007 \\
+P3 4-MBA & ExtraTrees & p4 & 0.994 $\pm$ 0.006 & 0.991 $\pm$ 0.010 & 0.996 $\pm$ 0.005 \\
+G1 Thiram & ExtraTrees & p2 & 1.000 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.000 $\pm$ 0.000 \\
+G2 MG & ExtraTrees & p1 & 0.966 $\pm$ 0.009 & 0.967 $\pm$ 0.009 & 0.966 $\pm$ 0.009 \\
+G3 4-MBA & SVM & p1 & 0.981 $\pm$ 0.007 & 0.981 $\pm$ 0.006 & 0.981 $\pm$ 0.007 \\
 \bottomrule
 \end{tabularx}
 \end{table}
 \FloatBarrier
 
-\subsection{系统模型比较展示三组分同步筛查与分级性能}
+\subsection{三组分共存显著压制 MG 1616 \texorpdfstring{\cmone}{cm-1} 核心指纹峰}
 
-13 模型 $\times$ 6 预处理 $\times$ 6 任务的系统模型比较显示，三组分 SERS 指纹能够支撑存在性筛查和三档离散浓度分级（图~\ref{fig:modelcompare}）。六个任务的各任务最优 macro-F1 均处于较高水平：P1 Thiram 存在性筛查为 0.996$\pm$0.006，P2 MG 存在性筛查为 0.985$\pm$0.009，P3 4-MBA 存在性筛查为 0.994$\pm$0.006；G1 Thiram 分级为 1.000$\pm$0.000，G2 MG 分级为 0.966$\pm$0.009，G3 4-MBA 分级为 0.981$\pm$0.007（表~\ref{tab:modelcompare}）。这些数值表明，固定波数 SERS 指纹不仅可用于三种目标物的有无判断，也可区分 \molA、\molB\ 和 \molC\ 三个离散浓度档。
+在相同 MG 浓度档下，MG+MBA、MG+Thiram 和三元体系中 MG 1616 \cmone 峰相对于纯 MG 的中位峰强比分别降至 0.355、0.206 和 0.129（图~\ref{fig:mgsuppression}a、b），三组差异达到统计显著水平（Kruskal-Wallis 检验，p$<$0.001）。这一结果表明，三元共存显著削弱了 MG 1616 \cmone 峰响应，单峰强度外推在该体系中的可靠性明显降低。逐谱统计进一步显示了这一压制的普遍性：MG+MBA、MG+Thiram 和三元体系中分别有 86/128、65/100 和 283/358 条光谱的 1616 \cmone 峰强低于同浓度纯 MG 的 0.5 倍。MG 存在性识别和浓度档读出在混合 SERS 谱中表现出明显不同的鲁棒性：前者仍可被稳定识别，后者则更容易受到峰强重塑干扰。
 
-\begin{figure}[!htbp]
-  \centering
-  \includegraphics[width=0.96\textwidth]{fig4_benchmark_heatmap.pdf}
-  \caption{13 类模型在六个筛查/分级任务中的系统比较。树集成模型表现出稳定的多任务筛查性能，G2/MG 分级任务呈现更宽的跨模型性能分布。}
-  \label{fig:modelcompare}
-\end{figure}
+峰强压制并不局限于 1616 \cmone 单一峰位。四个 MG 相关谱带的中位峰强比显示，三元体系中 1172、1220、1394 和 1616 \cmone 的残余强度分别为 0.282、0.129、0.467 和 0.129（图~\ref{fig:mgsuppression}c）。其中，1616 和 1220 \cmone 的下降最为明显；1172 和 1394 \cmone 位于更容易受邻近峰和峰包络变化影响的窗口，呈现出不同程度的谱区重塑。类似的竞争吸附诱导峰强衰减已在混合农药 SERS 体系中被报道：Shi 等观察到 pymetrozine/carbendazim 混合谱中特征峰强低于单一溶液，并将其归因于 Au@AgNPs 表面的竞争吸附\cite{ref2}；Tian 等进一步结合 DFT 和 SERS 强度差异表明，共吸附过程会改变目标物特征峰强度\cite{ref3}。与这些二元体系相比，MG 1616 \cmone 峰在三元体系中降至 12.9\%，说明三组分共存对 MG 核心峰读出的影响更为明显。
 
-\begin{table}[!htbp]
-\centering
-\caption{系统模型比较中六个任务的最优性能。}
-\label{tab:modelcompare}
-\scriptsize
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{llllll}
-\toprule
-任务 & 最优模型 & 预处理 & Macro-F1 & Balanced accuracy & Accuracy \\
-\midrule
-P1 Thiram 存在性筛查 & KNN & p1 & 0.996$\pm$0.006 & 0.998$\pm$0.003 & 0.997$\pm$0.005 \\
-P2 MG 存在性筛查 & RF & p1 & 0.985$\pm$0.009 & 0.987$\pm$0.009 & 0.988$\pm$0.007 \\
-P3 4-MBA 存在性筛查 & ExtraTrees & p4 & 0.994$\pm$0.006 & 0.991$\pm$0.010 & 0.996$\pm$0.005 \\
-G1 Thiram 分级 & ExtraTrees & p2 & 1.000$\pm$0.000 & 1.000$\pm$0.000 & 1.000$\pm$0.000 \\
-G2 MG 分级 & ExtraTrees & p1 & 0.966$\pm$0.009 & 0.967$\pm$0.009 & 0.966$\pm$0.009 \\
-G3 4-MBA 分级 & SVM & p1 & 0.981$\pm$0.007 & 0.981$\pm$0.006 & 0.981$\pm$0.007 \\
-\bottomrule
-\end{tabular}}
-\end{table}
-\FloatBarrier
-
-模型层面的比较进一步表明，树集成模型与固定波数 SERS 指纹具有较好的适配性。跨任务和跨预处理平均后，ExtraTrees、XGBoost 和 Random Forest 的平均 macro-F1 分别达到 0.971、0.969 和 0.966，领先于本研究测试的深度学习基线。Grinsztajn 等在典型表格数据上观察到树模型相对于深度学习的稳定优势\cite{Grinsztajn2022}；本文的固定波数 SERS 光谱同样具有表格化输入、高维但有效峰区稀疏的特点。ExtraTrees/p1 在多任务上表现均衡，因此被用于后续 TreeSHAP 归因、谱区筛选和土壤基质筛查。
-
-不同任务对模型选择的敏感性揭示了 MG 分级的特殊谱学背景。G2/MG 分级在最佳模型下可达到 0.966$\pm$0.009，但其跨模型分布范围更宽，部分深度学习和 KAN 模型在该任务上的表现明显低于其他任务。这一现象指向混合谱强度变化和干扰峰区处理方式的差异，并引出下一节对 MG 1616 \cmone\ 特征峰压制的分析。
-
-\subsection[三组分共存显著压制 MG 1616 cm-1 特征峰]{三组分共存显著压制 MG 1616 \cmone\ 特征峰}
-
-混合物光谱分析表明，MG 的核心标志峰在共存体系中发生显著衰减（图~\ref{fig:mgsuppression}）。以同一 MG 浓度档纯 MG 光谱作为参考，MG+MBA、MG+Thiram 和三元混合体系中 1616 \cmone\ 峰的中位峰强比分别为 0.355、0.206 和 0.129。也就是说，在三元体系中，MG 1616 \cmone\ 的中位信号仅保留同浓度档纯 MG 的约 12.9\%。逐谱统计进一步显示，MG+MBA 中 86/128 条光谱、MG+Thiram 中 65/100 条光谱、三元体系中 283/358 条光谱的 1616 \cmone\ 强度低于同浓度档纯 MG 的 0.5 倍。
+结合已有竞争吸附研究，MG 1616 \cmone 峰强的明显衰减更可能与 AgNPs 热点处的竞争占位和局域增强降低有关（图~\ref{fig:mgsuppression}d）\cite{ref4}。SERS 信号不仅取决于目标物本身浓度，还取决于分子在金属纳米结构表面的有效吸附和热点占据情况。Thiram 和 4-MBA 均含有可与银表面强相互作用的含硫基团；当二者与 MG 同时存在时，它们更容易竞争 AgNPs 热点处的有效吸附位点，从而削弱 MG 芳香骨架相关峰的局域增强。此时，MG 在混合体系中的浓度档信息不再表现为单一峰强的简单递增关系，而是被共存组分、竞争吸附和局部峰包络共同重塑。这也解释了 G2/MG 分级在不同模型间出现 0.598--0.966 的大跨度：当核心标志峰被显著削弱后，MG 浓度档判别更多依赖全谱中的多峰信息和共存敏感谱区。
 
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.96\textwidth]{fig5_mg_suppression.pdf}
-  \caption{共存组分显著压制 MG 1616 \cmone\ 核心标志峰。二元和三元共存使 MG 1616 \cmone\ 峰强分别降至同浓度档纯 MG 参考的 0.355、0.206 和 0.129，揭示竞争吸附诱导的混合物谱峰干扰。}
+  \caption{二元和三元共存体系中 MG 1616 \cmone\ 峰强压制。a，纯 MG 与混合体系谱图；b，1616 \cmone\ 峰强比；c，MG 相关峰中位峰强比；d，AgNPs 热点处竞争吸附示意图。}
   \label{fig:mgsuppression}
 \end{figure}
 \FloatBarrier
 
-Shi 等在 pymetrozine/carbendazim 混合溶液中观察到两种农药的特征峰强均低于单一溶液，并将其归因于 Au@AgNPs 表面的竞争吸附\cite{HuApple}；Tian 等也报道了混合吸附会削弱 thiabendazole 与 pymetrozine 的理论和实验 SERS 强度\cite{TianJFCA2025}。与这些二元体系不同，本文中 MG 1616 \cmone\ 的中位残余强度从 MG+MBA 的 35.5\% 和 MG+Thiram 的 20.6\% 进一步降至三元体系的 12.9\%，显示三组分共存带来更强的目标峰压制。Thiram 和 4-MBA 均可通过含硫基团或较强表面相互作用占据银纳米颗粒热点区域，降低 MG 的有效吸附和局域增强机会。1172、1220 和 1394 \cmone\ 等 MG 相关峰区也呈现不同程度的衰减或包络变化，其中 1172/1394 \cmone\ 作为重叠敏感区，进一步说明混合谱不能被简化为单一峰强规则。
+\subsection{SHAP 谱区归因定位化学可解释谱区}
 
-该谱学发现使 G2/MG 分级任务的模型敏感性具有明确的化学解释。MG 存在性任务主要判断是否存在 MG 指纹，而 MG 分级任务需要区分三个离散浓度档；当 1616 \cmone\ 核心标志峰在共存体系中被显著压制时，不同浓度档之间的强度差异被共存背景重新塑形，模型必须同时利用 MG 相关峰、重叠敏感峰区和共存组分带来的干扰线索。因此，G2 是三组分 SERS 混合物中竞争吸附干扰最直观的读出窗口。
+SHAP 谱区归因将模型判别依据定位到化学可解释的连续谱区：六个筛查和分级任务共得到 29 个高贡献峰簇，其中 22 个可对应到 Thiram、MG、4-MBA 的已知 Raman/SERS 峰带或共存敏感谱区，并贡献了 91.2\% 的总归因权重（图~\ref{fig:shap}a，表~\ref{tab:shap_clusters}；完整峰簇审计见补充表 S4）。本文将由共存组分峰重叠、峰包络重塑或竞争吸附诱导强度变化形成、并在 SHAP 归因中获得高贡献的窗口称为共存敏感谱区。贡献较高的峰簇主要分布在 4-MBA 的 1575 和 1068 \cmone、MG 的 1609、1170 和 1211 \cmone，以及 Thiram 的 1139、1502 和 922 \cmone 附近。高贡献波数并非随机散落于全谱，而是呈明显峰簇化分布，形态上接近 Raman 峰带的连续谱区，与 grouped features 和 spectral zones 的光谱 XAI 理念一致\cite{ref8,ref9}。
 
-\subsection{TreeSHAP 将模型判别定位到化学相关峰区}
+不同任务的 SHAP 分布落在对应目标物的主要指纹峰附近（图~\ref{fig:shap}c）。P2/MG 存在性筛查中，前 20 个高贡献波数集中在 1606–1614、1165–1173、1210–1216 和 1394 \cmone 附近，分别落在 MG 1616、1172、1220 和 1394 \cmone 相关峰区；P3/4-MBA 存在性筛查的主要贡献来自 1061–1074 和 1567–1582 \cmone，对应 4-MBA 的 1078 和 1590 \cmone 附近峰带；P1/Thiram 存在性筛查则集中在 918–926、1375 和 1510 \cmone 等 Thiram 相关谱区。存在性识别主要由目标物自身的分子指纹信息支撑。
 
-为进一步说明模型判别依据，本文对 ExtraTrees/p1 进行 TreeSHAP 归因，并将高贡献波数聚类为峰簇（图~\ref{fig:shap}）。22/29 个 SHAP 高贡献峰簇落在已知化学谱带上，覆盖 91.2\% 的总 SHAP 归因权重。模型权重主要集中在 Thiram、MG 和 4-MBA 的分子指纹峰，以及由共存体系引起的干扰敏感谱区。
+MG 分级任务呈现出更复杂的归因结构。G2/MG 分级的前 20 个高贡献波数除包含 1207–1216、1159–1161、1180–1187 和 1607 \cmone 等 MG 相关峰区外，860–866 \cmone 的 Thiram 相关谱区也位列最高贡献范围（图~\ref{fig:shap}b）。按谱区汇总后，MG 1172/1220 \cmone 相关区域贡献最高；共存敏感谱区的相对贡献约为 0.60，而 1616 \cmone 核心标志峰和 1394 \cmone 重叠敏感区的相对贡献分别约为 0.24 和 0.21（图~\ref{fig:shap}d）。这表明，在 1616 \cmone 核心标志峰被共存组分显著削弱后，G2/MG 分级更多依赖 1172/1220 \cmone 等 MG 次级峰簇以及 Thiram 共存诱导的谱区变化。
 
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.96\textwidth]{fig6_shap_attribution.pdf}
-  \caption{TreeSHAP 将模型判别谱区定位到已知化学峰带。共 22/29 个 SHAP 高贡献峰簇落在已知化学谱带上，覆盖 91.2\% 的总 SHAP 归因权重。}
+  \caption{SHAP 高贡献波数与峰簇归因。a，高贡献峰簇总览；b，G2/MG 分级任务高贡献谱区；c，P1/P2/P3 及 G1/G2/G3 任务 SHAP 分布；d，G2/MG 谱区贡献汇总。}
   \label{fig:shap}
 \end{figure}
 \FloatBarrier
 
-P2/MG 存在性筛查的高贡献区域集中在 MG 1172、1394 和 1616 \cmone\ 附近；P3/4-MBA 存在性筛查的高贡献区域集中在 1078 和 1590 \cmone\ 附近；G1/Thiram 分级主要利用 Thiram 1145、1380 和 1510 \cmone\ 附近信息。对于 G2/MG 分级，模型除使用 MG 1220 和 1616 \cmone\ 附近信息外，还捕获了 Thiram 相关干扰带。这种跨组分干扰归因说明，模型在处理 MG 分级时同时利用了 MG 自身峰和共存组分对混合谱造成的干扰线索。
+\begin{table}[!htbp]
+\centering
+\caption{SHAP 高贡献峰簇及主要化学归属。}
+\label{tab:shap_clusters}
+\small
+\begin{tabularx}{\textwidth}{L{2.3cm}L{3.4cm}Y L{2.9cm}}
+\toprule
+任务 & 高贡献中心波数 (\cmone) & 主要归属 & 谱区角色 \\
+\midrule
+P1 Thiram & 922、1375、1510、1587 & Thiram 930/1380/1510 相关峰；1587 接近 4-MBA 高波数峰 & Thiram 存在性与局部共存敏感区 \\
+P2 MG & 1170、1214、1394、1610 & MG 1172/1220/1394/1616 相关峰 & MG 存在性指纹峰 \\
+P3 4-MBA & 1068、1575 & 4-MBA 1078 和 1590 相关峰 & 4-MBA 存在性指纹峰 \\
+G1 Thiram & 1139、1377、1502 & Thiram 1145/1380/1510 相关峰 & Thiram 浓度档分级 \\
+G2 MG & 863、1160、1184、1211、1607 & MG 1172/1220/1616 相关峰及 Thiram 共存谱区 & MG 分级和共存干扰读出 \\
+G3 4-MBA & 1062、1387、1440、1575 & 4-MBA 1078/1590 相关峰及重叠敏感谱区 & 4-MBA 分级与谱区重塑 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\FloatBarrier
 
-TreeSHAP 归因将图~\ref{fig:mgsuppression} 中观察到的 MG 1616 \cmone\ 压制和峰包络重塑，与图~\ref{fig:modelcompare} 中模型实际使用的谱区连接起来。模型的主要贡献区集中在具有明确谱学意义的峰带和干扰敏感窗口，使三组分混合物的分类结果能够回到具体光谱特征中解释。
+\subsection{少量 SHAP 高贡献波数维持三组分筛查性能}
 
-\subsection{SHAP 引导谱区筛选实现紧凑谱区筛查}
+仅保留前 10\% SHAP 高贡献波数时，输入变量由 1401 个减少至 141 个，形成变量数更少的简化输入光谱筛查模型（图~\ref{fig:feature_selection}a；完整保留比例扫描见补充表 S5）。在这一输入下，三个存在性任务仍保持 0.969–0.986 的 macro-F1，三个分级任务也保持 0.953–0.979 的 macro-F1，说明少量 SHAP 高贡献波数已足以支撑三组分体系的同步筛查与分级。与全谱输入相比，六个任务的 macro-F1 下降幅度均不超过 0.014（图~\ref{fig:feature_selection}c）。即使最具挑战性的 G2/MG 分级任务，在 10\% 波数保留条件下仍保持 macro-F1 $>$ 0.95，表明共存敏感谱区中保留了足够的 MG 浓度档判别信息。
 
-按每个任务的 mean $|\mathrm{SHAP}|$ 排序后，仅保留前 10\% 波数，即 141/1401 个光谱变量，并用置零后的光谱重训 ExtraTrees。六个任务的 macro-F1 仍全部高于 0.95：P1、P2、P3、G1、G2 和 G3 分别为 0.986、0.969、0.982、0.979、0.953 和 0.974（图~\ref{fig:fs}）。与全谱输入相比，10\% 高贡献波数已经保留了足够的判别信息。
+随着保留比例从 10\% 增加到 100\%，各任务性能并未呈现单调提升（图~\ref{fig:feature_selection}a），表明额外引入的低贡献波数未带来稳定的性能增益。从变量约简结果来看，三组分 SERS 混合谱中的主要判别信息集中在少量高贡献窗口内。图~\ref{fig:feature_selection}b 中，保留波数主要分布于 Thiram、MG 和 4-MBA 的特征峰邻近区域，以及 MG 分级中与共存干扰相关的谱区。GRASS 和 spectral zones-based SHAP/LIME 等方法均将光谱贡献从孤立波数点提升到连续谱区层面，以获得更符合 Raman/SERS 峰形特征的解释\cite{ref8,ref9}；本研究中保留波数向连续峰区聚集，与这种区域化解释的处理思路相近，也避免了将相邻波数拆分为相互独立特征。
 
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.96\textwidth]{fig7_feature_elimination.pdf}
-  \caption{SHAP 引导谱区筛选在 10\% 光谱变量下保持筛查性能。仅使用 141/1401 个高贡献波数时，六个任务的 macro-F1 均保持在 0.95 以上。}
-  \label{fig:fs}
+  \caption{SHAP 引导简化输入模型性能。a，不同保留比例下 macro-F1；b，保留波数在全谱中的位置；c，10\% 波数输入相对于全谱输入的 macro-F1 变化。}
+  \label{fig:feature_selection}
 \end{figure}
 \FloatBarrier
 
-10\% 保留比例对应 141 个波数点，显著低于原始 1401 点全谱输入，但仍保留峰形邻域信息，可覆盖峰位偏移、峰宽变化和混合物峰包络重塑。与只选取少数孤立峰相比，SHAP 保留谱区包含目标分子指纹峰、共吸附相关峰区和干扰敏感窗口，更适合三组分混合物筛查。
+\subsection{加标土壤基质中的存在性筛查与离散浓度档判别}
 
-\subsection{加标土壤基质筛查验证}
+加标土壤样品首先用于评价三项目标物的存在性筛查能力。ExtraTrees/p1 在 P1/Thiram、P2/MG 和 P3/4-MBA 三项任务中均形成较清晰的 ROC 分离（图~\ref{fig:soil}a）。三项任务的五折 AUC 分别为 0.996 ± 0.008、0.956 ± 0.052 和 0.976 ± 0.034（图~\ref{fig:soil}c，补充表 S6）。P2/MG 的 AUC 低于 Thiram 和 4-MBA，但仍保持在 0.95 以上，说明 MG 相关信号在土壤基质中受到共存组分和背景谱形影响更明显。
 
-加标土壤基质进一步验证了该方法在复杂背景中的存在性筛查能力（图~\ref{fig:soil}）。Thiram、MG 和 4-MBA 三个存在性筛查任务的 AUC 分别达到 0.996$\pm$0.008、0.956$\pm$0.052 和 0.976$\pm$0.034；对应 macro-F1 分别为 0.887$\pm$0.087、0.811$\pm$0.127 和 0.919$\pm$0.085（表~\ref{tab:soil}）。标签置换检验显示三个任务的观测 AUC 均显著高于随机置换分布，$p<10^{-4}$。
+将五折 out-of-fold 阳性概率合并后，P1、P2 和 P3 的观测 AUC 分别为 0.993、0.955 和 0.976。折内标签置换 10000 次后，三项任务的零分布 AUC 均回落至随机判别水平附近，null mean 分别为 0.499、0.502 和 0.494；经验 \(p\) 值均小于 \(1\times10^{-4}\)（补充表 S7）。在 0.5 固定阈值下，10 个空白土壤样品在三项任务中均被判定为阴性，空白特异性达到 1.000；空白样品最高阳性概率仅为 0.065、0.061 和 0.085，均低于判别阈值（图~\ref{fig:soil}b）。图~\ref{fig:soil}d 给出了空白土壤与三元加标土壤的平均 p1 光谱。与空白土壤相比，加标土壤在 560、1078、1380、1586 和 1616 \cmone 等目标相关窗口保留了更清晰的谱结构，这些窗口覆盖 Thiram、4-MBA、MG 的主要指纹峰及 SHAP 高贡献共存敏感区。
+
+进一步使用 56 条三元加标土壤谱评价低、中、高加标浓度档的判别性能。三档浓度水平分别为 \(2.1\times10^{-5}\)、\(3.0\times10^{-5}\) 和 \(1.2\times10^{-4}\) mol/L。仅使用 MG 1616 \cmone 单峰窗口输入时，ExtraTrees 的五折 macro-F1 为 0.369 ± 0.148，out-of-fold macro-F1 为 0.403，置换检验 \(p=0.130\)（表~\ref{tab:soil_g}）。该单峰输入对低档和高档的召回率分别仅为 0.375 和 0.238，说明 MG 核心峰在三元共存和土壤背景下难以稳定区分加标浓度档。
+
+人工指认的特征峰窗口输入将该任务的 macro-F1 提高至 0.855 ± 0.093；使用六项混合体系任务平均 SHAP 贡献排序得到的前 10\% 波数后，macro-F1 进一步达到 0.900 ± 0.109；完整 p1 光谱输入的 macro-F1 为 0.931 ± 0.080。后三类输入的置换检验 \(p\) 值均小于 \(1\times10^{-4}\)，支持其在三元加标土壤中的有效分级能力。复杂基质中的峰强降低、峰位偏移和谱形变化已在苹果、果汁和土壤 SERS 研究中被报道\cite{ref2,ref5,ref6}；三元加标土壤低/中/高浓度档判别结果进一步表明，当 MG 1616 \cmone 单峰窗口难以稳定区分浓度档时，多分子指纹峰和 SHAP 高贡献谱区仍可提供有效判别信息。
 
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.96\textwidth]{fig8_soil_screening.pdf}
-  \caption{Thiram、MG 和 4-MBA 存在性任务的加标土壤基质筛查验证。ROC 分析、空白特异性和置换检验给出土壤基质中的筛查性能。}
+  \caption{加标土壤基质中三目标存在性筛查验证。a，ROC 曲线；b，阳性土壤和空白土壤的预测阳性概率；c，五折 AUC 汇总；d，空白土壤与三元加标土壤平均 p1 光谱。}
   \label{fig:soil}
 \end{figure}
+\FloatBarrier
 
 \begin{table}[!htbp]
 \centering
-\caption{三个存在性任务的加标土壤基质筛查指标。}
-\label{tab:soil}
-\scriptsize
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{llllllll}
+\caption{三元加标土壤离散浓度档判别中不同输入集的性能对照。}
+\label{tab:soil_g}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{L{3.15cm}L{1.45cm}L{2.15cm}L{2.15cm}L{2.05cm}L{1.75cm}}
 \toprule
-任务 & 加标光谱 & 空白/对照光谱 & 总光谱数 & AUC & Macro-F1 & Balanced accuracy & 空白特异性 \\
+输入集 & 特征数 & Macro-F1 & Balanced accuracy & Accuracy & 置换检验 \(p\) \\
 \midrule
-P1 Thiram & 79 & 10 & 89 & 0.996$\pm$0.008 & 0.887$\pm$0.087 & 0.868$\pm$0.117 & 1.000 \\
-P2 MG & 79 & 10 & 89 & 0.956$\pm$0.052 & 0.811$\pm$0.127 & 0.787$\pm$0.139 & 1.000 \\
-P3 4-MBA & 79 & 10 & 89 & 0.976$\pm$0.034 & 0.919$\pm$0.085 & 0.892$\pm$0.109 & 1.000 \\
+MG 1616 \cmone 单峰窗口 & 1 & 0.369 $\pm$ 0.148 & 0.418 $\pm$ 0.163 & 0.376 $\pm$ 0.120 & 0.130 \\
+人工特征峰窗口 & 16 & 0.855 $\pm$ 0.093 & 0.890 $\pm$ 0.057 & 0.858 $\pm$ 0.080 & $<10^{-4}$ \\
+SHAP 前 10\% 波数 & 141 & 0.900 $\pm$ 0.109 & 0.913 $\pm$ 0.099 & 0.909 $\pm$ 0.091 & $<10^{-4}$ \\
+完整 p1 光谱 & 1401 & 0.931 $\pm$ 0.080 & 0.947 $\pm$ 0.056 & 0.927 $\pm$ 0.076 & $<10^{-4}$ \\
 \bottomrule
-\end{tabular}}
+\end{tabularx}
+\begin{flushleft}
+\footnotesize 注：数据为五折交叉验证均值 ± 标准差；峰窗口特征由 p1 光谱中 ±5 \cmone 窗口积分得到；\(p\) 值由置换检验得到。
+\end{flushleft}
 \end{table}
 \FloatBarrier
 
-空白/对照结果进一步给出土壤背景判别依据。10 条空白/对照光谱在三个存在性筛查任务中均被判定为阴性，最大阳性概率分别为 0.065、0.061 和 0.085。Dong 等在土壤福美双检测中采用加标土壤、乙醇萃取和机器学习模型验证 SERS 基质应用\cite{SoilThiram}；本文沿用同类土壤基质验证的加标-萃取思路，同时引入空白土壤对照和标签置换检验。ROC、空白特异性和置换结果表明，三种目标物在土壤背景中仍可与空白样品区分。
+\subsection{与已有 SERS 混合物分析工作的比较}
+
+已有混合农药 SERS 研究多从基底增强、二元混合物建模或多变量回归角度提高同步检测性能。Shi 等利用 SERS 结合多元分析实现了苹果中混合农药残留的同步测定，并指出混合体系中特征峰强会受到共存组分影响\cite{ref2}；Tian 等进一步结合 DFT 和 SERS 强度差异分析了二元农药在银表面的竞争吸附\cite{ref3}。这些研究说明，混合体系中的单峰强度不能简单沿用纯组分校准关系。不过，已有混合农药 SERS 工作多以二元体系、多变量回归或基底增强为主，重点在于提高检测灵敏度和预测精度；对于核心标志峰在多组分共存下的失真，以及这种失真如何影响模型判别依据，讨论仍相对有限。与侧重新型增强基底构筑的研究不同，本文利用常规 AgNPs 胶体体系，将 MG 1616 \cmone 峰压制、模型分级表现和 SHAP 谱区归因联系起来。三元加标土壤分级结果进一步表明，在加标土壤基质中，单一 MG 1616 \cmone 窗口难以稳定区分浓度档，而多分子指纹峰和 SHAP 高贡献谱区仍保留了有效判别信息。
+
+与侧重高性能 SERS 基底构筑和单目标土壤检测的研究相比\cite{ref6}，本文采用常规 AgNPs 胶体体系，重点放在多组分共存干扰下的可解释筛查。光谱可解释性方面，spectral zones-based SHAP/LIME 和 Raman 光谱分段 SHAP 研究均强调，连续谱区解释比孤立波数点更符合光谱峰形特征\cite{ref8,ref9}。在本研究中，SHAP 高贡献波数主要聚集于已知分子指纹峰和共存敏感窗口，并在加标土壤浓度档判别中保留了主要判别性能。代表性 SERS 多组分检测、土壤基质检测和光谱 XAI 研究的对比见补充表 S9。
 
 \section{结论}
 
-本文最重要的发现是：在 Thiram、MG 和 4-MBA 三元共存条件下，MG 1616 \cmone\ 核心峰的中位强度仅保留同浓度档纯 MG 的 12.9\%。这一强压制说明，三组分 SERS 筛查中的主要难点并非单一峰识别，而是共存吸附对目标峰可见性的重塑。TreeSHAP 将 91.2\% 的模型归因权重定位到已知化学峰带和干扰敏感区，进一步说明模型主要读取可解释的谱学信息。该干扰读出和紧凑谱区筛查策略可进一步扩展到更多真实基质和浓度组合。
+本研究以 Thiram、MG 和 4-MBA 构建三组分 SERS 模型体系，考察了多组分共存条件下 MG 核心标志峰的响应变化及其对离散浓度档判别的影响。结果表明，MG 1616 \cmone 峰虽位于较少重叠的高波数窗口，但在三元体系中的中位强度降至同浓度纯 MG 的 12.9\%，说明共存组分显著削弱了 MG 单峰读数的可靠性。系统模型比较进一步显示，树集成模型在六项存在性筛查和浓度档判别任务中取得 0.966--1.000 的最优 macro-F1，表明固定波数 SERS 指纹仍可为三组分同步筛查提供有效信息。
 
-{\footnotesize
+SHAP 谱区归因进一步将模型判别依据定位到化学可解释的连续谱区。六项任务共得到 29 个高贡献峰簇，其中 22 个可归属于已知分子指纹峰或共存敏感谱区，并贡献 91.2\% 的总归因权重。仅保留前 10\% 高贡献波数后，六项任务仍维持 macro-F1 $>$ 0.95。加标土壤基质评估显示，三个存在性任务的 AUC 达到 0.956--0.996，空白土壤样品均被判定为阴性。在三元加标土壤低/中/高浓度档判别中，MG 1616 \cmone 单峰窗口输入未能形成稳定分级，而 SHAP 筛选谱区和完整 p1 光谱分别达到 0.900 ± 0.109 和 0.931 ± 0.080 的 macro-F1。上述结果将竞争吸附导致的单峰读数失真与多谱区模型判别联系起来，为加标土壤中的多目标 SERS 筛查提供了化学可解释依据。
+
+需要指出的是，本文采用加标土壤基质验证三组分共存条件下的筛查和浓度档判别能力，尚未覆盖不同来源土壤、长期老化残留和现场未知样品。后续工作可进一步扩展土壤类型、加标/残留老化条件和现场样品数量，并结合更稳定的 SERS 基底或便携式采集流程，评估该方法在复杂环境样品中的适用性。同时，SHAP 谱区归因可与更高效的谱区筛选或多尺度峰形分析结合，以进一步提升复杂混合谱解释和快速筛查能力。
+
 \begin{thebibliography}{99}
 
-\bibitem{HuApple} Shi, T.-F.; Pan, T.-T.; Lu, P. Rapid and simultaneous determination of mixed pesticide residues in apple using SERS coupled with multivariate analysis. \textit{Food Chemistry: X} \textbf{2024}, 24, 101954. https://doi.org/10.1016/j.fochx.2024.101954.
+\bibitem{ref1} Hu, B.; Sun, D.-W.; Pu, H.; Wei, Q. Rapid nondestructive detection of mixed pesticides residues on fruit surface using SERS combined with self-modeling mixture analysis method. Talanta, 2020, 217, 120998. \url{https://doi.org/10.1016/j.talanta.2020.120998}
 
-\bibitem{SMAMixture} Hu, B.; Sun, D.-W.; Pu, H.; Wei, Q. Rapid nondestructive detection of mixed pesticides residues on fruit surface using SERS combined with self-modeling mixture analysis method. \textit{Talanta} \textbf{2020}, 217, 120998. https://doi.org/10.1016/j.talanta.2020.120998.
+\bibitem{ref2} Shi, T.-F.; Pan, T.-T.; Lu, P. Rapid and simultaneous determination of mixed pesticide residues in apple using SERS coupled with multivariate analysis. Food Chemistry: X, 2024, 24, 101954. \url{https://doi.org/10.1016/j.fochx.2024.101954}
 
-\bibitem{TianJFCA2025} Tian, R.; Shi, T.-F.; Pan, T.-T.; Lu, P. Competitive adsorption of thiabendazole and pymetrozine on silver surface and simultaneous detection of mixed pesticide residues by surface-enhanced Raman spectroscopy. \textit{Journal of Food Composition and Analysis} \textbf{2025}, 148, 108215. https://doi.org/10.1016/j.jfca.2025.108215.
+\bibitem{ref3} Tian, R.; Shi, T.-F.; Pan, T.-T.; Lu, P. Competitive adsorption of thiabendazole and pymetrozine on silver surface and simultaneous detection of mixed pesticide residues by surface-enhanced Raman spectroscopy. Journal of Food Composition and Analysis, 2025, 148, 108215. \url{https://doi.org/10.1016/j.jfca.2025.108215}
 
-\bibitem{CompetitiveAdsorption} Altun, A. O.; Bond, T.; Pronk, W.; Park, H. G. Sensitive detection of competitive molecular adsorption by surface-enhanced Raman spectroscopy. \textit{Langmuir} \textbf{2017}, 33, 6999--7006. https://doi.org/10.1021/acs.langmuir.7b01186.
+\bibitem{ref4} Altun, A. O.; Bond, T.; Pronk, W.; Park, H. G. Sensitive detection of competitive molecular adsorption by surface-enhanced Raman spectroscopy. Langmuir, 2017, 33, 6999-7006. \url{https://doi.org/10.1021/acs.langmuir.7b01186}
 
-\bibitem{SHAPLIME} Contreras, J.; Winterfeld, A.; Popp, J.; Bocklitz, T. Spectral zones-based SHAP/LIME: enhancing interpretability in spectral deep learning models through grouped feature analysis. \textit{Analytical Chemistry} \textbf{2024}, 96, 15588--15597. https://doi.org/10.1021/acs.analchem.4c02329.
+\bibitem{ref5} Ma, L.; Han, E.; Yin, L.; Xu, Q.; Zou, C.; Bai, J.; Wu, W.; Cai, J. Simultaneous detection of mixed pesticide residues based on portable Raman spectrometer and Au@Ag nanoparticles SERS substrate. Food Control, 2023, 153, 109951. \url{https://doi.org/10.1016/j.foodcont.2023.109951}
 
-\bibitem{SHAPSegmentation} Yang, Z.; Meng, L.; Rui, W.; Shen, L.; Zhao, S.; Shi, L. Enhancing explainability in Raman spectroscopy classification with SHAP and spectral segmentation. \textit{Spectrochimica Acta Part A: Molecular and Biomolecular Spectroscopy} \textbf{2026}, 344, 126394. https://doi.org/10.1016/j.saa.2025.126394.
+\bibitem{ref6} Dong, M.; Ding, F.; Jin, Y.; Li, C.; Lin, X.; Lin, S. Facile synthesis of ultrasmooth Au nanospheres into macroscopic 3D supercrystals for machine-learning-driven analysis of thiram in soil. Analytical Chemistry, 2025, 97, 10452-10462. \url{https://doi.org/10.1021/acs.analchem.5c01350}
 
-\bibitem{XAIDLSERS} Tian, X.; Wang, P.; Fang, G.; Lin, X.; Gao, J. Simultaneous quantitative analysis of multiple metabolites using label-free surface-enhanced Raman spectroscopy and explainable deep learning. \textit{Spectrochimica Acta Part A: Molecular and Biomolecular Spectroscopy} \textbf{2025}, 327, 125386. https://doi.org/10.1016/j.saa.2024.125386.
+\bibitem{ref7} Sahin, F.; Celik, N.; Camdal, A.; Sakir, M.; Ceylan, A.; Ruzi, M.; Onses, M. S. Machine learning-assisted pesticide detection on a flexible surface-enhanced Raman scattering substrate prepared by silver nanoparticles. ACS Applied Nano Materials, 2022, 5, 13112-13122. \url{https://doi.org/10.1021/acsanm.2c02897}
 
-\bibitem{ZnOSHAP} Fan, L.; Yu, H.; He, Y.; Guo, J.; Min, G.; Wang, J. Optimization and interpretability analysis of machine learning methods for ZnO colloid particle size prediction. \textit{ACS Applied Nano Materials} \textbf{2025}, 8, 2682--2692. https://doi.org/10.1021/acsanm.4c05229.
+\bibitem{ref8} Contreras, J.; Winterfeld, A.; Popp, J.; Bocklitz, T. Spectral zones-based SHAP/LIME: enhancing interpretability in spectral deep learning models through grouped feature analysis. Analytical Chemistry, 2024, 96, 15588-15597. \url{https://doi.org/10.1021/acs.analchem.4c02329}
 
-\bibitem{Grinsztajn2022} Grinsztajn, L.; Oyallon, E.; Varoquaux, G. Why do tree-based models still outperform deep learning on typical tabular data? \textit{Advances in Neural Information Processing Systems} \textbf{2022}, 35, 507--520. arXiv:2207.08815.
+\bibitem{ref9} Yang, Z.; Meng, L.; Rui, W.; Shen, L.; Zhao, S.; Shi, L. Enhancing explainability in Raman spectroscopy classification with SHAP and spectral segmentation. Spectrochimica Acta Part A: Molecular and Biomolecular Spectroscopy, 2026, 344, 126394. \url{https://doi.org/10.1016/j.saa.2025.126394}
 
-\bibitem{SoilThiram} Dong, M.; Ding, F.; Jin, Y.; Li, C.; Lin, X.; Lin, S. Facile synthesis of ultrasmooth Au nanospheres into macroscopic 3D supercrystals for machine-learning-driven analysis of thiram in soil. \textit{Analytical Chemistry} \textbf{2025}, 97, 10452--10462. https://doi.org/10.1021/acs.analchem.5c01350.
+\bibitem{ref10} Fan, L.; Yu, H.; He, Y.; Guo, J.; Min, G.; Wang, J. Optimization and interpretability analysis of machine learning methods for ZnO colloid particle size prediction. ACS Applied Nano Materials, 2025, 8, 2682-2692. \url{https://doi.org/10.1021/acsanm.4c05229}
+
+\bibitem{ref11} Lee, P. C.; Meisel, D. Adsorption and surface-enhanced Raman of dyes on silver and gold sols. The Journal of Physical Chemistry, 1982, 86, 3391-3395. \url{https://doi.org/10.1021/j100214a025}
+
+\bibitem{ref12} Savitzky, A.; Golay, M. J. E. Smoothing and differentiation of data by simplified least squares procedures. Analytical Chemistry, 1964, 36, 1627-1639. \url{https://doi.org/10.1021/ac60214a047}
+
+\bibitem{ref13} Eilers, P. H. C.; Boelens, H. F. M. Baseline correction with asymmetric least squares smoothing. Leiden University Medical Centre Report, 2005.
+
+\bibitem{ref14} Barnes, R. J.; Dhanoa, M. S.; Lister, S. J. Standard normal variate transformation and de-trending of near-infrared diffuse reflectance spectra. Applied Spectroscopy, 1989, 43, 772-777. \url{https://doi.org/10.1366/0003702894202201}
+
+\bibitem{ref15} Chen, T.; Guestrin, C. XGBoost: A scalable tree boosting system. Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 2016, 785-794. \url{https://doi.org/10.1145/2939672.2939785}
+
+\bibitem{ref16} Pedregosa, F.; Varoquaux, G.; Gramfort, A.; Michel, V.; Thirion, B.; Grisel, O.; Blondel, M.; Prettenhofer, P.; Weiss, R.; Dubourg, V.; Vanderplas, J.; Passos, A.; Cournapeau, D.; Brucher, M.; Perrot, M.; Duchesnay, E. Scikit-learn: machine learning in Python. Journal of Machine Learning Research, 2011, 12, 2825-2830.
+
+\bibitem{ref17} Lundberg, S. M.; Erion, G.; Chen, H.; DeGrave, A.; Prutkin, J. M.; Nair, B.; Katz, R.; Himmelfarb, J.; Bansal, N.; Lee, S.-I. From local explanations to global understanding with explainable AI for trees. Nature Machine Intelligence, 2020, 2, 56-67. \url{https://doi.org/10.1038/s42256-019-0138-9}
+
+\bibitem{ref18} Grinsztajn, L.; Oyallon, E.; Varoquaux, G. Why do tree-based models still outperform deep learning on typical tabular data? Advances in Neural Information Processing Systems, 2022, 35, 507-520. arXiv:2207.08815
+
+\bibitem{ref19} Zhou, B.; Tong, Y.-K.; Zhang, R.; Ye, A. RamanNet: a lightweight convolutional neural network for bacterial identification based on Raman spectra. RSC Advances, 2022, 12, 26463-26469. \url{https://doi.org/10.1039/D2RA03722J}
+
+\bibitem{ref20} Liu, Z.; Wang, Y.; Vaidya, S.; Ruehle, F.; Halverson, J.; Soljacic, M.; Hou, T. Y.; Tegmark, M. KAN: Kolmogorov-Arnold Networks. arXiv, 2024, arXiv:2404.19756. \url{https://arxiv.org/abs/2404.19756}
+
+\bibitem{ref21} Urbanczyk, T.; Bozek, J.; Mirczak, S.; Koperski, J.; Krosnicki, M. Kolmogorov-Arnold neural network for identification of functional groups from FTIR spectra. Chemometrics and Intelligent Laboratory Systems, 2025, 263, 105421. \url{https://doi.org/10.1016/j.chemolab.2025.105421}
+
+\bibitem{ref22} Cheng, Y.; Ding, Y.; Chen, J.; Xu, W.; Wang, W.; Xu, S. Au nanoparticles decorated covalent organic framework composite for SERS analyses of malachite green and thiram residues in foods. Spectrochimica Acta Part A: Molecular and Biomolecular Spectroscopy, 2022, 281, 121644. \url{https://doi.org/10.1016/j.saa.2022.121644}
+
+\bibitem{ref23} Chen, M.; Huang, Y.; Miao, J.; Fan, Y.; Lai, K. A highly sensitive surface-enhanced Raman scattering sensor with MIL-100(Fe)/Au composites for detection of malachite green in fish pond water. Spectrochimica Acta Part A: Molecular and Biomolecular Spectroscopy, 2023, 292, 122432. \url{https://doi.org/10.1016/j.saa.2023.122432}
+
+\bibitem{ref24} Linh, D. T.; Mai, Q.-D.; Nguyet Nga, D. T.; Anh, N. T.; Van Tuan, H.; Nguyen, H. A.; Vu, X. H.; Le, A.-T. Surface ligand modified silver nanoparticles-based SERS sensing platform for ultrasensitive detection of the pesticide thiram in green tea leaves: roles of coating agents in sensing performance. RSC Advances, 2024, 14, 9975-9984. \url{https://doi.org/10.1039/D4RA00048J}
+
+\bibitem{ref25} Srivastava, S.; Wang, W.; Zhou, W.; Jin, M.; Vikesland, P. J. Machine learning-assisted surface-enhanced Raman spectroscopy detection for environmental applications: A review. Environmental Science \& Technology, 2024, 58, 20830-20848. \url{https://doi.org/10.1021/acs.est.4c06737}
+
+\bibitem{ref26} dos Santos, D. P.; Sena, M. M.; Almeida, M. R.; Mazali, I. O.; Olivieri, A. C.; Villa, J. E. L. Unraveling surface-enhanced Raman spectroscopy results through chemometrics and machine learning: principles, progress, and trends. Analytical and Bioanalytical Chemistry, 2023, 415, 3945-3966. \url{https://doi.org/10.1007/s00216-023-04620-y}
 
 \end{thebibliography}
-}
+
+\input{latex_manuscript/supplementary_materials}
 
 \end{document}

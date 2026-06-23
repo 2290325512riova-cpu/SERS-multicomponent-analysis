@@ -7,7 +7,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib import gridspec
 from matplotlib.colors import TwoSlopeNorm
-from matplotlib.patches import Circle, FancyArrowPatch, Patch, Rectangle
+from matplotlib.patches import Circle, FancyArrowPatch, Rectangle
 from PIL import Image
 
 from paper_style import (
@@ -239,7 +239,7 @@ def plot_fig3_spectra() -> None:
         if analyte == "MG":
             add_overlap_regions(ax, alpha=0.10)
             ax.axvline(1616, color=color, lw=1.2)
-            ax.text(1616, 0.08, "clean 1616", rotation=90, ha="right", va="bottom", fontsize=6)
+            ax.text(1616, 0.08, "1616 C=C", rotation=90, ha="right", va="bottom", fontsize=6)
         ax.set_xlim(400, 1800)
         ax.set_ylim(-0.08, 1.18)
         ax.set_xlabel(cm_label())
@@ -260,7 +260,7 @@ def plot_fig3_spectra() -> None:
     ax.set_xlabel(cm_label())
     ax.set_ylabel("Normalized intensity")
     ax.legend(frameon=False, loc="upper left")
-    ax.set_title("Reference overlap map")
+    ax.set_title("Reference spectra and overlap regions")
     panel_label(ax, "d")
     despine(ax)
     save_figure(fig, "fig3_spectra")
@@ -281,19 +281,19 @@ def plot_fig4_benchmark() -> None:
     gs = fig.add_gridspec(1, 2, width_ratios=[1.42, 1.05])
     ax0 = fig.add_subplot(gs[0, 0])
     ax1 = fig.add_subplot(gs[0, 1])
-    im = ax0.imshow(pivot.values, vmin=0.45, vmax=1.0, cmap="viridis", aspect="auto")
+    im = ax0.imshow(pivot.values, vmin=0.45, vmax=1.0, cmap="YlGnBu", aspect="auto")
     ax0.set_xticks(np.arange(len(task_order)), [TASK_LABEL[t].replace(" ", "\n") for t in task_order], rotation=0)
     ax0.set_yticks(np.arange(len(models)), models)
     for i in range(pivot.shape[0]):
         for j in range(pivot.shape[1]):
             val = pivot.iloc[i, j]
             weight = "bold" if np.isclose(val, np.nanmax(pivot.iloc[:, j])) else "normal"
-            color = "white" if val < 0.74 else "black"
+            color = "white" if val >= 0.93 else "black"
             ax0.text(j, i, f"{val:.2f}", ha="center", va="center", fontsize=5.5, color=color, fontweight=weight)
     for j in range(pivot.shape[1]):
         best_i = int(np.nanargmax(pivot.iloc[:, j].to_numpy()))
         ax0.add_patch(Rectangle((j - 0.5, best_i - 0.5), 1, 1, fill=False, edgecolor="black", lw=1.1))
-    ax0.set_title("Best preprocessing per model-task")
+    ax0.set_title("Model-task performance landscape")
     panel_label(ax0, "a", x=-0.18)
     cb = fig.colorbar(im, ax=ax0, fraction=0.046, pad=0.02)
     cb.set_label("Macro-F1")
@@ -353,12 +353,12 @@ def plot_fig4_benchmark() -> None:
     ax1.text(
         0.585,
         g2_y + 0.52,
-        "widest spread",
+        "largest model dependence",
         fontsize=5.8,
         va="center",
         color="#333333",
     )
-    ax1.set_title("Per-task model spread")
+    ax1.set_title("Task-dependent model performance")
     panel_label(ax1, "b", x=-0.25)
     despine(ax1)
     save_figure(fig, "fig4_benchmark_heatmap")
@@ -412,22 +412,16 @@ def plot_fig5_mg_suppression() -> None:
         ]
     )
     ax0.text(0.03, 0.96, ratio_text, transform=ax0.transAxes, ha="left", va="top", fontsize=7)
-    diff = scaled_means["Ternary"] - scaled_means["Pure MG"]
-    diff_scale = float(np.max(np.abs(diff[(wn >= 1500) & (wn <= 1700)])))
-    if diff_scale == 0:
-        diff_scale = 1.0
-    ax0.plot(wn, diff / diff_scale * 0.16 - 0.28, color=ANALYTE_COLORS["MG"], lw=0.9)
-    ax0.axhline(-0.28, color="#999999", lw=0.6)
-    ax0.text(1502, -0.37, "Ternary - pure MG", color=ANALYTE_COLORS["MG"], fontsize=6)
     y_max = max(1.05, max(float(np.nanmax(v[(wn >= 1500) & (wn <= 1700)])) for v in scaled_means.values()) * 1.08)
     ax0.set_xlim(1500, 1700)
-    ax0.set_ylim(-0.42, y_max)
-    ax0.text(1616, y_max * 0.94, "1616 clean marker", rotation=90, ha="right", va="top", fontsize=6)
+    ax0.set_ylim(-0.03, y_max)
+    ax0.text(1616, y_max * 0.94, "MG 1616", rotation=90, ha="right", va="top", fontsize=6)
     ax0.set_xlabel(cm_label())
     ax0.set_ylabel("Common-scaled intensity")
     ax0.legend(frameon=False, loc="lower center", bbox_to_anchor=(0.55, 1.04), ncol=2, borderaxespad=0)
+    use_origin_fig5_panel = False
     fig5_origin_crop = (0.0, 0.0, 0.006, 0.002)
-    if show_origin_image(ax0, "origin_clean_fig5_mg_suppression.png", crop=fig5_origin_crop):
+    if use_origin_fig5_panel and show_origin_image(ax0, "origin_clean_fig5_mg_suppression.png", crop=fig5_origin_crop):
         ax0.text(
             0.14,
             0.90,
@@ -498,6 +492,15 @@ def plot_fig5_mg_suppression() -> None:
     ternary = data[-1]
     ax1.axhline(1.0, color="#777777", lw=0.8, ls="--")
     ax1.axhline(0.5, color="#777777", lw=0.8, ls=":")
+    ax1.text(
+        3.42,
+        0.5,
+        "0.5 x pure MG",
+        ha="right",
+        va="bottom",
+        fontsize=5.8,
+        color="#555555",
+    )
     ax1.set_xticks(np.arange(1, 4), conds, rotation=20, ha="right")
     ax1.set_ylabel("MG 1616 peak ratio\nvs same-level pure MG")
     ax1.set_ylim(-0.02, 1.22)
@@ -518,7 +521,7 @@ def plot_fig5_mg_suppression() -> None:
         ax1.text(1.1, 1.12, ptext, fontsize=6)
     except Exception:
         pass
-    panel_label(ax1, "b")
+    panel_label(ax1, "b", y=1.12)
     despine(ax1)
 
     heat = (
@@ -562,7 +565,7 @@ def plot_fig5_mg_suppression() -> None:
         ax3.add_patch(Rectangle((x0 - 0.035, bar_base), 0.07, value * bar_scale, facecolor=color, edgecolor="none", alpha=0.88))
         ax3.text(x0, bar_base + value * bar_scale + 0.030, f"{value:.2f}", ha="center", fontsize=6.5)
         ax3.text(x0, 0.20, label, ha="center", va="top", fontsize=6.2, rotation=15)
-    ax3.text(0.50, 0.05, "Mixed adsorption attenuates the MG marker", ha="center", fontsize=7.5)
+    ax3.text(0.50, 0.05, "Ternary adsorption attenuates the MG marker band", ha="center", fontsize=7.5)
     panel_label(ax3, "d")
     save_figure(fig, "fig5_mg_suppression")
 
@@ -637,14 +640,19 @@ def plot_fig6_shap() -> None:
     ax0.set_yticks(np.arange(len(top)), labels)
     ax0.set_xlabel("Cluster SHAP mass")
     ax0.set_xlim(0, float(top.total_shap.max()) * 1.10)
+    assigned_count = int((audit.assignment_level != "unassigned").sum())
+    total_count = int(len(audit))
+    assigned_mass = float(audit.loc[audit.assignment_level != "unassigned", "total_shap"].sum())
+    total_mass = float(audit["total_shap"].sum())
+    assigned_pct = 100 * assigned_mass / total_mass if total_mass else np.nan
     ax0.text(
         1.02,
         0.98,
-        "22/29 clusters\n91.2% SHAP mass",
+        f"{assigned_count}/{total_count} clusters\n{assigned_pct:.1f}% assigned\nSHAP mass",
         transform=ax0.transAxes,
         ha="left",
         va="top",
-        fontsize=7.5,
+        fontsize=7.3,
         fontweight="bold",
         clip_on=False,
     )
@@ -660,7 +668,7 @@ def plot_fig6_shap() -> None:
         .to_numpy()
     )
     focus_signed = shap_npz[focus_task][..., -1].mean(axis=0)
-    sc = plot_shap_overlay(ax1, wn, spectrum, focus_abs, focus_signed, "SHAP localizes MG-interference bands")
+    sc = plot_shap_overlay(ax1, wn, spectrum, focus_abs, focus_signed, "Characteristic and interference-sensitive bands")
     ax1.set_xlim(800, 1700)
     ax1.axvline(1616, color=ANALYTE_COLORS["MG"], lw=1.0)
     ax1.text(1616, 0.08, "1616", rotation=90, ha="right", va="bottom", fontsize=6)
@@ -681,10 +689,10 @@ def plot_fig6_shap() -> None:
     panel_label(mini_axes[0], "c", x=-0.34)
 
     mg_regions = [
-        ("1616 clean marker", [(1600, 1630)], ANALYTE_COLORS["MG"]),
+        ("MG 1616 marker band", [(1600, 1630)], ANALYTE_COLORS["MG"]),
         ("1172/1220 MG bands", [(1162, 1230)], "#E99445"),
         ("1394 overlap band", [(1370, 1405)], "#C85A3E"),
-        ("coexisting-band region", [(850, 880), (1490, 1515)], "#777777"),
+        ("Coexisting-analyte bands", [(850, 880), (1490, 1515)], "#777777"),
     ]
     region_values = []
     for label, windows, color in mg_regions:
@@ -701,7 +709,7 @@ def plot_fig6_shap() -> None:
     ax3.set_yticks(y_pos, [label for label, _, _ in region_values])
     ax3.set_xlim(0, 1.12)
     ax3.set_xlabel("Relative G2 SHAP mass")
-    ax3.set_title("MG-task attribution by spectral region", loc="left", pad=4)
+    ax3.set_title("G2/MG attribution by spectral region", loc="left", pad=4)
     panel_label(ax3, "d", x=-0.20)
     despine(ax3)
     save_figure(fig, "fig6_shap_attribution")
@@ -729,7 +737,7 @@ def plot_fig7_feature_selection() -> None:
     ax0.set_ylim(0.93, 1.005)
     ax0.set_xlabel("Retained wavenumbers (%)")
     ax0.set_ylabel("Macro-F1")
-    ax0.legend(frameon=False, ncol=1, loc="lower right")
+    ax0.legend(frameon=False, ncol=3, loc="upper center", bbox_to_anchor=(0.50, -0.13), borderaxespad=0.0, fontsize=5.7)
     sec = ax0.secondary_xaxis("top", functions=(lambda p: p * 14.01, lambda n: n / 14.01))
     sec.set_xlabel("Number of retained points")
     panel_label(ax0, "a", x=-0.10)
@@ -763,14 +771,28 @@ def plot_fig7_feature_selection() -> None:
             }
         )
     bdf = pd.DataFrame(bar_rows)
+    bdf["delta"] = bdf["ten"] - bdf["full"]
     xloc = np.arange(len(bdf))
-    width = 0.36
-    ax2.bar(xloc - width / 2, bdf.full, width, yerr=bdf.full_std, color="#BDBDBD", capsize=2, label="Full")
-    ax2.bar(xloc + width / 2, bdf.ten, width, yerr=bdf.ten_std, color=[TASK_COLORS[t] for t in bdf.task], capsize=2, label="10%")
-    ax2.set_xticks(xloc, [t.split("_")[0] for t in bdf.task])
-    ax2.set_ylim(0.93, 1.005)
-    ax2.set_ylabel("Macro-F1")
-    ax2.legend(frameon=False, loc="upper left", bbox_to_anchor=(1.02, 1.0), borderaxespad=0)
+    ax2.axhline(0, color="#555555", lw=0.8)
+    ax2.bar(xloc, bdf.delta, width=0.58, color=[TASK_COLORS[t] for t in bdf.task], alpha=0.88)
+    for x_i, delta in zip(xloc, bdf.delta):
+        va = "bottom" if delta >= 0 else "top"
+        y_text = delta + (0.0018 if delta >= 0 else -0.0018)
+        ax2.text(x_i, y_text, f"{delta:+.3f}", ha="center", va=va, fontsize=5.8)
+    ax2.set_xticks(xloc, [t.split("_")[0] for t in bdf.task], rotation=0)
+    ylim = max(0.018, float(np.nanmax(np.abs(bdf.delta))) * 1.35)
+    ax2.set_ylim(-ylim, ylim)
+    ax2.set_ylabel(r"$\Delta$macro-F1 (10% - full)")
+    ax2.text(
+        0.02,
+        0.96,
+        "all |delta| <= 0.014",
+        transform=ax2.transAxes,
+        ha="left",
+        va="top",
+        fontsize=6.2,
+        color="#333333",
+    )
     panel_label(ax2, "c", x=-0.20)
     despine(ax2)
     save_figure(fig, "fig7_feature_elimination")
@@ -820,7 +842,6 @@ def plot_fig8_soil() -> None:
     roc = pd.read_csv(soil_dir / "soil_cv_roc_curve.csv")
     pred = pd.read_csv(soil_dir / "soil_cv_predictions.csv")
     blank = pd.read_csv(soil_dir / "soil_blank_predictions.csv")
-    blank_spec = pd.read_csv(soil_dir / "soil_blank_specificity.csv")
     x_soil = np.load(soil_dir / "X_soil_p1.npy")
     x_blank = np.load(soil_dir / "X_blanks_p1.npy")
     wn = np.load(soil_dir / "wavenumber.npy")
@@ -861,38 +882,54 @@ def plot_fig8_soil() -> None:
         ax1.scatter(i - 0.08 + rng.normal(0, 0.026, len(pos)), pos.prob_positive, color=TASK_COLORS[task], s=15, alpha=0.72, lw=0)
         ax1.scatter(i + 0.16 + rng.normal(0, 0.018, len(bl)), bl.prob_positive, marker="D", facecolors="none", edgecolors="#555555", s=20, lw=0.75)
     ax1.set_xticks(np.arange(len(tasks)), [TASK_LABEL[t] for t in tasks], rotation=15, ha="right")
-    ax1.set_ylabel("Screening score")
-    ax1.set_xlabel("Positive soil spectra and blank controls", labelpad=6, fontsize=7)
+    ax1.axhline(0.5, color="#777777", lw=0.8, ls=":")
+    ax1.text(
+        2.35,
+        0.515,
+        "0.5 threshold",
+        ha="right",
+        va="bottom",
+        fontsize=5.8,
+        color="#555555",
+    )
+    ax1.set_ylabel("Predicted positive probability")
+    ax1.set_xlabel("")
+    ax1.legend(
+        handles=[
+            plt.Line2D([0], [0], marker="o", linestyle="none", color="#555555", markerfacecolor="#555555", markersize=4.0, label="Spiked soil"),
+            plt.Line2D([0], [0], marker="D", linestyle="none", color="#555555", markerfacecolor="none", markersize=4.0, label="Soil blank"),
+        ],
+        frameon=False,
+        loc="upper left",
+        fontsize=6,
+        handletextpad=0.4,
+        borderaxespad=0.2,
+    )
     ax1.set_ylim(-0.03, 1.12)
     panel_label(ax1, "b")
     despine(ax1)
 
     auc_values = []
-    spec_values = []
+    auc_std_values = []
     for task in tasks:
         auc_values.append(summary.loc[summary.task == task, "AUC_mean"].iloc[0])
-        spec_values.append(blank_spec.loc[blank_spec.task == task, "specificity"].iloc[0])
+        auc_std_values.append(summary.loc[summary.task == task, "AUC_std"].iloc[0])
     y = np.arange(len(tasks))
-    ax2.barh(y + 0.14, auc_values, height=0.24, color=[TASK_COLORS[t] for t in tasks], alpha=0.88, label="AUC")
-    ax2.barh(y - 0.14, spec_values, height=0.24, color="#B8B8B8", alpha=0.95, label="Blank specificity")
-    for yi, task, auc, spec in zip(y, tasks, auc_values, spec_values):
-        ax2.text(auc + 0.006, yi + 0.14, f"{auc:.3f}", va="center", fontsize=6)
-        ax2.text(spec - 0.006, yi - 0.14, f"{spec:.3f}", va="center", ha="right", fontsize=6, color="#333333")
-    ax2.set_yticks(y, [TASK_LABEL[t] for t in tasks])
-    ax2.set_xlim(0.90, 1.015)
-    ax2.set_xlabel("Metric value")
-    ax2.set_title("Soil-matrix screening summary")
-    ax2.legend(
-        handles=[
-            Patch(facecolor="#777777", edgecolor="none", label="AUC (task color)"),
-            Patch(facecolor="#B8B8B8", edgecolor="none", label="Blank specificity"),
-        ],
-        frameon=False,
-        loc="lower center",
-        bbox_to_anchor=(0.50, -0.30),
-        ncol=2,
-        fontsize=6,
+    ax2.barh(
+        y,
+        auc_values,
+        xerr=auc_std_values,
+        height=0.42,
+        color=[TASK_COLORS[t] for t in tasks],
+        alpha=0.88,
+        capsize=2,
     )
+    for yi, auc, sd in zip(y, auc_values, auc_std_values):
+        ax2.text(1.012, yi, f"{auc:.3f} ± {sd:.3f}", va="center", fontsize=6)
+    ax2.set_yticks(y, [TASK_LABEL[t] for t in tasks])
+    ax2.set_xlim(0.90, 1.04)
+    ax2.set_xlabel("Five-fold AUC")
+    ax2.set_title("Soil matrix screening")
     panel_label(ax2, "c")
     despine(ax2)
 
